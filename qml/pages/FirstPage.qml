@@ -1,20 +1,27 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import TableUser 1.0
 
 Page {
     id: page
+    anchors.fill: parent
     allowedOrientations: Orientation.Portrait
     property int spacingGrid: 2
 
+    PageHeader {
+        id: headerPage
+        title: qsTr("Fox hunting")
+    }
+
     Column {
         id: column
-        anchors.fill: parent
+        anchors {
+            top: headerPage.bottom
+            bottom: parent.bottom
+        }
         width: page.width
         height: page.width
         spacing: Theme.paddingLarge
-        PageHeader {
-            title: qsTr("Fox hunting")
-        }
 
         Grid {
             id: fieldTop
@@ -100,13 +107,27 @@ Page {
                           anchors.fill: parent
                           columns: 9
                           rows: 9
+
                           Repeater {
-                              model: 81
-                              FoxCell {
-                                  height: item.height  - spacingGrid
-                                  width: item.width  - spacingGrid
-//                                  id: cell
-                              }
+                              model: dataModel.data
+                              delegate: Rectangle {
+                                          width: item.width  - spacingGrid
+                                          height: item.height  - spacingGrid
+                                          color: "lightGreen"
+
+                                          Text {
+                                              anchors.centerIn: parent
+//                                              renderType: Text.NativeRendering
+                                              text: model.text
+                                          }
+                                          MouseArea {
+                                              anchors.fill: parent
+                                              onClicked: { console.log("hi!" + model.index)}
+                                          }
+                                      }
+                          }
+                          TableUser {
+                              id: dataModel
                           }
                       }
 

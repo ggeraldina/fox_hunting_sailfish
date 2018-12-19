@@ -1,24 +1,21 @@
 import QtQuick 2.0
 
-MouseArea {
-    id: cell
+Rectangle {
     property alias littera: text.text
     width: 30
     height: 50
+    color: "lightGreen"
 
-    Rectangle {
-        width: parent.width
-        height: parent.height
-        color: "lightGreen"
-        Text {
-            id: text
-            anchors.centerIn: parent
-            text: "Fox"
-        }
+    Text {
+        id: text
+        anchors.centerIn: parent
+        text: "Fox"
     }
 
-    onClicked: { console.log("hi!")}
-
+    MouseArea {
+        anchors.fill: parent
+        onClicked: { console.log("hi!" + model.index)}
+    }
 }
 
 

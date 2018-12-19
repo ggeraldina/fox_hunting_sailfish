@@ -14,7 +14,13 @@ TARGET = FoxHunting
 
 CONFIG += sailfishapp
 
-SOURCES += src/FoxHunting.cpp
+SOURCES += \
+    src/CellUser.cpp \
+    src/CellComp.cpp \
+    src/TableUser.cpp \
+    src/TableComp.cpp \
+    src/Main.cpp \
+    src/FoxHunting.cpp
 
 DISTFILES += qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
@@ -27,8 +33,8 @@ DISTFILES += qml/FoxHunting.qml \
     FoxHunting.desktop \
     qml/pages/LittersCell.qml \
     qml/pages/FoxCell.qml \
-    qml/pages/DigitsCell.qml \
-    qml/pages/SecondPage.qml
+    qml/pages/SecondPage.qml \
+    qml/pages/PlanetItem.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -41,3 +47,9 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/FoxHunting-de.ts
+
+HEADERS += \
+    src/CellUser.h \
+    src/CellComp.h \
+    src/TableUser.h \
+    src/TableComp.h
