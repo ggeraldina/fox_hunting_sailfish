@@ -14,7 +14,7 @@ public:
 
     QQmlListProperty<CellComp> getDataComp();
 
-    Q_INVOKABLE void add();
+    Q_INVOKABLE void addDataComp();
 private:
     static void appendDataComp(QQmlListProperty<CellComp> *list, CellComp *value);
     static int countDataComp(QQmlListProperty<CellComp> *list);

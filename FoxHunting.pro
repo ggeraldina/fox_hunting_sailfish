@@ -17,8 +17,6 @@ CONFIG += sailfishapp
 SOURCES += \
     src/CellUser.cpp \
     src/CellComp.cpp \
-    src/TableUser.cpp \
-    src/TableComp.cpp \
     src/Main.cpp \
     src/TablesCompUser.cpp
 
@@ -32,7 +30,6 @@ DISTFILES += qml/FoxHunting.qml \
     translations/*.ts \
     FoxHunting.desktop \
     qml/pages/LittersCell.qml \
-    qml/pages/FoxCell.qml \
     qml/pages/FieldTableLitters.qml \
     qml/pages/FieldTableDigits.qml
 
@@ -51,6 +48,4 @@ TRANSLATIONS += translations/FoxHunting-de.ts
 HEADERS += \
     src/CellUser.h \
     src/CellComp.h \
-    src/TableUser.h \
-    src/TableComp.h \
     src/TablesCompUser.h

@@ -14,7 +14,7 @@ QQmlListProperty<CellUser> TableUser::getDataUser() {
                                      &TableUser::atDataUser, &TableUser::clearDataUser);
 }
 
-void TableUser::add() {
+void TableUser::addDataUser() {
     CellUser *cellUser = new CellUser(this);
     cellUser->setProperty("text", "!");
     dataUser.append(cellUser);
@@ -27,8 +27,8 @@ void TableUser::appendDataUser(QQmlListProperty<CellUser> *list, CellUser *value
 }
 
 int TableUser::countDataUser(QQmlListProperty<CellUser> *list) {
-    QList<CellUser*> *data = static_cast<QList<CellUser*> *>(list->data);
-    return data->size();
+    QList<CellUser*> *dataUser = static_cast<QList<CellUser*> *>(list->data);
+    return dataUser->size();
 }
 
 CellUser *TableUser::atDataUser(QQmlListProperty<CellUser> *list, int index) {

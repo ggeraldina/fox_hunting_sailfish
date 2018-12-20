@@ -2,32 +2,46 @@
 #define TABLESCOMPUSER_H
 
 #include <QObject>
-#include "TableComp.h"
-#include "TableUser.h"
+#include <QQmlListProperty>
+#include "CellComp.h"
+#include "CellUser.h"
+
 
 class TablesCompUser : public QObject
 {
     Q_OBJECT
-//    Q_PROPERTY(TableComp* tableComp READ getTableComp WRITE setTableComp NOTIFY tableCompChanged)
-    Q_PROPERTY(TableUser* tableUser READ getTableUser WRITE setTableUser NOTIFY tableUserChanged)
-    Q_CLASSINFO("DefaultProperty", "tableUser")
+    Q_PROPERTY(QQmlListProperty<CellComp> dataComp READ getDataComp NOTIFY dataCompChanged)
+    Q_PROPERTY(QQmlListProperty<CellUser> dataUser READ getDataUser NOTIFY dataUserChanged)
+    Q_CLASSINFO("DefaultProperty", "dataComp")
+    Q_CLASSINFO("DefaultProperty", "dataUser")
 public:
     explicit TablesCompUser(QObject *parent = 0);
 
-    TableComp* getTableComp();
-    TableUser* getTableUser();
-    void setTableComp(TableComp *tableComp);
-    void setTableUser(TableUser *tableUser);
+    QQmlListProperty<CellComp> getDataComp();
+    QQmlListProperty<CellUser> getDataUser();
 
+    Q_INVOKABLE void clickCellComp(int index);
 private:
-    TableComp* tableComp;
-    TableUser* tableUser;
+    static void appendDataComp(QQmlListProperty<CellComp> *list, CellComp *value);
+    static int countDataComp(QQmlListProperty<CellComp> *list);
+    static CellComp *atDataComp(QQmlListProperty<CellComp> *list, int index);
+    static void clearDataComp(QQmlListProperty<CellComp> *list);
+
+    static void appendDataUser(QQmlListProperty<CellUser> *list, CellUser *value);
+    static int countDataUser(QQmlListProperty<CellUser> *list);
+    static CellUser *atDataUser(QQmlListProperty<CellUser> *list, int index);
+    static void clearDataUser(QQmlListProperty<CellUser> *list);
+
+    QList<CellComp*> dataComp;
+    QList<CellUser*> dataUser;
 
 signals:
-    void tableCompChanged();
-    void tableUserChanged();
+    void dataCompChanged();
+    void dataUserChanged();
+    void clickComp(int index);
 
 public slots:
+    void printUser(int index);
 };
 
 #endif // TABLESCOMPUSER_H

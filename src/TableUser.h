@@ -14,7 +14,7 @@ public:
 
     QQmlListProperty<CellUser> getDataUser();
 
-    Q_INVOKABLE void add();
+    Q_INVOKABLE void addDataUser();
 private:
     static void appendDataUser(QQmlListProperty<CellUser> *list, CellUser *value);
     static int countDataUser(QQmlListProperty<CellUser> *list);

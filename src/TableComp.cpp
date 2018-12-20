@@ -14,7 +14,7 @@ QQmlListProperty<CellComp> TableComp::getDataComp() {
                                      &TableComp::atDataComp, &TableComp::clearDataComp);
 }
 
-void TableComp::add() {
+void TableComp::addDataComp() {
     CellComp *cellComp = new CellComp(this);
     cellComp->setProperty("text", "!");
     dataComp.append(cellComp);
