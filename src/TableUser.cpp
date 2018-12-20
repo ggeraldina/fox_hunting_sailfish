@@ -1,43 +1,43 @@
 #include "TableUser.h"
 
 TableUser::TableUser(QObject *parent) : QObject(parent) {
-    for(int i = 0; i < 56; i++) {
+    for(int i = 0; i < 81; i++) {
         CellUser *element = new CellUser(this);
-        element->setProperty("text", "?");
+        element->setProperty("text", "+");
 
-        data << element;
+        dataUser << element;
     }
 }
-QQmlListProperty<CellUser> TableUser::getData() {
-    return QQmlListProperty<CellUser>(static_cast<QObject *>(this), static_cast<void *>(&data),
-                                     &TableUser::appendData, &TableUser::countData,
-                                     &TableUser::atData, &TableUser::clearData);
+QQmlListProperty<CellUser> TableUser::getDataUser() {
+    return QQmlListProperty<CellUser>(static_cast<QObject *>(this), static_cast<void *>(&dataUser),
+                                     &TableUser::appendDataUser, &TableUser::countDataUser,
+                                     &TableUser::atDataUser, &TableUser::clearDataUser);
 }
 
 void TableUser::add() {
     CellUser *cellUser = new CellUser(this);
     cellUser->setProperty("text", "!");
-    data.append(cellUser);
+    dataUser.append(cellUser);
 
-    emit dataChanged();
+    emit dataUserChanged();
 }
-void TableUser::appendData(QQmlListProperty<CellUser> *list, CellUser *value) {
-    QList<CellUser*> *data = static_cast<QList<CellUser*> *>(list->data);
-    data->append(value);
+void TableUser::appendDataUser(QQmlListProperty<CellUser> *list, CellUser *value) {
+    QList<CellUser*> *dataUser = static_cast<QList<CellUser*> *>(list->data);
+    dataUser->append(value);
 }
 
-int TableUser::countData(QQmlListProperty<CellUser> *list) {
+int TableUser::countDataUser(QQmlListProperty<CellUser> *list) {
     QList<CellUser*> *data = static_cast<QList<CellUser*> *>(list->data);
     return data->size();
 }
 
-CellUser *TableUser::atData(QQmlListProperty<CellUser> *list, int index) {
-    QList<CellUser*> *data = static_cast<QList<CellUser*> *>(list->data);
-    return data->at(index);
+CellUser *TableUser::atDataUser(QQmlListProperty<CellUser> *list, int index) {
+    QList<CellUser*> *dataUser = static_cast<QList<CellUser*> *>(list->data);
+    return dataUser->at(index);
 }
 
-void TableUser::clearData(QQmlListProperty<CellUser> *list) {
-    QList<CellUser*> *data = static_cast<QList<CellUser*> *>(list->data);
-    qDeleteAll(data->begin(), data->end());
-    data->clear();
+void TableUser::clearDataUser(QQmlListProperty<CellUser> *list) {
+    QList<CellUser*> *dataUser = static_cast<QList<CellUser*> *>(list->data);
+    qDeleteAll(dataUser->begin(), dataUser->end());
+    dataUser->clear();
 }

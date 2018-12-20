@@ -8,24 +8,23 @@
 class TableUser : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QQmlListProperty<CellUser> data READ getData NOTIFY dataChanged)
-    Q_CLASSINFO("DefaultProperty", "data")
+    Q_PROPERTY(QQmlListProperty<CellUser> dataUser READ getDataUser NOTIFY dataUserChanged)
 public:
     explicit TableUser(QObject *parent = 0);
 
-    QQmlListProperty<CellUser> getData();
+    QQmlListProperty<CellUser> getDataUser();
 
     Q_INVOKABLE void add();
 private:
-    static void appendData(QQmlListProperty<CellUser> *list, CellUser *value);
-    static int countData(QQmlListProperty<CellUser> *list);
-    static CellUser *atData(QQmlListProperty<CellUser> *list, int index);
-    static void clearData(QQmlListProperty<CellUser> *list);
+    static void appendDataUser(QQmlListProperty<CellUser> *list, CellUser *value);
+    static int countDataUser(QQmlListProperty<CellUser> *list);
+    static CellUser *atDataUser(QQmlListProperty<CellUser> *list, int index);
+    static void clearDataUser(QQmlListProperty<CellUser> *list);
 
-    QList<CellUser*> data;
+    QList<CellUser*> dataUser;
 
 signals:
-    void dataChanged();
+    void dataUserChanged();
 
 public slots:
 };

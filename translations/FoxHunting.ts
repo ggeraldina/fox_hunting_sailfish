@@ -14,5 +14,13 @@
         <source>Fox hunting</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

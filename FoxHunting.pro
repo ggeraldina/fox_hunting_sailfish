@@ -20,7 +20,7 @@ SOURCES += \
     src/TableUser.cpp \
     src/TableComp.cpp \
     src/Main.cpp \
-    src/FoxHunting.cpp
+    src/TablesCompUser.cpp
 
 DISTFILES += qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
@@ -33,8 +33,8 @@ DISTFILES += qml/FoxHunting.qml \
     FoxHunting.desktop \
     qml/pages/LittersCell.qml \
     qml/pages/FoxCell.qml \
-    qml/pages/SecondPage.qml \
-    qml/pages/PlanetItem.qml
+    qml/pages/FieldTableLitters.qml \
+    qml/pages/FieldTableDigits.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -52,4 +52,5 @@ HEADERS += \
     src/CellUser.h \
     src/CellComp.h \
     src/TableUser.h \
-    src/TableComp.h
+    src/TableComp.h \
+    src/TablesCompUser.h

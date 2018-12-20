@@ -1,12 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import TableUser 1.0
+import TablesCompUser 1.0
 
 Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
-    property int spacingGrid: 2
+    property int spacingGrid: 1
+    property int baseWidthHeight: page.width / 15
 
     PageHeader {
         id: headerPage
@@ -17,121 +18,136 @@ Page {
         id: column
         anchors {
             top: headerPage.bottom
-            bottom: parent.bottom
+            right: page.right
+            left: page.left
+            bottom: page.bottom
         }
-        width: page.width
-        height: page.width
-        spacing: Theme.paddingLarge
+        spacing: Theme.paddingMedium
+
+
+        TablesCompUser {
+            id: dataModel
+        }
+
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: baseWidthHeight
+            text: qsTr("Computer")
+            color: "white"
+        }
 
         Grid {
             id: fieldTop
-            height: column.height
             spacing: spacingGrid
-            anchors.fill: parent
+            anchors.horizontalCenter: parent.horizontalCenter
             columns: 2
 
             Rectangle {
                   id: item
-                  width: fieldTop.width / 15
-                  height: fieldTop.width / 15
+                  width: baseWidthHeight
+                  height: baseWidthHeight
                   color: "darkblue";
-                 }
+            }
+
+            FieldTableLitters {
+
+            }
+
+            FieldTableDigits{
+
+            }
 
             Rectangle {
-                width: item.width * 9 - spacingGrid * 9
-                height: item.height
-                color: "yellow";
-                Grid {
-                        id: fieldTopLitters
-                        spacing: spacingGrid
-                        anchors.fill: parent
-                        columns: 9
-                        Repeater {
-                            model: ListModel {
-                                ListElement { name: "А"}
-                                ListElement { name: "Б" }
-                                ListElement { name: "В" }
-                                ListElement { name: "Г" }
-                                ListElement { name: "Д" }
-                                ListElement { name: "Е" }
-                                ListElement { name: "Ж" }
-                                ListElement { name: "З" }
-                                ListElement { name: "И" }
-                            }
-                            LittersCell {
-                                height: item.height
-                                width: fieldTopLitters.width / fieldTopLitters.columns
-                                littera: name
-                            }
-                        }
-                    }
-                }
-
-            Rectangle {
-                width: item.width
-                height: item.height * 9 - spacingGrid * 9
-                color: "red";
-                Grid {
-                        id: fieldTopDigits
-                        spacing: spacingGrid
-                        anchors.fill: parent
-                        rows: 9
-                        Repeater {
-                            model: ListModel {
-                                ListElement { name: "1"}
-                                ListElement { name: "2" }
-                                ListElement { name: "3" }
-                                ListElement { name: "4" }
-                                ListElement { name: "5" }
-                                ListElement { name: "6" }
-                                ListElement { name: "7" }
-                                ListElement { name: "8" }
-                                ListElement { name: "9" }
-                            }
-                            LittersCell {
-                                height: fieldTopDigits.height / fieldTopDigits.rows
-                                width: item.width
-                                littera: name
-                            }
-                        }
-                    }
-                }
-            Rectangle {
-                  width: item.width * 9  - spacingGrid * 9
-                  height: item.height * 9  - spacingGrid * 9
-                  color: "orange";
+                  width: baseWidthHeight * 9 // - spacingGrid * 9
+                  height: baseWidthHeight * 9 // - spacingGrid * 9
+                  color: "transparent";
 
                   Grid {
-                          id: fieldTopFox
-                          spacing: spacingGrid
-                          anchors.fill: parent
-                          columns: 9
-                          rows: 9
+                      id: fieldTopFox
+                      spacing: spacingGrid
+                      anchors.fill: parent
+                      columns: 9
+                      rows: 9
 
-                          Repeater {
-                              model: dataModel.data
-                              delegate: Rectangle {
-                                          width: item.width  - spacingGrid
-                                          height: item.height  - spacingGrid
-                                          color: "lightGreen"
+                      Repeater {
+                          model: dataModel.dataComp
+                          delegate: Rectangle {
+                                      width: baseWidthHeight // - spacingGrid
+                                      height: baseWidthHeight // - spacingGrid
+                                      color: "lightGreen"
 
-                                          Text {
-                                              anchors.centerIn: parent
-//                                              renderType: Text.NativeRendering
-                                              text: model.text
-                                          }
-                                          MouseArea {
-                                              anchors.fill: parent
-                                              onClicked: { console.log("hi!" + model.index)}
-                                          }
+                                      Text {
+                                          anchors.centerIn: parent
+                                          text: model.text
                                       }
-                          }
-                          TableUser {
-                              id: dataModel
-                          }
+                                      MouseArea {
+                                          anchors.fill: parent
+                                          onClicked: { console.log("hi!" + model.index)}
+                                      }
+                                  }
                       }
+                  }
+             }
+        }
 
-                 }
+        Text {
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: baseWidthHeight
+            text: qsTr("You")
+            color: "white"
+        }
+
+        Grid {
+            id: fieldBottom
+            spacing: spacingGrid
+            anchors.horizontalCenter: parent.horizontalCenter
+            columns: 2
+
+            Rectangle {
+                  width: baseWidthHeight
+                  height: baseWidthHeight
+                  color: "darkRed";
+            }
+
+            FieldTableLitters {
+
+            }
+
+            FieldTableDigits{
+
+            }
+
+            Rectangle {
+                  width: baseWidthHeight * 9 // - spacingGrid * 9
+                  height: baseWidthHeight * 9 // - spacingGrid * 9
+                  color: "transparent";
+
+                  Grid {
+                      id: fieldBottomFox
+                      spacing: spacingGrid
+                      anchors.fill: parent
+                      columns: 9
+                      rows: 9
+
+                      Repeater {
+                          model: dataModel.dataUser
+                          delegate: Rectangle {
+                                      width: baseWidthHeight // - spacingGrid
+                                      height: baseWidthHeight //  - spacingGrid
+                                      color: "lightGreen"
+
+                                      Text {
+                                          anchors.centerIn: parent
+                                          text: model.text
+                                      }
+                                      MouseArea {
+                                          anchors.fill: parent
+                                          onClicked: { console.log("hi2!" + model.index)}
+                                      }
+                                  }
+                      }
+                  }
+             }
         }
     }
 }
