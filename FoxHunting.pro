@@ -31,7 +31,12 @@ DISTFILES += qml/FoxHunting.qml \
     FoxHunting.desktop \
     qml/pages/LittersCell.qml \
     qml/pages/FieldTableLitters.qml \
-    qml/pages/FieldTableDigits.qml
+    qml/pages/FieldTableDigits.qml \
+    image/fox.ico \
+    image/fox.jpg \
+    qml/pages/GamePage.qml \
+    qml/pages/WinGamePage.qml \
+    qml/pages/LoseGamePage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

@@ -1,7 +1,6 @@
 #include "CellComp.h"
 
 CellComp::CellComp(QObject *parent) : QObject(parent) {
-//    this->text = 'fox';
 }
 
 QString CellComp::getText() {
@@ -15,3 +14,28 @@ void CellComp::setText(QString newValue) {
     text = newValue;
     emit textChanged(text);
 }
+
+QString CellComp::getColor() {
+    return color;
+}
+
+void CellComp::setColor(QString newValue) {
+    if (color == newValue) {
+        return;
+    }
+    color = newValue;
+    emit colorChanged(color);
+}
+
+int CellComp::getValue() {
+    return value;
+}
+
+void CellComp::setValue(int newValue) {
+    if (value == newValue) {
+        return;
+    }
+    value = newValue;
+    emit valueChanged(value);
+}
+

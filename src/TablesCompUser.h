@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QQmlListProperty>
+#include <QTime>
 #include "CellComp.h"
 #include "CellUser.h"
 
@@ -19,8 +20,8 @@ public:
 
     QQmlListProperty<CellComp> getDataComp();
     QQmlListProperty<CellUser> getDataUser();
+    Q_INVOKABLE void shotCellUser(int index);
 
-    Q_INVOKABLE void clickCellComp(int index);
 private:
     static void appendDataComp(QQmlListProperty<CellComp> *list, CellComp *value);
     static int countDataComp(QQmlListProperty<CellComp> *list);
@@ -32,16 +33,34 @@ private:
     static CellUser *atDataUser(QQmlListProperty<CellUser> *list, int index);
     static void clearDataUser(QQmlListProperty<CellUser> *list);
 
+    void randomFoxes();
+    template <typename T>
+    void addFox(T data, int numberCell);
+    template <typename T>
+    void addRandomFox(T data);
+    template <typename T>
+    bool checkPossibleAddFox(T data, int randomIndex);
+    void showFoxesCompOnField();
+    void shotCellComp();
+
+    const int baseFieldSize = 9;
+    const int countCells = baseFieldSize * baseFieldSize;
+    const int numberFoxes = 4;
+    const int valueFox = -1;
+
+    int countFoundFoxesComp = 0;
+    int countFoundFoxesUser = 0;
+
     QList<CellComp*> dataComp;
     QList<CellUser*> dataUser;
 
 signals:
     void dataCompChanged();
     void dataUserChanged();
-    void clickComp(int index);
+    void winUser();
+    void winComp();
 
 public slots:
-    void printUser(int index);
 };
 
 #endif // TABLESCOMPUSER_H

@@ -1,7 +1,6 @@
 #include "CellUser.h"
 
 CellUser::CellUser(QObject *parent) : QObject(parent) {
-//    this->text = 'fox';
 }
 
 QString CellUser::getText() {
@@ -14,4 +13,28 @@ void CellUser::setText(QString newValue) {
     }
     text = newValue;
     emit textChanged(text);
+}
+
+QString CellUser::getColor() {
+    return color;
+}
+
+void CellUser::setColor(QString newValue) {
+    if (color == newValue) {
+        return;
+    }
+    color = newValue;
+    emit colorChanged(color);
+}
+
+int CellUser::getValue() {
+    return value;
+}
+
+void CellUser::setValue(int newValue) {
+    if (value == newValue) {
+        return;
+    }
+    value = newValue;
+    emit valueChanged(value);
 }

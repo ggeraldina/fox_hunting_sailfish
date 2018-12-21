@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 
 Rectangle {
-    width: baseWidthHeight * 9 // - spacingGrid * 9
+    width: baseWidthHeight * baseFieldSize
     height: baseWidthHeight
     color: "transparent";
 
@@ -10,23 +10,26 @@ Rectangle {
         id: fieldLitters
         spacing: spacingGrid
         anchors.fill: parent
-        columns: 9
-        Repeater {
-            model: ListModel {
-                ListElement { name: "A"}
-                ListElement { name: "B" }
-                ListElement { name: "C" }
-                ListElement { name: "D" }
-                ListElement { name: "E" }
-                ListElement { name: "F" }
-                ListElement { name: "G" }
-                ListElement { name: "I" }
-                ListElement { name: "H" }
+        columns: baseFieldSize
+
+        ListModel {
+            id: dataModelLitters
+
+            Component.onCompleted: {
+                for(var i = 0; i < baseFieldSize; i++){
+                    append({ name:  String.fromCharCode(i + ("A").charCodeAt())});
+                }
             }
-            LittersCell {
+        }
+
+
+        Repeater {
+            model: dataModelLitters
+
+            delegate: LittersCell {
                 height: baseWidthHeight
-                width: fieldLitters.width / fieldLitters.columns
-                littera: name
+                width: baseWidthHeight
+                litteraDigit: name
             }
         }
     }

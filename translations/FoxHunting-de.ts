@@ -15,11 +15,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GamePage</name>
+    <message>
         <source>Computer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game with computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LoseGamePage</name>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Better luck next time!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WinGamePage</name>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You win!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulate!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

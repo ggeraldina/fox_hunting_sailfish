@@ -23,7 +23,14 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Menu")
+            text: qsTr("You lost.")
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeLarge
+        }
+
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Better luck next time!")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeLarge
         }
@@ -31,7 +38,8 @@ Page {
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: "New game"
-            onClicked: pageStack.push(Qt.resolvedUrl("GamePage.qml"))
+            onClicked: pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
         }
     }
 }
+

@@ -1,9 +1,7 @@
 import QtQuick 2.0
 
 Rectangle {
-    property alias littera: text.text
-    width: 30
-    height: 50
+    property alias litteraDigit: text.text
     color: "lightBlue"
     Text {
         id: text
