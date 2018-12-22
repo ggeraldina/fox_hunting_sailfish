@@ -54,7 +54,7 @@ DISTFILES += qml/FoxHunting.qml \
     translations/FoxHunting.ts \
     qml/cover/CoverPage.qml \
     qml/FoxHunting.qml \
-    rpm/FoxHunting.spec
+    rpm/FoxHunting.spec \
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
