@@ -14,6 +14,7 @@ Page {
         id: column
         anchors {
             top: page.top
+            topMargin: 20
             right: page.right
             left: page.left
             bottom: page.bottom
@@ -87,11 +88,6 @@ Page {
                                       Text {
                                           anchors.centerIn: parent
                                           text: model.text
-                                      }
-
-                                      MouseArea {
-                                          anchors.fill: parent
-                                          onClicked: { console.log("hi!" + model.index)}
                                       }
                                   }
                       }

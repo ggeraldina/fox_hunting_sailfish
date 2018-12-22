@@ -4,15 +4,9 @@ TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent)
 {
     for(int i = 0; i < countCells; i++) {
         CellComp *elementCellComp = new CellComp(this);
-        elementCellComp->setProperty("text", "");
-        elementCellComp->setProperty("color", "lightGreen");
-        elementCellComp->setProperty("value", 0);
         dataComp << elementCellComp;
 
         CellUser *elementCellUser = new CellUser(this);
-        elementCellUser->setProperty("text", "");
-        elementCellUser->setProperty("color", "lightGreen");
-        elementCellUser->setProperty("value", 0);
         dataUser << elementCellUser;
     }
     randomFoxes();
@@ -51,6 +45,7 @@ template <typename T>
 bool TablesCompUser::checkPossibleAddFox(T data, int currentCell) {
     if (data.value(currentCell)->getValue() == valueFox)
         return false;
+
     int leftCenterCell = currentCell - 1;
     int leftTopCell = currentCell - baseFieldSize - 1;
     int topCell = currentCell - baseFieldSize;
@@ -59,6 +54,7 @@ bool TablesCompUser::checkPossibleAddFox(T data, int currentCell) {
     int rightBottomCell = currentCell + baseFieldSize + 1;
     int bottomCell = currentCell + baseFieldSize;
     int leftBottomCell = currentCell + baseFieldSize - 1;
+
     if (leftCenterCell >= 0 && data.value(leftCenterCell)->getValue() == valueFox)
         return false;
     if (leftTopCell >= 0 && data.value(leftTopCell)->getValue() == valueFox)
@@ -75,6 +71,7 @@ bool TablesCompUser::checkPossibleAddFox(T data, int currentCell) {
         return false;
     if (leftBottomCell < countCells && data.value(leftBottomCell)->getValue() == valueFox)
         return false;
+
     return true;
 }
 
@@ -209,6 +206,8 @@ void TablesCompUser::clearDataUser(QQmlListProperty<CellUser> *list) {
 }
 
 void TablesCompUser::shotCellUser(int index) {
+    if (dataUser.value(index)->getShot())
+        return;
     int value = dataUser.value(index)->getValue();
     if (value == valueFox) {
         dataUser.value(index)->setProperty("color", "orange");
@@ -221,10 +220,15 @@ void TablesCompUser::shotCellUser(int index) {
         dataUser.value(index)->setProperty("text", value);
         shotCellComp();
     }
+    dataUser.value(index)->setProperty("shot", true);
 }
 
 void TablesCompUser::shotCellComp() {
     int randomIndex = rand() % (countCells - 1);
+    if (dataComp.value(randomIndex)->getShot()){
+        shotCellComp();
+        return;
+    }
     int value = dataComp.value(randomIndex)->getValue();
     if (value == valueFox) {
         dataComp.value(randomIndex)->setProperty("color", "orange");
@@ -236,6 +240,7 @@ void TablesCompUser::shotCellComp() {
     }
     else
         dataComp.value(randomIndex)->setProperty("text", value);
+    dataComp.value(randomIndex)->setProperty("shot", true);
 }
 
 

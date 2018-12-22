@@ -12,7 +12,7 @@
     <name>FirstPage</name>
     <message>
         <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Охота на лис</translation>
     </message>
     <message>
         <source>Menu</source>
@@ -23,41 +23,41 @@
     <name>GamePage</name>
     <message>
         <source>Computer</source>
-        <translation type="unfinished"></translation>
+        <translation>Компьютер</translation>
     </message>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы</translation>
     </message>
     <message>
         <source>Game with computer</source>
-        <translation type="unfinished"></translation>
+        <translation>Игра против компьютера</translation>
     </message>
 </context>
 <context>
     <name>LoseGamePage</name>
     <message>
         <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
+        <translation>Охота на лис</translation>
     </message>
     <message>
         <source>You lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы проиграли.</translation>
     </message>
     <message>
         <source>Better luck next time!</source>
-        <translation type="unfinished"></translation>
+        <translation>Повезет в другой раз!</translation>
     </message>
 </context>
 <context>
     <name>RulesPage</name>
     <message>
         <source>Rules</source>
-        <translation type="unfinished"></translation>
+        <translation>Правила</translation>
     </message>
     <message>
         <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
+        <translation>Охота на лис</translation>
     </message>
     <message>
         <source>Rules of the game &apos;Fox Hunting&apos;:
@@ -91,22 +91,54 @@ in the same cell.
 4) Foxes can&apos;t be located in
 neighboring cells.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Правила игры &apos;Охота на лис&apos;:
+
+Порядок игры:
+На полях игрока и компьютера
+(размеры полей: 9х9) случайным
+образом по четыре лисы спрятаны
+на каждом поле.
+Игрок и компьютер по очереди
+делают свои выстрелы каждый на
+своем поле, пытаясь отыскать всех
+лис перед противником.
+Игрок стреляет первым.
+Победителем становится тот,
+кто первым найдет всех лис.
+
+Особенность игры:
+1) После каждого меткого
+выстрела в клетку отображается
+лиса, и выстрел можно повторить.
+2) В случае промаха отображается
+число, которое показывает
+количество лис, спрятанных во всех
+клетках, расположенных на одной
+и той же вертикали, горизонтали
+и на обеих диагоналях (учитываются
+как необнаруженные, так и
+найденные лисы). Следующий
+ход дается противнику.
+3) Лисы не могут находиться
+в одной клетке.
+4) Лисы не могут находиться
+в соседних клетках.
+</translation>
     </message>
 </context>
 <context>
     <name>WinGamePage</name>
     <message>
         <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
+        <translation>Охота на лис</translation>
     </message>
     <message>
         <source>You win!</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы победили!</translation>
     </message>
     <message>
         <source>Congratulate!</source>
-        <translation type="unfinished"></translation>
+        <translation>Поздравляем!</translation>
     </message>
 </context>
 </TS>

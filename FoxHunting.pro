@@ -18,7 +18,8 @@ SOURCES += \
     src/CellUser.cpp \
     src/CellComp.cpp \
     src/Main.cpp \
-    src/TablesCompUser.cpp
+    src/TablesCompUser.cpp \
+    src/QmlTranslator.cpp \
 
 DISTFILES += qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
@@ -36,7 +37,24 @@ DISTFILES += qml/FoxHunting.qml \
     image/fox.jpg \
     qml/pages/GamePage.qml \
     qml/pages/WinGamePage.qml \
-    qml/pages/LoseGamePage.qml
+    qml/pages/LoseGamePage.qml \
+    qml/pages/RulesPage.qml \
+    translations/FoxHunting-ru.ts \
+    FoxHunting.desktop \
+    rpm/FoxHunting.changes.run.in \
+    rpm/FoxHunting.yaml \
+    image/fox.jpg \
+    icons/108x108/FoxHunting.png \
+    icons/128x128/FoxHunting.png \
+    icons/172x172/FoxHunting.png \
+    icons/86x86/FoxHunting.png \
+    image/fox.ico \
+    rpm/FoxHunting.changes.in \
+    translations/FoxHunting-ru.ts \
+    translations/FoxHunting.ts \
+    qml/cover/CoverPage.qml \
+    qml/FoxHunting.qml \
+    rpm/FoxHunting.spec
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -44,13 +62,17 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 
-# German translation is enabled as an example. If you aren't
+# Russian translation is enabled as an example. If you aren't
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/FoxHunting-de.ts
+TRANSLATIONS += translations/FoxHunting-ru.ts
 
 HEADERS += \
     src/CellUser.h \
     src/CellComp.h \
-    src/TablesCompUser.h
+    src/TablesCompUser.h \
+    src/QmlTranslator.h \
+
+SUBDIRS += \
+    FoxHunting.pro
