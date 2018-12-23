@@ -1,6 +1,9 @@
 [ui]
 username = Geraldina <grushevskaya.d.v@yandex.ru>
 
+[paths]
+default = https://Geraldina@bitbucket.org/Geraldina/foxhunting
+
 [extensions]
 mq=
 graphlog=
