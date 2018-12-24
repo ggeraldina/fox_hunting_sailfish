@@ -25,7 +25,7 @@ void TablesCompUser::showFoxesCompOnField() {
     for(int i = 0; i < countCells; i++) {
         int value = dataComp.value(i)->getValue();
         if (value == valueFox)
-            dataComp.value(i)->setProperty("text", "(fox)");
+            dataComp.value(i)->setProperty("text", "x");
     }
 }
 
@@ -211,7 +211,7 @@ void TablesCompUser::shotCellUser(int index) {
     int value = dataUser.value(index)->getValue();
     if (value == valueFox) {
         dataUser.value(index)->setProperty("color", "orange");
-        dataUser.value(index)->setProperty("text", "fox");
+        dataUser.value(index)->setProperty("text", symbolFox);
         countFoundFoxesUser++;
         if (countFoundFoxesUser == numberFoxes)
             emit winUser();
@@ -232,7 +232,7 @@ void TablesCompUser::shotCellComp() {
     int value = dataComp.value(randomIndex)->getValue();
     if (value == valueFox) {
         dataComp.value(randomIndex)->setProperty("color", "orange");
-        dataComp.value(randomIndex)->setProperty("text", "fox");
+        dataComp.value(randomIndex)->setProperty("text", symbolFox);
         countFoundFoxesComp++;
         if (countFoundFoxesComp == numberFoxes)
             emit winComp();

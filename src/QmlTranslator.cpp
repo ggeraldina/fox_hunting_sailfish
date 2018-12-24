@@ -7,16 +7,8 @@ QmlTranslator::QmlTranslator(QObject *parent) : QObject(parent)
 
 void QmlTranslator::setTranslation(QString language)
 {
-    QDir dir = QDir(qApp->applicationDirPath());
-    if (!translator->load(
-                // for example, in case of "ru" language the file would be
-                // FoxHunting-ru.qm
-                // extension is set automatically
-                QString("FoxHunting-%1").arg(language),
-                // look for the file in folder within working directory
-                QString("%1/translations").arg(dir.path())
-                )
-            )
+    QString translationPath(SailfishApp::pathTo("translations").toLocalFile());
+    if (!translator->load(QString("FoxHunting%1").arg(language), translationPath))
     {
         qDebug() << "Failed to load translation file, falling back to English";
     }

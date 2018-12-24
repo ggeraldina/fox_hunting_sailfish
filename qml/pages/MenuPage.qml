@@ -22,37 +22,29 @@ Page {
         }
         spacing: Theme.paddingMedium
 
-        Row {
-          anchors.horizontalCenter: parent.horizontalCenter
-          spacing: Theme.paddingMedium
-
-//          QmlTranslator {
-//              id: qmlTranslator
-//          }
-//
-//          Button {
-//              text: "Russian language"
-//              width: page.width / 2
-//              onClicked: qmlTranslator.setTranslation("ru")
-//          }
-        }
-
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Menu")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeLarge
         }
+
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Rules game"
+            text: qsTr("New game")
+            onClicked: pageStack.push(Qt.resolvedUrl("GamePage.qml"))
+        }
+
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Rules game")
             onClicked: pageStack.push(Qt.resolvedUrl("RulesPage.qml"))
         }
 
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "New game"
-            onClicked: pageStack.push(Qt.resolvedUrl("GamePage.qml"))
+            text: qsTr("Select language")
+            onClicked: pageStack.navigateBack()
         }
     }
 }

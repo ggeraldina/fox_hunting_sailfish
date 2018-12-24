@@ -21,52 +21,59 @@ SOURCES += \
     src/TablesCompUser.cpp \
     src/QmlTranslator.cpp \
 
-DISTFILES += qml/FoxHunting.qml \
+DISTFILES += \
+    qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    rpm/FoxHunting.changes.in \
-    rpm/FoxHunting.changes.run.in \
-    rpm/FoxHunting.spec \
-    rpm/FoxHunting.yaml \
-    translations/*.ts \
-    FoxHunting.desktop \
-    qml/pages/LittersCell.qml \
-    qml/pages/FieldTableLitters.qml \
-    qml/pages/FieldTableDigits.qml \
-    image/fox.ico \
-    image/fox.jpg \
     qml/pages/GamePage.qml \
     qml/pages/WinGamePage.qml \
     qml/pages/LoseGamePage.qml \
     qml/pages/RulesPage.qml \
-    translations/FoxHunting-ru.ts \
-    FoxHunting.desktop \
+    qml/pages/LittersCell.qml \
+    qml/pages/FieldTableLitters.qml \
+    qml/pages/FieldTableDigits.qml \
+    qml/pages/SelectLanguagePage.qml \
+    qml/pages/MenuPage.qml \
+    rpm/FoxHunting.changes.in \
     rpm/FoxHunting.changes.run.in \
+    rpm/FoxHunting.spec \
     rpm/FoxHunting.yaml \
+    image/fox.ico \
     image/fox.jpg \
+    FoxHunting.desktop \
     icons/108x108/FoxHunting.png \
     icons/128x128/FoxHunting.png \
     icons/172x172/FoxHunting.png \
     icons/86x86/FoxHunting.png \
-    image/fox.ico \
-    rpm/FoxHunting.changes.in \
-    translations/FoxHunting-ru.ts \
     translations/FoxHunting.ts \
-    qml/cover/CoverPage.qml \
-    qml/FoxHunting.qml \
-    rpm/FoxHunting.spec \
+    translations/FoxHunting-en.ts \
+    translations/FoxHunting-ru.ts \
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
-# to disable building translations every time, comment out the
-# following CONFIG line
-CONFIG += sailfishapp_i18n
+# Translations
+CONFIG += \
+    translations \
+    sailfishapp_i18n \
 
-# Russian translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/FoxHunting-ru.ts
+TRANSLATIONS += \
+    translations/FoxHunting-ru.ts \
+    translations/FoxHunting-en.ts \
+    translations/FoxHunting.ts \
+
+lupdate_only {
+    SOURCES += \
+    qml/FoxHunting.qml \
+    qml/cover/CoverPage.qml \
+    qml/pages/GamePage.qml \
+    qml/pages/WinGamePage.qml \
+    qml/pages/LoseGamePage.qml \
+    qml/pages/RulesPage.qml \
+    qml/pages/LittersCell.qml \
+    qml/pages/FieldTableLitters.qml \
+    qml/pages/FieldTableDigits.qml \
+    qml/pages/SelectLanguagePage.qml \
+    qml/pages/MenuPage.qml \
+}
 
 HEADERS += \
     src/CellUser.h \

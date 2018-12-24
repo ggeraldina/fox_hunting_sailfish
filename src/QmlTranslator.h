@@ -1,7 +1,12 @@
 #ifndef TRANSLATION_H
 #define TRANSLATION_H
 
+#ifdef QT_QML_DEBUG
+#endif
+
+
 #include <QObject>
+#include <sailfishapp.h>
 #include <QTranslator>
 #include <QCoreApplication>
 #include <QGuiApplication>

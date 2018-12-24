@@ -47,6 +47,7 @@ private:
     const int countCells = baseFieldSize * baseFieldSize;
     const int numberFoxes = 4;
     const int valueFox = -1;
+    const QString symbolFox = tr("fox"); // "🦊"
 
     int countFoundFoxesComp = 0;
     int countFoundFoxesUser = 0;

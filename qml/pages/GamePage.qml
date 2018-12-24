@@ -1,13 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import TablesCompUser 1.0
+import "components/cells_field"
 
 Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
     property int spacingGrid: 1
-    property int baseWidthHeight: page.width / 15
+    property int baseWidthHeight: page.width / 14
     property int baseFieldSize: 9
 
     Column {
