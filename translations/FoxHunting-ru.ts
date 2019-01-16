@@ -162,7 +162,7 @@
 <context>
     <name>TablesCompUser</name>
     <message>
-        <location filename="../src/TablesCompUser.h" line="50"/>
+        <location filename="../src/TablesCompUser.h" line="52"/>
         <source>fox</source>
         <translation>лис</translation>
     </message>

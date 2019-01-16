@@ -77,8 +77,12 @@ bool TablesCompUser::checkPossibleAddFox(T data, int currentCell) {
 
 template <typename T>
 void TablesCompUser::addFox(T data, int currentCell) {
-
     data.value(currentCell)->setProperty("value", valueFox);
+    editCellsShapeSnowflake(data, currentCell);
+}
+
+template <typename T>
+void TablesCompUser::editCellsShapeSnowflake(T data, int currentCell) {
 
     int currentRow = currentCell / baseFieldSize;
     int currentColumn = currentCell % baseFieldSize;

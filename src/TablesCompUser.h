@@ -37,6 +37,8 @@ private:
     template <typename T>
     void addFox(T data, int numberCell);
     template <typename T>
+    void editCellsShapeSnowflake(T data, int currentCell);
+    template <typename T>
     void addRandomFox(T data);
     template <typename T>
     bool checkPossibleAddFox(T data, int randomIndex);
