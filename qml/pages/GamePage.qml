@@ -81,9 +81,9 @@ Page {
                                       height: baseWidthHeight
                                       color: "transparent";
 
-                                      Rectangle {
+                                      Image {
                                           anchors.fill: parent
-                                          color: model.color
+                                          source: model.backgroundURL
                                       }
 
                                       Text {
@@ -141,9 +141,9 @@ Page {
                                       height: baseWidthHeight
                                       color: "transparent";
 
-                                      Rectangle {
+                                      Image {
                                           anchors.fill: parent
-                                          color: model.color
+                                          source: model.backgroundURL
                                       }
 
                                       Text {

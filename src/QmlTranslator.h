@@ -1,5 +1,5 @@
-#ifndef TRANSLATION_H
-#define TRANSLATION_H
+#ifndef QMLTRANSLATOR_H
+#define QMLTRANSLATOR_H
 
 #ifdef QT_QML_DEBUG
 #endif
@@ -13,23 +13,22 @@
 #include <QDebug>
 #include <QDir>
 
-class QmlTranslator : public QObject
-{
+class QmlTranslator : public QObject {
     Q_OBJECT
 
 public:
     explicit QmlTranslator(QObject *parent = 0);
 
-signals:
-    // The signal of change the current language to change the interface translation
-    void languageChanged();
-
-public:
     // Translation installation method, which will be available in QML
     Q_INVOKABLE void setTranslation(QString translation);
 
 private:
     QTranslator *translator;
+
+signals:
+    // The signal of change the current language to change the interface translation
+    void languageChanged();
+
 };
 
-#endif // TRANSLATION_H
+#endif // QMLTRANSLATOR_H

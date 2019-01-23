@@ -104,13 +104,6 @@
     </message>
 </context>
 <context>
-    <name>TablesCompUser</name>
-    <message>
-        <source>fox</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>WinGamePage</name>
     <message>
         <source>Fox hunting</source>

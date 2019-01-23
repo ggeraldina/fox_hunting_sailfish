@@ -160,14 +160,6 @@
     </message>
 </context>
 <context>
-    <name>TablesCompUser</name>
-    <message>
-        <location filename="../src/TablesCompUser.h" line="52"/>
-        <source>fox</source>
-        <translation>лис</translation>
-    </message>
-</context>
-<context>
     <name>WinGamePage</name>
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="11"/>

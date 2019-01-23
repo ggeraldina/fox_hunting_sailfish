@@ -15,11 +15,15 @@ TARGET = FoxHunting
 CONFIG += sailfishapp
 
 SOURCES += \
-    src/CellUser.cpp \
+    src/CellBase.cpp \
     src/CellComp.cpp \
+    src/CellUser.cpp \
     src/Main.cpp \
-    src/TablesCompUser.cpp \
     src/QmlTranslator.cpp \
+    src/TablesCompUser.cpp \
+    src/lib_tables/TableComp.cpp \
+    src/lib_tables/TableUser.cpp \
+    src/lib_tables/TableAny.cpp
 
 DISTFILES += \
     qml/FoxHunting.qml \
@@ -47,6 +51,10 @@ DISTFILES += \
     translations/FoxHunting.ts \
     translations/FoxHunting-en.ts \
     translations/FoxHunting-ru.ts \
+    image/lightGreen.jpg
+
+RESOURCES += \
+    foxhunting.qrc
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -76,10 +84,14 @@ lupdate_only {
 }
 
 HEADERS += \
-    src/CellUser.h \
+    src/CellBase.h \
     src/CellComp.h \
-    src/TablesCompUser.h \
+    src/CellUser.h \
     src/QmlTranslator.h \
+    src/TablesCompUser.h \
+    src/lib_tables/TableComp.h \
+    src/lib_tables/TableUser.h \
+    src/lib_tables/TableAny.h
 
 SUBDIRS += \
     FoxHunting.pro
