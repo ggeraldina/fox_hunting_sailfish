@@ -1,8 +1,13 @@
 #include "TablesCompUser.h"
 
-TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent)
-{    
+TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
     srand( time(0) ); // автоматическая рандомизация
+    connect(this, &TablesCompUser::baseTableSizeChanged, this, &TablesCompUser::createData);
+    connect(this, &TablesCompUser::numberFoxesChanged, this, &TablesCompUser::initData);
+}
+
+void TablesCompUser::createData() {
+    int countCells = baseFieldSize * baseFieldSize;
     for(int i = 0; i < countCells; i++) {
         CellComp *elementCellComp = new CellComp(this);
         dataComp << elementCellComp;
@@ -10,6 +15,9 @@ TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent)
         CellUser *elementCellUser = new CellUser(this);
         dataUser << elementCellUser;
     }
+}
+
+void TablesCompUser::initData() {
     TableAny::addRandomFoxes(&dataComp, numberFoxes);
     TableComp::showFoxesOnField(&dataComp);
     TableAny::addRandomFoxes(&dataUser, numberFoxes);
@@ -29,6 +37,30 @@ QQmlListProperty<CellUser> TablesCompUser::getDataUser() {
                                      &TablesCompUser::countDataCells<CellUser>,
                                      &TablesCompUser::atDataCells<CellUser>,
                                      &TablesCompUser::clearDataCells<CellUser>);
+}
+
+int TablesCompUser::getBaseTableSize() {
+    return baseFieldSize;
+}
+
+int TablesCompUser::getNumberFoxes() {
+    return numberFoxes;
+}
+
+void TablesCompUser::setBaseTableSize(int newValue) {
+    if (newValue <= 0 || baseFieldSize == newValue) {
+        return;
+    }
+    baseFieldSize = newValue;
+    emit baseTableSizeChanged();
+}
+
+void TablesCompUser::setNumberFoxes(int newValue) {
+    if (newValue <= 0 || numberFoxes == newValue) {
+        return;
+    }
+    numberFoxes = newValue;
+    emit numberFoxesChanged();
 }
 
 // abstract functions (depend on QList<T *>)
@@ -73,6 +105,7 @@ void TablesCompUser::shotCellUser(int index) {
 }
 
 void TablesCompUser::shotCellComp() {
+    int countCells = baseFieldSize * baseFieldSize;
     int randomIndex = rand() % (countCells - 1);
     if (dataComp.value(randomIndex)->getShot()){
         shotCellComp();

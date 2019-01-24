@@ -10,6 +10,7 @@ Page {
     property int spacingGrid: 1
     property int baseWidthHeight: page.width / 14
     property int baseFieldSize: 9
+    property int quantityFoxes: 3
 
     Column {
         id: column
@@ -31,8 +32,10 @@ Page {
 
         TablesCompUser {
             id: dataModel
+            baseTableSize: baseFieldSize
+            numberFoxes: quantityFoxes
             onWinUser: pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
-            onWinComp: pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
+            onWinComp: pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))            
         }
 
         Text {

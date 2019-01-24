@@ -13,12 +13,20 @@ class TablesCompUser : public QObject {
     Q_OBJECT
     Q_PROPERTY(QQmlListProperty<CellComp> dataComp READ getDataComp NOTIFY dataCompChanged)
     Q_PROPERTY(QQmlListProperty<CellUser> dataUser READ getDataUser NOTIFY dataUserChanged)
+    Q_PROPERTY(int baseTableSize READ getBaseTableSize WRITE setBaseTableSize NOTIFY baseTableSizeChanged)
+    Q_PROPERTY(int numberFoxes READ getNumberFoxes WRITE setNumberFoxes NOTIFY numberFoxesChanged)
+
 
 public:
     explicit TablesCompUser(QObject *parent = 0);
 
     QQmlListProperty<CellComp> getDataComp();
     QQmlListProperty<CellUser> getDataUser();
+    int getBaseTableSize();
+    int getNumberFoxes();
+
+    void setBaseTableSize(int newValue);
+    void setNumberFoxes(int newValue);
 
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
 
@@ -34,9 +42,8 @@ private:
 
     void shotCellComp();
 
-    int baseFieldSize = 9;
-    int countCells = baseFieldSize * baseFieldSize;
-    int numberFoxes = 4;
+    int baseFieldSize;
+    int numberFoxes;
     const int VALUE_FOX = -1;
 
     int countFoundFoxesComp = 0;
@@ -48,10 +55,14 @@ private:
 signals:
     void dataCompChanged();
     void dataUserChanged();
+    void baseTableSizeChanged();
+    void numberFoxesChanged();
     void winUser();
     void winComp();
 
 public slots:
+    void initData();
+    void createData();
 };
 
 #endif // TABLESCOMPUSER_H

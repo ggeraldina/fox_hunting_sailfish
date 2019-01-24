@@ -12,17 +12,17 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="27"/>
+        <location filename="../qml/pages/GamePage.qml" line="28"/>
         <source>Game with computer</source>
         <translation>Game with computer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="40"/>
+        <location filename="../qml/pages/GamePage.qml" line="43"/>
         <source>Computer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="101"/>
+        <location filename="../qml/pages/GamePage.qml" line="104"/>
         <source>You</source>
         <translation type="unfinished"></translation>
     </message>
