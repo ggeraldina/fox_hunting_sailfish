@@ -2,14 +2,19 @@
 #define TABLEUSER_H
 
 #include <QObject>
+#include "../CellUser.h"
 
 class TableUser : public QObject {
      Q_OBJECT
+
 public:
     explicit TableUser(QObject *parent = nullptr);
 
+    static void editCellWithFox(QList<CellUser *> *list, int index);
+    static void editCellWithoutFox(QList<CellUser *> *list, int index);
+
 private:
-    const int VALUE_FOX = -1;
+    static const int VALUE_FOX = -1;
 };
 
 #endif // TABLEUSER_H

@@ -7,6 +7,7 @@
 #include "CellUser.h"
 #include "lib_tables/TableAny.h"
 #include "lib_tables/TableComp.h"
+#include "lib_tables/TableUser.h"
 
 
 class TablesCompUser : public QObject {

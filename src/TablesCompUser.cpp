@@ -67,62 +67,59 @@ void TablesCompUser::setNumberFoxes(int newValue) {
 
 template <class T>
 void TablesCompUser::appendDataCells(QQmlListProperty<T> *list, T *value) {
-    QList<T *> *dataUser = static_cast<QList<T *> *>(list->data);
-    dataUser->append(value);
+    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
+    dataTable->append(value);
 }
 template <class T>
 int TablesCompUser::countDataCells(QQmlListProperty<T> *list) {
-    QList<T *> *dataUser = static_cast<QList<T *> *>(list->data);
-    return dataUser->size();
+    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
+    return dataTable->size();
 }
 template <class T>
 T *TablesCompUser::atDataCells(QQmlListProperty<T> *list, int index) {
-    QList<T *> *dataUser = static_cast<QList<T *> *>(list->data);
-    return dataUser->at(index);
+    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
+    return dataTable->at(index);
 }
 template <class T>
 void TablesCompUser::clearDataCells(QQmlListProperty<T> *list) {
-    QList<T *> *dataUser = static_cast<QList<T *> *>(list->data);
-    qDeleteAll(dataUser->begin(), dataUser->end());
-    dataUser->clear();
+    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
+    qDeleteAll(dataTable->begin(), dataTable->end());
+    dataTable->clear();
 }
 
 void TablesCompUser::shotCellUser(int index) {
-    if (dataUser.value(index)->getShot())
+    if (dataUser.value(index)->getShot()) {
         return;
-    int value = dataUser.value(index)->getValue();
-    if (value == VALUE_FOX) {
-        dataUser.value(index)->setProperty("backgroundURL", "qrc:/image/fox.jpg");
+    }
+    int valueCell = dataUser.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        TableUser::editCellWithFox(&dataUser, index);
         countFoundFoxesUser++;
-        if (countFoundFoxesUser == numberFoxes)
+        if (countFoundFoxesUser == numberFoxes) {
             emit winUser();
+        }
     }
     else {
-        dataUser.value(index)->setProperty("text", value);
+        TableUser::editCellWithoutFox(&dataUser, index);
         shotCellComp();
     }
-    dataUser.value(index)->setProperty("shot", true);
 }
 
 void TablesCompUser::shotCellComp() {
-    int countCells = baseFieldSize * baseFieldSize;
-    int randomIndex = rand() % (countCells - 1);
-    if (dataComp.value(randomIndex)->getShot()){
-        shotCellComp();
-        return;
-    }
-    int value = dataComp.value(randomIndex)->getValue();
-    if (value == VALUE_FOX) {
-        dataComp.value(randomIndex)->setProperty("backgroundURL", "qrc:/image/fox.jpg");
-        dataComp.value(randomIndex)->setProperty("text", "");
+    int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp, dataComp.count());
+    int valueCell = dataComp.value(smartRandomIndex)->getValue();
+    if (valueCell == VALUE_FOX) {
+        TableComp::editCellWithFox(&dataComp, smartRandomIndex);
         countFoundFoxesComp++;
-        if (countFoundFoxesComp == numberFoxes)
+        if (countFoundFoxesComp == numberFoxes) {
             emit winComp();
+            return;
+        }
         shotCellComp();
     }
-    else
-        dataComp.value(randomIndex)->setProperty("text", value);
-    dataComp.value(randomIndex)->setProperty("shot", true);
+    else {
+        TableComp::editCellWithoutFox(&dataComp, smartRandomIndex);
+    }
 }
 
 

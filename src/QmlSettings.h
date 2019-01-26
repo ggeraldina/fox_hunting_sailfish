@@ -21,6 +21,8 @@ public:
 
 private:
     const QString NAME_FILE_SETTINGS = "settingsFoxHunting.conf";
+    const QString SETTING_BASE_TABLE_SIZE = "settings_game/base_table_size";
+    const QString SETTING_NUMBER_FOXES = "settings_game/number_foxes";
 
 signals:
     void settingBaseTableSizeChanged();
