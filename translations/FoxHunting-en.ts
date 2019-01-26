@@ -12,17 +12,17 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="28"/>
+        <location filename="../qml/pages/GamePage.qml" line="33"/>
         <source>Game with computer</source>
         <translation>Game with computer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="43"/>
+        <location filename="../qml/pages/GamePage.qml" line="48"/>
         <source>Computer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="104"/>
+        <location filename="../qml/pages/GamePage.qml" line="109"/>
         <source>You</source>
         <translation type="unfinished"></translation>
     </message>
@@ -79,6 +79,11 @@
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="46"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="52"/>
         <source>Select language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -151,6 +156,24 @@ neighboring cells.
     <message>
         <location filename="../qml/pages/SelectLanguagePage.qml" line="34"/>
         <source>Выберите, пожалуйста, язык</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPage</name>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="33"/>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="39"/>
+        <source>Size of games field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="60"/>
+        <source>Amount foxes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

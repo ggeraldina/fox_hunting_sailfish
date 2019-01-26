@@ -23,7 +23,8 @@ SOURCES += \
     src/TablesCompUser.cpp \
     src/lib_tables/TableComp.cpp \
     src/lib_tables/TableUser.cpp \
-    src/lib_tables/TableAny.cpp
+    src/lib_tables/TableAny.cpp \
+    src/QmlSettings.cpp
 
 DISTFILES += \
     qml/FoxHunting.qml \
@@ -51,7 +52,8 @@ DISTFILES += \
     translations/FoxHunting.ts \
     translations/FoxHunting-en.ts \
     translations/FoxHunting-ru.ts \
-    image/lightGreen.jpg
+    image/lightGreen.jpg \
+    qml/pages/SettingsPage.qml
 
 RESOURCES += \
     foxhunting.qrc
@@ -91,7 +93,8 @@ HEADERS += \
     src/TablesCompUser.h \
     src/lib_tables/TableComp.h \
     src/lib_tables/TableUser.h \
-    src/lib_tables/TableAny.h
+    src/lib_tables/TableAny.h \
+    src/QmlSettings.h
 
 SUBDIRS += \
     FoxHunting.pro

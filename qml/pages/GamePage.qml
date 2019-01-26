@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import TablesCompUser 1.0
+import QmlSettings 1.0
 import "components/cells_field"
 
 Page {
@@ -9,8 +10,12 @@ Page {
     allowedOrientations: Orientation.Portrait
     property int spacingGrid: 1
     property int baseWidthHeight: page.width / 14
-    property int baseFieldSize: 9
-    property int quantityFoxes: 3
+    property int baseFieldSize: settings.settingBaseTableSize || 6
+    property int quantityFoxes: settings.settingNumberFoxes || 2
+
+    QmlSettings {
+        id: settings
+    }
 
     Column {
         id: column

@@ -43,6 +43,12 @@ Page {
 
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Settings")
+            onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+        }
+
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Select language")
             onClicked: pageStack.navigateBack()
         }

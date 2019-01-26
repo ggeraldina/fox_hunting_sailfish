@@ -5,6 +5,7 @@
 #include "CellUser.h"
 #include "CellComp.h"
 #include "TablesCompUser.h"
+#include "QmlSettings.h"
 #include "QmlTranslator.h"
 
 int main(int argc, char *argv[])
@@ -22,8 +23,9 @@ int main(int argc, char *argv[])
         qDebug() << "Translation file not loaded";
 
     qmlRegisterType<CellUser>("CellUser", 1, 0, "CellUser");
-    qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");;
+    qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");
+    qmlRegisterType<QmlSettings>("QmlSettings", 1, 0, "QmlSettings");
     qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
