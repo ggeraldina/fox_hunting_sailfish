@@ -8,8 +8,10 @@ TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
 
 void TablesCompUser::createData() {
     int countCells = baseFieldSize * baseFieldSize;
+    double chance = (double)1/countCells;
     for(int i = 0; i < countCells; i++) {
         CellComp *elementCellComp = new CellComp(this);
+        elementCellComp->setChance(chance);
         dataComp << elementCellComp;
 
         CellUser *elementCellUser = new CellUser(this);
@@ -93,33 +95,52 @@ void TablesCompUser::shotCellUser(int index) {
     }
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
-        TableUser::editCellWithFox(&dataUser, index);
+        TableUser::editCellsWhenFox(&dataUser, index);
         countFoundFoxesUser++;
         if (countFoundFoxesUser == numberFoxes) {
             emit winUser();
         }
     }
     else {
-        TableUser::editCellWithoutFox(&dataUser, index);
+        TableUser::editCellsWhenNoFox(&dataUser, index);
         shotCellComp();
     }
 }
 
 void TablesCompUser::shotCellComp() {
-    int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp, dataComp.count());
+    int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp);
+    qDebug() << smartRandomIndex << " this shot";
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {
-        TableComp::editCellWithFox(&dataComp, smartRandomIndex);
+        TableComp::editCellsWhenFox(&dataComp, smartRandomIndex, numberFoxes, countFoundFoxesComp);
         countFoundFoxesComp++;
         if (countFoundFoxesComp == numberFoxes) {
             emit winComp();
             return;
         }
-        shotCellComp();
+//        for (int i = 0; i < dataComp.count(); i++) {
+//            qDebug() << i << " with:";
+//            qDebug() << "value " << dataComp.value(i)->getValue();
+//            qDebug() << "shot " << dataComp.value(i)->getShot();
+//            qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
+//            qDebug() << "chance " << dataComp.value(i)->getChance();
+//        }
+        QTimer::singleShot(500, this, &TablesCompUser::nextStepComp);
     }
     else {
-        TableComp::editCellWithoutFox(&dataComp, smartRandomIndex);
+        TableComp::editCellsWhenNoFox(&dataComp, smartRandomIndex, numberFoxes, countFoundFoxesComp);
+//        for (int i = 0; i < dataComp.count(); i++) {
+//            qDebug() << i << " with:";
+//            qDebug() << "value " << dataComp.value(i)->getValue();
+//            qDebug() << "shot " << dataComp.value(i)->getShot();
+//            qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
+//            qDebug() << "chance " << dataComp.value(i)->getChance();
+//        }
     }
+}
+
+void TablesCompUser::nextStepComp(){
+    shotCellComp();
 }
 
 

@@ -96,7 +96,7 @@ Page {
 
                                       Text {
                                           anchors.centerIn: parent
-                                          text: model.text
+                                          text: model.value
                                       }
                                   }
                       }
@@ -156,7 +156,7 @@ Page {
 
                                       Text {
                                           anchors.centerIn: parent
-                                          text: model.text
+                                          text: model.value
                                       }
 
                                       MouseArea {

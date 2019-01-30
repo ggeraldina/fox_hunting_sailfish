@@ -1,7 +1,7 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-<qresource prefix="/">
-    <file>image/fox.jpg</file>
-    <file>image/lightGreen.jpg</file>
-</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>image/fox.jpg</file>
+        <file>image/lightGreen.jpg</file>
+        <file>image/lightYellow.jpg</file>
+    </qresource>
 </RCC>

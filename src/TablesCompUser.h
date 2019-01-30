@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QQmlListProperty>
+#include <QTimer>
 #include "CellComp.h"
 #include "CellUser.h"
 #include "lib_tables/TableAny.h"
@@ -64,6 +65,9 @@ signals:
 public slots:
     void initData();
     void createData();
+
+private slots:
+    void nextStepComp();
 };
 
 #endif // TABLESCOMPUSER_H

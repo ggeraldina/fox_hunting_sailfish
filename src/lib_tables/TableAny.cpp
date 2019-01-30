@@ -24,3 +24,27 @@ void TableAny::calculateIndexesCellsAroundRadius(int indexesCellsAround[],
    indexesCellsAround[7] = (isNearBottomEdge || isNearLeftEdge) ? -1 :
                                                                   currentIndex + (baseFieldSize - 1) * radius;
 }
+
+int TableAny::calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex) {
+    for(int i = 0; i < sizeArray; i++) {
+        cellsShapeSnowflake[i] = false;
+    }
+    cellsShapeSnowflake[currentIndex] = true;
+    int countGroupTrue = 1;
+    int indexesCellsAround[8];
+    int baseFieldSize = (int)sqrt(sizeArray);
+    for(int i = 1; i < baseFieldSize; i++) {
+        calculateIndexesCellsAroundRadius(indexesCellsAround, sizeArray, currentIndex, i);
+        for (int indexCell : indexesCellsAround) {
+            if(indexCell >= 0) {
+                cellsShapeSnowflake[indexCell] = true;
+                countGroupTrue++;
+            }
+        }
+    }
+    return countGroupTrue;
+}
+
+
+
+

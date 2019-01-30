@@ -10,8 +10,8 @@ class TableUser : public QObject {
 public:
     explicit TableUser(QObject *parent = nullptr);
 
-    static void editCellWithFox(QList<CellUser *> *list, int index);
-    static void editCellWithoutFox(QList<CellUser *> *list, int index);
+    static void editCellsWhenFox(QList<CellUser *> *list, int index);
+    static void editCellsWhenNoFox(QList<CellUser *> *list, int index);
 
 private:
     static const int VALUE_FOX = -1;

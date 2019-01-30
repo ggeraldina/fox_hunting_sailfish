@@ -2,6 +2,8 @@
 
 CellComp::CellComp(QObject *parent) : CellBase(parent) {
     shot = false;
+    possibleShot = true;
+    chance = 0;
 }
 
 bool CellComp::getShot() {
@@ -9,10 +11,10 @@ bool CellComp::getShot() {
 }
 
 bool CellComp::getPossibleShot() {
-    return shot;
+    return possibleShot;
 }
 
-int CellComp::getChance() {
+double CellComp::getChance() {
     return chance;
 }
 
@@ -32,7 +34,7 @@ void CellComp::setPossibleShot(bool newValue) {
     emit possibleShotChanged();
 }
 
-void CellComp::setChance(int newValue) {
+void CellComp::setChance(double newValue) {
     if (chance == newValue) {
         return;
     }

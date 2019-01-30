@@ -53,7 +53,8 @@ DISTFILES += \
     translations/FoxHunting-en.ts \
     translations/FoxHunting-ru.ts \
     image/lightGreen.jpg \
-    qml/pages/SettingsPage.qml
+    qml/pages/SettingsPage.qml \
+    image/lightYellow.jpg
 
 RESOURCES += \
     foxhunting.qrc

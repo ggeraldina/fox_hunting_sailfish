@@ -12,6 +12,10 @@ class TableAny : public QObject {
 public:
     explicit TableAny(QObject *parent = nullptr);
 
+    static void calculateIndexesCellsAroundRadius(int indexesCellsAround[],
+                                                  int countCells, int currentIndex, int radius = 1);
+    static int calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex);
+
     template <class T>
     static void addRandomFoxes(T *list, int numberFoxes) {
         for(int i = 0; i < numberFoxes; i++) {
@@ -19,11 +23,35 @@ public:
         }
     }
 
+    template <class T>
+    static void editCellsShapeSnowflake(T *list, int currentIndex, void fun(T *, int)) {
+        int countCells = list->count();
+        int indexesCellsAround[8];
+        int baseFieldSize = (int)sqrt(countCells);
+        for(int i = 1; i < baseFieldSize; i++) {
+            calculateIndexesCellsAroundRadius(indexesCellsAround, countCells, currentIndex, i);
+            for (auto indexCell : indexesCellsAround) {
+                if(indexCell >= 0) {
+                    fun(list, indexCell);
+                }
+            }
+        }
+    }
+
+    template <class T>
+    static void editCellsShapeNoSnowflake(T *list, int currentIndex, void fun(T *, int)) {
+        int countCells = list->count();
+        bool cellsShapeSnowflake[countCells];
+        calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, currentIndex);
+        for (int i = 0; i < countCells; i++) {
+            if(!cellsShapeSnowflake[i]) {
+                fun(list, i);
+            }
+        }
+    }
+
 private:
     static const int VALUE_FOX = -1;
-
-    static void calculateIndexesCellsAroundRadius(int indexesCellsAround[],
-                                                  int countCells, int currentIndex, int radius = 1);
 
 
     template <class T>
@@ -60,21 +88,34 @@ private:
         editValueCells(list, currentIndex);
     }
 
+//    template <class T>
+//    static void editValueCells(T *list, int currentIndex) {
+//        int countCells = list->count();
+//        int indexesCellsAround[8];
+//        int baseFieldSize = (int)sqrt(countCells);
+//        for(int i = 1; i < baseFieldSize; i++) {
+//            calculateIndexesCellsAroundRadius(indexesCellsAround, countCells, currentIndex, i);
+//            for (auto indexCell : indexesCellsAround) {
+//                if(indexCell >= 0) {
+//                    int valueCell = list->value(indexCell)->getValue();
+//                    if(valueCell != VALUE_FOX) {
+//                        list->value(indexCell)->setValue(valueCell + 1);
+//                    }
+//                }
+//            }
+//        }
+//    }
+
     template <class T>
     static void editValueCells(T *list, int currentIndex) {
-        int countCells = list->count();
-        int indexesCellsAround[8];
-        int baseFieldSize = (int)sqrt(countCells);
-        for(int i = 1; i < baseFieldSize; i++) {
-            calculateIndexesCellsAroundRadius(indexesCellsAround, countCells, currentIndex, i);
-            for (auto indexCell : indexesCellsAround) {
-                if(indexCell >= 0) {
-                    int valueCell = list->value(indexCell)->getValue();
-                    if(valueCell != VALUE_FOX) {
-                        list->value(indexCell)->setValue(valueCell + 1);
-                    }
-                }
-            }
+        editCellsShapeSnowflake(list, currentIndex, editValue);
+    }
+
+    template <class T>
+    static void editValue(T *list, int currentIndex) {
+        int valueCell = list->value(currentIndex)->getValue();
+        if(valueCell != VALUE_FOX) {
+            list->value(currentIndex)->setValue(valueCell + 1);
         }
     }
 };
