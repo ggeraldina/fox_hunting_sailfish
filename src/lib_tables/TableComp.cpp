@@ -29,14 +29,11 @@ void TableComp::recalculatePossibleShot(QList<CellComp *> *list, int numberFoxes
         bool shotCell = list->value(i)->getShot();
         if (valueCell != VALUE_FOX && shotCell) {
             int foundFoxesShapeSnowflake = countFoundFoxesShapeSnowflake(list, i);
-//            qDebug() << i << " around found foxes " << foundFoxesShapeSnowflake;
             if (valueCell == foundFoxesShapeSnowflake) {
                 editCellsWhenZero(list, i);
-//                qDebug() << i << " Snowflake";
             }
             if (numberFoxes - valueCell == countFoundFoxes - foundFoxesShapeSnowflake) {
                 editCellsWhenNumberFoxes(list, i);
-//                qDebug() << i << " NO Snowflake";
             }
         }
     }
@@ -67,11 +64,9 @@ void TableComp::editCellsWhenNoFox(QList<CellComp *> *list, int index, int numbe
     int foundFoxesShapeSnowflake = countFoundFoxesShapeSnowflake(list, index);
     if (valueCell == foundFoxesShapeSnowflake) {
         editCellsWhenZero(list, index);
-//        qDebug() << index << " Snowflake";
     }
     if (valueCell == numberFoxes + foundFoxesShapeSnowflake - countFoundFoxes) {
         editCellsWhenNumberFoxes(list, index);
-//        qDebug() << index << " NO Snowflake";
     }
     editCellsWhenNumber(list, index, numberFoxes);
 }
@@ -106,31 +101,19 @@ void TableComp::editCellsWhenNumber(QList<CellComp *> *list, int currentIndex, i
     int valueCell = list->value(currentIndex)->getValue();
     double chanceGroupTrue = (double)valueCell / (countGroupTrue * numberFoxes);
     double chanceGroupFalse = (double)(numberFoxes - valueCell) / ((countCells - countGroupTrue) * numberFoxes);
-//    qDebug() << countGroupTrue;
-//    qDebug() << valueCell << " -> chance" << chanceGroupTrue << " T-F " << chanceGroupFalse;
-//    double debugSumBefore = 0;
-//    double debugSum = 0;
     for (int i = 0; i < countCells; i++) {
-//        qDebug() << i << " with " << list->value(i)->getChance();
         if(cellsShapeSnowflake[i]) {
             editChance(list, i, chanceGroupTrue);
-//            debugSumBefore += chanceGroupTrue;
         }
         else {
             editChance(list, i, chanceGroupFalse);
-//            debugSumBefore += chanceGroupFalse;
         }
-//        debugSum += list->value(i)->getChance();
-//        qDebug() << i << " is " << cellsShapeSnowflake[i] << " with " << list->value(i)->getChance();
     }
-//    qDebug() << "sumNew" << debugSumBefore;
-//    qDebug() << "sum" << debugSum;
 }
 
 void TableComp::editChance(QList<CellComp *> *list, int index, double newChance) {
     double oldChance = list->value(index)->getChance();
     double resultChance = (oldChance + newChance) / 2;
-//    qDebug() << oldChance << " and " << newChance << " = " << resultChance;
     list->value(index)->setChance(resultChance);
 }
 
@@ -138,10 +121,8 @@ int TableComp::generateIndexCellForShot(QList<CellComp *> *list) {
     int countCellsRandom = countMaxChance(list);
     int indexesRandomCells[countCellsRandom];
     calculateIndexesCellsMaxChance(list, indexesRandomCells, countCellsRandom);
-    qDebug() << "random:";
     int maxRandomNumber = countCellsRandom - 1;
     int randomNumber = maxRandomNumber > 0 ? (rand() % maxRandomNumber) : 0;
-    qDebug() << randomNumber;
     int randomIndex = indexesRandomCells[randomNumber];
     return randomIndex;
 }
@@ -162,7 +143,6 @@ int TableComp::countMaxChance(QList<CellComp *> *list) {
             }
         }
     }
-    qDebug() << "count cells random " << countChance;
     return countChance;
 }
 
@@ -186,7 +166,6 @@ void TableComp::calculateIndexesCellsMaxChance(QList<CellComp *> *list, int inde
         }
     }
     for (int i = 0; i < sizeArray; i++) {
-        qDebug() << indexesCells[i];
     }
 }
 

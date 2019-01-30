@@ -109,7 +109,6 @@ void TablesCompUser::shotCellUser(int index) {
 
 void TablesCompUser::shotCellComp() {
     int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp);
-    qDebug() << smartRandomIndex << " this shot";
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {
         TableComp::editCellsWhenFox(&dataComp, smartRandomIndex, numberFoxes, countFoundFoxesComp);
@@ -118,24 +117,10 @@ void TablesCompUser::shotCellComp() {
             emit winComp();
             return;
         }
-//        for (int i = 0; i < dataComp.count(); i++) {
-//            qDebug() << i << " with:";
-//            qDebug() << "value " << dataComp.value(i)->getValue();
-//            qDebug() << "shot " << dataComp.value(i)->getShot();
-//            qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
-//            qDebug() << "chance " << dataComp.value(i)->getChance();
-//        }
         QTimer::singleShot(500, this, &TablesCompUser::nextStepComp);
     }
     else {
         TableComp::editCellsWhenNoFox(&dataComp, smartRandomIndex, numberFoxes, countFoundFoxesComp);
-//        for (int i = 0; i < dataComp.count(); i++) {
-//            qDebug() << i << " with:";
-//            qDebug() << "value " << dataComp.value(i)->getValue();
-//            qDebug() << "shot " << dataComp.value(i)->getShot();
-//            qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
-//            qDebug() << "chance " << dataComp.value(i)->getChance();
-//        }
     }
 }
 
