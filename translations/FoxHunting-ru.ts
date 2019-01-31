@@ -4,25 +4,25 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="8"/>
+        <location filename="../qml/cover/CoverPage.qml" line="21"/>
         <source>Fox hunting</source>
-        <translation>Охота на лис</translation>
+        <translation type="unfinished">Охота на лис</translation>
     </message>
 </context>
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="33"/>
+        <location filename="../qml/pages/GamePage.qml" line="42"/>
         <source>Game with computer</source>
         <translation>Игра против компьютера</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="48"/>
+        <location filename="../qml/pages/GamePage.qml" line="60"/>
         <source>Computer</source>
         <translation>Компьютер</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="109"/>
+        <location filename="../qml/pages/GamePage.qml" line="121"/>
         <source>You</source>
         <translation>Вы</translation>
     </message>
@@ -180,6 +180,26 @@
         <location filename="../qml/pages/SettingsPage.qml" line="60"/>
         <source>Amount foxes</source>
         <translation>Количество лисов</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <source>Speed of computer&apos;s steps</source>
+        <translation>Задержка шагов компьютера</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <source>0,5 sec</source>
+        <translation>0,5 сек</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <source>1 sec</source>
+        <translation>1 сек</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
+        <source>Volume of effects</source>
+        <translation>Громкость звуковых эффектов</translation>
     </message>
 </context>
 <context>

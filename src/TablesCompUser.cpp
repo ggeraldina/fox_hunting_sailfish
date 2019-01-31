@@ -49,6 +49,10 @@ int TablesCompUser::getNumberFoxes() {
     return numberFoxes;
 }
 
+int TablesCompUser::getSpeedStepComp() {
+    return speedStepComp;
+}
+
 void TablesCompUser::setBaseTableSize(int newValue) {
     if (newValue <= 0 || baseFieldSize == newValue) {
         return;
@@ -63,6 +67,14 @@ void TablesCompUser::setNumberFoxes(int newValue) {
     }
     numberFoxes = newValue;
     emit numberFoxesChanged();
+}
+
+void TablesCompUser::setSpeedStepComp(int newValue) {
+    if (newValue <= 0 || speedStepComp == newValue) {
+        return;
+    }
+    speedStepComp = newValue;
+    emit speedStepCompChanged();
 }
 
 // abstract functions (depend on QList<T *>)
@@ -90,9 +102,10 @@ void TablesCompUser::clearDataCells(QQmlListProperty<T> *list) {
 }
 
 void TablesCompUser::shotCellUser(int index) {
-    if (dataUser.value(index)->getShot()) {
+    if (dataUser.value(index)->getShot() || flagStepComp) {
         return;
     }
+    emit shotUser();
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
         TableUser::editCellsWhenFox(&dataUser, index);
@@ -103,11 +116,13 @@ void TablesCompUser::shotCellUser(int index) {
     }
     else {
         TableUser::editCellsWhenNoFox(&dataUser, index);
-        shotCellComp();
+        QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
     }
 }
 
 void TablesCompUser::shotCellComp() {
+    flagStepComp = true;
+    emit shotComp();
     int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp);
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {
@@ -117,15 +132,29 @@ void TablesCompUser::shotCellComp() {
             emit winComp();
             return;
         }
-        QTimer::singleShot(500, this, &TablesCompUser::nextStepComp);
+        QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
     }
     else {
         TableComp::editCellsWhenNoFox(&dataComp, smartRandomIndex, numberFoxes, countFoundFoxesComp);
+        flagStepComp = false;
     }
 }
 
 void TablesCompUser::nextStepComp(){
     shotCellComp();
+}
+
+void TablesCompUser::putOrRemoveMarkCellUser(int index) {
+    if (dataUser.value(index)->getShot()) {
+        return;
+    }
+    QString textCell = dataUser.value(index)->getText();
+    if (textCell == "") {
+        dataUser.value(index)->setText(MARK_USER);
+    }
+    else {
+        dataUser.value(index)->setText("");
+    }
 }
 
 

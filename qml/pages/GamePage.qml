@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtMultimedia 5.6
 import TablesCompUser 1.0
 import QmlSettings 1.0
 import "components/cells_field"
@@ -12,9 +13,17 @@ Page {
     property int baseWidthHeight: page.width / 14
     property int baseFieldSize: settings.settingBaseTableSize || 6
     property int quantityFoxes: settings.settingNumberFoxes || 2
+    property int speedStepComputer: settings.settingSpeedStepComp || 1000
 
     QmlSettings {
         id: settings
+    }
+
+    SoundEffect {
+        id: soundEffect
+        source: "qrc:/soundeffects/shot.wav"
+        volume : settings.settingVolumeEffects || 0.0
+        loops : 1
     }
 
     Column {
@@ -39,6 +48,9 @@ Page {
             id: dataModel
             baseTableSize: baseFieldSize
             numberFoxes: quantityFoxes
+            speedStepComp: speedStepComputer
+            onShotUser: soundEffect.play()
+            onShotComp: soundEffect.play()
             onWinUser: pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
             onWinComp: pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))            
         }
@@ -163,6 +175,9 @@ Page {
                                           anchors.fill: parent
                                           onClicked: {
                                               dataModel.shotCellUser(model.index);
+                                          }
+                                          onPressAndHold: {
+                                              dataModel.putOrRemoveMarkCellUser(model.index);
                                           }
                                       }
                                   }

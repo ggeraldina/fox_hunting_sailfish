@@ -54,7 +54,8 @@ DISTFILES += \
     translations/FoxHunting-ru.ts \
     image/lightGreen.jpg \
     qml/pages/SettingsPage.qml \
-    image/lightYellow.jpg
+    image/lightYellow.jpg \
+    soundeffects/shot.wav
 
 RESOURCES += \
     foxhunting.qrc

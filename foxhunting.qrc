@@ -3,5 +3,8 @@
         <file>image/fox.jpg</file>
         <file>image/lightGreen.jpg</file>
         <file>image/lightYellow.jpg</file>
+        <file>soundeffects/shot.wav</file>
+        <file>image/fox172.png</file>
+        <file>image/coverFox.png</file>
     </qresource>
 </RCC>

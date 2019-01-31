@@ -70,6 +70,36 @@ Page {
                     }
                 }
             }
+
+            ComboBox {
+                width: page.width
+                currentIndex: settings.settingSpeedStepComp / 500 - 1
+                label: qsTr("Speed of computer's steps")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("0,5 sec")
+                        onClicked: settings.setSpeedStepComp(500)
+                    }
+                    MenuItem {
+                        text: qsTr("1 sec")
+                        onClicked: settings.setSpeedStepComp(1000)
+                    }
+                }
+            }
+
+            Slider {
+                width: page.width
+                label: qsTr("Volume of effects")
+                value: settings.settingVolumeEffects
+                valueText: value.toFixed(1)
+                minimumValue: 0
+                maximumValue: 1
+                stepSize: 0.1
+                on_OldValueChanged: {
+                    settings.setVolumeEffects(value);
+                }
+            }
         }
 
         VerticalScrollDecorator { }

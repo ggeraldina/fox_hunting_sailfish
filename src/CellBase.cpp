@@ -2,7 +2,7 @@
 
 CellBase::CellBase(QObject *parent) : QObject(parent) {
     text = "";
-    backgroundURL = "qrc:/image/lightGreen.jpg"; // "../../image/fox.jpg"
+    backgroundURL = "qrc:/image/lightGreen.jpg";
     value = 0;
 }
 

@@ -17,6 +17,7 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(QQmlListProperty<CellUser> dataUser READ getDataUser NOTIFY dataUserChanged)
     Q_PROPERTY(int baseTableSize READ getBaseTableSize WRITE setBaseTableSize NOTIFY baseTableSizeChanged)
     Q_PROPERTY(int numberFoxes READ getNumberFoxes WRITE setNumberFoxes NOTIFY numberFoxesChanged)
+    Q_PROPERTY(int speedStepComp READ getSpeedStepComp WRITE setSpeedStepComp NOTIFY speedStepCompChanged)
 
 
 public:
@@ -26,11 +27,14 @@ public:
     QQmlListProperty<CellUser> getDataUser();
     int getBaseTableSize();
     int getNumberFoxes();
+    int getSpeedStepComp();
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
+    void setSpeedStepComp(int newValue);
 
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
+    Q_INVOKABLE void putOrRemoveMarkCellUser(int index);
 
 private:
     template <class T>
@@ -46,10 +50,13 @@ private:
 
     int baseFieldSize;
     int numberFoxes;
+    int speedStepComp;
     const int VALUE_FOX = -1;
+    const QString MARK_USER = "?";
 
     int countFoundFoxesComp = 0;
     int countFoundFoxesUser = 0;
+    bool flagStepComp = false;
 
     QList<CellComp *> dataComp;
     QList<CellUser *> dataUser;
@@ -59,6 +66,9 @@ signals:
     void dataUserChanged();
     void baseTableSizeChanged();
     void numberFoxesChanged();
+    void speedStepCompChanged();
+    void shotUser();
+    void shotComp();
     void winUser();
     void winComp();
 

@@ -121,6 +121,22 @@
         <source>Amount foxes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Speed of computer&apos;s steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0,5 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Volume of effects</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WinGamePage</name>
