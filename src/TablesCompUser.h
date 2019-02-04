@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QQmlListProperty>
 #include <QTimer>
+#include <QTime>
 #include "CellComp.h"
 #include "CellUser.h"
 #include "lib_tables/TableAny.h"
@@ -18,6 +19,9 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(int baseTableSize READ getBaseTableSize WRITE setBaseTableSize NOTIFY baseTableSizeChanged)
     Q_PROPERTY(int numberFoxes READ getNumberFoxes WRITE setNumberFoxes NOTIFY numberFoxesChanged)
     Q_PROPERTY(int speedStepComp READ getSpeedStepComp WRITE setSpeedStepComp NOTIFY speedStepCompChanged)
+    Q_PROPERTY(int countStepsComp READ getCountStepsComp NOTIFY countStepsCompChanged)
+    Q_PROPERTY(int countStepsUser READ getCountStepsUser NOTIFY countStepsUserChanged)
+    Q_PROPERTY(QString timeGame READ getTimeGame NOTIFY timeGameChanged)
 
 
 public:
@@ -28,6 +32,10 @@ public:
     int getBaseTableSize();
     int getNumberFoxes();
     int getSpeedStepComp();
+    int getCountStepsComp();
+    int getCountStepsUser();
+    QString getTimeGame();
+
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
@@ -46,6 +54,9 @@ private:
     template <class T>
     static void clearDataCells(QQmlListProperty<T> *list);
 
+    void increaseCountStepsComp(int addedValue = 1);
+    void increaseCountStepsUser(int addedValue = 1);
+
     void shotCellComp();
 
     int baseFieldSize;
@@ -56,6 +67,10 @@ private:
 
     int countFoundFoxesComp = 0;
     int countFoundFoxesUser = 0;
+    int countStepsComp = 0;
+    int countStepsUser = 0;
+    QTime *timeGame;
+    QTimer *timerGame;
     bool flagStepComp = false;
 
     QList<CellComp *> dataComp;
@@ -67,6 +82,9 @@ signals:
     void baseTableSizeChanged();
     void numberFoxesChanged();
     void speedStepCompChanged();
+    void countStepsCompChanged();
+    void countStepsUserChanged();
+    void timeGameChanged();
     void shotUser();
     void shotComp();
     void winUser();
@@ -75,6 +93,7 @@ signals:
 public slots:
     void initData();
     void createData();
+    void updateTimeGame();
 
 private slots:
     void nextStepComp();

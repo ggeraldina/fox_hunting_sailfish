@@ -13,16 +13,21 @@
     <name>GamePage</name>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="42"/>
-        <source>Game with computer</source>
-        <translation>Game with computer</translation>
+        <source>Steps </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="60"/>
+        <location filename="../qml/pages/GamePage.qml" line="43"/>
+        <source> and time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePage.qml" line="61"/>
         <source>Computer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="121"/>
+        <location filename="../qml/pages/GamePage.qml" line="122"/>
         <source>You</source>
         <translation type="unfinished"></translation>
     </message>

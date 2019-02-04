@@ -39,7 +39,8 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Game with computer")
+            text: qsTr("Steps ") + dataModel.countStepsComp + ":" +
+                  dataModel.countStepsUser + qsTr(" and time ") + dataModel.timeGame
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeLarge
         }

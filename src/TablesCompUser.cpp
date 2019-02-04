@@ -4,6 +4,10 @@ TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
     srand( time(0) ); // автоматическая рандомизация
     connect(this, &TablesCompUser::baseTableSizeChanged, this, &TablesCompUser::createData);
     connect(this, &TablesCompUser::numberFoxesChanged, this, &TablesCompUser::initData);
+    timeGame = new QTime(0, 0);
+    timerGame = new QTimer(this);
+    connect(timerGame, SIGNAL(timeout()), this, SLOT(updateTimeGame()));
+    timerGame->start(1000);
 }
 
 void TablesCompUser::createData() {
@@ -23,6 +27,11 @@ void TablesCompUser::initData() {
     TableAny::addRandomFoxes(&dataComp, numberFoxes);
     TableComp::showFoxesOnField(&dataComp);
     TableAny::addRandomFoxes(&dataUser, numberFoxes);
+}
+
+void TablesCompUser::updateTimeGame() {
+    *timeGame = timeGame->addSecs(1);
+    emit timeGameChanged();
 }
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {
@@ -53,6 +62,18 @@ int TablesCompUser::getSpeedStepComp() {
     return speedStepComp;
 }
 
+int TablesCompUser::getCountStepsComp() {
+    return countStepsComp;
+}
+
+int TablesCompUser::getCountStepsUser() {
+    return countStepsUser;
+}
+
+QString TablesCompUser::getTimeGame() {
+    return timeGame->toString("hh:mm:ss");
+}
+
 void TablesCompUser::setBaseTableSize(int newValue) {
     if (newValue <= 0 || baseFieldSize == newValue) {
         return;
@@ -76,6 +97,7 @@ void TablesCompUser::setSpeedStepComp(int newValue) {
     speedStepComp = newValue;
     emit speedStepCompChanged();
 }
+
 
 // abstract functions (depend on QList<T *>)
 
@@ -101,11 +123,23 @@ void TablesCompUser::clearDataCells(QQmlListProperty<T> *list) {
     dataTable->clear();
 }
 
+void TablesCompUser::increaseCountStepsComp(int addedValue) {
+    countStepsComp += addedValue;
+    emit countStepsCompChanged();
+}
+
+void TablesCompUser::increaseCountStepsUser(int addedValue) {
+    countStepsUser += addedValue;
+    emit countStepsUserChanged();
+}
+
 void TablesCompUser::shotCellUser(int index) {
-    if (dataUser.value(index)->getShot() || flagStepComp) {
+    if (flagStepComp || dataUser.value(index)->getShot()) {
         return;
     }
+    flagStepComp = true;
     emit shotUser();
+    increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
         TableUser::editCellsWhenFox(&dataUser, index);
@@ -113,6 +147,7 @@ void TablesCompUser::shotCellUser(int index) {
         if (countFoundFoxesUser == numberFoxes) {
             emit winUser();
         }
+        flagStepComp = false;
     }
     else {
         TableUser::editCellsWhenNoFox(&dataUser, index);
@@ -121,8 +156,8 @@ void TablesCompUser::shotCellUser(int index) {
 }
 
 void TablesCompUser::shotCellComp() {
-    flagStepComp = true;
     emit shotComp();
+    increaseCountStepsComp();
     int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp);
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {

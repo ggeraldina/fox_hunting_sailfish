@@ -19,7 +19,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Game with computer</source>
+        <source>Steps </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> and time </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
