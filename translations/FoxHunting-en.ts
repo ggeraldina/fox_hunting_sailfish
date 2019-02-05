@@ -27,7 +27,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="122"/>
+        <location filename="../qml/pages/GamePage.qml" line="123"/>
         <source>You</source>
         <translation type="unfinished"></translation>
     </message>
@@ -149,17 +149,17 @@ neighboring cells.
 <context>
     <name>SelectLanguagePage</name>
     <message>
-        <location filename="../qml/pages/SelectLanguagePage.qml" line="12"/>
+        <location filename="../qml/pages/SelectLanguagePage.qml" line="25"/>
         <source>Fox hunting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SelectLanguagePage.qml" line="27"/>
+        <location filename="../qml/pages/SelectLanguagePage.qml" line="40"/>
         <source>Select language, please</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SelectLanguagePage.qml" line="34"/>
+        <location filename="../qml/pages/SelectLanguagePage.qml" line="47"/>
         <source>Выберите, пожалуйста, язык</source>
         <translation type="unfinished"></translation>
     </message>
@@ -167,38 +167,43 @@ neighboring cells.
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="33"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>Fox hunting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="39"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>Size of games field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="60"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Amount foxes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>Speed of computer&apos;s steps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
         <source>0,5 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>Volume of effects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <source>Apply default settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

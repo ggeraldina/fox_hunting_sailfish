@@ -6,9 +6,16 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property int currentIndexBaseTableSize: settings.settingBaseTableSize - 7
+    property int currentIndexNumberFoxes: settings.settingNumberFoxes - 3
+    property int currentIndexSpeedStepComp: settings.settingSpeedStepComp / 500 - 1
 
     QmlSettings {
         id: settings
+        onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
+        onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
+        onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
+        onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
     }
 
     SilicaFlickable {
@@ -20,7 +27,7 @@ Page {
             right: page.right
             left: page.left
             bottom: page.bottom
-            bottomMargin: 20
+            bottomMargin: 20 + buttonDefaultSettings.height
         }
 
         Column {
@@ -34,61 +41,65 @@ Page {
             }
 
             ComboBox {
+                id: comboBoxBaseTableSize
                 width: page.width
-                currentIndex: settings.settingBaseTableSize - 7
+                currentIndex: currentIndexBaseTableSize
                 label: qsTr("Size of games field")
 
                 menu: ContextMenu {
                     MenuItem {
                         text: "7"
-                        onClicked: settings.setBaseTableSize(7)
+                        onClicked: settings.settingBaseTableSize = 7
                     }
                     MenuItem {
                         text: "8"
-                        onClicked: settings.setBaseTableSize(8)
+                        onClicked: settings.settingBaseTableSize = 8
                     }
                     MenuItem {
                         text: "9"
-                        onClicked: settings.setBaseTableSize(9)
+                        onClicked: settings.settingBaseTableSize = 9
                     }
                 }
             }
 
             ComboBox {
+                id: comboBoxNumberFoxes
                 width: page.width
-                currentIndex: settings.settingNumberFoxes - 3
+                currentIndex: currentIndexNumberFoxes
                 label: qsTr("Amount foxes")
 
                 menu: ContextMenu {
                     MenuItem {
                         text: "3"
-                        onClicked: settings.setNumberFoxes(3)
+                        onClicked: settings.settingNumberFoxes = 3
                     }
                     MenuItem {
                         text: "4"
-                        onClicked: settings.setNumberFoxes(4)
+                        onClicked: settings.settingNumberFoxes = 4
                     }
                 }
             }
 
             ComboBox {
+                id: comboBoxSpeedStepComp
                 width: page.width
-                currentIndex: settings.settingSpeedStepComp / 500 - 1
+                currentIndex: currentIndexSpeedStepComp
                 label: qsTr("Speed of computer's steps")
 
                 menu: ContextMenu {
                     MenuItem {
                         text: qsTr("0,5 sec")
-                        onClicked: settings.setSpeedStepComp(500)
+                        onClicked: settings.settingSpeedStepComp = 500
                     }
                     MenuItem {
                         text: qsTr("1 sec")
-                        onClicked: settings.setSpeedStepComp(1000)
+                        onClicked: settings.settingSpeedStepComp = 1000
                     }
                 }
             }
 
             Slider {
+                id: sliderVolumeEffects
                 width: page.width
                 label: qsTr("Volume of effects")
                 value: settings.settingVolumeEffects
@@ -97,11 +108,22 @@ Page {
                 maximumValue: 1
                 stepSize: 0.1
                 on_OldValueChanged: {
-                    settings.setVolumeEffects(value);
+                    settings.settingVolumeEffects = value;
                 }
             }
         }
 
         VerticalScrollDecorator { }
+    }
+
+
+    Button {
+        id: buttonDefaultSettings
+        width: page.width
+        anchors.bottom: page.bottom
+        text: qsTr("Apply default settings")
+        onClicked: {
+            settings.updateToDefaultSettings()
+        }
     }
 }

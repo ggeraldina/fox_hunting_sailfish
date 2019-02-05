@@ -24,6 +24,11 @@ float QmlSettings::getVolumeEffects() {
     return settings.value(SETTING_VOLUME_EFFECTS, 0.5).toFloat();
 }
 
+QString QmlSettings::getLanguage() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_LANGUAGE, "-??").toString();
+}
+
 void QmlSettings::setBaseTableSize(int newValue) {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, newValue);
@@ -50,4 +55,26 @@ void QmlSettings::setVolumeEffects(float newValue) {
     settings.setValue(SETTING_VOLUME_EFFECTS, newValue);
     settings.sync();
     emit settingVolumeEffectsChanged();
+}
+
+void QmlSettings::setLanguage(QString newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_LANGUAGE, newValue);
+    settings.sync();
+    emit settingLanguageChanged();
+}
+
+void QmlSettings::updateToDefaultSettings() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
+    settings.setValue(SETTING_NUMBER_FOXES, 4);
+    settings.setValue(SETTING_SPEED_STEP_COMP, 1000);
+    settings.setValue(SETTING_VOLUME_EFFECTS, 0.5);
+    settings.setValue(SETTING_LANGUAGE, "-??");
+    emit settingBaseTableSizeChanged();
+    emit settingNumberFoxesChanged();
+    emit settingSpeedStepCompChanged();
+    emit settingVolumeEffectsChanged();
+    emit settingLanguageChanged();
+    settings.sync();
 }

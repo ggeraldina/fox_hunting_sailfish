@@ -141,6 +141,10 @@
         <source>Volume of effects</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Apply default settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WinGamePage</name>

@@ -1,11 +1,24 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QmlTranslator 1.0
+import QmlSettings 1.0
 
 Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+
+    QmlTranslator {
+        id: qmlTranslator
+        onLanguageChanged: {
+//                  pageStack.replace(Qt.resolvedUrl("SelectLanguagePage.qml"), { }, PageStackAction.Immediate)
+            pageStack.push(Qt.resolvedUrl("MenuPage.qml"))
+        }
+    }
+
+    QmlSettings {
+        id: settings
+    }
 
     PageHeader {
         id: headerPage
@@ -37,32 +50,28 @@ Page {
         }
 
         Row {
-          anchors.horizontalCenter: parent.horizontalCenter
-          spacing: Theme.paddingMedium
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: Theme.paddingMedium
 
-          QmlTranslator {
-              id: qmlTranslator
-              onLanguageChanged: {
-//                  pageStack.replace(Qt.resolvedUrl("SelectLanguagePage.qml"), { }, PageStackAction.Immediate)
-                  pageStack.push(Qt.resolvedUrl("MenuPage.qml"))
-              }
-          }
-
-          Button {
+            Button {
               text: "EN"
               width: 100
               onClicked: {
                   qmlTranslator.setTranslation("-en")
+                  settings.settingLanguage = "-en"
               }
-          }
+            }
 
-          Button {
+            Button {
               text: "RU"
               width: 100
               onClicked: {
                   qmlTranslator.setTranslation("-ru")
+                  settings.settingLanguage = "-ru"
               }
-          }
+            }
         }
     }
 }
+
+

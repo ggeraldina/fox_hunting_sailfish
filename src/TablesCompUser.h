@@ -21,7 +21,9 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(int speedStepComp READ getSpeedStepComp WRITE setSpeedStepComp NOTIFY speedStepCompChanged)
     Q_PROPERTY(int countStepsComp READ getCountStepsComp NOTIFY countStepsCompChanged)
     Q_PROPERTY(int countStepsUser READ getCountStepsUser NOTIFY countStepsUserChanged)
-    Q_PROPERTY(QString timeGame READ getTimeGame NOTIFY timeGameChanged)
+    Q_PROPERTY(QString timeGameComp READ getTimeGameComp NOTIFY timeGameCompChanged)
+    Q_PROPERTY(QString timeGameUser READ getTimeGameUser NOTIFY timeGameUserChanged)
+
 
 
 public:
@@ -34,7 +36,8 @@ public:
     int getSpeedStepComp();
     int getCountStepsComp();
     int getCountStepsUser();
-    QString getTimeGame();
+    QString getTimeGameComp();
+    QString getTimeGameUser();
 
 
     void setBaseTableSize(int newValue);
@@ -57,11 +60,15 @@ private:
     void increaseCountStepsComp(int addedValue = 1);
     void increaseCountStepsUser(int addedValue = 1);
 
+    void shotCellUserWhenFox(int index);
+    void shotCellUserWhenNoFox(int index);
     void shotCellComp();
+    void shotCellCompWhenFox(int index);
+    void shotCellCompWhenNoFox(int index);
 
     int baseFieldSize;
     int numberFoxes;
-    int speedStepComp;
+    int speedStepComp; // msec
     const int VALUE_FOX = -1;
     const QString MARK_USER = "?";
 
@@ -69,9 +76,11 @@ private:
     int countFoundFoxesUser = 0;
     int countStepsComp = 0;
     int countStepsUser = 0;
-    QTime *timeGame;
-    QTimer *timerGame;
-    bool flagStepComp = false;
+    QTime *timeGameComp;
+    QTime *timeGameUser;
+    QTimer *timerGameComp;
+    QTimer *timerGameUser;
+    bool flagLockedTables = false;
 
     QList<CellComp *> dataComp;
     QList<CellUser *> dataUser;
@@ -84,19 +93,21 @@ signals:
     void speedStepCompChanged();
     void countStepsCompChanged();
     void countStepsUserChanged();
-    void timeGameChanged();
+    void timeGameCompChanged();
+    void timeGameUserChanged();
     void shotUser();
     void shotComp();
     void winUser();
     void winComp();
 
 public slots:
-    void initData();
-    void createData();
-    void updateTimeGame();
 
 private slots:
-    void nextStepComp();
+    void initData();
+    void createData();
+    void startTimerGameUser();
+    void updateTimeGameComp();
+    void updateTimeGameUser();
 };
 
 #endif // TABLESCOMPUSER_H

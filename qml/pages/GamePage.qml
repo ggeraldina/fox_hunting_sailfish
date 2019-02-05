@@ -39,10 +39,10 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Steps ") + dataModel.countStepsComp + ":" +
-                  dataModel.countStepsUser + qsTr(" and time ") + dataModel.timeGame
+            text: qsTr("Steps ") + dataModel.countStepsComp + " | " + dataModel.countStepsUser +
+                  qsTr(" and time ") + dataModel.timeGameComp + " | " + dataModel.timeGameUser
             color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeLarge
+            font.pixelSize: Theme.fontSizeSmall
         }
 
         TablesCompUser {
@@ -60,6 +60,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Computer")
             color: "white"
+            font.pixelSize: Theme.fontSizeMedium
         }
 
         Grid {
@@ -121,6 +122,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("You")
             color: "white"
+            font.pixelSize: Theme.fontSizeMedium
         }
 
         Grid {
