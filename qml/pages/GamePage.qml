@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.6
+import QtQuick.LocalStorage 2.0
+import "qrc:/js/database/Database.js" as DB
 import TablesCompUser 1.0
 import QmlSettings 1.0
 import "components/cells_field"
@@ -13,7 +15,8 @@ Page {
     property int baseWidthHeight: page.width / 14
     property int baseFieldSize: settings.settingBaseTableSize || 6
     property int quantityFoxes: settings.settingNumberFoxes || 2
-    property int speedStepComputer: settings.settingSpeedStepComp || 1000
+    property int speedStepComputer: settings.settingSpeedStepComp || 1000    
+    property string tableName: "gameStatistics"
 
     QmlSettings {
         id: settings
@@ -52,8 +55,28 @@ Page {
             speedStepComp: speedStepComputer
             onShotUser: soundEffect.play()
             onShotComp: soundEffect.play()
-            onWinUser: pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
-            onWinComp: pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))            
+            onWinUser: {
+                var obj = { date: new Date(),
+                    winner: "user",
+                    stepsComp: countStepsComp,
+                    timeComp: timeGameComp,
+                    stepsUser: countStepsUser,
+                    timeUser: timeGameUser
+                }
+                DB.dbInsertRow(tableName, JSON.stringify(obj))
+                pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
+            }
+            onWinComp: {
+                var obj = { date: new Date(),
+                    winner: "comp",
+                    stepsComp: countStepsComp,
+                    timeComp: timeGameComp,
+                    stepsUser: countStepsUser,
+                    timeUser: timeGameUser
+                }
+                DB.dbInsertRow(tableName, JSON.stringify(obj))
+                pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
+            }
         }
 
         Text {
@@ -101,7 +124,7 @@ Page {
                           delegate: Rectangle {
                                       width: baseWidthHeight
                                       height: baseWidthHeight
-                                      color: "transparent";
+                                      color: "transparent"
 
                                       Image {
                                           anchors.fill: parent
@@ -162,7 +185,7 @@ Page {
                           delegate: Rectangle {
                                       width: baseWidthHeight
                                       height: baseWidthHeight
-                                      color: "transparent";
+                                      color: "transparent"
 
                                       Image {
                                           anchors.fill: parent

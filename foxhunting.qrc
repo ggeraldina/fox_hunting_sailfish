@@ -6,5 +6,6 @@
         <file>soundeffects/shot.wav</file>
         <file>image/fox172.png</file>
         <file>image/coverFox.png</file>
+        <file>js/database/Database.js</file>
     </qresource>
 </RCC>

@@ -76,6 +76,10 @@
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Statistics game</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RulesPage</name>
@@ -143,6 +147,45 @@
     </message>
     <message>
         <source>Apply default settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>StatisticsPage</name>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game&apos;s statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Winner </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps comp </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time comp </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps user </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time user </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

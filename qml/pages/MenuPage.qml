@@ -43,6 +43,12 @@ Page {
 
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Statistics game")
+            onClicked: pageStack.push(Qt.resolvedUrl("StatisticsPage.qml"))
+        }
+
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Settings")
             onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
         }

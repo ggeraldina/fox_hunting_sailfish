@@ -55,7 +55,9 @@ DISTFILES += \
     image/lightGreen.jpg \
     qml/pages/SettingsPage.qml \
     image/lightYellow.jpg \
-    soundeffects/shot.wav
+    soundeffects/shot.wav \
+    js/database/Database.js \
+    qml/pages/StatisticsPage.qml
 
 RESOURCES += \
     foxhunting.qrc

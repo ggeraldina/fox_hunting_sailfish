@@ -12,22 +12,22 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="42"/>
+        <location filename="../qml/pages/GamePage.qml" line="45"/>
         <source>Steps </source>
         <translation>Ходы </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="43"/>
+        <location filename="../qml/pages/GamePage.qml" line="46"/>
         <source> and time </source>
         <translation> и время </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="61"/>
+        <location filename="../qml/pages/GamePage.qml" line="84"/>
         <source>Computer</source>
         <translation>Компьютер</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="123"/>
+        <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source>You</source>
         <translation>Вы</translation>
     </message>
@@ -84,11 +84,16 @@
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="46"/>
+        <source>Statistics game</source>
+        <translation>Статистика</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="52"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="52"/>
+        <location filename="../qml/pages/MenuPage.qml" line="58"/>
         <source>Select language</source>
         <translation>Выбрать язык</translation>
     </message>
@@ -210,6 +215,54 @@
         <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>Apply default settings</source>
         <translation>Применить настройки по умолчанию</translation>
+    </message>
+</context>
+<context>
+    <name>StatisticsPage</name>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="35"/>
+        <source>Fox hunting</source>
+        <translation>Охота на лис</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="40"/>
+        <source>Game&apos;s statistics</source>
+        <translation>Статистика игры</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="86"/>
+        <source>Date </source>
+        <translation>Дата </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="92"/>
+        <source>Time </source>
+        <translation>Время </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
+        <source>Winner </source>
+        <translation>Победитель </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="108"/>
+        <source>Steps comp </source>
+        <translation>Ходы компа</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="114"/>
+        <source>Time comp </source>
+        <translation>Время компа </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="120"/>
+        <source>Steps user </source>
+        <translation>Ходы Ваши </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="126"/>
+        <source>Time user </source>
+        <translation>Время Ваше </translation>
     </message>
 </context>
 <context>
