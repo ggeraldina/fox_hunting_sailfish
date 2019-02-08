@@ -12,22 +12,22 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="45"/>
+        <location filename="../qml/pages/GamePage.qml" line="46"/>
         <source>Steps </source>
         <translation>Steps </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="46"/>
+        <location filename="../qml/pages/GamePage.qml" line="47"/>
         <source> and time </source>
         <translation> and time </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePage.qml" line="92"/>
         <source>Computer</source>
         <translation>Computer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="148"/>
+        <location filename="../qml/pages/GamePage.qml" line="152"/>
         <source>You</source>
         <translation>You</translation>
     </message>
@@ -176,37 +176,67 @@ neighboring cells.
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="43"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
         <source>Game&apos;s settings</source>
         <translation>Game&apos;s settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
+        <source>Games&apos;s level</source>
+        <translation>Games&apos;s level</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <source>1</source>
+        <translation>1 - very easy</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
+        <source>2</source>
+        <translation type="unfinished">2 - very difficult</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>3</source>
+        <translation type="unfinished">3 - very difficult</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="79"/>
+        <source>4</source>
+        <translation type="unfinished">4 - very difficult</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>5</source>
+        <translation>5 - very difficult</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>Size of games field</source>
         <translation>Size of games field</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Amount foxes</source>
         <translation>Amount foxes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="101"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>Speed of computer&apos;s steps</source>
         <translation>Speed of computer&apos;s steps</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>0,5 sec</source>
         <translation>0,5 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
         <source>1 sec</source>
         <translation>1 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="118"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Volume of effects</source>
         <translation>Volume of effects</translation>
     </message>
@@ -244,22 +274,27 @@ neighboring cells.
         <translation>Winner </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="118"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="113"/>
+        <source>Level </source>
+        <translation>Level </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="119"/>
         <source>Steps comp </source>
         <translation>Steps comp </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="124"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
         <source>Time comp </source>
         <translation>Time comp </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="130"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="131"/>
         <source>Steps user </source>
         <translation>Steps user </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="136"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="137"/>
         <source>Time user </source>
         <translation>Time user </translation>
     </message>

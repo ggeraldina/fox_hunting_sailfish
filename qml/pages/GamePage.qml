@@ -13,9 +13,10 @@ Page {
     allowedOrientations: Orientation.Portrait
     property int spacingGrid: 1
     property int baseWidthHeight: page.width / 14
-    property int baseFieldSize: settings.settingBaseTableSize || 6
-    property int quantityFoxes: settings.settingNumberFoxes || 2
-    property int speedStepComputer: settings.settingSpeedStepComp || 1000    
+    property int baseFieldSize: settings.settingBaseTableSize
+    property int quantityFoxes: settings.settingNumberFoxes
+    property int speedStepComputer: settings.settingSpeedStepComp
+    property int level: settings.settingLevel
     property string tableName: "gameStatistics"
 
     QmlSettings {
@@ -53,6 +54,7 @@ Page {
             baseTableSize: baseFieldSize
             numberFoxes: quantityFoxes
             speedStepComp: speedStepComputer
+            levelGame: level
             onShotUser: soundEffect.play()
             onShotComp: soundEffect.play()
             onWinUser: {
@@ -60,6 +62,7 @@ Page {
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
                     winner: "user",
+                    level: level,
                     stepsComp: countStepsComp,
                     timeComp: timeGameComp,
                     stepsUser: countStepsUser,
@@ -73,6 +76,7 @@ Page {
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
                     winner: "comp",
+                    level: level,
                     stepsComp: countStepsComp,
                     timeComp: timeGameComp,
                     stepsUser: countStepsUser,

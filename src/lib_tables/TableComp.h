@@ -25,6 +25,7 @@ public:
     static int generateIndexCellForShot(QList<CellComp *> *list);
     static int countMaxChance(QList<CellComp *> *list);
     static void calculateIndexesCellsMaxChance(QList<CellComp *> *list, int indexesCells[], int sizeArray);
+    static int generateRandomIndexForShot(QList<CellComp *> *list, int countCells);
 
 
 private:

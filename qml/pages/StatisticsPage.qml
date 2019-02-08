@@ -109,7 +109,8 @@ Page {
                             }
 
                             Text {
-                                text: " "
+                                id: textLevelGame
+                                text: qsTr("Level ")
                                 color: Theme.highlightColor
                             }
 
@@ -143,9 +144,10 @@ Page {
                             var date = new Date(obj.date)
                             textDate.text += date.toDateString()
                             textTime.text += date.toTimeString()
-                            textSizeField.text += obj.sizeField
+                            textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                             textNumberFoxes.text += obj.countFoxes
                             textWinner.text += obj.winner
+                            textLevelGame.text += obj.level
                             textStepsComp.text += obj.stepsComp
                             textTimeComp.text += obj.timeComp
                             textStepsUser.text += obj.stepsUser

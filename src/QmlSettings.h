@@ -16,6 +16,8 @@ class QmlSettings : public QObject
     Q_PROPERTY(int settingSpeedStepComp READ getSpeedStepComp WRITE setSpeedStepComp NOTIFY settingSpeedStepCompChanged)
     Q_PROPERTY(float settingVolumeEffects READ getVolumeEffects WRITE setVolumeEffects NOTIFY settingVolumeEffectsChanged)
     Q_PROPERTY(QString settingLanguage READ getLanguage WRITE setLanguage NOTIFY settingLanguageChanged)
+    Q_PROPERTY(int settingLevel READ getLevel WRITE setLevel NOTIFY settingLevelChanged)
+
 public:
     explicit QmlSettings(QObject *parent = nullptr);
 
@@ -24,12 +26,14 @@ public:
     int getSpeedStepComp();
     float getVolumeEffects();
     QString getLanguage();
+    int getLevel();
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
     void setSpeedStepComp(int newValue);
     void setVolumeEffects(float newValue);
     void setLanguage(QString newValue);
+    void setLevel(int newValue);
     Q_INVOKABLE void updateToDefaultSettings();
 
 private:
@@ -39,6 +43,7 @@ private:
     const QString SETTING_SPEED_STEP_COMP = "settings_game/speed_step_comp";
     const QString SETTING_VOLUME_EFFECTS = "settings_app/volume_effects";
     const QString SETTING_LANGUAGE = "settings_app/language";
+    const QString SETTING_LEVEL = "settings_game/level";
 
 signals:
     void settingBaseTableSizeChanged();
@@ -46,6 +51,7 @@ signals:
     void settingSpeedStepCompChanged();
     void settingVolumeEffectsChanged();
     void settingLanguageChanged();
+    void settingLevelChanged();
 };
 
 #endif // QMLSETTINGS_H

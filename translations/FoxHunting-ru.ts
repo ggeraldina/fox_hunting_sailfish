@@ -12,22 +12,22 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="45"/>
+        <location filename="../qml/pages/GamePage.qml" line="46"/>
         <source>Steps </source>
         <translation>Ходы </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="46"/>
+        <location filename="../qml/pages/GamePage.qml" line="47"/>
         <source> and time </source>
         <translation> и время </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePage.qml" line="92"/>
         <source>Computer</source>
         <translation>Компьютер</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="148"/>
+        <location filename="../qml/pages/GamePage.qml" line="152"/>
         <source>You</source>
         <translation>Вы</translation>
     </message>
@@ -181,37 +181,67 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="43"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
+        <source>Games&apos;s level</source>
+        <translation>Уровень игры</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <source>1</source>
+        <translation>1 - очень легкий</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
+        <source>2</source>
+        <translation type="unfinished">2 - очень сложный</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>3</source>
+        <translation type="unfinished">3 - очень сложный</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="79"/>
+        <source>4</source>
+        <translation type="unfinished">4 - очень сложный</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>5</source>
+        <translation>5 - очень сложный</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>Size of games field</source>
         <translation>Размер игрового поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Amount foxes</source>
         <translation>Количество лисов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="101"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>Speed of computer&apos;s steps</source>
-        <translation>Задержка шагов компьютера</translation>
+        <translation>Задержка ходов компьютера</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>0,5 sec</source>
         <translation>0,5 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
         <source>1 sec</source>
         <translation>1 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="118"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Volume of effects</source>
         <translation>Громкость звуковых эффектов</translation>
     </message>
@@ -249,22 +279,27 @@
         <translation>Победитель </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="118"/>
-        <source>Steps comp </source>
-        <translation>Ходы компа</translation>
+        <location filename="../qml/pages/StatisticsPage.qml" line="113"/>
+        <source>Level </source>
+        <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="124"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="119"/>
+        <source>Steps comp </source>
+        <translation>Ходы компа </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
         <source>Time comp </source>
         <translation>Время компа </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="130"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="131"/>
         <source>Steps user </source>
         <translation>Ходы Ваши </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="136"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="137"/>
         <source>Time user </source>
         <translation>Время Ваше </translation>
     </message>

@@ -121,8 +121,7 @@ int TableComp::generateIndexCellForShot(QList<CellComp *> *list) {
     int countCellsRandom = countMaxChance(list);
     int indexesRandomCells[countCellsRandom];
     calculateIndexesCellsMaxChance(list, indexesRandomCells, countCellsRandom);
-    int maxRandomNumber = countCellsRandom - 1;
-    int randomNumber = maxRandomNumber > 0 ? (rand() % maxRandomNumber) : 0;
+    int randomNumber = rand() % countCellsRandom;
     int randomIndex = indexesRandomCells[randomNumber];
     return randomIndex;
 }
@@ -167,5 +166,13 @@ void TableComp::calculateIndexesCellsMaxChance(QList<CellComp *> *list, int inde
     }
     for (int i = 0; i < sizeArray; i++) {
     }
+}
+
+int TableComp::generateRandomIndexForShot(QList<CellComp *> *list, int countCells) {
+    int randomIndex = rand() % countCells;
+    if (list->value(randomIndex)->getShot()){
+        randomIndex = generateRandomIndexForShot(list, countCells);
+    }
+    return randomIndex;
 }
 

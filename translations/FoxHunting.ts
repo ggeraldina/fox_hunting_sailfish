@@ -146,6 +146,30 @@
         <source>Game&apos;s settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Games&apos;s level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StatisticsPage</name>
@@ -187,6 +211,10 @@
     </message>
     <message>
         <source>Foxes </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

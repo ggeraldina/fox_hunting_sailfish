@@ -9,6 +9,7 @@ Page {
     property int currentIndexBaseTableSize: settings.settingBaseTableSize - 7
     property int currentIndexNumberFoxes: settings.settingNumberFoxes - 3
     property int currentIndexSpeedStepComp: settings.settingSpeedStepComp / 500 - 1
+    property int currentIndexLevel: settings.settingLevel - 1
 
     QmlSettings {
         id: settings
@@ -16,6 +17,7 @@ Page {
         onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
         onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
         onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
+        onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
     }
 
     SilicaFlickable {
@@ -55,6 +57,36 @@ Page {
             }
 
             ComboBox {
+                id: comboBoxLevel
+                width: page.width
+                currentIndex: currentIndexLevel
+                label: qsTr("Games's level")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("1")
+                        onClicked: settings.settingLevel = 1
+                    }
+                    MenuItem {
+                        text: qsTr("2")
+                        onClicked: settings.settingLevel = 2
+                    }
+                    MenuItem {
+                        text: qsTr("3")
+                        onClicked: settings.settingLevel = 3
+                    }
+                    MenuItem {
+                        text: qsTr("4")
+                        onClicked: settings.settingLevel = 4
+                    }
+                    MenuItem {
+                        text: qsTr("5")
+                        onClicked: settings.settingLevel = 5
+                    }
+                }
+            }
+
+            ComboBox {
                 id: comboBoxBaseTableSize
                 width: page.width
                 currentIndex: currentIndexBaseTableSize
@@ -62,15 +94,15 @@ Page {
 
                 menu: ContextMenu {
                     MenuItem {
-                        text: "7"
+                        text: "7 × 7"
                         onClicked: settings.settingBaseTableSize = 7
                     }
                     MenuItem {
-                        text: "8"
+                        text: "8 × 8"
                         onClicked: settings.settingBaseTableSize = 8
                     }
                     MenuItem {
-                        text: "9"
+                        text: "9 × 9"
                         onClicked: settings.settingBaseTableSize = 9
                     }
                 }

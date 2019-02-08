@@ -29,6 +29,11 @@ QString QmlSettings::getLanguage() {
     return settings.value(SETTING_LANGUAGE, "-??").toString();
 }
 
+int QmlSettings::getLevel() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_LEVEL, 1).toInt();
+}
+
 void QmlSettings::setBaseTableSize(int newValue) {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, newValue);
@@ -64,6 +69,13 @@ void QmlSettings::setLanguage(QString newValue) {
     emit settingLanguageChanged();
 }
 
+void QmlSettings::setLevel(int newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_LEVEL, newValue);
+    settings.sync();
+    emit settingLevelChanged();
+}
+
 void QmlSettings::updateToDefaultSettings() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
@@ -71,10 +83,12 @@ void QmlSettings::updateToDefaultSettings() {
     settings.setValue(SETTING_SPEED_STEP_COMP, 1000);
     settings.setValue(SETTING_VOLUME_EFFECTS, 0.5);
     settings.setValue(SETTING_LANGUAGE, "-??");
+    settings.setValue(SETTING_LEVEL, 1);
     emit settingBaseTableSizeChanged();
     emit settingNumberFoxesChanged();
     emit settingSpeedStepCompChanged();
     emit settingVolumeEffectsChanged();
     emit settingLanguageChanged();
+    emit settingLevelChanged();
     settings.sync();
 }

@@ -91,6 +91,10 @@ QString TablesCompUser::getTimeGameUser() {
     return timeGameUser->toString("mm:ss");
 }
 
+int TablesCompUser::getLevelGame() {
+    return levelGame;
+}
+
 void TablesCompUser::setBaseTableSize(int newValue) {
     if (newValue <= 0 || baseFieldSize == newValue) {
         return;
@@ -113,6 +117,14 @@ void TablesCompUser::setSpeedStepComp(int newValue) {
     }
     speedStepComp = newValue;
     emit speedStepCompChanged();
+}
+
+void TablesCompUser::setLevelGame(int newValue) {
+    if (newValue <= 0 || levelGame == newValue) {
+        return;
+    }
+    levelGame = newValue;
+    emit levelGameChanged();
 }
 
 
@@ -187,7 +199,7 @@ void TablesCompUser::shotCellUserWhenNoFox(int index) {
 void TablesCompUser::shotCellComp() {
     emit shotComp();
     increaseCountStepsComp();
-    int smartRandomIndex = TableComp::generateIndexCellForShot(&dataComp);
+    int smartRandomIndex = generateIndexByLevel();
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {
         shotCellCompWhenFox(smartRandomIndex);
@@ -225,6 +237,38 @@ void TablesCompUser::putOrRemoveMarkCellUser(int index) {
     }
     else {
         dataUser.value(index)->setText("");
+    }
+}
+
+int TablesCompUser::generateIndexByLevel() {
+    int randNumber= rand() % 100; // 0..99
+    int chanseSmartShot = 0;
+    switch (levelGame) {
+    case 1:
+        //  probability smart shot = 0%
+        break;
+    case 2:
+        chanseSmartShot = 15;
+        break;
+    case 3:
+        chanseSmartShot = 40;
+        break;
+    case 4:
+        chanseSmartShot = 70;
+        break;
+    case 5:
+        //  probability smart shot = 100%
+        chanseSmartShot = 100;
+        break;
+    default:
+        break;
+    }
+    if (randNumber < chanseSmartShot) {
+        // smart shot
+        return TableComp::generateIndexCellForShot(&dataComp);
+    }
+    else {
+        return TableComp::generateRandomIndexForShot(&dataComp, dataComp.count());
     }
 }
 

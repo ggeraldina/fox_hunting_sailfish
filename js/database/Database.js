@@ -67,6 +67,5 @@ function dbDeleteAll(tableName)
     })
     // listModel - it is my stuff (type ListModel)
     listModel.clear()
-    dbReadAll()
 }
 

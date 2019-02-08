@@ -23,7 +23,7 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(int countStepsUser READ getCountStepsUser NOTIFY countStepsUserChanged)
     Q_PROPERTY(QString timeGameComp READ getTimeGameComp NOTIFY timeGameCompChanged)
     Q_PROPERTY(QString timeGameUser READ getTimeGameUser NOTIFY timeGameUserChanged)
-
+    Q_PROPERTY(int levelGame READ getLevelGame WRITE setLevelGame NOTIFY levelGameChanged)
 
 
 public:
@@ -38,11 +38,13 @@ public:
     int getCountStepsUser();
     QString getTimeGameComp();
     QString getTimeGameUser();
+    int getLevelGame();
 
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
     void setSpeedStepComp(int newValue);
+    void setLevelGame(int newValue);
 
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
     Q_INVOKABLE void putOrRemoveMarkCellUser(int index);
@@ -65,10 +67,12 @@ private:
     void shotCellComp();
     void shotCellCompWhenFox(int index);
     void shotCellCompWhenNoFox(int index);
+    int generateIndexByLevel();
 
     int baseFieldSize;
     int numberFoxes;
     int speedStepComp; // msec
+    int levelGame; // 1 - minimum level
     const int VALUE_FOX = -1;
     const QString MARK_USER = "?";
 
@@ -95,6 +99,7 @@ signals:
     void countStepsUserChanged();
     void timeGameCompChanged();
     void timeGameUserChanged();
+    void levelGameChanged();
     void shotUser();
     void shotComp();
     void winUser();
