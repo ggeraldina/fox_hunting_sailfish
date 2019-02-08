@@ -25,14 +25,7 @@ Page {
 
             PageHeader {
                 id: headerPage
-                title: qsTr("Fox hunting")
-            }
-
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("The rules")
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeLarge
+                title: qsTr("The rules")
             }
 
             Text {

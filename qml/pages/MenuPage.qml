@@ -7,56 +7,66 @@ Page {
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
 
-    PageHeader {
-        id: headerPage
-        title: qsTr("Fox hunting")
-    }
-
-    Column {
-        id: column
-        anchors {
-            top: headerPage.bottom
-            right: page.right
-            left: page.left
-            bottom: page.bottom
-        }
-        spacing: Theme.paddingMedium
-
-        Label {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Menu")
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeLarge
+    SilicaListView {
+        id: listView
+        anchors.fill: parent
+        header: PageHeader {
+            id: headerPage
+            title: qsTr("Menu")
         }
 
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("New game")
-            onClicked: pageStack.push(Qt.resolvedUrl("GamePage.qml"))
+        model: ListModel {
+            ListElement {
+                page: "GamePage.qml"
+                title: qsTr("New game")
+                section: qsTr("Game")
+            }
+            ListElement {
+                page: "RulesPage.qml"
+                title: qsTr("Game's rules")
+                section: qsTr("Game")
+            }
+            ListElement {
+                page: "StatisticsPage.qml"
+                title: qsTr("Game's statistics")
+                section: qsTr("Game")
+            }
+            ListElement {
+                page: "SettingsPage.qml"
+                title: qsTr("Game's settings")
+                section: qsTr("Settings")
+            }
+            ListElement {
+                page: ""
+                title: qsTr("Select language")
+                section: qsTr("Settings")
+            }
         }
 
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Rules game")
-            onClicked: pageStack.push(Qt.resolvedUrl("RulesPage.qml"))
+        section {
+            property: 'section'
+            delegate: SectionHeader {
+                text: section
+            }
         }
 
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Statistics game")
-            onClicked: pageStack.push(Qt.resolvedUrl("StatisticsPage.qml"))
+        delegate: BackgroundItem {
+            width: listView.width
+            Label {
+                text: model.title
+                color: highlighted ? Theme.highlightColor : Theme.primaryColor
+                anchors.verticalCenter: parent.verticalCenter
+                x: Theme.horizontalPageMargin
+            }
+            onClicked: {
+                if (page !== "") {
+                    pageStack.push(Qt.resolvedUrl(page))
+                }
+                else {
+                   pageStack.navigateBack()
+                }
+            }
         }
-
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Settings")
-            onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
-        }
-
-        Button {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Select language")
-            onClicked: pageStack.navigateBack()
-        }
+        VerticalScrollDecorator {}
     }
 }

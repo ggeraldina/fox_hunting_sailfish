@@ -22,7 +22,8 @@ Page {
 
     PageHeader {
         id: headerPage
-        title: qsTr("Fox hunting")
+        title: qsTr("Fox hunting
+Охота на лис")
     }
 
     Column {

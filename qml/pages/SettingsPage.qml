@@ -27,17 +27,31 @@ Page {
             right: page.right
             left: page.left
             bottom: page.bottom
-            bottomMargin: 20 + buttonDefaultSettings.height
         }
 
         Column {
             id: column
             width: flickable.width
             spacing: Theme.paddingMedium
+            Item {
+                width: column.width
+                height: headerPage.height
 
-            PageHeader {
-                id: headerPage
-                title: qsTr("Fox hunting")
+                PageHeader {
+                    id: headerPage
+                    anchors.right: buttonSettings.left
+                    title: qsTr("Game's settings")
+                }
+
+                IconButton {
+                    id: buttonSettings
+                    anchors.right: parent.right
+                    // подчеркивание icon.source красным в Qt Creator - это нормально
+                    icon.source: "image://theme/icon-m-reset"
+                    onClicked: {
+                        settings.updateToDefaultSettings()
+                    }
+                }
             }
 
             ComboBox {
@@ -114,16 +128,5 @@ Page {
         }
 
         VerticalScrollDecorator { }
-    }
-
-
-    Button {
-        id: buttonDefaultSettings
-        width: page.width
-        anchors.bottom: page.bottom
-        text: qsTr("Apply default settings")
-        onClicked: {
-            settings.updateToDefaultSettings()
-        }
     }
 }

@@ -53,15 +53,7 @@
 <context>
     <name>MenuPage</name>
     <message>
-        <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rules game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -69,24 +61,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Statistics game</source>
+        <source>Select language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game&apos;s rules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game&apos;s statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game&apos;s settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RulesPage</name>
-    <message>
-        <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>New game</source>
         <translation type="unfinished"></translation>
@@ -103,10 +103,6 @@
 <context>
     <name>SelectLanguagePage</name>
     <message>
-        <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select language, please</source>
         <translation type="unfinished"></translation>
     </message>
@@ -114,13 +110,14 @@
         <source>Выберите, пожалуйста, язык</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fox hunting
+Охота на лис</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
-    <message>
-        <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Size of games field</source>
         <translation type="unfinished"></translation>
@@ -146,16 +143,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Apply default settings</source>
+        <source>Game&apos;s settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>StatisticsPage</name>
-    <message>
-        <source>Fox hunting</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Game&apos;s statistics</source>
         <translation type="unfinished"></translation>
@@ -186,6 +179,14 @@
     </message>
     <message>
         <source>Time user </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size field </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

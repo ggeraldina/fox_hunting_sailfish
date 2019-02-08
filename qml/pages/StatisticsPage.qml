@@ -22,7 +22,6 @@ Page {
             right: page.right
             left: page.left
             bottom: page.bottom
-            bottomMargin: 20
         }
 
         Column {
@@ -30,26 +29,24 @@ Page {
             width: flickable.width
             spacing: Theme.paddingMedium
 
-            PageHeader {
-                id: headerPage
-                title: qsTr("Fox hunting")
-            }
+            Item {
+                width: column.width
+                height: headerPage.height
 
-            Label {
-                id: labelGameStatistics
-                text: qsTr("Game's statistics")
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeLarge
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
+                PageHeader {
+                    id: headerPage
+                    title: qsTr("Game's statistics")
+                    anchors.right: buttonDeleteStatistics.left
+                }
 
-            IconButton {
-                id: buttonDeleteStatistics
-                anchors.right: parent.right
-                // подчеркивание icon.source красным в Qt Creator - это нормально
-                icon.source: "image://theme/icon-m-delete"
-                onClicked: {
-                    DB.dbDeleteAll(tableName)
+                IconButton {
+                    id: buttonDeleteStatistics
+                    anchors.right: parent.right
+                    // подчеркивание icon.source красным в Qt Creator - это нормально
+                    icon.source: "image://theme/icon-m-delete"
+                    onClicked: {
+                        DB.dbDeleteAll(tableName)
+                    }
                 }
             }
 
@@ -75,56 +72,69 @@ Page {
 
                         Grid {
                             width: page.width - 40
-                            height: 250
+                            height: 300
                             id: grid
                             spacing: Theme.paddingMedium
                             columns: 2
-                            rows: 4
+                            rows: 5
 
                             Text {
                                 id: textDate
                                 text: qsTr("Date ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textTime
                                 text: qsTr("Time ")
-                                color: "white"
+                                color: Theme.highlightColor
+                            }
+
+                            Text {
+                                id: textSizeField
+                                text: qsTr("Size field ")
+                                color: Theme.highlightColor
+                            }
+
+                            Text {
+                                id: textNumberFoxes
+                                text: qsTr("Foxes ")
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textWinner
                                 text: qsTr("Winner ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 text: " "
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textStepsComp
                                 text: qsTr("Steps comp ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textTimeComp
                                 text: qsTr("Time comp ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textStepsUser
                                 text: qsTr("Steps user ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
 
                             Text {
                                 id: textTimeUser
                                 text: qsTr("Time user ")
-                                color: "white"
+                                color: Theme.highlightColor
                             }
                         }
 
@@ -133,6 +143,8 @@ Page {
                             var date = new Date(obj.date)
                             textDate.text += date.toDateString()
                             textTime.text += date.toTimeString()
+                            textSizeField.text += obj.sizeField
+                            textNumberFoxes.text += obj.countFoxes
                             textWinner.text += obj.winner
                             textStepsComp.text += obj.stepsComp
                             textTimeComp.text += obj.timeComp

@@ -45,7 +45,7 @@ Page {
             text: qsTr("Steps ") + dataModel.countStepsComp + " | " + dataModel.countStepsUser +
                   qsTr(" and time ") + dataModel.timeGameComp + " | " + dataModel.timeGameUser
             color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeSmall
+            font.pixelSize: Theme.fontSizeMedium
         }
 
         TablesCompUser {
@@ -57,6 +57,8 @@ Page {
             onShotComp: soundEffect.play()
             onWinUser: {
                 var obj = { date: new Date(),
+                    sizeField: baseFieldSize,
+                    countFoxes: quantityFoxes,
                     winner: "user",
                     stepsComp: countStepsComp,
                     timeComp: timeGameComp,
@@ -68,6 +70,8 @@ Page {
             }
             onWinComp: {
                 var obj = { date: new Date(),
+                    sizeField: baseFieldSize,
+                    countFoxes: quantityFoxes,
                     winner: "comp",
                     stepsComp: countStepsComp,
                     timeComp: timeGameComp,
@@ -82,8 +86,8 @@ Page {
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Computer")
-            color: "white"
-            font.pixelSize: Theme.fontSizeMedium
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeSmall
         }
 
         Grid {
@@ -107,10 +111,9 @@ Page {
 
             }
 
-            Rectangle {
+            Item {
                   width: baseWidthHeight * baseFieldSize
                   height: baseWidthHeight * baseFieldSize
-                  color: "transparent";
 
                   Grid {
                       id: fieldTopFox
@@ -121,10 +124,9 @@ Page {
 
                       Repeater {
                           model: dataModel.dataComp
-                          delegate: Rectangle {
+                          delegate: Item {
                                       width: baseWidthHeight
                                       height: baseWidthHeight
-                                      color: "transparent"
 
                                       Image {
                                           anchors.fill: parent
@@ -144,8 +146,8 @@ Page {
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("You")
-            color: "white"
-            font.pixelSize: Theme.fontSizeMedium
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeSmall
         }
 
         Grid {
@@ -168,10 +170,9 @@ Page {
 
             }
 
-            Rectangle {
+            Item {
                   width: baseWidthHeight * baseFieldSize
                   height: baseWidthHeight * baseFieldSize
-                  color: "transparent";
 
                   Grid {
                       id: fieldBottomFox
@@ -182,10 +183,9 @@ Page {
 
                       Repeater {
                           model: dataModel.dataUser
-                          delegate: Rectangle {
+                          delegate: Item {
                                       width: baseWidthHeight
                                       height: baseWidthHeight
-                                      color: "transparent"
 
                                       Image {
                                           anchors.fill: parent
