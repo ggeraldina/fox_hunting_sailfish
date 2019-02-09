@@ -1,7 +1,12 @@
 #include "QmlTranslator.h"
 
 QmlTranslator::QmlTranslator(QObject *parent) : QObject(parent) {
+    // new необходимо; иначе язык применяется только для текущей страницы, а не для всего приложения
     translator = new QTranslator(this);
+}
+
+QmlTranslator::~QmlTranslator() {
+    delete translator;
 }
 
 void QmlTranslator::setTranslation(QString language) {

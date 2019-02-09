@@ -28,6 +28,7 @@ class TablesCompUser : public QObject {
 
 public:
     explicit TablesCompUser(QObject *parent = 0);
+    ~TablesCompUser();
 
     QQmlListProperty<CellComp> getDataComp();
     QQmlListProperty<CellUser> getDataUser();
@@ -80,10 +81,10 @@ private:
     int countFoundFoxesUser = 0;
     int countStepsComp = 0;
     int countStepsUser = 0;
-    QTime *timeGameComp;
-    QTime *timeGameUser;
-    QTimer *timerGameComp;
-    QTimer *timerGameUser;
+    QTime timeGameComp;
+    QTime timeGameUser;
+    QTimer timerGameComp;
+    QTimer timerGameUser;
     bool flagLockedTables = false;
 
     QList<CellComp *> dataComp;

@@ -14,14 +14,6 @@ int main(int argc, char *argv[])
     QStringList args = app->arguments();
     bool daemonized = args.contains("-daemon");
 
-    //Translations
-    QString translationPath(SailfishApp::pathTo("translations").toLocalFile());
-    static QTranslator translator;
-    if(translator.load("FoxHunting-en", translationPath))
-        app->installTranslator(&translator);
-    else
-        qDebug() << "Translation file not loaded";
-
     qmlRegisterType<CellUser>("CellUser", 1, 0, "CellUser");
     qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");

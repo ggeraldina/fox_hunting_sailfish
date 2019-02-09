@@ -63,45 +63,45 @@
 <context>
     <name>MenuPage</name>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="15"/>
+        <location filename="../qml/pages/MenuPage.qml" line="14"/>
         <source>Menu</source>
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="21"/>
+        <location filename="../qml/pages/MenuPage.qml" line="20"/>
         <source>New game</source>
         <translation>New game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="22"/>
-        <location filename="../qml/pages/MenuPage.qml" line="27"/>
-        <location filename="../qml/pages/MenuPage.qml" line="32"/>
+        <location filename="../qml/pages/MenuPage.qml" line="21"/>
+        <location filename="../qml/pages/MenuPage.qml" line="26"/>
+        <location filename="../qml/pages/MenuPage.qml" line="31"/>
         <source>Game</source>
         <translation>Game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="26"/>
+        <location filename="../qml/pages/MenuPage.qml" line="25"/>
         <source>Game&apos;s rules</source>
         <translation>Game&apos;s rules</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="31"/>
+        <location filename="../qml/pages/MenuPage.qml" line="30"/>
         <source>Game&apos;s statistics</source>
         <translation>Game&apos;s statistics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="36"/>
+        <location filename="../qml/pages/MenuPage.qml" line="35"/>
         <source>Game&apos;s settings</source>
         <translation>Game&apos;s settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="37"/>
-        <location filename="../qml/pages/MenuPage.qml" line="42"/>
+        <location filename="../qml/pages/MenuPage.qml" line="36"/>
+        <location filename="../qml/pages/MenuPage.qml" line="41"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="41"/>
+        <location filename="../qml/pages/MenuPage.qml" line="40"/>
         <source>Select language</source>
         <translation>Сменить язык</translation>
     </message>

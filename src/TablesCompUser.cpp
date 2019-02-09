@@ -2,15 +2,23 @@
 
 TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
     srand( time(0) ); // автоматическая рандомизация
-    timeGameComp = new QTime(0, 0);
-    timeGameUser = new QTime(0, 0);
-    timerGameComp = new QTimer(this);
-    timerGameUser = new QTimer(this);
-    connect(timerGameComp, &QTimer::timeout, this, &TablesCompUser::updateTimeGameComp);
-    connect(timerGameUser, &QTimer::timeout, this, &TablesCompUser::updateTimeGameUser);
+    timeGameComp.setHMS(0, 0, 0, 0);
+    timeGameUser.setHMS(0, 0, 0, 0);
+    connect(&timerGameComp, &QTimer::timeout, this, &TablesCompUser::updateTimeGameComp);
+    connect(&timerGameUser, &QTimer::timeout, this, &TablesCompUser::updateTimeGameUser);
     connect(this, &TablesCompUser::baseTableSizeChanged, this, &TablesCompUser::createData);
     connect(this, &TablesCompUser::numberFoxesChanged, this, &TablesCompUser::initData);
     connect(this, &TablesCompUser::speedStepCompChanged, this, &TablesCompUser::startTimerGameUser);
+}
+
+TablesCompUser::~TablesCompUser() {
+    // qDeleteAll - вызывает С++ delete для элементов, являющихся указателями,
+    // но при этом не удаляет элементы из контейнера QList
+    // clear - удаляет элементы из контейнера
+    qDeleteAll(dataComp.begin(), dataComp.end());
+    dataComp.clear();
+    qDeleteAll(dataUser.begin(), dataUser.end());
+    dataUser.clear();
 }
 
 void TablesCompUser::createData() {
@@ -33,17 +41,17 @@ void TablesCompUser::initData() {
 }
 
 void TablesCompUser::startTimerGameUser(){
-    timerGameUser->start(speedStepComp);
+    timerGameUser.start(speedStepComp);
 }
 
 void TablesCompUser::updateTimeGameComp() {
-    *timeGameComp = timeGameComp->addMSecs(speedStepComp);
+    timeGameComp = timeGameComp.addMSecs(speedStepComp);
     emit timeGameCompChanged();
     shotCellComp();
 }
 
 void TablesCompUser::updateTimeGameUser() {
-    *timeGameUser = timeGameUser->addMSecs(speedStepComp);
+    timeGameUser = timeGameUser.addMSecs(speedStepComp);
     emit timeGameUserChanged();
 }
 
@@ -84,11 +92,11 @@ int TablesCompUser::getCountStepsUser() {
 }
 
 QString TablesCompUser::getTimeGameComp() {
-    return timeGameComp->toString("mm:ss");
+    return timeGameComp.toString("mm:ss");
 }
 
 QString TablesCompUser::getTimeGameUser() {
-    return timeGameUser->toString("mm:ss");
+    return timeGameUser.toString("mm:ss");
 }
 
 int TablesCompUser::getLevelGame() {
@@ -182,17 +190,17 @@ void TablesCompUser::shotCellUserWhenFox(int index) {
     TableUser::editCellsWhenFox(&dataUser, index);
     countFoundFoxesUser++;
     if (countFoundFoxesUser == numberFoxes) {
-        timerGameComp->stop();
-        timerGameUser->stop();
+        timerGameComp.stop();
+        timerGameUser.stop();
         emit winUser();
     }
     flagLockedTables = false;
 }
 
 void TablesCompUser::shotCellUserWhenNoFox(int index) {
-    timerGameUser->stop();
+    timerGameUser.stop();
     TableUser::editCellsWhenNoFox(&dataUser, index);
-    timerGameComp->start(speedStepComp);
+    timerGameComp.start(speedStepComp);
 }
 
 
@@ -213,17 +221,17 @@ void TablesCompUser::shotCellCompWhenFox(int index) {
     TableComp::editCellsWhenFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     countFoundFoxesComp++;
     if (countFoundFoxesComp == numberFoxes) {
-        timerGameComp->stop();
-        timerGameUser->stop();
+        timerGameComp.stop();
+        timerGameUser.stop();
         emit winComp();
         return;
     }
 }
 
 void TablesCompUser::shotCellCompWhenNoFox(int index) {
-    timerGameComp->stop();
+    timerGameComp.stop();
     TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
-    timerGameUser->start(speedStepComp);
+    timerGameUser.start(speedStepComp);
     flagLockedTables = false;
 }
 
