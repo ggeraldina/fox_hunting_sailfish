@@ -50,12 +50,12 @@
         <translation>В следующий раз повезет!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="40"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="46"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="46"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="52"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -322,12 +322,12 @@
         <translation>Поздравляем!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="40"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="46"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="46"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="52"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>

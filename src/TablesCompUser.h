@@ -25,7 +25,6 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(QString timeGameUser READ getTimeGameUser NOTIFY timeGameUserChanged)
     Q_PROPERTY(int levelGame READ getLevelGame WRITE setLevelGame NOTIFY levelGameChanged)
 
-
 public:
     explicit TablesCompUser(QObject *parent = 0);
     ~TablesCompUser();

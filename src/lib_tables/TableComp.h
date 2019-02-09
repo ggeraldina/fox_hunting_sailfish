@@ -13,19 +13,21 @@ public:
 
     static void showFoxesOnField(QList<CellComp *> *list);
     static void editCellsWhenFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes);
+    static void editCellsWhenNoFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes);
+    static int generateIndexCellForShot(QList<CellComp *> *list);
+    static int generateRandomIndexForShot(QList<CellComp *> *list, int countCells);
+
+private:
     static void recalculatePossibleShot(QList<CellComp *> *list, int numberFoxes, int countFoundFoxes);
     static int countFoundFoxesShapeSnowflake(QList<CellComp *> *list, int index);
-    static void editCellsWhenNoFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes);
     static void editCellsWhenZero(QList<CellComp *> *list, int index);
     static void editPossibleShotFalse(QList<CellComp *> *list, int index);
     static void editPossibleShotFalseAround(QList<CellComp *> *list, int currentIndex);
     static void editCellsWhenNumberFoxes(QList<CellComp *> *list, int index);
     static void editCellsWhenNumber(QList<CellComp *> *list, int index, int numberFoxes);
     static void editChance(QList<CellComp *> *list, int index, double newChance);
-    static int generateIndexCellForShot(QList<CellComp *> *list);
     static int countMaxChance(QList<CellComp *> *list);
     static void calculateIndexesCellsMaxChance(QList<CellComp *> *list, int indexesCells[], int sizeArray);
-    static int generateRandomIndexForShot(QList<CellComp *> *list, int countCells);
 
 
 private:

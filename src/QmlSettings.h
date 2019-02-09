@@ -1,15 +1,10 @@
 #ifndef QMLSETTINGS_H
 #define QMLSETTINGS_H
 
-
-#include <QDebug>
-
-
 #include <QObject>
 #include <QSettings>
 
-class QmlSettings : public QObject
-{
+class QmlSettings : public QObject {
     Q_OBJECT
     Q_PROPERTY(int settingBaseTableSize READ getBaseTableSize WRITE setBaseTableSize NOTIFY settingBaseTableSizeChanged)
     Q_PROPERTY(int settingNumberFoxes READ getNumberFoxes WRITE setNumberFoxes NOTIFY settingNumberFoxesChanged)

@@ -35,6 +35,12 @@ Page {
             font.pixelSize: Theme.fontSizeLarge
         }
 
+        AnimatedImage {
+            anchors.horizontalCenter: parent.horizontalCenter
+            id: animation
+            source: "qrc:/image/fox.gif"
+        }
+
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("New game")
