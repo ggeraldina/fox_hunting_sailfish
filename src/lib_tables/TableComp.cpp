@@ -99,8 +99,8 @@ void TableComp::editCellsWhenNumber(QList<CellComp *> *list, int currentIndex, i
     bool cellsShapeSnowflake[countCells];
     int countGroupTrue = TableAny::calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, currentIndex);
     int valueCell = list->value(currentIndex)->getValue();
-    double chanceGroupTrue = (double)valueCell / (countGroupTrue * numberFoxes);
-    double chanceGroupFalse = (double)(numberFoxes - valueCell) / ((countCells - countGroupTrue) * numberFoxes);
+    double chanceGroupTrue = static_cast<double>(valueCell) / (countGroupTrue * numberFoxes);
+    double chanceGroupFalse = static_cast<double>(numberFoxes - valueCell) / ((countCells - countGroupTrue) * numberFoxes);
     for (int i = 0; i < countCells; i++) {
         if(cellsShapeSnowflake[i]) {
             editChance(list, i, chanceGroupTrue);

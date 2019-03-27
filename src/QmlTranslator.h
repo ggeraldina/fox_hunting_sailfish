@@ -12,7 +12,7 @@ class QmlTranslator : public QObject {
     Q_OBJECT
 
 public:
-    explicit QmlTranslator(QObject *parent = 0);
+    explicit QmlTranslator(QObject *parent = nullptr);
     ~QmlTranslator();
 
     Q_INVOKABLE void setTranslation(QString translation);

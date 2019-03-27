@@ -11,13 +11,17 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
-    property int spacingGrid: 1
-    property int baseWidthHeight: page.width / 14
+    property int spacingGrid: 1    
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
     property int speedStepComputer: settings.settingSpeedStepComp
     property int level: settings.settingLevel
+    property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property string tableName: "gameStatistics"
+
+    Component.onCompleted: {
+        DB.dbInit(tableName)
+    }
 
     QmlSettings {
         id: settings
@@ -26,7 +30,7 @@ Page {
     SoundEffect {
         id: soundEffect
         source: "qrc:/soundeffects/shot.wav"
-        volume : settings.settingVolumeEffects || 0.0
+        volume : settings.settingVolumeEffects
         loops : 1
     }
 
@@ -40,14 +44,6 @@ Page {
             bottom: page.bottom
         }
         spacing: Theme.paddingMedium
-
-        Label {
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Steps ") + dataModel.countStepsComp + " | " + dataModel.countStepsUser +
-                  qsTr(" and time ") + dataModel.timeGameComp + " | " + dataModel.timeGameUser
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeMedium
-        }
 
         TablesCompUser {
             id: dataModel
@@ -87,9 +83,11 @@ Page {
             }
         }
 
-        Text {
+        Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Computer")
+            text: qsTr("Computer") +
+                  qsTr(" (steps ") + dataModel.countStepsComp +
+                  qsTr(", time ") + dataModel.timeGameComp + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
@@ -97,7 +95,7 @@ Page {
         Grid {
             id: fieldTop
             spacing: spacingGrid
-            anchors.horizontalCenter: parent.horizontalCenter
+            x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
             columns: 2
 
             Rectangle {
@@ -147,9 +145,11 @@ Page {
              }
         }
 
-        Text {
+        Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("You")
+            text: qsTr("You") +
+                  qsTr(" (steps ") + dataModel.countStepsUser +
+                  qsTr(", time ") + dataModel.timeGameUser + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
@@ -157,7 +157,7 @@ Page {
         Grid {
             id: fieldBottom
             spacing: spacingGrid
-            anchors.horizontalCenter: parent.horizontalCenter
+            x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
             columns: 2
 
             Rectangle {

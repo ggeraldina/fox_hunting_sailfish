@@ -8,7 +8,7 @@ class CellUser : public CellBase {
     Q_PROPERTY(bool shot READ getShot WRITE setShot NOTIFY shotChanged)
 
 public:
-    explicit CellUser(QObject *parent = 0);
+    explicit CellUser(QObject *parent = nullptr);
 
     bool getShot();
     void setShot(bool shot);

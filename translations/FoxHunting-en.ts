@@ -12,22 +12,30 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="46"/>
-        <source>Steps </source>
-        <translation>Steps </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GamePage.qml" line="47"/>
-        <source> and time </source>
-        <translation> and time </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GamePage.qml" line="92"/>
+        <location filename="../qml/pages/GamePage.qml" line="88"/>
         <source>Computer</source>
         <translation>Computer</translation>
     </message>
     <message>
+        <location filename="../qml/pages/GamePage.qml" line="89"/>
+        <location filename="../qml/pages/GamePage.qml" line="151"/>
+        <source> (steps </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePage.qml" line="90"/>
         <location filename="../qml/pages/GamePage.qml" line="152"/>
+        <source>, time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePage.qml" line="90"/>
+        <location filename="../qml/pages/GamePage.qml" line="152"/>
+        <source>)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePage.qml" line="150"/>
         <source>You</source>
         <translation>You</translation>
     </message>

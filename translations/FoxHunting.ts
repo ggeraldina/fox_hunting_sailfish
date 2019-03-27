@@ -19,11 +19,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Steps </source>
+        <source> (steps </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> and time </source>
+        <source>, time </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

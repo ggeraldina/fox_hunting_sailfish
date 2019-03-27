@@ -29,21 +29,13 @@ SOURCES += \
 DISTFILES += \
     qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/GamePage.qml \
-    qml/pages/WinGamePage.qml \
-    qml/pages/LoseGamePage.qml \
-    qml/pages/RulesPage.qml \
-    qml/pages/LittersCell.qml \
-    qml/pages/FieldTableLitters.qml \
-    qml/pages/FieldTableDigits.qml \
-    qml/pages/SelectLanguagePage.qml \
-    qml/pages/MenuPage.qml \
+    qml/pages/*.qml \
     rpm/FoxHunting.changes.in \
     rpm/FoxHunting.changes.run.in \
     rpm/FoxHunting.spec \
     rpm/FoxHunting.yaml \
-    image/fox.ico \
-    image/fox.jpg \
+    image/*.ico \
+    image/*.jpg \
     FoxHunting.desktop \
     icons/108x108/FoxHunting.png \
     icons/128x128/FoxHunting.png \
@@ -52,12 +44,8 @@ DISTFILES += \
     translations/FoxHunting.ts \
     translations/FoxHunting-en.ts \
     translations/FoxHunting-ru.ts \
-    image/lightGreen.jpg \
-    qml/pages/SettingsPage.qml \
-    image/lightYellow.jpg \
     soundeffects/shot.wav \
     js/database/Database.js \
-    qml/pages/StatisticsPage.qml
 
 RESOURCES += \
     foxhunting.qrc
@@ -76,17 +64,8 @@ TRANSLATIONS += \
 
 lupdate_only {
     SOURCES += \
-    qml/FoxHunting.qml \
-    qml/cover/CoverPage.qml \
-    qml/pages/GamePage.qml \
-    qml/pages/WinGamePage.qml \
-    qml/pages/LoseGamePage.qml \
-    qml/pages/RulesPage.qml \
-    qml/pages/LittersCell.qml \
-    qml/pages/FieldTableLitters.qml \
-    qml/pages/FieldTableDigits.qml \
-    qml/pages/SelectLanguagePage.qml \
-    qml/pages/MenuPage.qml \
+    qml/*.qml \
+    qml/pages/*.qml
 }
 
 HEADERS += \
@@ -100,5 +79,5 @@ HEADERS += \
     src/lib_tables/TableAny.h \
     src/QmlSettings.h
 
-SUBDIRS += \
-    FoxHunting.pro
+#SUBDIRS += \
+#    FoxHunting.pro

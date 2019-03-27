@@ -26,7 +26,7 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(int levelGame READ getLevelGame WRITE setLevelGame NOTIFY levelGameChanged)
 
 public:
-    explicit TablesCompUser(QObject *parent = 0);
+    explicit TablesCompUser(QObject *parent = nullptr);
     ~TablesCompUser();
 
     QQmlListProperty<CellComp> getDataComp();

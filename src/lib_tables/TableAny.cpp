@@ -8,7 +8,7 @@ void TableAny::calculateIndexesCellsAroundRadius(int indexesCellsAround[],
                                                  int countCells,
                                                  int currentIndex,
                                                  int radius) {
-   int baseFieldSize = (int)sqrt(countCells);
+   int baseFieldSize = static_cast<int>(sqrt(countCells));
    bool isNearLeftEdge = (currentIndex % baseFieldSize < radius) ? true : false;
    bool isNearTopEdge = (currentIndex < baseFieldSize * radius) ? true : false;
    bool isNearRightEdge = (currentIndex % baseFieldSize >= baseFieldSize - radius) ? true : false;
@@ -32,7 +32,7 @@ int TableAny::calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int siz
     cellsShapeSnowflake[currentIndex] = true;
     int countGroupTrue = 1;
     int indexesCellsAround[8];
-    int baseFieldSize = (int)sqrt(sizeArray);
+    int baseFieldSize = static_cast<int>(sqrt(sizeArray));
     for(int i = 1; i < baseFieldSize; i++) {
         calculateIndexesCellsAroundRadius(indexesCellsAround, sizeArray, currentIndex, i);
         for (int indexCell : indexesCellsAround) {

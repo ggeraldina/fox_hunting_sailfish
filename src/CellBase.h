@@ -12,7 +12,7 @@ class CellBase : public QObject {
     Q_PROPERTY(int value READ getValue WRITE setValue NOTIFY valueChanged)
 
 public:
-    explicit CellBase(QObject *parent = 0);
+    explicit CellBase(QObject *parent = nullptr);
 
     QString getText();
     QString getBackgroundURL();

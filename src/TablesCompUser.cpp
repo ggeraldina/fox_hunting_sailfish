@@ -23,7 +23,7 @@ TablesCompUser::~TablesCompUser() {
 
 void TablesCompUser::createData() {
     int countCells = baseFieldSize * baseFieldSize;
-    double chance = (double)1/countCells;
+    double chance = static_cast<double>(1)/countCells;
     for(int i = 0; i < countCells; i++) {
         CellComp *elementCellComp = new CellComp(this);
         elementCellComp->setChance(chance);

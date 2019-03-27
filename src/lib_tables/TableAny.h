@@ -26,7 +26,7 @@ public:
     static void editCellsShapeSnowflake(T *list, int currentIndex, void fun(T *, int)) {
         int countCells = list->count();
         int indexesCellsAround[8];
-        int baseFieldSize = (int)sqrt(countCells);
+        int baseFieldSize = static_cast<int>(sqrt(countCells));
         for(int i = 1; i < baseFieldSize; i++) {
             calculateIndexesCellsAroundRadius(indexesCellsAround, countCells, currentIndex, i);
             for (auto indexCell : indexesCellsAround) {
@@ -39,7 +39,7 @@ public:
 
     template <class T>
     static void editCellsShapeNoSnowflake(T *list, int currentIndex, void fun(T *, int)) {
-        int countCells = list->count();
+        const int countCells = list->count();
         bool cellsShapeSnowflake[countCells];
         calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, currentIndex);
         for (int i = 0; i < countCells; i++) {
