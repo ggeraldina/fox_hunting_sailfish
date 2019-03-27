@@ -6,66 +6,136 @@ Page {
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
 
-    SilicaListView {
-        id: listView
+    PageHeader {
+        id: headerPage
+        title: qsTr("Menu")
+    }
+
+    SilicaFlickable {
+        id: flickable
+        contentWidth: column.width
+        contentHeight: column.height
         anchors.fill: parent
-        header: PageHeader {
-            id: headerPage
-            title: qsTr("Menu")
+        anchors {
+            topMargin: headerPage.height
         }
 
-        model: ListModel {
-            ListElement {
-                page: "GamePage.qml"
-                title: qsTr("New game")
-                section: qsTr("Game")
-            }
-            ListElement {
-                page: "RulesPage.qml"
-                title: qsTr("Game's rules")
-                section: qsTr("Game")
-            }
-            ListElement {
-                page: "StatisticsPage.qml"
-                title: qsTr("Game's statistics")
-                section: qsTr("Game")
-            }
-            ListElement {
-                page: "SettingsPage.qml"
-                title: qsTr("Game's settings")
-                section: qsTr("Settings")
-            }
-            ListElement {
-                page: ""
-                title: qsTr("Select language")
-                section: qsTr("Settings")
-            }
-        }
+        Column {
+            id: column
+            width: flickable.width
+            spacing: Theme.paddingMedium
 
-        section {
-            property: 'section'
-            delegate: SectionHeader {
-                text: section
+            SectionHeader {
+                id: sectionGame
             }
-        }
 
-        delegate: BackgroundItem {
-            width: listView.width
-            Label {
-                text: model.title
-                color: highlighted ? Theme.highlightColor : Theme.primaryColor
-                anchors.verticalCenter: parent.verticalCenter
-                x: Theme.horizontalPageMargin
-            }
-            onClicked: {
-                if (page !== "") {
-                    pageStack.push(Qt.resolvedUrl(page))
+            BackgroundItem {
+                id: itemNewGame
+                width: column.width
+                Label {
+                    id: labelNewGame
+                    color: itemNewGame.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
                 }
-                else {
-                   pageStack.navigateBack()
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("GamePage.qml"))
                 }
             }
+
+
+            BackgroundItem {
+                id: itemRules
+                width: column.width
+                Label {
+                    id: labelRules
+                    color: itemRules.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("RulesPage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemStatistics
+                width: column.width
+                Label {
+                    id: labelStatistics
+                    color: itemStatistics.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("StatisticsPage.qml"))
+                }
+            }
+
+            SectionHeader {
+                id: sectionSettings
+            }
+
+            BackgroundItem {
+                id: itemSettings
+                width: column.width
+                Label {
+                    id: labelSettings
+                    color: itemSettings.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+                }
+            }
+
+            ComboBox {
+                id: comboBoxLanguage
+                width: page.width
+                currentIndex: settings.settingLanguage == "-en" ? 0 : 1
+                label: qsTr("Language | Язык")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("EN")
+                        onClicked: {
+                            translator.setTranslation("-en")
+                            settings.settingLanguage = "-en"
+                        }
+                    }
+                    MenuItem {
+                        text: qsTr("RU")
+                        onClicked: {
+                              translator.setTranslation("-ru")
+                              settings.settingLanguage = "-ru"
+                        }
+                    }
+                }
+            }
         }
+
         VerticalScrollDecorator {}
+    }
+
+    Connections {
+        target: translator
+        onLanguageChanged: {
+            retranslateUi()
+        }
+    }
+
+    function retranslateUi() {
+        headerPage.title = qsTr("Menu")
+        labelNewGame.text = qsTr("New game")
+        labelRules.text = qsTr("Game's rules")
+        labelStatistics.text = qsTr("Game's statistics")
+        labelSettings.text  = qsTr("Game's settings")
+        sectionGame.text = qsTr("Game")
+        sectionSettings.text = qsTr("Settings")
+    }
+
+    Component.onCompleted: {
+        retranslateUi();
     }
 }

@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QmlSettings 1.0
 
 Page {
     id: page
@@ -11,13 +10,12 @@ Page {
     property int currentIndexSpeedStepComp: settings.settingSpeedStepComp / 500 - 1
     property int currentIndexLevel: settings.settingLevel - 1
 
-    QmlSettings {
-        id: settings
-        onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
-        onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
-        onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
-        onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
-        onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
+    Connections {
+            target: translator
+    }
+
+    Connections {
+            target: settings
     }
 
     SilicaFlickable {
@@ -52,6 +50,7 @@ Page {
                     icon.source: "image://theme/icon-m-reset"
                     onClicked: {
                         settings.updateToDefaultSettings()
+                        sliderVolumeEffects.value = settings.settingVolumeEffects
                     }
                 }
             }

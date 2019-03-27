@@ -4,7 +4,6 @@ import QtMultimedia 5.6
 import QtQuick.LocalStorage 2.0
 import "qrc:/js/database/Database.js" as DB
 import TablesCompUser 1.0
-import QmlSettings 1.0
 import "components/cells_field"
 
 Page {
@@ -23,8 +22,8 @@ Page {
         DB.dbInit(tableName)
     }
 
-    QmlSettings {
-        id: settings
+    Connections {
+        target: settings
     }
 
     SoundEffect {
@@ -96,6 +95,7 @@ Page {
             id: fieldTop
             spacing: spacingGrid
             x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
+            height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
             columns: 2
 
             Rectangle {
@@ -158,6 +158,7 @@ Page {
             id: fieldBottom
             spacing: spacingGrid
             x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
+            height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
             columns: 2
 
             Rectangle {

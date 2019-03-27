@@ -61,19 +61,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>EN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language | Язык</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>New game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -86,6 +86,14 @@
     </message>
     <message>
         <source>Game&apos;s settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

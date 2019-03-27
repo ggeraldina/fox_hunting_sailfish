@@ -18,13 +18,21 @@ int main(int argc, char *argv[])
     qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");
     qmlRegisterType<QmlSettings>("QmlSettings", 1, 0, "QmlSettings");
-    qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");
+    qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");    
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
+
+    QQmlContext *context = view->rootContext();
+    QmlTranslator translator;
+    context->setContextProperty("translator", &translator);
+    QmlSettings settings;
+    context->setContextProperty("settings", &settings);
+
     view->setSource(SailfishApp::pathTo("qml/FoxHunting.qml"));
     if(daemonized)
         app->setQuitOnLastWindowClosed(false);
     else
         view->show();
-    return app->exec();
+
+   return app->exec();
 }

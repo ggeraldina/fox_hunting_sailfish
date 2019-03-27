@@ -1,28 +1,30 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QmlTranslator 1.0
-import QmlSettings 1.0
 import "pages"
 
 ApplicationWindow
 {
-    initialPage: Component { SelectLanguagePage { } }
+//    initialPage: Component { }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 
-    QmlTranslator {
-        id: qmlTranslator
+    Connections {
+        target: translator
     }
 
-    QmlSettings {
-        id: settings
+    Connections {
+        target: settings
     }
+
 
     Component.onCompleted: {
         var language = settings.settingLanguage
         if (language != "-??") {
-            qmlTranslator.setTranslation(language)
+            translator.setTranslation(language)
             pageStack.push(Qt.resolvedUrl("pages/MenuPage.qml"))
+        }        
+        else {
+            pageStack.push(Qt.resolvedUrl("pages/SelectLanguagePage.qml"))
         }
     }
 
