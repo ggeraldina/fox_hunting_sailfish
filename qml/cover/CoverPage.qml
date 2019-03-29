@@ -17,7 +17,20 @@ CoverBackground {
                 top: parent.top
                 topMargin: 10
             }
+        }
 
-            text: qsTr("Fox hunting")
+        Connections {
+            target: translator
+            onLanguageChanged: {
+                retranslateUi()
+            }
+        }
+
+        function retranslateUi() {
+            label.text = qsTr("Fox hunting")
+        }
+
+        Component.onCompleted: {
+            retranslateUi();
         }
 }

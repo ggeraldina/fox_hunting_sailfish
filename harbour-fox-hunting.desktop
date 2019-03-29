@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=FoxHunting
-Exec=FoxHunting
-Name=FoxHunting
+Icon=harbour-fox-hunting
+Exec=harbour-fox-hunting
+Name=Fox hunting
 # translation
 # your app name in locale (ru)
-Name[ru]=FoxHunting
+Name[ru]=Охота на лис

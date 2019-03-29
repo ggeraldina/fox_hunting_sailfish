@@ -1,6 +1,7 @@
 #ifndef QMLTRANSLATOR_H
 #define QMLTRANSLATOR_H
 
+#include <QDebug>
 #include <QObject>
 #include <sailfishapp.h>
 #include <QTranslator>

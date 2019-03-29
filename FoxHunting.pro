@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = FoxHunting
+TARGET = harbour-fox-hunting
 
 CONFIG += sailfishapp
 
@@ -30,22 +30,22 @@ DISTFILES += \
     qml/FoxHunting.qml \
     qml/cover/CoverPage.qml \
     qml/pages/*.qml \
-    rpm/FoxHunting.changes.in \
-    rpm/FoxHunting.changes.run.in \
-    rpm/FoxHunting.spec \
-    rpm/FoxHunting.yaml \
     image/*.ico \
     image/*.jpg \
-    FoxHunting.desktop \
-    icons/108x108/FoxHunting.png \
-    icons/128x128/FoxHunting.png \
-    icons/172x172/FoxHunting.png \
-    icons/86x86/FoxHunting.png \
-    translations/FoxHunting.ts \
-    translations/FoxHunting-en.ts \
-    translations/FoxHunting-ru.ts \
     soundeffects/shot.wav \
     js/database/Database.js \
+    rpm/harbour-fox-hunting.yaml \
+    rpm/harbour-fox-hunting.spec \
+    rpm/harbour-fox-hunting.changes.run.in \
+    rpm/harbour-fox-hunting.changes.in \
+    harbour-fox-hunting.desktop \
+    icons/108x108/harbour-fox-hunting.png \
+    icons/128x128/harbour-fox-hunting.png \
+    icons/172x172/harbour-fox-hunting.png \
+    icons/86x86/harbour-fox-hunting.png \
+    translations/harbour-fox-hunting-en.ts \
+    translations/harbour-fox-hunting.ts \
+    translations/harbour-fox-hunting-ru.ts
 
 RESOURCES += \
     foxhunting.qrc
@@ -58,9 +58,9 @@ CONFIG += \
     sailfishapp_i18n \
 
 TRANSLATIONS += \
-    translations/FoxHunting-ru.ts \
-    translations/FoxHunting-en.ts \
-    translations/FoxHunting.ts \
+    translations/harbour-fox-hunting-ru.ts \
+    translations/harbour-fox-hunting-en.ts \
+    translations/harbour-fox-hunting.ts \
 
 lupdate_only {
     SOURCES += \

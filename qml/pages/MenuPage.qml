@@ -130,7 +130,7 @@ Page {
         labelNewGame.text = qsTr("New game")
         labelRules.text = qsTr("Game's rules")
         labelStatistics.text = qsTr("Game's statistics")
-        labelSettings.text  = qsTr("Game's settings")
+        labelSettings.text = qsTr("Game's settings")
         sectionGame.text = qsTr("Game")
         sectionSettings.text = qsTr("Settings")
     }

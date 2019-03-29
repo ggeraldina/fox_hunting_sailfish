@@ -4,9 +4,9 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="21"/>
+        <location filename="../qml/cover/CoverPage.qml" line="30"/>
         <source>Fox hunting</source>
-        <translation type="unfinished">Охота на лис</translation>
+        <translation>Fox hunting</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../qml/pages/GamePage.qml" line="87"/>
         <source>Computer</source>
-        <translation>Компьютер</translation>
+        <translation>Computer</translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="88"/>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../qml/pages/GamePage.qml" line="150"/>
         <source>You</source>
-        <translation>Вы</translation>
+        <translation>You</translation>
     </message>
 </context>
 <context>
@@ -45,27 +45,27 @@
     <message>
         <location filename="../qml/pages/LoseGamePage.qml" line="11"/>
         <source>Fox hunting</source>
-        <translation>Охота на лис</translation>
+        <translation>Fox hunting</translation>
     </message>
     <message>
         <location filename="../qml/pages/LoseGamePage.qml" line="26"/>
         <source>You lost.</source>
-        <translation>Вы проиграли</translation>
+        <translation>You lost.</translation>
     </message>
     <message>
         <location filename="../qml/pages/LoseGamePage.qml" line="33"/>
         <source>Better luck next time!</source>
-        <translation>В следующий раз повезет!</translation>
+        <translation>Better luck next time!</translation>
     </message>
     <message>
         <location filename="../qml/pages/LoseGamePage.qml" line="46"/>
         <source>New game</source>
-        <translation>Новая игра</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/LoseGamePage.qml" line="52"/>
         <source>Menu</source>
-        <translation>Меню</translation>
+        <translation>Menu</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@
         <location filename="../qml/pages/MenuPage.qml" line="11"/>
         <location filename="../qml/pages/MenuPage.qml" line="129"/>
         <source>Menu</source>
-        <translation>Меню</translation>
+        <translation>Menu</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="97"/>
@@ -94,32 +94,32 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="130"/>
         <source>New game</source>
-        <translation>Новая игра</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="131"/>
         <source>Game&apos;s rules</source>
-        <translation>Правила игры</translation>
+        <translation>Game&apos;s rules</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="132"/>
         <source>Game&apos;s statistics</source>
-        <translation>Статистика игры</translation>
+        <translation>Game&apos;s statistics</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="133"/>
         <source>Game&apos;s settings</source>
-        <translation>Настройки</translation>
+        <translation>Game&apos;s settings</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="134"/>
         <source>Game</source>
-        <translation>Игра</translation>
+        <translation>Game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="135"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation>Settings</translation>
     </message>
 </context>
 <context>
@@ -127,52 +127,47 @@
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="28"/>
         <source>The rules</source>
-        <translation>Правила</translation>
+        <translation>The rules</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="35"/>
         <source>Rules of the game &apos;Fox Hunting&apos;</source>
-        <translation>Правила игры &apos;Охота на лис&apos;:
+        <translation>Rules of the game &apos;Fox Hunting&apos;:
 
-Порядок игры:
-На полях игрока и компьютера
-(размеры полей: 9х9) случайным
-образом спрятано по четыре лисы.
-Игрок и компьютер по очереди
-делают свои выстрелы каждый на
-своем поле, пытаясь отыскать
-всех лис раньше противника.
-Игрок стреляет первым.
-Победителем становится тот,
-кто первым найдет всех лис,
-загаданных противником.
+Order of play:
+On the fields of the player and
+computer (field sizes: 9x9) randomly
+at four foxes hidden on each field.
+The player and the computer take
+turns making their shots each on
+his field, trying to find all the
+foxes before the opponent.
+The player shoots first.
+The winner is the one who
+first finds all the foxes.
 
-Особенности игры:
-1) После каждого меткого
-выстрела по клетке открывается
-лиса и предоставляется
-повторный выстрел.
-2) В случае промаха открывается
-число, которое показывает
-количество лис, спрятанных
-во всех клетках,
-находящихся на одной вертикали,
-горизонтали и по обеим
-диагоналям (Учитываются как
-ненайденные, так и найденные
-лисы).
-Следующий ход предоставляется
-противнику.
-3) Несколько лис не могут
-находится в одной клетке.
-4) Лисы не могут располагаться
-в соседних клетках.
+Feature of the game:
+1) After each well-aimed
+shot on a cell the fox displayed,
+and shot can be repeated.
+2) In case of a miss, a number is
+displayed, which shows the number
+of foxes hidden in all cells,
+located on the same vertical,
+horizontal and on both diagonals
+(both undiscovered and found foxes
+are taken into account). The next
+move is given to the opponent.
+3) Foxes can not be located
+in the same cell.
+4) Foxes can&apos;t be located in
+neighboring cells.
 </translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="40"/>
         <source>New game</source>
-        <translation>Новая игра</translation>
+        <translation>New game</translation>
     </message>
 </context>
 <context>
@@ -199,67 +194,67 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="43"/>
         <source>Game&apos;s settings</source>
-        <translation>Настройки</translation>
+        <translation>Game&apos;s settings</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="62"/>
         <source>Games&apos;s level</source>
-        <translation>Уровень игры</translation>
+        <translation>Games&apos;s level</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>1</source>
-        <translation>1 - очень легкий</translation>
+        <translation>1 - very easy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="70"/>
         <source>2</source>
-        <translation type="unfinished">2 - очень сложный</translation>
+        <translation type="unfinished">2 - very difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="74"/>
         <source>3</source>
-        <translation type="unfinished">3 - очень сложный</translation>
+        <translation type="unfinished">3 - very difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>4</source>
-        <translation type="unfinished">4 - очень сложный</translation>
+        <translation type="unfinished">4 - very difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>5</source>
-        <translation>5 - очень сложный</translation>
+        <translation>5 - very difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Size of games field</source>
-        <translation>Размер игрового поля</translation>
+        <translation>Size of games field</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="114"/>
         <source>Amount foxes</source>
-        <translation>Количество лисов</translation>
+        <translation>Amount foxes</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="132"/>
         <source>Speed of computer&apos;s steps</source>
-        <translation>Задержка ходов компьютера</translation>
+        <translation>Speed of computer&apos;s steps</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>0,5 sec</source>
-        <translation>0,5 сек</translation>
+        <translation>0,5 sec</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="140"/>
         <source>1 sec</source>
-        <translation>1 сек</translation>
+        <translation>1 sec</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="149"/>
         <source>Volume of effects</source>
-        <translation>Громкость звуковых эффектов</translation>
+        <translation>Volume of effects</translation>
     </message>
 </context>
 <context>
@@ -267,57 +262,57 @@
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="38"/>
         <source>Game&apos;s statistics</source>
-        <translation>Статистика игры</translation>
+        <translation>Game&apos;s statistics</translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="83"/>
         <source>Date </source>
-        <translation>Дата </translation>
+        <translation>Date </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="89"/>
         <source>Time </source>
-        <translation>Время </translation>
+        <translation>Time </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="95"/>
         <source>Size field </source>
-        <translation>Размер поля </translation>
+        <translation>Size field </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="101"/>
         <source>Foxes </source>
-        <translation>Лисы </translation>
+        <translation>Foxes </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="107"/>
         <source>Winner </source>
-        <translation>Победитель </translation>
+        <translation>Winner </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="113"/>
         <source>Level </source>
-        <translation>Уровень </translation>
+        <translation>Level </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="119"/>
         <source>Steps comp </source>
-        <translation>Ходы компа </translation>
+        <translation>Steps comp </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
         <source>Time comp </source>
-        <translation>Время компа </translation>
+        <translation>Time comp </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="131"/>
         <source>Steps user </source>
-        <translation>Ходы Ваши </translation>
+        <translation>Steps user </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="137"/>
         <source>Time user </source>
-        <translation>Время Ваше </translation>
+        <translation>Time user </translation>
     </message>
 </context>
 <context>
@@ -325,27 +320,27 @@
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="11"/>
         <source>Fox hunting</source>
-        <translation>Охота на лис</translation>
+        <translation>Fox hunting</translation>
     </message>
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="26"/>
         <source>You win!</source>
-        <translation>Вы победили!</translation>
+        <translation>You win!</translation>
     </message>
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="33"/>
         <source>Congratulate!</source>
-        <translation>Поздравляем!</translation>
+        <translation>Congratulate!</translation>
     </message>
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="46"/>
         <source>New game</source>
-        <translation>Новая игра</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/WinGamePage.qml" line="52"/>
         <source>Menu</source>
-        <translation>Меню</translation>
+        <translation>Menu</translation>
     </message>
 </context>
 </TS>

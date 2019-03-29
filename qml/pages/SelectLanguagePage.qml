@@ -64,7 +64,7 @@ Page {
               onClicked: {
                   translator.setTranslation("-ru")
                   settings.settingLanguage = "-ru"
-                  pageStack.push(Qt.resolvedUrl("MenuPage.qml"))
+                  pageStack.replace(Qt.resolvedUrl("MenuPage.qml"))
               }
             }
         }
