@@ -59,9 +59,7 @@ Page {
                     winner: "user",
                     level: level,
                     stepsComp: countStepsComp,
-                    timeComp: timeGameComp,
                     stepsUser: countStepsUser,
-                    timeUser: timeGameUser
                 }
                 DB.dbInsertRow(tableName, JSON.stringify(obj))
                 pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
@@ -73,9 +71,7 @@ Page {
                     winner: "comp",
                     level: level,
                     stepsComp: countStepsComp,
-                    timeComp: timeGameComp,
                     stepsUser: countStepsUser,
-                    timeUser: timeGameUser
                 }
                 DB.dbInsertRow(tableName, JSON.stringify(obj))
                 pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
@@ -85,8 +81,7 @@ Page {
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Computer") +
-                  qsTr(" (steps ") + dataModel.countStepsComp +
-                  qsTr(", time ") + dataModel.timeGameComp + qsTr(")")
+                  qsTr(" (steps ") + dataModel.countStepsComp + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
@@ -148,8 +143,7 @@ Page {
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("You") +
-                  qsTr(" (steps ") + dataModel.countStepsUser +
-                  qsTr(", time ") + dataModel.timeGameUser + qsTr(")")
+                  qsTr(" (steps ") + dataModel.countStepsUser + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }

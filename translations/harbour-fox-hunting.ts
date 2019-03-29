@@ -23,10 +23,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>, time </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -206,15 +202,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Time comp </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Steps user </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Time user </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

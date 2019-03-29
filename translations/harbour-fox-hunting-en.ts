@@ -12,30 +12,24 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="87"/>
+        <location filename="../qml/pages/GamePage.qml" line="83"/>
         <source>Computer</source>
         <translation>Computer</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="88"/>
-        <location filename="../qml/pages/GamePage.qml" line="151"/>
+        <location filename="../qml/pages/GamePage.qml" line="84"/>
+        <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source> (steps </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="89"/>
-        <location filename="../qml/pages/GamePage.qml" line="152"/>
-        <source>, time </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GamePage.qml" line="89"/>
-        <location filename="../qml/pages/GamePage.qml" line="152"/>
+        <location filename="../qml/pages/GamePage.qml" line="84"/>
+        <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source>)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="150"/>
+        <location filename="../qml/pages/GamePage.qml" line="145"/>
         <source>You</source>
         <translation>You</translation>
     </message>
@@ -301,18 +295,8 @@ neighboring cells.
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
-        <source>Time comp </source>
-        <translation>Time comp </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="131"/>
         <source>Steps user </source>
         <translation>Steps user </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="137"/>
-        <source>Time user </source>
-        <translation>Time user </translation>
     </message>
 </context>
 <context>

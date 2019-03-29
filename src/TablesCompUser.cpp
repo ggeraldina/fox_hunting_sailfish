@@ -2,13 +2,8 @@
 
 TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
     srand( time(0) ); // автоматическая рандомизация
-    timeGameComp.setHMS(0, 0, 0, 0);
-    timeGameUser.setHMS(0, 0, 0, 0);
-    connect(&timerGameComp, &QTimer::timeout, this, &TablesCompUser::updateTimeGameComp);
-    connect(&timerGameUser, &QTimer::timeout, this, &TablesCompUser::updateTimeGameUser);
     connect(this, &TablesCompUser::baseTableSizeChanged, this, &TablesCompUser::createData);
     connect(this, &TablesCompUser::numberFoxesChanged, this, &TablesCompUser::initData);
-    connect(this, &TablesCompUser::speedStepCompChanged, this, &TablesCompUser::startTimerGameUser);
 }
 
 TablesCompUser::~TablesCompUser() {
@@ -38,21 +33,6 @@ void TablesCompUser::initData() {
     TableAny::addRandomFoxes(&dataComp, numberFoxes);
     TableComp::showFoxesOnField(&dataComp);
     TableAny::addRandomFoxes(&dataUser, numberFoxes);
-}
-
-void TablesCompUser::startTimerGameUser(){
-    timerGameUser.start(speedStepComp);
-}
-
-void TablesCompUser::updateTimeGameComp() {
-    timeGameComp = timeGameComp.addMSecs(speedStepComp);
-    emit timeGameCompChanged();
-    shotCellComp();
-}
-
-void TablesCompUser::updateTimeGameUser() {
-    timeGameUser = timeGameUser.addMSecs(speedStepComp);
-    emit timeGameUserChanged();
 }
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {
@@ -89,14 +69,6 @@ int TablesCompUser::getCountStepsComp() {
 
 int TablesCompUser::getCountStepsUser() {
     return countStepsUser;
-}
-
-QString TablesCompUser::getTimeGameComp() {
-    return timeGameComp.toString("mm:ss");
-}
-
-QString TablesCompUser::getTimeGameUser() {
-    return timeGameUser.toString("mm:ss");
 }
 
 int TablesCompUser::getLevelGame() {
@@ -190,19 +162,19 @@ void TablesCompUser::shotCellUserWhenFox(int index) {
     TableUser::editCellsWhenFox(&dataUser, index);
     countFoundFoxesUser++;
     if (countFoundFoxesUser == numberFoxes) {
-        timerGameComp.stop();
-        timerGameUser.stop();
         emit winUser();
     }
     flagLockedTables = false;
 }
 
 void TablesCompUser::shotCellUserWhenNoFox(int index) {
-    timerGameUser.stop();
     TableUser::editCellsWhenNoFox(&dataUser, index);
-    timerGameComp.start(speedStepComp);
+    QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
 }
 
+void TablesCompUser::nextStepComp(){
+    shotCellComp();
+}
 
 void TablesCompUser::shotCellComp() {
     emit shotComp();
@@ -221,17 +193,14 @@ void TablesCompUser::shotCellCompWhenFox(int index) {
     TableComp::editCellsWhenFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     countFoundFoxesComp++;
     if (countFoundFoxesComp == numberFoxes) {
-        timerGameComp.stop();
-        timerGameUser.stop();
         emit winComp();
         return;
     }
+    QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
 }
 
 void TablesCompUser::shotCellCompWhenNoFox(int index) {
-    timerGameComp.stop();
     TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
-    timerGameUser.start(speedStepComp);
     flagLockedTables = false;
 }
 

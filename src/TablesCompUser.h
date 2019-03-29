@@ -21,8 +21,6 @@ class TablesCompUser : public QObject {
     Q_PROPERTY(int speedStepComp READ getSpeedStepComp WRITE setSpeedStepComp NOTIFY speedStepCompChanged)
     Q_PROPERTY(int countStepsComp READ getCountStepsComp NOTIFY countStepsCompChanged)
     Q_PROPERTY(int countStepsUser READ getCountStepsUser NOTIFY countStepsUserChanged)
-    Q_PROPERTY(QString timeGameComp READ getTimeGameComp NOTIFY timeGameCompChanged)
-    Q_PROPERTY(QString timeGameUser READ getTimeGameUser NOTIFY timeGameUserChanged)
     Q_PROPERTY(int levelGame READ getLevelGame WRITE setLevelGame NOTIFY levelGameChanged)
 
 public:
@@ -36,8 +34,6 @@ public:
     int getSpeedStepComp();
     int getCountStepsComp();
     int getCountStepsUser();
-    QString getTimeGameComp();
-    QString getTimeGameUser();
     int getLevelGame();
 
 
@@ -80,10 +76,6 @@ private:
     int countFoundFoxesUser = 0;
     int countStepsComp = 0;
     int countStepsUser = 0;
-    QTime timeGameComp;
-    QTime timeGameUser;
-    QTimer timerGameComp;
-    QTimer timerGameUser;
     bool flagLockedTables = false;
 
     QList<CellComp *> dataComp;
@@ -97,8 +89,6 @@ signals:
     void speedStepCompChanged();
     void countStepsCompChanged();
     void countStepsUserChanged();
-    void timeGameCompChanged();
-    void timeGameUserChanged();
     void levelGameChanged();
     void shotUser();
     void shotComp();
@@ -110,9 +100,7 @@ public slots:
 private slots:
     void initData();
     void createData();
-    void startTimerGameUser();
-    void updateTimeGameComp();
-    void updateTimeGameUser();
+    void nextStepComp();
 };
 
 #endif // TABLESCOMPUSER_H

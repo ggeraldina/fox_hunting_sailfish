@@ -76,7 +76,7 @@ Page {
                             id: grid
                             spacing: Theme.paddingMedium
                             columns: 2
-                            rows: 5
+                            rows: 4
 
                             Text {
                                 id: textDate
@@ -121,20 +121,8 @@ Page {
                             }
 
                             Text {
-                                id: textTimeComp
-                                text: qsTr("Time comp ")
-                                color: Theme.highlightColor
-                            }
-
-                            Text {
                                 id: textStepsUser
                                 text: qsTr("Steps user ")
-                                color: Theme.highlightColor
-                            }
-
-                            Text {
-                                id: textTimeUser
-                                text: qsTr("Time user ")
                                 color: Theme.highlightColor
                             }
                         }
@@ -149,9 +137,7 @@ Page {
                             textWinner.text += obj.winner
                             textLevelGame.text += obj.level
                             textStepsComp.text += obj.stepsComp
-                            textTimeComp.text += obj.timeComp
                             textStepsUser.text += obj.stepsUser
-                            textTimeUser.text += obj.timeUser
                         }
                     }
                 }

@@ -12,30 +12,24 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="87"/>
+        <location filename="../qml/pages/GamePage.qml" line="83"/>
         <source>Computer</source>
         <translation>Компьютер</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="88"/>
-        <location filename="../qml/pages/GamePage.qml" line="151"/>
+        <location filename="../qml/pages/GamePage.qml" line="84"/>
+        <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source> (steps </source>
-        <translation>(шаги </translation>
+        <translation> (шаги </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="89"/>
-        <location filename="../qml/pages/GamePage.qml" line="152"/>
-        <source>, time </source>
-        <translation>, время </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GamePage.qml" line="89"/>
-        <location filename="../qml/pages/GamePage.qml" line="152"/>
+        <location filename="../qml/pages/GamePage.qml" line="84"/>
+        <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source>)</source>
         <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="150"/>
+        <location filename="../qml/pages/GamePage.qml" line="145"/>
         <source>You</source>
         <translation>Вы</translation>
     </message>
@@ -306,18 +300,8 @@
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
-        <source>Time comp </source>
-        <translation>Время компа </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="131"/>
         <source>Steps user </source>
         <translation>Ходы Ваши </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="137"/>
-        <source>Time user </source>
-        <translation>Время Ваше </translation>
     </message>
 </context>
 <context>
