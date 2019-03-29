@@ -11,10 +11,6 @@
 <context>
     <name>GamePage</name>
     <message>
-        <source>Computer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>You</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24,6 +20,10 @@
     </message>
     <message>
         <source>)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -186,14 +186,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Date </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Time </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Winner </source>
         <translation type="unfinished"></translation>
     </message>
@@ -216,6 +208,10 @@
     <message>
         <source>Level </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
     </message>
 </context>
 <context>

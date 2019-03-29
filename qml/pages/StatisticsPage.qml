@@ -64,77 +64,85 @@ Page {
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Label {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            text: model.id
+                            id: labelName
+                            anchors.right: parent.right
+                            text: qsTr("")
                             color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
+                            font.pixelSize: Theme.fontSizeTiny
                         }
 
-                        Grid {
+                        Column {
                             width: page.width - 40
-                            height: 300
-                            id: grid
+                            height: (Theme.paddingMedium + Theme.fontSizeSmall) * (6 + 1)
+                            anchors.horizontalCenter: parent.horizontalCenter
                             spacing: Theme.paddingMedium
-                            columns: 2
-                            rows: 4
-
-                            Text {
-                                id: textDate
-                                text: qsTr("Date ")
-                                color: Theme.highlightColor
-                            }
-
-                            Text {
-                                id: textTime
-                                text: qsTr("Time ")
-                                color: Theme.highlightColor
-                            }
-
-                            Text {
-                                id: textSizeField
-                                text: qsTr("Size field ")
-                                color: Theme.highlightColor
-                            }
-
-                            Text {
-                                id: textNumberFoxes
-                                text: qsTr("Foxes ")
-                                color: Theme.highlightColor
-                            }
 
                             Text {
                                 id: textWinner
                                 text: qsTr("Winner ")
                                 color: Theme.highlightColor
-                            }
+                                font.pixelSize: Theme.fontSizeSmall
+                                anchors.horizontalCenter: parent.horizontalCenter
+                            }                            
 
                             Text {
                                 id: textLevelGame
                                 text: qsTr("Level ")
                                 color: Theme.highlightColor
-                            }
-
-                            Text {
-                                id: textStepsComp
-                                text: qsTr("Steps comp ")
-                                color: Theme.highlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                anchors.horizontalCenter: parent.horizontalCenter
                             }
 
                             Text {
                                 id: textStepsUser
                                 text: qsTr("Steps user ")
                                 color: Theme.highlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                anchors.horizontalCenter: parent.horizontalCenter
                             }
+
+                            Text {
+                                id: textStepsComp
+                                text: qsTr("Steps comp ")
+                                color: Theme.highlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                anchors.horizontalCenter: parent.horizontalCenter
+                            }
+
+                            Text {
+                                id: textSizeField
+                                text: qsTr("Size field ")
+                                color: Theme.highlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                anchors.horizontalCenter: parent.horizontalCenter
+                            }
+
+                            Text {
+                               id: textNumberFoxes
+                               text: qsTr("Foxes ")
+                               color: Theme.highlightColor
+                               font.pixelSize: Theme.fontSizeSmall
+                               anchors.horizontalCenter: parent.horizontalCenter
+                           }
                         }
 
                         Component.onCompleted: {
                             var obj = JSON.parse(model.dataJSON)
                             var date = new Date(obj.date)
-                            textDate.text += date.toDateString()
-                            textTime.text += date.toTimeString()
+                            labelName.text += date.toDateString() + " " + date.toTimeString()
                             textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                             textNumberFoxes.text += obj.countFoxes
-                            textWinner.text += obj.winner
+                            if (settings.settingLanguage == "-ru") {
+                                if (obj.winner == "I") {
+                                    textWinner.text += "Я"
+                                }
+                                else {
+                                    textWinner.text += "Вы"
+                                }
+                            }
+                            else {
+                                textWinner.text += obj.winner
+                            }
                             textLevelGame.text += obj.level
                             textStepsComp.text += obj.stepsComp
                             textStepsUser.text += obj.stepsUser

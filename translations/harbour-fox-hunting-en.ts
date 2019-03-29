@@ -13,8 +13,8 @@
     <name>GamePage</name>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="83"/>
-        <source>Computer</source>
-        <translation>Computer</translation>
+        <source>I</source>
+        <translation>I</translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="84"/>
@@ -198,27 +198,27 @@ neighboring cells.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>1</source>
-        <translation>1 - very easy</translation>
+        <translation>very easy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="70"/>
         <source>2</source>
-        <translation type="unfinished">2 - very difficult</translation>
+        <translation>easy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="74"/>
         <source>3</source>
-        <translation type="unfinished">3 - very difficult</translation>
+        <translation>average</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>4</source>
-        <translation type="unfinished">4 - very difficult</translation>
+        <translation>difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>5</source>
-        <translation>5 - very difficult</translation>
+        <translation>very difficult</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
@@ -259,44 +259,39 @@ neighboring cells.
         <translation>Game&apos;s statistics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="83"/>
-        <source>Date </source>
-        <translation>Date </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="89"/>
-        <source>Time </source>
-        <translation>Time </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="95"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="114"/>
         <source>Size field </source>
-        <translation>Size field </translation>
+        <translation>Size field: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="101"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="122"/>
         <source>Foxes </source>
-        <translation>Foxes </translation>
+        <translation>Amount foxes: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="107"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="82"/>
         <source>Winner </source>
-        <translation>Winner </translation>
+        <translation>Winner - </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="113"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="69"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="90"/>
         <source>Level </source>
         <translation>Level </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="119"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="106"/>
         <source>Steps comp </source>
-        <translation>Steps comp </translation>
+        <translation>Count my steps: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
         <source>Steps user </source>
-        <translation>Steps user </translation>
+        <translation>Count your steps: </translation>
     </message>
 </context>
 <context>

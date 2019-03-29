@@ -56,7 +56,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "user",
+                    winner: "You",
                     level: level,
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
@@ -68,7 +68,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "comp",
+                    winner: "I",
                     level: level,
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
@@ -80,7 +80,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Computer") +
+            text: qsTr("I") +
                   qsTr(" (steps ") + dataModel.countStepsComp + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall

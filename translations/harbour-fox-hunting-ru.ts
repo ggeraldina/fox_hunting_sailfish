@@ -13,14 +13,14 @@
     <name>GamePage</name>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="83"/>
-        <source>Computer</source>
-        <translation>Компьютер</translation>
+        <source>I</source>
+        <translation>Я</translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="84"/>
         <location filename="../qml/pages/GamePage.qml" line="146"/>
         <source> (steps </source>
-        <translation> (шаги </translation>
+        <translation> (ходы: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="84"/>
@@ -203,27 +203,27 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>1</source>
-        <translation>1 - очень легкий</translation>
+        <translation>очень легкий</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="70"/>
         <source>2</source>
-        <translation type="unfinished">2 - очень сложный</translation>
+        <translation>легкий</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="74"/>
         <source>3</source>
-        <translation type="unfinished">3 - очень сложный</translation>
+        <translation>средний</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>4</source>
-        <translation type="unfinished">4 - очень сложный</translation>
+        <translation>сложный</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>5</source>
-        <translation>5 - очень сложный</translation>
+        <translation>очень сложный</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
@@ -264,44 +264,39 @@
         <translation>Статистика игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="83"/>
-        <source>Date </source>
-        <translation>Дата </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="89"/>
-        <source>Time </source>
-        <translation>Время </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="95"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="114"/>
         <source>Size field </source>
-        <translation>Размер поля </translation>
+        <translation>Размер поля: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="101"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="122"/>
         <source>Foxes </source>
-        <translation>Лисы </translation>
+        <translation>Количество лис: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="107"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="82"/>
         <source>Winner </source>
-        <translation>Победитель </translation>
+        <translation>Победитель - </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="113"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="69"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="90"/>
         <source>Level </source>
         <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="119"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="106"/>
         <source>Steps comp </source>
-        <translation>Ходы компа </translation>
+        <translation>Количество моих ходов: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="125"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
         <source>Steps user </source>
-        <translation>Ходы Ваши </translation>
+        <translation>Количество Ваших ходов: </translation>
     </message>
 </context>
 <context>
