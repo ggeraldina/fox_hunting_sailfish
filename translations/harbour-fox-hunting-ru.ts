@@ -2,6 +2,36 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="11"/>
+        <source>About program</source>
+        <translation>О программе</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="26"/>
+        <source>Fox hunting</source>
+        <translation>Fox hunting</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="36"/>
+        <source>Version: 1.0</source>
+        <translation>Версия: 1.0</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
+        <source>© 2019</source>
+        <translation>© 2019</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="56"/>
+        <source>Author: Geraldina
+(ggeraldina@yandex.ru)</source>
+        <translation>Автор: Geraldina
+(ggeraldina@yandex.ru)</translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="30"/>
@@ -66,7 +96,7 @@
     <name>MenuPage</name>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="11"/>
-        <location filename="../qml/pages/MenuPage.qml" line="129"/>
+        <location filename="../qml/pages/MenuPage.qml" line="147"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -86,34 +116,44 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="130"/>
+        <location filename="../qml/pages/MenuPage.qml" line="148"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="131"/>
+        <location filename="../qml/pages/MenuPage.qml" line="149"/>
         <source>Game&apos;s rules</source>
         <translation>Правила игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="132"/>
+        <location filename="../qml/pages/MenuPage.qml" line="150"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="133"/>
+        <location filename="../qml/pages/MenuPage.qml" line="151"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="134"/>
+        <location filename="../qml/pages/MenuPage.qml" line="152"/>
+        <source>About program</source>
+        <translation>О программе</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="153"/>
         <source>Game</source>
         <translation>Игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="135"/>
+        <location filename="../qml/pages/MenuPage.qml" line="154"/>
         <source>Settings</source>
         <translation>Настройки</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="155"/>
+        <source>Help</source>
+        <translation>Справка</translation>
     </message>
 </context>
 <context>

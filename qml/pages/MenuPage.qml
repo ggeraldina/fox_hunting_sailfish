@@ -113,7 +113,25 @@ Page {
                     }
                 }
             }
-        }
+
+            SectionHeader {
+                id: sectionHelp
+            }
+
+            BackgroundItem {
+                id: itemAbout
+                width: column.width
+                Label {
+                    id: labelAbout
+                    color: itemAbout.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+                }
+            }
+        }        
 
         VerticalScrollDecorator {}
     }
@@ -131,8 +149,10 @@ Page {
         labelRules.text = qsTr("Game's rules")
         labelStatistics.text = qsTr("Game's statistics")
         labelSettings.text = qsTr("Game's settings")
+        labelAbout.text = qsTr("About program")
         sectionGame.text = qsTr("Game")
         sectionSettings.text = qsTr("Settings")
+        sectionHelp.text = qsTr("Help")
     }
 
     Component.onCompleted: {

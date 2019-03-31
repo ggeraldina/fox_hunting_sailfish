@@ -45,7 +45,8 @@ DISTFILES += \
     icons/86x86/harbour-fox-hunting.png \
     translations/harbour-fox-hunting-en.ts \
     translations/harbour-fox-hunting.ts \
-    translations/harbour-fox-hunting-ru.ts
+    translations/harbour-fox-hunting-ru.ts \
+    qml/pages/AboutPage.qml
 
 RESOURCES += \
     foxhunting.qrc

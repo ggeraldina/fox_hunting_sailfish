@@ -2,6 +2,30 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <source>About program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>© 2019</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version: 1.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author: Geraldina
+(ggeraldina@yandex.ru)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <source>Fox hunting</source>
@@ -90,6 +114,14 @@
     </message>
     <message>
         <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
