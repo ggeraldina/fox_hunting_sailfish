@@ -2,6 +2,9 @@
 #define QMLSETTINGS_H
 
 #include <QObject>
+#include <QCoreApplication>
+#include <QStandardPaths>
+#include <QDir>
 #include <QSettings>
 
 class QmlSettings : public QObject {
@@ -32,7 +35,7 @@ public:
     Q_INVOKABLE void updateToDefaultSettings();
 
 private:
-    const QString NAME_FILE_SETTINGS = "settingsFoxHunting.conf";
+    const QString NAME_FILE_SETTINGS = QDir(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)).filePath(QCoreApplication::applicationName());
     const QString SETTING_BASE_TABLE_SIZE = "settings_game/base_table_size";
     const QString SETTING_NUMBER_FOXES = "settings_game/number_foxes";
     const QString SETTING_SPEED_STEP_COMP = "settings_game/speed_step_comp";
