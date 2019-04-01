@@ -8,18 +8,5 @@
         <file>js/database/Database.js</file>
         <file>image/fox.gif</file>
         <file>image/salute.gif</file>
-        <file>qml/cover/CoverPage.qml</file>
-        <file>qml/pages/components/cells_field/FieldTableDigits.qml</file>
-        <file>qml/pages/components/cells_field/FieldTableLitters.qml</file>
-        <file>qml/pages/components/cells_field/LittersCell.qml</file>
-        <file>qml/pages/GamePage.qml</file>
-        <file>qml/pages/LoseGamePage.qml</file>
-        <file>qml/pages/MenuPage.qml</file>
-        <file>qml/pages/RulesPage.qml</file>
-        <file>qml/pages/SelectLanguagePage.qml</file>
-        <file>qml/pages/SettingsPage.qml</file>
-        <file>qml/pages/StatisticsPage.qml</file>
-        <file>qml/pages/WinGamePage.qml</file>
-        <file>qml/FoxHunting.qml</file>
     </qresource>
 </RCC>

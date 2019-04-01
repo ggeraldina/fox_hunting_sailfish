@@ -12,12 +12,11 @@ Name:       harbour-fox-hunting
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Game
-Version:    0.1
+Summary:    Logic game
+Version:    1.0
 Release:    1
-Group:      Qt/Qt
+Group:      Amusements/Games
 License:    LICENSE
-URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-fox-hunting.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9

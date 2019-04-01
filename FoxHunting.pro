@@ -65,6 +65,7 @@ TRANSLATIONS += \
 
 lupdate_only {
     SOURCES += \
+    qml/cover/CoverPage.qml \
     qml/*.qml \
     qml/pages/*.qml
 }

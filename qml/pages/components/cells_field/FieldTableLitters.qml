@@ -17,7 +17,12 @@ Rectangle {
 
             Component.onCompleted: {
                 for(var i = 0; i < baseFieldSize; i++){
-                    append({ name:  String.fromCharCode(i + ("A").charCodeAt())});
+                    if (settings.settingLanguage != "-ru") {
+                        append({ name:  String.fromCharCode(i + ("A").charCodeAt())});
+                    }
+                    else {
+                        append({ name:  String.fromCharCode(i + ("А").charCodeAt())});
+                    }
                 }
             }
         }

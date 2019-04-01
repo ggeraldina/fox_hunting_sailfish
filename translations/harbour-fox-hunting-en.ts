@@ -171,7 +171,7 @@
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="42"/>
         <source>order of play</source>
-        <translation>On the fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
+        <translation>On fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
 
 The winner is the one who first finds all the foxes.
         </translation>
