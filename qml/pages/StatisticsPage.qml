@@ -129,19 +129,24 @@ Page {
                         Component.onCompleted: {
                             var obj = JSON.parse(model.dataJSON)
                             var date = new Date(obj.date)
-                            labelName.text += date.toDateString() + " " + date.toTimeString()
+                            labelName.text += date.toDateString() + ", " + date.toTimeString()
                             textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                             textNumberFoxes.text += obj.countFoxes
                             if (settings.settingLanguage == "-ru") {
                                 if (obj.winner == "I") {
-                                    textWinner.text += "Я"
+                                    textWinner.text += "Противник"
                                 }
                                 else {
                                     textWinner.text += "Вы"
                                 }
                             }
                             else {
-                                textWinner.text += obj.winner
+                                if (obj.winner == "I") {
+                                    textWinner.text += "Opponent"
+                                }
+                                else {
+                                    textWinner.text += "You"
+                                }
                             }
                             textLevelGame.text += obj.level
                             textStepsComp.text += obj.stepsComp

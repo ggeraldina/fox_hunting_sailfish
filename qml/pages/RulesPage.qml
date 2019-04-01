@@ -25,14 +25,54 @@ Page {
 
             PageHeader {
                 id: headerPage
-                title: qsTr("The rules")
+                title: qsTr("Rules of the game")
             }
 
-            Text {
-                anchors.horizontalCenter: parent.horizontalCenter
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeMedium
-                text: qsTr("Rules of the game 'Fox Hunting'")
+            ExpandingSectionGroup {
+                ExpandingSection {
+                    title: qsTr("Order of play")
+                    content.sourceComponent: Column {
+                        Text {
+                            width:column.width - Theme.paddingLarge * 2
+                            horizontalAlignment: Text.AlignJustify
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            wrapMode: Text.WordWrap
+                            color: Theme.highlightColor
+                            font.pixelSize: Theme.fontSizeMedium
+                            text: qsTr("order of play")
+                        }
+                    }
+                }
+
+                ExpandingSection {
+                    title: qsTr("Feature of the game")
+                    content.sourceComponent: Column {
+                        Text {
+                            width:column.width - Theme.paddingLarge * 2
+                            horizontalAlignment: Text.AlignJustify
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            wrapMode: Text.WordWrap
+                            color: Theme.highlightColor
+                            font.pixelSize: Theme.fontSizeMedium
+                            text: qsTr("feature of the game")
+                        }
+                    }
+                }
+
+                ExpandingSection {
+                    title: qsTr("Functionality of the program")
+                    content.sourceComponent: Column {
+                        Text {
+                            width:column.width - Theme.paddingLarge * 2
+                            horizontalAlignment: Text.AlignJustify
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            wrapMode: Text.WordWrap
+                            color: Theme.highlightColor
+                            font.pixelSize: Theme.fontSizeMedium
+                            text: qsTr("functionality of the program")
+                        }
+                    }
+                }
             }
 
             Button {

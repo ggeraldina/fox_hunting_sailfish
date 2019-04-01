@@ -132,11 +132,31 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rules of the game &apos;Fox Hunting&apos;</source>
+        <source>Rules of the game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The rules</source>
+        <source>Order of play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>order of play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Feature of the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functionality of the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>functionality of the program</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

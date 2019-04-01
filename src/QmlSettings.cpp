@@ -21,7 +21,7 @@ int QmlSettings::getSpeedStepComp() {
 
 float QmlSettings::getVolumeEffects() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
-    return settings.value(SETTING_VOLUME_EFFECTS, 0.5).toFloat();
+    return settings.value(SETTING_VOLUME_EFFECTS, 0.0).toFloat();
 }
 
 QString QmlSettings::getLanguage() {
@@ -81,7 +81,7 @@ void QmlSettings::updateToDefaultSettings() {
     settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
     settings.setValue(SETTING_NUMBER_FOXES, 4);
     settings.setValue(SETTING_SPEED_STEP_COMP, 1000);
-    settings.setValue(SETTING_VOLUME_EFFECTS, 0.5);
+    settings.setValue(SETTING_VOLUME_EFFECTS, 0.0);
     settings.setValue(SETTING_LANGUAGE, "-??");
     settings.setValue(SETTING_LEVEL, 1);
     emit settingBaseTableSizeChanged();

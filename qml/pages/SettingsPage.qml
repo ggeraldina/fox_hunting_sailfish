@@ -16,6 +16,11 @@ Page {
 
     Connections {
             target: settings
+            onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
+            onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
+            onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
+            onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
+            onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
     }
 
     SilicaFlickable {
