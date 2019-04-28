@@ -1,9 +1,9 @@
 #include "TablesCompUser.h"
 
-TablesCompUser::TablesCompUser(QObject *parent) : QObject(parent) {
+TablesCompUser::TablesCompUser(QObject *parent) : TablesBase(parent) {
     srand( time(0) ); // автоматическая рандомизация
-    connect(this, &TablesCompUser::baseTableSizeChanged, this, &TablesCompUser::createData);
-    connect(this, &TablesCompUser::numberFoxesChanged, this, &TablesCompUser::initData);
+    connect(this, &TablesBase::baseTableSizeChanged, this, &TablesCompUser::createData);
+    connect(this, &TablesBase::numberFoxesChanged, this, &TablesCompUser::initData);
 }
 
 TablesCompUser::~TablesCompUser() {
@@ -37,26 +37,18 @@ void TablesCompUser::initData() {
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {
     return QQmlListProperty<CellComp>(static_cast<QObject *>(this), static_cast<void *>(&dataComp),
-                                     &TablesCompUser::appendDataCells<CellComp>,
-                                     &TablesCompUser::countDataCells<CellComp>,
-                                     &TablesCompUser::atDataCells<CellComp>,
-                                     &TablesCompUser::clearDataCells<CellComp>);
+                                     &TablesBase::appendDataCells<CellComp>,
+                                     &TablesBase::countDataCells<CellComp>,
+                                     &TablesBase::atDataCells<CellComp>,
+                                     &TablesBase::clearDataCells<CellComp>);
 }
 
 QQmlListProperty<CellUser> TablesCompUser::getDataUser() {
     return QQmlListProperty<CellUser>(static_cast<QObject *>(this), static_cast<void *>(&dataUser),
-                                     &TablesCompUser::appendDataCells<CellUser>,
-                                     &TablesCompUser::countDataCells<CellUser>,
-                                     &TablesCompUser::atDataCells<CellUser>,
-                                     &TablesCompUser::clearDataCells<CellUser>);
-}
-
-int TablesCompUser::getBaseTableSize() {
-    return baseFieldSize;
-}
-
-int TablesCompUser::getNumberFoxes() {
-    return numberFoxes;
+                                     &TablesBase::appendDataCells<CellUser>,
+                                     &TablesBase::countDataCells<CellUser>,
+                                     &TablesBase::atDataCells<CellUser>,
+                                     &TablesBase::clearDataCells<CellUser>);
 }
 
 int TablesCompUser::getSpeedStepComp() {
@@ -75,22 +67,6 @@ int TablesCompUser::getLevelGame() {
     return levelGame;
 }
 
-void TablesCompUser::setBaseTableSize(int newValue) {
-    if (newValue <= 0 || baseFieldSize == newValue) {
-        return;
-    }
-    baseFieldSize = newValue;
-    emit baseTableSizeChanged();
-}
-
-void TablesCompUser::setNumberFoxes(int newValue) {
-    if (newValue <= 0 || numberFoxes == newValue) {
-        return;
-    }
-    numberFoxes = newValue;
-    emit numberFoxesChanged();
-}
-
 void TablesCompUser::setSpeedStepComp(int newValue) {
     if (newValue <= 0 || speedStepComp == newValue) {
         return;
@@ -105,31 +81,6 @@ void TablesCompUser::setLevelGame(int newValue) {
     }
     levelGame = newValue;
     emit levelGameChanged();
-}
-
-
-// abstract functions (depend on QList<T *>)
-
-template <class T>
-void TablesCompUser::appendDataCells(QQmlListProperty<T> *list, T *value) {
-    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
-    dataTable->append(value);
-}
-template <class T>
-int TablesCompUser::countDataCells(QQmlListProperty<T> *list) {
-    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
-    return dataTable->size();
-}
-template <class T>
-T *TablesCompUser::atDataCells(QQmlListProperty<T> *list, int index) {
-    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
-    return dataTable->at(index);
-}
-template <class T>
-void TablesCompUser::clearDataCells(QQmlListProperty<T> *list) {
-    QList<T *> *dataTable = static_cast<QList<T *> *>(list->data);
-    qDeleteAll(dataTable->begin(), dataTable->end());
-    dataTable->clear();
 }
 
 void TablesCompUser::increaseCountStepsComp(int addedValue) {

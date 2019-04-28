@@ -24,7 +24,8 @@ SOURCES += \
     src/lib_tables/TableComp.cpp \
     src/lib_tables/TableUser.cpp \
     src/lib_tables/TableAny.cpp \
-    src/QmlSettings.cpp
+    src/QmlSettings.cpp \
+    src/TablesBase.cpp
 
 DISTFILES += \
     qml/FoxHunting.qml \
@@ -47,7 +48,8 @@ DISTFILES += \
     translations/harbour-fox-hunting.ts \
     translations/harbour-fox-hunting-ru.ts \
     qml/pages/AboutPage.qml \
-    qml/pages/LocationFoxesPage.qml
+    qml/pages/LocationFoxesPage.qml \
+    js/database/DatabaseTableSaveGame.js
 
 RESOURCES += \
     foxhunting.qrc
@@ -80,7 +82,8 @@ HEADERS += \
     src/lib_tables/TableComp.h \
     src/lib_tables/TableUser.h \
     src/lib_tables/TableAny.h \
-    src/QmlSettings.h
+    src/QmlSettings.h \
+    src/TablesBase.h
 
 #SUBDIRS += \
 #    FoxHunting.pro

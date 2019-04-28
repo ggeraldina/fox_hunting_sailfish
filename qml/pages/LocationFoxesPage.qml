@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "components/cells_field"
+import QtQuick.LocalStorage 2.0
+import "qrc:/js/database/DatabaseTableSaveGame.js" as DB
 
 Dialog {
     id: page
@@ -10,6 +12,7 @@ Dialog {
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
+    property string tableName: "gameSaveFoxes" + quantityFoxes + "Size" + baseFieldSize
 
     Connections {
         target: settings
@@ -117,7 +120,7 @@ Dialog {
                 // подчеркивание icon.source красным в Qt Creator - это нормально
                 icon.source: "image://theme/icon-m-delete"
                 onClicked: {
-
+                    console.log(tableName)
                 }
             }
         }
