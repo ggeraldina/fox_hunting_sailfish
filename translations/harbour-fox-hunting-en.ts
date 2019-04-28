@@ -15,8 +15,8 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="36"/>
-        <source>Version: 1.0</source>
-        <translation>Version: 1.0</translation>
+        <source>Version: </source>
+        <translation>Version: </translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="46"/>
@@ -62,6 +62,34 @@
         <location filename="../qml/pages/GamePage.qml" line="145"/>
         <source>You</source>
         <translation>Your field</translation>
+    </message>
+</context>
+<context>
+    <name>LocationFoxesPage</name>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="20"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="21"/>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="35"/>
+        <source>Are you pleased the location of the foxes on the field?</source>
+        <translation>Are you pleased the location of the foxes on the field?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="45"/>
+        <source>You can set the location of the foxes.</source>
+        <translation>You can set the location of the foxes.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="112"/>
+        <source>Randomly</source>
+        <translation>Randomly</translation>
     </message>
 </context>
 <context>

@@ -12,16 +12,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Version: 1.0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Author: Geraldina
 (ggeraldina@yandex.ru)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -48,6 +48,29 @@
     </message>
     <message>
         <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LocationFoxesPage</name>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you pleased the location of the foxes on the field?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Randomly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set the location of the foxes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

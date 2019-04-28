@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>translations/harbour-fox-hunting-en.qm</file>
-        <file>translations/harbour-fox-hunting-ru.qm</file>
-    </qresource>
-</RCC>

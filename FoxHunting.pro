@@ -46,7 +46,8 @@ DISTFILES += \
     translations/harbour-fox-hunting-en.ts \
     translations/harbour-fox-hunting.ts \
     translations/harbour-fox-hunting-ru.ts \
-    qml/pages/AboutPage.qml
+    qml/pages/AboutPage.qml \
+    qml/pages/LocationFoxesPage.qml
 
 RESOURCES += \
     foxhunting.qrc

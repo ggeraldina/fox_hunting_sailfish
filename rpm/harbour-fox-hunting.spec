@@ -13,7 +13,7 @@ Name:       harbour-fox-hunting
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Logic game
-Version:    1.0
+Version:    1.1
 Release:    1
 Group:      Amusements/Games
 License:    LICENSE

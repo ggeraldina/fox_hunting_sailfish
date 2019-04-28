@@ -39,7 +39,7 @@ Page {
                     x: Theme.horizontalPageMargin
                 }
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("GamePage.qml"))
+                    pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"))
                 }
             }
 
