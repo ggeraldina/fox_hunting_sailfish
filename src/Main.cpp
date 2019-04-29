@@ -2,9 +2,11 @@
 #include <QtQuick>
 #include <sailfishapp.h>
 #include <QtQml>
+#include "CellBase.h"
 #include "CellUser.h"
 #include "CellComp.h"
 #include "TablesCompUser.h"
+#include "TablesLocationFoxes.h"
 #include "QmlSettings.h"
 #include "QmlTranslator.h"
 
@@ -14,9 +16,11 @@ int main(int argc, char *argv[])
     QStringList args = app->arguments();
     bool daemonized = args.contains("-daemon");
 
+    qmlRegisterType<CellBase>("CellBase", 1, 0, "CellBase");
     qmlRegisterType<CellUser>("CellUser", 1, 0, "CellUser");
     qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");
+    qmlRegisterType<TablesLocationFoxes>("TablesLocationFoxes", 1, 0, "TablesLocationFoxes");
     qmlRegisterType<QmlSettings>("QmlSettings", 1, 0, "QmlSettings");
     qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");    
 

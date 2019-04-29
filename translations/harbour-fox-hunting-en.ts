@@ -67,27 +67,27 @@
 <context>
     <name>LocationFoxesPage</name>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="23"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="28"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="24"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="29"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="38"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="43"/>
         <source>Are you pleased the location of the foxes on the field?</source>
         <translation>Are you pleased the location of the foxes on the field?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="48"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="53"/>
         <source>You can set the location of the foxes.</source>
         <translation>You can set the location of the foxes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="115"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="144"/>
         <source>Randomly</source>
         <translation>Randomly</translation>
     </message>

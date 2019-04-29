@@ -10,7 +10,7 @@ Page {
     property string tableName: "gameStatistics"
 
     Component.onCompleted: {
-        DB.dbInit(tableName)
+        DB.dbInitGameStatistics(tableName)
     }
 
     SilicaFlickable {
@@ -45,7 +45,7 @@ Page {
                     // подчеркивание icon.source красным в Qt Creator - это нормально
                     icon.source: "image://theme/icon-m-delete"
                     onClicked: {
-                        DB.dbDeleteAll(tableName)
+                        DB.dbDeleteAllGameStatistics(tableName)
                     }
                 }
             }
@@ -57,7 +57,7 @@ Page {
                 Repeater {
                     model: ListModel {
                         id: listModel
-                        Component.onCompleted: DB.dbReadAll(tableName)
+                        Component.onCompleted: DB.dbReadAllGameStatistics(tableName)
                     }
 
                     delegate: Column {

@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QQmlListProperty>
-#include "CellBase.h"
 
 class TablesBase: public QObject {
     Q_OBJECT

@@ -2,7 +2,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "components/cells_field"
 import QtQuick.LocalStorage 2.0
-import "qrc:/js/database/DatabaseTableSaveGame.js" as DB
+import "qrc:/js/database/Database.js" as DB
+import TablesLocationFoxes 1.0
 
 Dialog {
     id: page
@@ -11,11 +12,15 @@ Dialog {
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
+    property int level: settings.settingLevel
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
-    property string tableName: "gameSaveFoxes" + quantityFoxes + "Size" + baseFieldSize
 
     Connections {
         target: settings
+    }
+
+    Component.onCompleted: {
+        DB.dbInitLocationGameSave()
     }
 
     DialogHeader {
@@ -54,6 +59,13 @@ Dialog {
             font.pixelSize: Theme.fontSizeMedium
         }
 
+        TablesLocationFoxes {
+            id: dataModel
+            baseTableSize: baseFieldSize
+            numberFoxes: quantityFoxes
+
+        }
+
         Grid {
             id: fieldTop
             spacing: spacingGrid
@@ -88,19 +100,36 @@ Dialog {
                       rows: baseFieldSize
 
                       Repeater {
-                          model: baseFieldSize * baseFieldSize
+                          model: dataModel.dataFoxes
                           delegate: Item {
                                       width: baseWidthHeight
                                       height: baseWidthHeight
 
                                       Image {
                                           anchors.fill: parent
-                                          source: "qrc:/image/lightGreen.jpg"
+                                          source: model.backgroundURL
                                       }
 
                                       Text {
                                           anchors.centerIn: parent
-                                          text: ""
+                                          text:  model.text
+
+//                                          {
+//                                              var obj = DB.dbReadRowLocationGameSave(level, quantityFoxes,
+//                                                                                     baseFieldSize, model.index)
+//                                              if (obj.fox == 0) {
+//                                                  text = ""
+//                                              } else {
+//                                                  text = "x"
+//                                              }
+//                                          }
+                                      }
+
+                                      MouseArea {
+                                          anchors.fill: parent
+                                          onClicked: {
+                                              console.log(dataModel.putOrRemoveFox(model.index))
+                                          }
                                       }
                                   }
                       }
@@ -113,6 +142,9 @@ Dialog {
 
             Button {
                 text: qsTr("Randomly")
+                onClicked: {
+                    dataModel.generateRandomLocationFoxes()
+                }
             }
 
             IconButton {
@@ -120,7 +152,7 @@ Dialog {
                 // подчеркивание icon.source красным в Qt Creator - это нормально
                 icon.source: "image://theme/icon-m-delete"
                 onClicked: {
-                    console.log(tableName)
+                    dataModel.cleanLocationFoxes()
                 }
             }
         }

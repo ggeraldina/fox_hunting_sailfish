@@ -8,6 +8,5 @@
         <file>js/database/Database.js</file>
         <file>image/fox.gif</file>
         <file>image/salute.gif</file>
-        <file>js/database/DatabaseTableSaveGame.js</file>
     </qresource>
 </RCC>

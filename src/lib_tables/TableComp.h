@@ -11,7 +11,6 @@ class TableComp : public QObject {
 public:
     explicit TableComp(QObject *parent = nullptr);
 
-    static void showFoxesOnField(QList<CellComp *> *list);
     static void editCellsWhenFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes);
     static void editCellsWhenNoFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes);
     static int generateIndexCellForShot(QList<CellComp *> *list);

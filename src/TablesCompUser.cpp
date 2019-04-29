@@ -31,7 +31,7 @@ void TablesCompUser::createData() {
 
 void TablesCompUser::initData() {
     TableAny::addRandomFoxes(&dataComp, numberFoxes);
-    TableComp::showFoxesOnField(&dataComp);
+    TableAny::showFoxesOnField(&dataComp);
     TableAny::addRandomFoxes(&dataUser, numberFoxes);
 }
 

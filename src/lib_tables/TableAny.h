@@ -49,20 +49,13 @@ public:
         }
     }
 
-private:
-    static const int VALUE_FOX = -1;
-
-
     template <class T>
-    static void addRandomOneFox(T *list) {
+    static void showFoxesOnField(T *list) {
         int countCells = list->count();
-        int randomIndex;
-        while(true) {
-            randomIndex = rand() % countCells;
-            if (checkPossibleAddFox(list, randomIndex)) {
-                addOneFox(list, randomIndex);
-                return;
-            }
+        for(int i = 0; i < countCells; i++) {
+            int valueCell = list->value(i)->getValue();
+            if (valueCell == VALUE_FOX)
+                list->value(i)->setText("x");
         }
     }
 
@@ -79,6 +72,23 @@ private:
             }
         }
         return true;
+    }
+
+private:
+    static const int VALUE_FOX = -1;
+
+
+    template <class T>
+    static void addRandomOneFox(T *list) {
+        int countCells = list->count();
+        int randomIndex;
+        while(true) {
+            randomIndex = rand() % countCells;
+            if (checkPossibleAddFox(list, randomIndex)) {
+                addOneFox(list, randomIndex);
+                return;
+            }
+        }
     }
 
     template <class T>

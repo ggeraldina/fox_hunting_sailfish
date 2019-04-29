@@ -19,7 +19,7 @@ Page {
     property string tableName: "gameStatistics"
 
     Component.onCompleted: {
-        DB.dbInit(tableName)
+        DB.dbInitGameStatistics(tableName)
     }
 
     Connections {
@@ -61,7 +61,7 @@ Page {
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
                 }
-                DB.dbInsertRow(tableName, JSON.stringify(obj))
+                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
             }
             onWinComp: {
@@ -73,7 +73,7 @@ Page {
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
                 }
-                DB.dbInsertRow(tableName, JSON.stringify(obj))
+                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
             }
         }

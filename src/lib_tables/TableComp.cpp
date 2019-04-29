@@ -4,15 +4,6 @@ TableComp::TableComp(QObject *parent) : QObject(parent) {
 
 }
 
-void TableComp::showFoxesOnField(QList<CellComp *> *list) {
-    int countCells = list->count();
-    for(int i = 0; i < countCells; i++) {
-        int valueCell = list->value(i)->getValue();
-        if (valueCell == VALUE_FOX)
-            list->value(i)->setText("x");
-    }
-}
-
 void TableComp::editCellsWhenFox(QList<CellComp *> *list, int index, int numberFoxes, int countFoundFoxes) {
     list->value(index)->setBackgroundURL("qrc:/image/fox.jpg");
     list->value(index)->setText("");
