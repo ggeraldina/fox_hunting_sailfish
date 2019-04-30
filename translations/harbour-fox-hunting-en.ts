@@ -87,9 +87,15 @@
         <translation>You can set the location of the foxes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="144"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="169"/>
         <source>Randomly</source>
         <translation>Randomly</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="183"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="195"/>
+        <source>Foxes less than need</source>
+        <translation>Foxes less than need</translation>
     </message>
 </context>
 <context>
@@ -373,6 +379,25 @@ The winner is the one who first finds all the foxes.
         <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
         <source>Steps user </source>
         <translation>Count your steps: </translation>
+    </message>
+</context>
+<context>
+    <name>TablesLocationFoxes</name>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="72"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="81"/>
+        <source>Foxes less than need</source>
+        <translation>Foxes less than need</translation>
+    </message>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="85"/>
+        <source>There are nearby foxes</source>
+        <translation>Cannot be placed next to other foxes</translation>
+    </message>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="87"/>
+        <source>A lot of foxes</source>
+        <translation>All foxes are placed</translation>
     </message>
 </context>
 <context>

@@ -18,6 +18,7 @@ public:
     Q_INVOKABLE void cleanLocationFoxes();
     Q_INVOKABLE void generateRandomLocationFoxes();
     Q_INVOKABLE QString putOrRemoveFox(int index);
+    Q_INVOKABLE bool equalNumberAndCountFoxes();
 
     QQmlListProperty<CellBase> getDataFoxes();
 
@@ -27,6 +28,9 @@ private:
 
 signals:
     void dataFoxesChanged();
+    void addFox(int index);
+    void removeFox(int index);
+    void removeAllFox();
 
 private slots:
     void initData();

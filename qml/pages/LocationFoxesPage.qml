@@ -63,7 +63,17 @@ Dialog {
             id: dataModel
             baseTableSize: baseFieldSize
             numberFoxes: quantityFoxes
-
+            onAddFox: {
+                var fox = 1
+                var shot = 0
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, index, fox, shot)
+            }
+            onRemoveFox: {
+                DB.dbDeleteRowLocationGameSave(level, quantityFoxes, baseFieldSize, index)
+            }
+            onRemoveAllFox: {
+                DB.dbDeleteGameLocationGameSave(level, quantityFoxes, baseFieldSize)
+            }
         }
 
         Grid {
@@ -102,39 +112,54 @@ Dialog {
                       Repeater {
                           model: dataModel.dataFoxes
                           delegate: Item {
-                                      width: baseWidthHeight
-                                      height: baseWidthHeight
+                              width: baseWidthHeight
+                              height: baseWidthHeight
 
-                                      Image {
-                                          anchors.fill: parent
-                                          source: model.backgroundURL
-                                      }
+                              Image {
+                                  anchors.fill: parent
+                                  source: model.backgroundURL
+                              }
 
-                                      Text {
-                                          anchors.centerIn: parent
-                                          text:  model.text
+                              Text {
+                                  anchors.centerIn: parent
+                                  text:  model.text
+//                                  {
+//                                      var obj = DB.dbReadRowLocationGameSave(level, quantityFoxes,
+//                                                                             baseFieldSize, model.index)
+//                                      if (obj.fox == 0) {
+//                                          text = "."
+//                                      } else {
+//                                          text = "x"
+//                                      }
+//                                  }
+                              }
 
-//                                          {
-//                                              var obj = DB.dbReadRowLocationGameSave(level, quantityFoxes,
-//                                                                                     baseFieldSize, model.index)
-//                                              if (obj.fox == 0) {
-//                                                  text = ""
-//                                              } else {
-//                                                  text = "x"
-//                                              }
-//                                          }
-                                      }
-
-                                      MouseArea {
-                                          anchors.fill: parent
-                                          onClicked: {
-                                              console.log(dataModel.putOrRemoveFox(model.index))
-                                          }
+                              MouseArea {
+                                  anchors.fill: parent
+                                  onClicked: {
+                                      labelMessage.text = dataModel.putOrRemoveFox(model.index)
+                                      if (dataModel.equalNumberAndCountFoxes()) {
+                                          page.canAccept = true
+                                      } else {
+                                          page.canAccept = false
                                       }
                                   }
+                              }
+                          }
                       }
                   }
              }
+        }
+
+        Label {
+            id: labelMessage
+            text: ""
+            width: column.width - Theme.paddingLarge * 2
+            horizontalAlignment: Text.AlignHCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            wrapMode: Text.WordWrap
+            color: Theme.secondaryColor
+            font.pixelSize: Theme.fontSizeTiny
         }
 
         Row {
@@ -144,6 +169,8 @@ Dialog {
                 text: qsTr("Randomly")
                 onClicked: {
                     dataModel.generateRandomLocationFoxes()
+                    labelMessage.text = ""
+                    page.canAccept = true
                 }
             }
 
@@ -153,6 +180,8 @@ Dialog {
                 icon.source: "image://theme/icon-m-delete"
                 onClicked: {
                     dataModel.cleanLocationFoxes()
+                    labelMessage.text =  qsTr("Foxes less than need");
+                    page.canAccept = false
                 }
             }
         }
@@ -161,4 +190,9 @@ Dialog {
     acceptDestination: Qt.resolvedUrl("GamePage.qml")
     acceptDestinationAction: PageStackAction.Replace
 
+    onAccepted: {
+        if (page.canAccept == false) {
+            labelMessage.text =  qsTr("Foxes less than need");
+        }
+    }
 }

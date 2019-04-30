@@ -42,6 +42,7 @@ void TablesLocationFoxes::cleanLocationFoxes() {
         cell->setValue(0);
         cell->setText("");
     }
+    emit removeAllFox();
 }
 
 void TablesLocationFoxes::generateRandomLocationFoxes() {
@@ -55,6 +56,7 @@ void TablesLocationFoxes::generateRandomLocationFoxes() {
             if (TableAny::checkPossibleAddFox(&dataFoxes, randomIndex)) {
                 dataFoxes.value(randomIndex)->setValue(VALUE_FOX);
                 dataFoxes.value(randomIndex)->setText("x");
+                emit addFox(randomIndex);
                 break;
             }
         }
@@ -65,17 +67,29 @@ QString TablesLocationFoxes::putOrRemoveFox(int index) {
     if (dataFoxes.value(index)->getValue() == VALUE_FOX) {
         dataFoxes.value(index)->setValue(0);
         dataFoxes.value(index)->setText("");
+        emit removeFox(index);
         currentCountFoxes--;
-        return "";
+        return tr("Foxes less than need");
     }
-    if (TableAny::checkPossibleAddFox(&dataFoxes, index)) {
-        if (currentCountFoxes < numberFoxes) {
+    if (currentCountFoxes < numberFoxes) {
+        if (TableAny::checkPossibleAddFox(&dataFoxes, index)) {
             dataFoxes.value(index)->setValue(VALUE_FOX);
             dataFoxes.value(index)->setText("x");
+            emit addFox(index);
             currentCountFoxes++;
+            if (currentCountFoxes != numberFoxes) {
+                return tr("Foxes less than need");
+            }
             return "";
         }
-        return "A lot of foxes";
+        return tr("There are nearby foxes");
     }
-    return "There are nearby foxes";
+    return tr("A lot of foxes");
+}
+
+bool TablesLocationFoxes::equalNumberAndCountFoxes() {
+    if (currentCountFoxes != numberFoxes) {
+        return false;
+    }
+    return true;
 }

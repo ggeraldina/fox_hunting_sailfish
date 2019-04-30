@@ -87,9 +87,15 @@
         <translation>Вы можете расставить их иначе.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="144"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="169"/>
         <source>Randomly</source>
         <translation>Случайно</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="183"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="195"/>
+        <source>Foxes less than need</source>
+        <translation>Лис на поле мало</translation>
     </message>
 </context>
 <context>
@@ -373,6 +379,25 @@
         <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
         <source>Steps user </source>
         <translation>Количество Ваших ходов: </translation>
+    </message>
+</context>
+<context>
+    <name>TablesLocationFoxes</name>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="72"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="81"/>
+        <source>Foxes less than need</source>
+        <translation>Лис на поле мало</translation>
+    </message>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="85"/>
+        <source>There are nearby foxes</source>
+        <translation>Нельзя располагать лис рядом</translation>
+    </message>
+    <message>
+        <location filename="../src/TablesLocationFoxes.cpp" line="87"/>
+        <source>A lot of foxes</source>
+        <translation>Все лисы расставлены</translation>
     </message>
 </context>
 <context>

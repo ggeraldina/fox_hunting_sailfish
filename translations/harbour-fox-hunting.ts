@@ -73,6 +73,10 @@
         <source>You can set the location of the foxes.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Foxes less than need</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoseGamePage</name>
@@ -287,6 +291,21 @@
     <message>
         <source></source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>TablesLocationFoxes</name>
+    <message>
+        <source>There are nearby foxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A lot of foxes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes less than need</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

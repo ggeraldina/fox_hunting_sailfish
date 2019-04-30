@@ -104,7 +104,7 @@ function dbInsertRowLocationGameSave(level, foxes, size, numberCell, fox, shot) 
                           [fox, shot, numberCell, gameId])
         }
     })
-
+    console.log("number add " + numberCell)
 }
 
 function dbReadRowLocationGameSave(level, foxes, size, numberCell) {
@@ -130,6 +130,7 @@ function dbDeleteRowLocationGameSave(level, foxes, size, numberCell) {
         tx.executeSql('DELETE FROM locationGameSave WHERE numberCell = ? and gameId = ?;',
                       [numberCell, gameId])
     })
+    console.log("number remove " + numberCell)
 }
 
 function dbDeleteGameLocationGameSave(level, foxes, size) {
@@ -138,6 +139,7 @@ function dbDeleteGameLocationGameSave(level, foxes, size) {
     db.transaction(function (tx) {
         tx.executeSql('DELETE FROM locationGameSave WHERE gameId = ?;', [gameId])
     })
+    console.log("delete game")
 }
 
 function dbDeleteAllLocationGameSave() {
