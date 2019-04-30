@@ -1,7 +1,6 @@
 #include "TablesCompUser.h"
 
 TablesCompUser::TablesCompUser(QObject *parent) : TablesBase(parent) {
-    srand( time(0) ); // автоматическая рандомизация
     connect(this, &TablesBase::baseTableSizeChanged, this, &TablesCompUser::createData);
     connect(this, &TablesBase::numberFoxesChanged, this, &TablesCompUser::initData);
 }
@@ -30,9 +29,19 @@ void TablesCompUser::createData() {
 }
 
 void TablesCompUser::initData() {
-    TableAny::addRandomFoxes(&dataComp, numberFoxes);
+    QVector<int> indexesUserFoxes = TableAny::addRandomFoxes(&dataUser, numberFoxes);
+    for(auto index : indexesUserFoxes) {
+        emit addFoxUser(index);
+    }
+}
+
+void TablesCompUser::addFoxesComp(QVariant indexes) {
+    QList<QVariant> list = indexes.toList();
+    for(auto index : list) {
+        int indexInt = index.toInt();
+        TableAny::addOneFox(&dataComp, indexInt);
+    }
     TableAny::showFoxesOnField(&dataComp);
-    TableAny::addRandomFoxes(&dataUser, numberFoxes);
 }
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {
@@ -98,7 +107,7 @@ void TablesCompUser::shotCellUser(int index) {
         return;
     }
     flagLockedTables = true;
-    emit shotUser();
+    emit shotUser(index);
     increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
@@ -128,9 +137,9 @@ void TablesCompUser::nextStepComp(){
 }
 
 void TablesCompUser::shotCellComp() {
-    emit shotComp();
     increaseCountStepsComp();
     int smartRandomIndex = generateIndexByLevel();
+    emit shotComp(smartRandomIndex);
     int valueCell = dataComp.value(smartRandomIndex)->getValue();
     if (valueCell == VALUE_FOX) {
         shotCellCompWhenFox(smartRandomIndex);

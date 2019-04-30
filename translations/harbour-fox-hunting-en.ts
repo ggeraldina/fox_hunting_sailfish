@@ -42,24 +42,24 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="83"/>
+        <location filename="../qml/pages/GamePage.qml" line="109"/>
         <source>I</source>
         <translation>Opponent&apos;s field</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="84"/>
-        <location filename="../qml/pages/GamePage.qml" line="146"/>
+        <location filename="../qml/pages/GamePage.qml" line="110"/>
+        <location filename="../qml/pages/GamePage.qml" line="172"/>
         <source> (steps </source>
         <translation> (steps </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="84"/>
-        <location filename="../qml/pages/GamePage.qml" line="146"/>
+        <location filename="../qml/pages/GamePage.qml" line="110"/>
+        <location filename="../qml/pages/GamePage.qml" line="172"/>
         <source>)</source>
         <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="145"/>
+        <location filename="../qml/pages/GamePage.qml" line="171"/>
         <source>You</source>
         <translation>Your field</translation>
     </message>
@@ -87,13 +87,12 @@
         <translation>You can set the location of the foxes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="169"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="176"/>
         <source>Randomly</source>
         <translation>Randomly</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="183"/>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="195"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="190"/>
         <source>Foxes less than need</source>
         <translation>Foxes less than need</translation>
     </message>
@@ -384,18 +383,18 @@ The winner is the one who first finds all the foxes.
 <context>
     <name>TablesLocationFoxes</name>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="72"/>
-        <location filename="../src/TablesLocationFoxes.cpp" line="81"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="71"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="80"/>
         <source>Foxes less than need</source>
         <translation>Foxes less than need</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="85"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="84"/>
         <source>There are nearby foxes</source>
         <translation>Cannot be placed next to other foxes</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="87"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="86"/>
         <source>A lot of foxes</source>
         <translation>All foxes are placed</translation>
     </message>

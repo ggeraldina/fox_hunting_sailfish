@@ -1,7 +1,6 @@
 #include "TablesLocationFoxes.h"
 
 TablesLocationFoxes::TablesLocationFoxes(QObject *parent) : TablesBase(parent) {
-    srand( time(0) ); // автоматическая рандомизация
     connect(this, &TablesBase::baseTableSizeChanged, this, &TablesLocationFoxes::createData);
     connect(this, &TablesBase::numberFoxesChanged, this, &TablesLocationFoxes::initData);
     currentCountFoxes = 0;
@@ -56,7 +55,7 @@ void TablesLocationFoxes::generateRandomLocationFoxes() {
             if (TableAny::checkPossibleAddFox(&dataFoxes, randomIndex)) {
                 dataFoxes.value(randomIndex)->setValue(VALUE_FOX);
                 dataFoxes.value(randomIndex)->setText("x");
-                emit addFox(randomIndex);
+                emit addFoxComp(randomIndex);
                 break;
             }
         }
@@ -67,7 +66,7 @@ QString TablesLocationFoxes::putOrRemoveFox(int index) {
     if (dataFoxes.value(index)->getValue() == VALUE_FOX) {
         dataFoxes.value(index)->setValue(0);
         dataFoxes.value(index)->setText("");
-        emit removeFox(index);
+        emit removeFoxComp(index);
         currentCountFoxes--;
         return tr("Foxes less than need");
     }
@@ -75,7 +74,7 @@ QString TablesLocationFoxes::putOrRemoveFox(int index) {
         if (TableAny::checkPossibleAddFox(&dataFoxes, index)) {
             dataFoxes.value(index)->setValue(VALUE_FOX);
             dataFoxes.value(index)->setText("x");
-            emit addFox(index);
+            emit addFoxComp(index);
             currentCountFoxes++;
             if (currentCountFoxes != numberFoxes) {
                 return tr("Foxes less than need");

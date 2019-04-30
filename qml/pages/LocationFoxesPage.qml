@@ -60,19 +60,25 @@ Dialog {
         }
 
         TablesLocationFoxes {
-            id: dataModel
+            id: dataModelLocation
             baseTableSize: baseFieldSize
             numberFoxes: quantityFoxes
-            onAddFox: {
+            onAddFoxComp: {
+                var field = "Comp"
                 var fox = 1
                 var shot = 0
-                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, index, fox, shot)
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                DB.dbPrintLocationGameSave()
             }
-            onRemoveFox: {
-                DB.dbDeleteRowLocationGameSave(level, quantityFoxes, baseFieldSize, index)
+            onRemoveFoxComp: {
+                var field = "Comp"
+                DB.dbDeleteRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index)
+                DB.dbPrintLocationGameSave()
             }
             onRemoveAllFox: {
-                DB.dbDeleteGameLocationGameSave(level, quantityFoxes, baseFieldSize)
+                var field = "Comp"
+                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
+                DB.dbPrintLocationGameSave()
             }
         }
 
@@ -110,7 +116,7 @@ Dialog {
                       rows: baseFieldSize
 
                       Repeater {
-                          model: dataModel.dataFoxes
+                          model: dataModelLocation.dataFoxes
                           delegate: Item {
                               width: baseWidthHeight
                               height: baseWidthHeight
@@ -124,8 +130,9 @@ Dialog {
                                   anchors.centerIn: parent
                                   text:  model.text
 //                                  {
+//                                      var field = "Comp"
 //                                      var obj = DB.dbReadRowLocationGameSave(level, quantityFoxes,
-//                                                                             baseFieldSize, model.index)
+//                                                                             baseFieldSize, field, model.index)
 //                                      if (obj.fox == 0) {
 //                                          text = "."
 //                                      } else {
@@ -137,8 +144,8 @@ Dialog {
                               MouseArea {
                                   anchors.fill: parent
                                   onClicked: {
-                                      labelMessage.text = dataModel.putOrRemoveFox(model.index)
-                                      if (dataModel.equalNumberAndCountFoxes()) {
+                                      labelMessage.text = dataModelLocation.putOrRemoveFox(model.index)
+                                      if (dataModelLocation.equalNumberAndCountFoxes()) {
                                           page.canAccept = true
                                       } else {
                                           page.canAccept = false
@@ -168,7 +175,7 @@ Dialog {
             Button {
                 text: qsTr("Randomly")
                 onClicked: {
-                    dataModel.generateRandomLocationFoxes()
+                    dataModelLocation.generateRandomLocationFoxes()
                     labelMessage.text = ""
                     page.canAccept = true
                 }
@@ -179,7 +186,7 @@ Dialog {
                 // подчеркивание icon.source красным в Qt Creator - это нормально
                 icon.source: "image://theme/icon-m-delete"
                 onClicked: {
-                    dataModel.cleanLocationFoxes()
+                    dataModelLocation.cleanLocationFoxes()
                     labelMessage.text =  qsTr("Foxes less than need");
                     page.canAccept = false
                 }
@@ -187,12 +194,12 @@ Dialog {
         }
     }
 
-    acceptDestination: Qt.resolvedUrl("GamePage.qml")
-    acceptDestinationAction: PageStackAction.Replace
-
+//    acceptDestination: Qt.resolvedUrl("GamePage.qml")
+//    acceptDestinationAction: PageStackAction.Replace
     onAccepted: {
-        if (page.canAccept == false) {
-            labelMessage.text =  qsTr("Foxes less than need");
-        }
+        DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+        console.log("page location")
+        DB.dbPrintLocationGameSave()
+        pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
     }
 }

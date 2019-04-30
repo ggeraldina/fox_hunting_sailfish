@@ -1,6 +1,7 @@
 #ifndef TABLESCOMPUSER_H
 #define TABLESCOMPUSER_H
 
+#include <QVariant>
 #include <QObject>
 #include <QQmlListProperty>
 #include <QTimer>
@@ -38,6 +39,7 @@ public:
 
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
     Q_INVOKABLE void putOrRemoveMarkCellUser(int index);
+    Q_INVOKABLE void addFoxesComp(QVariant indexes);
 
 private:
     void increaseCountStepsComp(int addedValue = 1);
@@ -70,10 +72,11 @@ signals:
     void countStepsCompChanged();
     void countStepsUserChanged();
     void levelGameChanged();
-    void shotUser();
-    void shotComp();
+    void shotUser(int index);
+    void shotComp(int index);
     void winUser();
     void winComp();
+    void addFoxUser(int index);
 
 public slots:
 

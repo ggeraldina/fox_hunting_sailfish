@@ -42,24 +42,24 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="83"/>
+        <location filename="../qml/pages/GamePage.qml" line="109"/>
         <source>I</source>
         <translation>Поле противника</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="84"/>
-        <location filename="../qml/pages/GamePage.qml" line="146"/>
+        <location filename="../qml/pages/GamePage.qml" line="110"/>
+        <location filename="../qml/pages/GamePage.qml" line="172"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="84"/>
-        <location filename="../qml/pages/GamePage.qml" line="146"/>
+        <location filename="../qml/pages/GamePage.qml" line="110"/>
+        <location filename="../qml/pages/GamePage.qml" line="172"/>
         <source>)</source>
         <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="145"/>
+        <location filename="../qml/pages/GamePage.qml" line="171"/>
         <source>You</source>
         <translation>Ваше поле</translation>
     </message>
@@ -87,13 +87,12 @@
         <translation>Вы можете расставить их иначе.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="169"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="176"/>
         <source>Randomly</source>
         <translation>Случайно</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="183"/>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="195"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="190"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
@@ -384,18 +383,18 @@
 <context>
     <name>TablesLocationFoxes</name>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="72"/>
-        <location filename="../src/TablesLocationFoxes.cpp" line="81"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="71"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="80"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="85"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="84"/>
         <source>There are nearby foxes</source>
         <translation>Нельзя располагать лис рядом</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="87"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="86"/>
         <source>A lot of foxes</source>
         <translation>Все лисы расставлены</translation>
     </message>

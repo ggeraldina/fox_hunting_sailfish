@@ -2,6 +2,7 @@
 #define TABLEANY_H
 
 #include <QObject>
+#include <QVector>
 
 // объяснение, почему реализация шаблонов в .h
 // https://www.linux.org.ru/forum/development/12094159
@@ -16,10 +17,13 @@ public:
     static int calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex);
 
     template <class T>
-    static void addRandomFoxes(T *list, int numberFoxes) {
+    static QVector<int> addRandomFoxes(T *list, int numberFoxes) {
+        QVector<int> indexesFoxes;
         for(int i = 0; i < numberFoxes; i++) {
-            addRandomOneFox(list);
+            int indexFox = addRandomOneFox(list);
+            indexesFoxes.append(indexFox);
         }
+        return indexesFoxes;
     }
 
     template <class T>
@@ -74,41 +78,44 @@ public:
         return true;
     }
 
+    template <class T>
+    static void addOneFox(T *list, int currentIndex) {
+        list->value(currentIndex)->setValue(VALUE_FOX);
+        editValueCellsAddFox(list, currentIndex);
+    }
+
 private:
     static const int VALUE_FOX = -1;
 
 
     template <class T>
-    static void addRandomOneFox(T *list) {
+    static int addRandomOneFox(T *list) {
         int countCells = list->count();
         int randomIndex;
         while(true) {
             randomIndex = rand() % countCells;
-            if (checkPossibleAddFox(list, randomIndex)) {
+            if (checkPossibleAddFox(list, randomIndex)) {                
                 addOneFox(list, randomIndex);
-                return;
+                return randomIndex;
             }
         }
     }
 
     template <class T>
-    static void addOneFox(T *list, int currentIndex) {
-        list->value(currentIndex)->setValue(VALUE_FOX);
-        editValueCells(list, currentIndex);
+    static void editValueCellsAddFox(T *list, int currentIndex) {
+        editCellsShapeSnowflake(list, currentIndex, editValueAddFox);
     }
 
     template <class T>
-    static void editValueCells(T *list, int currentIndex) {
-        editCellsShapeSnowflake(list, currentIndex, editValue);
-    }
-
-    template <class T>
-    static void editValue(T *list, int currentIndex) {
+    static void editValueAddFox(T *list, int currentIndex) {
         int valueCell = list->value(currentIndex)->getValue();
         if(valueCell != VALUE_FOX) {
             list->value(currentIndex)->setValue(valueCell + 1);
         }
     }
 };
+
+
+
 
 #endif // TABLEANY_H

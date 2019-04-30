@@ -28,8 +28,8 @@ private:
 
 signals:
     void dataFoxesChanged();
-    void addFox(int index);
-    void removeFox(int index);
+    void addFoxComp(int index);
+    void removeFoxComp(int index);
     void removeAllFox();
 
 private slots:

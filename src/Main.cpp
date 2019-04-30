@@ -12,6 +12,8 @@
 
 int main(int argc, char *argv[])
 {
+    srand( time(0) ); // автоматическая рандомизация
+
     QGuiApplication *app = (SailfishApp::application(argc, argv));
     QStringList args = app->arguments();
     bool daemonized = args.contains("-daemon");

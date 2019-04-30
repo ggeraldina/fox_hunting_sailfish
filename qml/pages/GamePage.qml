@@ -20,6 +20,11 @@ Page {
 
     Component.onCompleted: {
         DB.dbInitGameStatistics(tableName)
+        var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+        console.log(numberCellCompFoxes)
+        dataModel.addFoxesComp(numberCellCompFoxes)
+        console.log("create game page")
+        DB.dbPrintLocationGameSave()
     }
 
     Connections {
@@ -50,8 +55,29 @@ Page {
             numberFoxes: quantityFoxes
             speedStepComp: speedStepComputer
             levelGame: level
-            onShotUser: soundEffect.play()
-            onShotComp: soundEffect.play()
+            onAddFoxUser: {
+                var field = "User"
+                var fox = 1
+                var shot = 0
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                DB.dbPrintLocationGameSave()
+            }
+            onShotUser: {
+                soundEffect.play()
+                var field = "User"
+                var fox = 0
+                var shot = 1
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                DB.dbPrintLocationGameSave()
+            }
+            onShotComp: {
+                soundEffect.play()
+                var field = "Comp"
+                var fox = 0
+                var shot = 1
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                DB.dbPrintLocationGameSave()
+            }
             onWinUser: {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
