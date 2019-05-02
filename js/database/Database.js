@@ -72,6 +72,9 @@ function dbDeleteAllGameStatistics(tableName) {
     listModel.clear()
 }
 
+
+
+
 // locationGameSave
 
 function dbInitLocationGameSave() {
@@ -100,30 +103,46 @@ function dbInsertRowLocationGameSave(level, foxes, size, field, numberCell, fox,
         var results = tx.executeSql('SELECT * FROM locationGameSave WHERE field = ? and numberCell = ? and gameId = ?;',
                                     [field, numberCell, gameId])
         if (results.rows.length == 0) {
-            tx.executeSql('INSERT INTO locationGameSave (datetime, field, numberCell, fox, shot, gameId) VALUES (datetime("now"), ?, ?, ?, ?, ?);',
+            tx.executeSql('INSERT INTO locationGameSave (datetime, field, numberCell, fox, shot, gameId)' +
+                          ' VALUES (strftime("%Y-%m-%d %H:%M:%f", "now"), ?, ?, ?, ?, ?);',
                           [field, numberCell, fox, shot, gameId])
         } else {
-            tx.executeSql('UPDATE locationGameSave SET shot = ?, datetime = datetime("now") WHERE field = ? and numberCell = ? and gameId = ?',
+            tx.executeSql('UPDATE locationGameSave SET shot = ?, datetime = strftime("%Y-%m-%d %H:%M:%f", "now")' +
+                          ' WHERE field = ? and numberCell = ? and gameId = ?',
                           [shot, field, numberCell, gameId])
         }
     })
-    console.log("number add " + numberCell + " in " + field)
+//    console.log("number add " + numberCell + " in " + field)
 }
 
-function dbReadRowLocationGameSave(level, foxes, size, field, numberCell) {
+//function dbReadRowLocationGameSave(level, foxes, size, field, numberCell) {
+//    var gameId = 'Level' + level + 'Foxes' + foxes + 'Size' +  size
+//    var db = dbGetHandle()
+//    var results = ""
+//    db.transaction(function (tx) {
+//        results = tx.executeSql('SELECT fox, shot FROM locationGameSave WHERE field = ? and numberCell = ? and gameId = ?;',
+//                                    [field, numberCell, gameId])
+//    })
+//    var obj =  { fox: 0, shot: 0 }
+//    if (results.rows.length != 0) {
+//        obj =  { fox: results.rows.item(0).fox, shot: results.rows.item(0).shot }
+//    }
+//    return obj
+//}
+
+function dbExistsFieldLocationGameSave(level, foxes, size, field) {
     var gameId = 'Level' + level + 'Foxes' + foxes + 'Size' +  size
     var db = dbGetHandle()
     var results = ""
     db.transaction(function (tx) {
-        results = tx.executeSql('SELECT fox, shot FROM locationGameSave WHERE field = ? and numberCell = ? and gameId = ?;',
-                                    [field, numberCell, gameId])
-
+        results = tx.executeSql('SELECT * FROM locationGameSave WHERE field = ? and gameId = ?;',
+                                    [field, gameId])
     })
-    var obj =  { fox: 0, shot: 0 }
-    if (results.rows.length != 0) {
-        obj =  { fox: results.rows.item(0).fox, shot: results.rows.item(0).shot }
+    if (results.rows.length == 0) {
+        return false
+    } else {
+        return true
     }
-    return obj
 }
 
 function dbGetFoxesFieldLocationGameSave(level, foxes, size, field) {
@@ -137,6 +156,21 @@ function dbGetFoxesFieldLocationGameSave(level, foxes, size, field) {
     var obj =  []
     for (var i = 0; i < results.rows.length; i++) {
         obj.push(results.rows.item(i).numberCell)
+    }
+    return obj
+}
+
+function dbGetStepGameLocationGameSave(level, foxes, size) {
+    var gameId = 'Level' + level + 'Foxes' + foxes + 'Size' +  size
+    var db = dbGetHandle()
+    var results = ""
+    db.transaction(function (tx) {
+        results = tx.executeSql('SELECT numberCell, field FROM locationGameSave WHERE shot = 1 and gameId = ?' +
+                                ' ORDER BY datetime;', [gameId])
+    })
+    var obj =  []
+    for (var i = 0; i < results.rows.length; i++) {
+        obj.push( {index: results.rows.item(i).numberCell, field: results.rows.item(i).field} )
     }
     return obj
 }
@@ -168,7 +202,7 @@ function dbDeleteRowLocationGameSave(level, foxes, size, field, numberCell) {
         tx.executeSql('DELETE FROM locationGameSave WHERE field = ? and numberCell = ? and gameId = ?;',
                       [field, numberCell, gameId])
     })
-    console.log("number remove " + numberCell)
+//    console.log("number remove " + numberCell)
 }
 
 function dbDeleteFieldLocationGameSave(level, foxes, size, field) {
@@ -177,7 +211,7 @@ function dbDeleteFieldLocationGameSave(level, foxes, size, field) {
     db.transaction(function (tx) {
         tx.executeSql('DELETE FROM locationGameSave WHERE field = ? and gameId = ?;', [field, gameId])
     })
-    console.log("delete game in " + field)
+//    console.log("delete game in " + field)
 }
 
 function dbDeleteAllLocationGameSave() {

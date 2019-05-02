@@ -19,10 +19,6 @@ Dialog {
         target: settings
     }
 
-    Component.onCompleted: {
-        DB.dbInitLocationGameSave()
-    }
-
     DialogHeader {
         id: headerPage
         acceptText: qsTr("Ok")
@@ -68,17 +64,17 @@ Dialog {
                 var fox = 1
                 var shot = 0
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
             onRemoveFoxComp: {
                 var field = "Comp"
                 DB.dbDeleteRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
             onRemoveAllFox: {
                 var field = "Comp"
                 DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
         }
 
@@ -197,9 +193,30 @@ Dialog {
 //    acceptDestination: Qt.resolvedUrl("GamePage.qml")
 //    acceptDestinationAction: PageStackAction.Replace
     onAccepted: {
-        DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
-        console.log("page location")
-        DB.dbPrintLocationGameSave()
+//        console.log("page location")
+//        DB.dbPrintLocationGameSave()
         pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
+    }
+
+    Component.onCompleted: {
+        DB.dbInitLocationGameSave()
+        DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp") == false) {
+            dataModelLocation.generateRandomLocationFoxes()
+            page.canAccept = true
+        } else {
+            var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+//            console.log(numberCellCompFoxes)
+            for (var i = 0; i < numberCellCompFoxes.length; i++) {
+                dataModelLocation.putOrRemoveFox(numberCellCompFoxes[i])
+            }
+            if(dataModelLocation.equalNumberAndCountFoxes()) {
+                page.canAccept = true
+            } else {
+                page.canAccept = false
+                labelMessage.text =  qsTr("Foxes less than need");
+            }
+        }
+//        DB.dbPrintLocationGameSave()
     }
 }

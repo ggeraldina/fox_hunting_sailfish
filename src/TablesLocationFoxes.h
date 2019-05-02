@@ -33,7 +33,6 @@ signals:
     void removeAllFox();
 
 private slots:
-    void initData();
     void createData();
 };
 

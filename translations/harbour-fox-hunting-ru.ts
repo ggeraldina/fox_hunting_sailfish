@@ -42,24 +42,24 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="109"/>
+        <location filename="../qml/pages/GamePage.qml" line="104"/>
         <source>I</source>
         <translation>Поле противника</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="110"/>
-        <location filename="../qml/pages/GamePage.qml" line="172"/>
+        <location filename="../qml/pages/GamePage.qml" line="105"/>
+        <location filename="../qml/pages/GamePage.qml" line="167"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="110"/>
-        <location filename="../qml/pages/GamePage.qml" line="172"/>
+        <location filename="../qml/pages/GamePage.qml" line="105"/>
+        <location filename="../qml/pages/GamePage.qml" line="167"/>
         <source>)</source>
         <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="171"/>
+        <location filename="../qml/pages/GamePage.qml" line="166"/>
         <source>You</source>
         <translation>Ваше поле</translation>
     </message>
@@ -67,32 +67,33 @@
 <context>
     <name>LocationFoxesPage</name>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="28"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="24"/>
         <source>Ok</source>
         <translation>Ок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="29"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="25"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="43"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="39"/>
         <source>Are you pleased the location of the foxes on the field?</source>
         <translation>Вас устраивает расположение лис?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="53"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="49"/>
         <source>You can set the location of the foxes.</source>
         <translation>Вы можете расставить их иначе.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="176"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="172"/>
         <source>Randomly</source>
         <translation>Случайно</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="190"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="186"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="217"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
@@ -128,63 +129,68 @@
 <context>
     <name>MenuPage</name>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="11"/>
-        <location filename="../qml/pages/MenuPage.qml" line="147"/>
+        <location filename="../qml/pages/MenuPage.qml" line="23"/>
+        <location filename="../qml/pages/MenuPage.qml" line="183"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="97"/>
+        <location filename="../qml/pages/MenuPage.qml" line="128"/>
         <source>Language | Язык</source>
         <translation>Language | Язык</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="101"/>
+        <location filename="../qml/pages/MenuPage.qml" line="132"/>
         <source>EN</source>
         <translation>EN</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="108"/>
+        <location filename="../qml/pages/MenuPage.qml" line="139"/>
         <source>RU</source>
         <translation>RU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="148"/>
+        <location filename="../qml/pages/MenuPage.qml" line="184"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="149"/>
+        <location filename="../qml/pages/MenuPage.qml" line="185"/>
+        <source>Continue game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="186"/>
         <source>Game&apos;s rules</source>
         <translation>Правила игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="150"/>
+        <location filename="../qml/pages/MenuPage.qml" line="187"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="151"/>
+        <location filename="../qml/pages/MenuPage.qml" line="188"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="152"/>
+        <location filename="../qml/pages/MenuPage.qml" line="189"/>
         <source>About program</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="153"/>
+        <location filename="../qml/pages/MenuPage.qml" line="190"/>
         <source>Game</source>
         <translation>Игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="154"/>
+        <location filename="../qml/pages/MenuPage.qml" line="191"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="155"/>
+        <location filename="../qml/pages/MenuPage.qml" line="192"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
@@ -340,22 +346,22 @@
 <context>
     <name>StatisticsPage</name>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="38"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="34"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="114"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="110"/>
         <source>Size field </source>
         <translation>Размер поля: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="122"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="118"/>
         <source>Foxes </source>
         <translation>Количество лис: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="82"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="78"/>
         <source>Winner </source>
         <translation>Победитель - </translation>
     </message>
@@ -365,17 +371,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="90"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="86"/>
         <source>Level </source>
         <translation>Уровень </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="106"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="102"/>
         <source>Steps comp </source>
         <translation>Количество ходов противника: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="98"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="94"/>
         <source>Steps user </source>
         <translation>Количество Ваших ходов: </translation>
     </message>
@@ -383,18 +389,18 @@
 <context>
     <name>TablesLocationFoxes</name>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="71"/>
-        <location filename="../src/TablesLocationFoxes.cpp" line="80"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="65"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="74"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="84"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="78"/>
         <source>There are nearby foxes</source>
         <translation>Нельзя располагать лис рядом</translation>
     </message>
     <message>
-        <location filename="../src/TablesLocationFoxes.cpp" line="86"/>
+        <location filename="../src/TablesLocationFoxes.cpp" line="80"/>
         <source>A lot of foxes</source>
         <translation>Все лисы расставлены</translation>
     </message>

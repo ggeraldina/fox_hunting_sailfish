@@ -9,10 +9,6 @@ Page {
     allowedOrientations: Orientation.Portrait
     property string tableName: "gameStatistics"
 
-    Component.onCompleted: {
-        DB.dbInitGameStatistics(tableName)
-    }
-
     SilicaFlickable {
         id: flickable
         contentWidth: column.width
@@ -158,5 +154,9 @@ Page {
         }
 
         VerticalScrollDecorator { }
+    }
+
+    Component.onCompleted: {
+        DB.dbInitGameStatistics(tableName)
     }
 }

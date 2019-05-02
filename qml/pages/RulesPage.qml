@@ -78,7 +78,7 @@ Page {
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("New game")
-                onClicked: pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
+                onClicked: pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"))
             }
         }
         VerticalScrollDecorator { }

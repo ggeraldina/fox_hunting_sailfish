@@ -18,15 +18,6 @@ Page {
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property string tableName: "gameStatistics"
 
-    Component.onCompleted: {
-        DB.dbInitGameStatistics(tableName)
-        var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
-        console.log(numberCellCompFoxes)
-        dataModel.addFoxesComp(numberCellCompFoxes)
-        console.log("create game page")
-        DB.dbPrintLocationGameSave()
-    }
-
     Connections {
         target: settings
     }
@@ -60,7 +51,7 @@ Page {
                 var fox = 1
                 var shot = 0
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
             onShotUser: {
                 soundEffect.play()
@@ -68,7 +59,7 @@ Page {
                 var fox = 0
                 var shot = 1
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
             onShotComp: {
                 soundEffect.play()
@@ -76,7 +67,7 @@ Page {
                 var fox = 0
                 var shot = 1
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                DB.dbPrintLocationGameSave()
+//                DB.dbPrintLocationGameSave()
             }
             onWinUser: {
                 var obj = { date: new Date(),
@@ -88,6 +79,8 @@ Page {
                     stepsUser: countStepsUser,
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
+                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
                 pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
             }
             onWinComp: {
@@ -100,6 +93,8 @@ Page {
                     stepsUser: countStepsUser,
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
+                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
                 pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
             }
         }
@@ -236,6 +231,34 @@ Page {
                   }
              }
         }
+    }
+
+    Component.onCompleted: {
+        DB.dbInitGameStatistics(tableName)
+        var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+        dataModel.addFoxesComp(numberCellCompFoxes)
+        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
+            dataModel.initFoxesUser()
+        } else {
+            var numberCellUserFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+            dataModel.addFoxesUser(numberCellUserFoxes)
+            var stepRestoreGame = DB.dbGetStepGameLocationGameSave(level, quantityFoxes, baseFieldSize)
+            for (var i = 0; i < stepRestoreGame.length; i++) {
+//                console.log(i + " cell.index " + stepRestoreGame[i].index + " " + stepRestoreGame[i].field)
+                if (stepRestoreGame[i].field == "Comp") {
+//                    console.log("comp cell.index " + stepRestoreGame[i].index)
+                    dataModel.shotCellCompGameSave(stepRestoreGame[i].index)
+                }
+                if (stepRestoreGame[i].field == "User") {
+//                    console.log("user cell.index " + stepRestoreGame[i].index)
+                    dataModel.shotCellUserGameSave(stepRestoreGame[i].index)
+                }
+            }
+        }
+//        console.log("create game page")
+//        console.log(numberCellCompFoxes)
+//        console.log(numberCellUserFoxes)
+//        DB.dbPrintLocationGameSave()
     }
 }
 

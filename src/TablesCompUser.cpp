@@ -2,7 +2,6 @@
 
 TablesCompUser::TablesCompUser(QObject *parent) : TablesBase(parent) {
     connect(this, &TablesBase::baseTableSizeChanged, this, &TablesCompUser::createData);
-    connect(this, &TablesBase::numberFoxesChanged, this, &TablesCompUser::initData);
 }
 
 TablesCompUser::~TablesCompUser() {
@@ -28,13 +27,6 @@ void TablesCompUser::createData() {
     }
 }
 
-void TablesCompUser::initData() {
-    QVector<int> indexesUserFoxes = TableAny::addRandomFoxes(&dataUser, numberFoxes);
-    for(auto index : indexesUserFoxes) {
-        emit addFoxUser(index);
-    }
-}
-
 void TablesCompUser::addFoxesComp(QVariant indexes) {
     QList<QVariant> list = indexes.toList();
     for(auto index : list) {
@@ -42,6 +34,59 @@ void TablesCompUser::addFoxesComp(QVariant indexes) {
         TableAny::addOneFox(&dataComp, indexInt);
     }
     TableAny::showFoxesOnField(&dataComp);
+}
+
+void TablesCompUser::initFoxesUser() {
+    QVector<int> indexesUserFoxes = TableAny::addRandomFoxes(&dataUser, numberFoxes);
+    for(auto index : indexesUserFoxes) {
+        emit addFoxUser(index);
+    }
+}
+
+void TablesCompUser::addFoxesUser(QVariant indexes) {
+    QList<QVariant> list = indexes.toList();
+    for(auto index : list) {
+        int indexInt = index.toInt();
+        TableAny::addOneFox(&dataUser, indexInt);
+    }
+}
+
+void TablesCompUser::shotCellCompGameSave(int index) {
+    increaseCountStepsComp();
+    int valueCell = dataComp.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        countFoundFoxesComp++;
+        TableComp::editCellsWhenFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
+    }
+    else {
+        TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
+    }
+
+//    for (int i = 0; i < dataComp.count(); i++) {
+//        qDebug() << i << " Comp with:";
+//        qDebug() << "value " << dataComp.value(i)->getValue();
+//        qDebug() << "shot " << dataComp.value(i)->getShot();
+//        qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
+//        qDebug() << "chance " << dataComp.value(i)->getChance();
+//    }
+}
+
+void TablesCompUser::shotCellUserGameSave(int index) {
+    increaseCountStepsUser();
+    int valueCell = dataUser.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        countFoundFoxesUser++;
+        TableUser::editCellsWhenFox(&dataUser, index);
+    }
+    else {
+        TableUser::editCellsWhenNoFox(&dataUser, index);
+    }
+
+//    for (int i = 0; i < dataUser.count(); i++) {
+//        qDebug() << i << " User with:";
+//        qDebug() << "value " << dataUser.value(i)->getValue();
+//        qDebug() << "shot " << dataUser.value(i)->getShot();
+//    }
 }
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {

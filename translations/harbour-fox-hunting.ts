@@ -151,6 +151,10 @@
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Continue game</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RulesPage</name>

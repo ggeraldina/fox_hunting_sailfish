@@ -2,7 +2,6 @@
 
 TablesLocationFoxes::TablesLocationFoxes(QObject *parent) : TablesBase(parent) {
     connect(this, &TablesBase::baseTableSizeChanged, this, &TablesLocationFoxes::createData);
-    connect(this, &TablesBase::numberFoxesChanged, this, &TablesLocationFoxes::initData);
     currentCountFoxes = 0;
 }
 
@@ -20,11 +19,6 @@ void TablesLocationFoxes::createData() {
         CellBase *elementCell = new CellBase(this);
         dataFoxes << elementCell;
     }
-}
-
-void TablesLocationFoxes::initData() {
-    generateRandomLocationFoxes();
-    currentCountFoxes = numberFoxes;
 }
 
 QQmlListProperty<CellBase> TablesLocationFoxes::getDataFoxes() {
