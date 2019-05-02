@@ -169,13 +169,11 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Activating) {
-//            console.log("activating")
             if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp") == false) {
                 itemContinueGame.visible = false
             } else {
                 itemContinueGame.visible = true
             }
-//            DB.dbPrintLocationGameSave()
         }
     }
 

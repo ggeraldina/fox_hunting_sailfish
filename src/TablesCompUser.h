@@ -23,6 +23,7 @@ class TablesCompUser : public TablesBase {
     Q_PROPERTY(int countStepsComp READ getCountStepsComp NOTIFY countStepsCompChanged)
     Q_PROPERTY(int countStepsUser READ getCountStepsUser NOTIFY countStepsUserChanged)
     Q_PROPERTY(int levelGame READ getLevelGame WRITE setLevelGame NOTIFY levelGameChanged)
+    Q_PROPERTY(int flagLockedTables READ getFlagLockedTables WRITE setFlagLockedTables NOTIFY flagLockedTablesChanged)
 
 public:
     explicit TablesCompUser(QObject *parent = nullptr);
@@ -34,11 +35,14 @@ public:
     int getCountStepsComp();
     int getCountStepsUser();
     int getLevelGame();
+    bool getFlagLockedTables();
 
     void setSpeedStepComp(int newValue);
     void setLevelGame(int newValue);
+    void setFlagLockedTables(bool newValue);
 
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
+    Q_INVOKABLE void shotCellComp();
     Q_INVOKABLE void putOrRemoveMarkCellUser(int index);
     Q_INVOKABLE void addFoxesComp(QVariant indexes);
     Q_INVOKABLE void initFoxesUser();
@@ -53,7 +57,6 @@ private:
 
     void shotCellUserWhenFox(int index);
     void shotCellUserWhenNoFox(int index);
-    void shotCellComp();
     void shotCellCompWhenFox(int index);
     void shotCellCompWhenNoFox(int index);
     int generateIndexByLevel();
@@ -78,6 +81,7 @@ signals:
     void countStepsCompChanged();
     void countStepsUserChanged();
     void levelGameChanged();
+    void flagLockedTablesChanged();
     void shotUser(int index);
     void shotComp(int index);
     void winUser();

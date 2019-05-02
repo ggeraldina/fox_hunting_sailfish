@@ -51,7 +51,6 @@ Page {
                 var fox = 1
                 var shot = 0
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-//                DB.dbPrintLocationGameSave()
             }
             onShotUser: {
                 soundEffect.play()
@@ -59,7 +58,6 @@ Page {
                 var fox = 0
                 var shot = 1
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-//                DB.dbPrintLocationGameSave()
             }
             onShotComp: {
                 soundEffect.play()
@@ -67,7 +65,6 @@ Page {
                 var fox = 0
                 var shot = 1
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-//                DB.dbPrintLocationGameSave()
             }
             onWinUser: {
                 var obj = { date: new Date(),
@@ -234,7 +231,7 @@ Page {
     }
 
     Component.onCompleted: {
-        DB.dbInitGameStatistics(tableName)
+        dataModel.flagLockedTables = true
         var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         dataModel.addFoxesComp(numberCellCompFoxes)
         if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
@@ -243,22 +240,20 @@ Page {
             var numberCellUserFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
             dataModel.addFoxesUser(numberCellUserFoxes)
             var stepRestoreGame = DB.dbGetStepGameLocationGameSave(level, quantityFoxes, baseFieldSize)
-            for (var i = 0; i < stepRestoreGame.length; i++) {
-//                console.log(i + " cell.index " + stepRestoreGame[i].index + " " + stepRestoreGame[i].field)
+            var numberRows = stepRestoreGame.length
+            for (var i = 0; i < numberRows; i++) {
                 if (stepRestoreGame[i].field == "Comp") {
-//                    console.log("comp cell.index " + stepRestoreGame[i].index)
                     dataModel.shotCellCompGameSave(stepRestoreGame[i].index)
                 }
                 if (stepRestoreGame[i].field == "User") {
-//                    console.log("user cell.index " + stepRestoreGame[i].index)
                     dataModel.shotCellUserGameSave(stepRestoreGame[i].index)
                 }
             }
+            if (stepRestoreGame[numberRows-1].field == "User" && stepRestoreGame[numberRows-1].fox == 0) {
+                dataModel.shotCellComp();
+            }
         }
-//        console.log("create game page")
-//        console.log(numberCellCompFoxes)
-//        console.log(numberCellUserFoxes)
-//        DB.dbPrintLocationGameSave()
+        dataModel.flagLockedTables = false
     }
 }
 

@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.LocalStorage 2.0
+import "qrc:/js/database/Database.js" as DB
 import "pages"
 
 ApplicationWindow
@@ -26,6 +28,8 @@ ApplicationWindow
         else {
             pageStack.push(Qt.resolvedUrl("pages/SelectLanguagePage.qml"))
         }
+        DB.dbInitGameStatistics("gameStatistics")
+        DB.dbInitLocationGameSave()
     }
 
 }

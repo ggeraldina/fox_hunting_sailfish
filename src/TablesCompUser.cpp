@@ -121,6 +121,10 @@ int TablesCompUser::getLevelGame() {
     return levelGame;
 }
 
+bool TablesCompUser::getFlagLockedTables() {
+    return flagLockedTables;
+}
+
 void TablesCompUser::setSpeedStepComp(int newValue) {
     if (newValue <= 0 || speedStepComp == newValue) {
         return;
@@ -135,6 +139,14 @@ void TablesCompUser::setLevelGame(int newValue) {
     }
     levelGame = newValue;
     emit levelGameChanged();
+}
+
+void TablesCompUser::setFlagLockedTables(bool newValue) {
+    if (flagLockedTables == newValue) {
+        return;
+    }
+    flagLockedTables = newValue;
+    emit flagLockedTablesChanged();
 }
 
 void TablesCompUser::increaseCountStepsComp(int addedValue) {
