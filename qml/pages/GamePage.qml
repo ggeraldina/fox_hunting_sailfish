@@ -249,7 +249,7 @@ Page {
                     dataModel.shotCellUserGameSave(stepRestoreGame[i].index)
                 }
             }
-            if (stepRestoreGame[numberRows-1].field == "User" && stepRestoreGame[numberRows-1].fox == 0) {
+            if (numberRows > 0 && stepRestoreGame[numberRows-1].field == "User" && stepRestoreGame[numberRows-1].fox == 0) {
                 dataModel.shotCellComp();
             }
         }
