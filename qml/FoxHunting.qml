@@ -31,5 +31,4 @@ ApplicationWindow
         DB.dbInitGameStatistics("gameStatistics")
         DB.dbInitLocationGameSave()
     }
-
 }

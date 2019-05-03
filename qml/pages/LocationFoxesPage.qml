@@ -193,10 +193,7 @@ Dialog {
     }
 
     function restoreCompFoxesGame() {
-        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp") == false) {
-            dataModelLocation.generateRandomLocationFoxes()
-            page.canAccept = true
-        } else {
+        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
             var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
             for (var i = 0; i < numberCellCompFoxes.length; i++) {
                 dataModelLocation.putOrRemoveFox(numberCellCompFoxes[i])
@@ -207,6 +204,9 @@ Dialog {
                 page.canAccept = false
                 labelMessage.text =  qsTr("Foxes less than need");
             }
+        } else {
+            dataModelLocation.generateRandomLocationFoxes()
+            page.canAccept = true
         }
     }
 }

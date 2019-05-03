@@ -170,7 +170,11 @@ Page {
     onStatusChanged: {
         if (status == PageStatus.Activating) {
             if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
-                itemContinueGame.visible = true
+                if (settings.settingSavingGames == "true") {
+                    itemContinueGame.visible = true
+                } else {
+                    itemContinueGame.visible = false
+                }
             } else {
                 itemContinueGame.visible = false
             }

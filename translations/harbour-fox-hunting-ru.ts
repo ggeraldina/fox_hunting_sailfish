@@ -93,7 +93,7 @@
     </message>
     <message>
         <location filename="../qml/pages/LocationFoxesPage.qml" line="173"/>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="208"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="205"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
@@ -130,7 +130,7 @@
     <name>MenuPage</name>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="23"/>
-        <location filename="../qml/pages/MenuPage.qml" line="186"/>
+        <location filename="../qml/pages/MenuPage.qml" line="190"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -150,47 +150,47 @@
         <translation>RU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="187"/>
+        <location filename="../qml/pages/MenuPage.qml" line="191"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="188"/>
+        <location filename="../qml/pages/MenuPage.qml" line="192"/>
         <source>Continue game</source>
         <translation>Продолжить игру</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="189"/>
+        <location filename="../qml/pages/MenuPage.qml" line="193"/>
         <source>Game&apos;s rules</source>
         <translation>Правила игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="190"/>
+        <location filename="../qml/pages/MenuPage.qml" line="194"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="191"/>
+        <location filename="../qml/pages/MenuPage.qml" line="195"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="192"/>
+        <location filename="../qml/pages/MenuPage.qml" line="196"/>
         <source>About program</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="193"/>
+        <location filename="../qml/pages/MenuPage.qml" line="197"/>
         <source>Game</source>
         <translation>Игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="194"/>
+        <location filename="../qml/pages/MenuPage.qml" line="198"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="195"/>
+        <location filename="../qml/pages/MenuPage.qml" line="199"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
