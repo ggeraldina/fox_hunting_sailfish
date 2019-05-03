@@ -181,7 +181,7 @@ Dialog {
         pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
     }
 
-    onCanceled: {
+    onRejected: {
         if (settings.settingSavingGames == "false") {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         }
