@@ -23,6 +23,18 @@ function dbDeleteAll(tableName) {
     })
 }
 
+function dbExistsDataTable(tableName) {
+    var db = dbGetHandle()
+    var results = ""
+    db.transaction(function (tx) {
+        results = tx.executeSql('SELECT * FROM ' + tableName)
+    })
+    if (results.rows.length == 0) {
+        return false
+    }
+    return true
+}
+
 // gameStatistics
 
 function dbInitGameStatistics(tableName) {

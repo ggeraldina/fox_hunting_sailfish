@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.LocalStorage 2.0
+import "qrc:/js/database/Database.js" as DB
 
 Page {
     id: page
@@ -9,6 +11,8 @@ Page {
     property int currentIndexNumberFoxes: settings.settingNumberFoxes - 3
     property int currentIndexSpeedStepComp: settings.settingSpeedStepComp / 500 - 1
     property int currentIndexLevel: settings.settingLevel - 1
+    property bool currentCheckedSavingGames: settings.settingSavingGames == "true" ? true : false
+    property bool currentCheckedSavingStatistics: settings.settingSavingStatistics == "true" ? true : false
 
     Connections {
             target: translator
@@ -16,11 +20,14 @@ Page {
 
     Connections {
             target: settings
+            // for default settings
             onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
             onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
             onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
             onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
             onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
+            onSettingSavingGamesChanged: switchSavingGames.checked = settings.settingSavingGames == "true" ? true : false
+            onSettingSavingStatisticsChanged: switchSavingStatistics.checked = settings.settingSavingStatistics == "true" ? true : false
     }
 
     SilicaFlickable {
@@ -159,6 +166,33 @@ Page {
                 stepSize: 0.1
                 on_OldValueChanged: {
                     settings.settingVolumeEffects = value;
+                }
+            }
+
+            TextSwitch {
+                id: switchSavingGames
+                text: qsTr("Saving games")
+                checked: currentCheckedSavingGames
+                onCheckedChanged: {
+                    if (checked) {
+                        settings.settingSavingGames = "true"
+                    } else {
+                        settings.settingSavingGames = "false"
+                        DB.dbDeleteAllLocationGameSave()
+                    }
+                }
+            }
+
+            TextSwitch {
+                id: switchSavingStatistics
+                text: qsTr("Saving statistics")
+                checked: currentCheckedSavingStatistics
+                onCheckedChanged: {
+                    if (checked) {
+                        settings.settingSavingStatistics = "true"
+                    } else {
+                        settings.settingSavingStatistics = "false"
+                    }
                 }
             }
         }

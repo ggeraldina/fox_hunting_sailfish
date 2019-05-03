@@ -181,8 +181,18 @@ Dialog {
         pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
     }
 
+    onCanceled: {
+        if (settings.settingSavingGames == "false") {
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+        }
+    }
+
     Component.onCompleted: {
         DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+        restoreCompFoxesGame()
+    }
+
+    function restoreCompFoxesGame() {
         if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp") == false) {
             dataModelLocation.generateRandomLocationFoxes()
             page.canAccept = true

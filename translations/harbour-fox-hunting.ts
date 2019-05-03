@@ -261,6 +261,14 @@
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Saving games</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StatisticsPage</name>

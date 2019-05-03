@@ -15,6 +15,8 @@ class QmlSettings : public QObject {
     Q_PROPERTY(float settingVolumeEffects READ getVolumeEffects WRITE setVolumeEffects NOTIFY settingVolumeEffectsChanged)
     Q_PROPERTY(QString settingLanguage READ getLanguage WRITE setLanguage NOTIFY settingLanguageChanged)
     Q_PROPERTY(int settingLevel READ getLevel WRITE setLevel NOTIFY settingLevelChanged)
+    Q_PROPERTY(QString settingSavingGames READ getSavingGames WRITE setSavingGames NOTIFY settingSavingGamesChanged)
+    Q_PROPERTY(QString settingSavingStatistics READ getSavingStatistics WRITE setSavingStatistics NOTIFY settingSavingStatisticsChanged)
 
 public:
     explicit QmlSettings(QObject *parent = nullptr);
@@ -25,6 +27,8 @@ public:
     float getVolumeEffects();
     QString getLanguage();
     int getLevel();
+    QString getSavingGames();
+    QString getSavingStatistics();
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
@@ -32,6 +36,8 @@ public:
     void setVolumeEffects(float newValue);
     void setLanguage(QString newValue);
     void setLevel(int newValue);
+    void setSavingGames(QString newValue);
+    void setSavingStatistics(QString newValue);
     Q_INVOKABLE void updateToDefaultSettings();
 
 private:
@@ -42,6 +48,8 @@ private:
     const QString SETTING_VOLUME_EFFECTS = "settings_app/volume_effects";
     const QString SETTING_LANGUAGE = "settings_app/language";
     const QString SETTING_LEVEL = "settings_game/level";
+    const QString SETTING_SAVING_GAMES = "settings_app/saving_games";
+    const QString SETTING_SAVING_STATISTICS = "settings_app/saving_statistics";
 
 signals:
     void settingBaseTableSizeChanged();
@@ -50,6 +58,8 @@ signals:
     void settingVolumeEffectsChanged();
     void settingLanguageChanged();
     void settingLevelChanged();
+    void settingSavingGamesChanged();
+    void settingSavingStatisticsChanged();
 };
 
 #endif // QMLSETTINGS_H

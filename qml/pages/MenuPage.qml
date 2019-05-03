@@ -169,10 +169,15 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Activating) {
-            if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp") == false) {
-                itemContinueGame.visible = false
-            } else {
+            if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
                 itemContinueGame.visible = true
+            } else {
+                itemContinueGame.visible = false
+            }
+            if (DB.dbExistsDataTable("gameStatistics")) {
+                itemStatistics.visible = true
+            } else {
+                itemStatistics.visible = false
             }
         }
     }

@@ -47,49 +47,59 @@ Page {
             speedStepComp: speedStepComputer
             levelGame: level
             onAddFoxUser: {
-                var field = "User"
-                var fox = 1
-                var shot = 0
-                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                if (settings.settingSavingGames == "true") {
+                    var field = "User"
+                    var fox = 1
+                    var shot = 0
+                    DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                }
             }
             onShotUser: {
                 soundEffect.play()
-                var field = "User"
-                var fox = 0
-                var shot = 1
-                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                if (settings.settingSavingGames == "true") {
+                    var field = "User"
+                    var fox = 0
+                    var shot = 1
+                    DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                }
             }
             onShotComp: {
                 soundEffect.play()
-                var field = "Comp"
-                var fox = 0
-                var shot = 1
-                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                if (settings.settingSavingGames == "true") {
+                    var field = "Comp"
+                    var fox = 0
+                    var shot = 1
+                    DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+                }
             }
             onWinUser: {
-                var obj = { date: new Date(),
-                    sizeField: baseFieldSize,
-                    countFoxes: quantityFoxes,
-                    winner: "You",
-                    level: level,
-                    stepsComp: countStepsComp,
-                    stepsUser: countStepsUser,
+                if (settings.settingSavingStatistics == "true") {
+                    var obj = { date: new Date(),
+                        sizeField: baseFieldSize,
+                        countFoxes: quantityFoxes,
+                        winner: "You",
+                        level: level,
+                        stepsComp: countStepsComp,
+                        stepsUser: countStepsUser,
+                    }
+                    DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 }
-                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
                 DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
                 pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
             }
             onWinComp: {
-                var obj = { date: new Date(),
-                    sizeField: baseFieldSize,
-                    countFoxes: quantityFoxes,
-                    winner: "I",
-                    level: level,
-                    stepsComp: countStepsComp,
-                    stepsUser: countStepsUser,
+                if (settings.settingSavingStatistics == "true") {
+                    var obj = { date: new Date(),
+                        sizeField: baseFieldSize,
+                        countFoxes: quantityFoxes,
+                        winner: "I",
+                        level: level,
+                        stepsComp: countStepsComp,
+                        stepsUser: countStepsUser,
+                    }
+                    DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 }
-                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
                 DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
                 DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
                 pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
@@ -231,29 +241,42 @@ Page {
     }
 
     Component.onCompleted: {
+        restoreGame()
+    }
+
+    function restoreGame() {
         dataModel.flagLockedTables = true
         var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         dataModel.addFoxesComp(numberCellCompFoxes)
-        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
+        if (settings.settingSavingGames == "false") {
             dataModel.initFoxesUser()
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         } else {
-            var numberCellUserFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
-            dataModel.addFoxesUser(numberCellUserFoxes)
-            var stepRestoreGame = DB.dbGetStepGameLocationGameSave(level, quantityFoxes, baseFieldSize)
-            var numberRows = stepRestoreGame.length
-            for (var i = 0; i < numberRows; i++) {
-                if (stepRestoreGame[i].field == "Comp") {
-                    dataModel.shotCellCompGameSave(stepRestoreGame[i].index)
-                }
-                if (stepRestoreGame[i].field == "User") {
-                    dataModel.shotCellUserGameSave(stepRestoreGame[i].index)
-                }
-            }
-            if (numberRows > 0 && stepRestoreGame[numberRows-1].field == "User" && stepRestoreGame[numberRows-1].fox == 0) {
-                dataModel.shotCellComp();
+            if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
+                dataModel.initFoxesUser()
+            } else {
+                restoreStepsGame()
             }
         }
         dataModel.flagLockedTables = false
+    }
+
+    function restoreStepsGame() {
+        var numberCellUserFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+        dataModel.addFoxesUser(numberCellUserFoxes)
+        var stepRestoreGame = DB.dbGetStepGameLocationGameSave(level, quantityFoxes, baseFieldSize)
+        var numberRows = stepRestoreGame.length
+        for (var i = 0; i < numberRows; i++) {
+            if (stepRestoreGame[i].field == "Comp") {
+                dataModel.shotCellCompGameSave(stepRestoreGame[i].index)
+            }
+            if (stepRestoreGame[i].field == "User") {
+                dataModel.shotCellUserGameSave(stepRestoreGame[i].index)
+            }
+        }
+        if (numberRows > 0 && stepRestoreGame[numberRows-1].field == "User" && stepRestoreGame[numberRows-1].fox == 0) {
+            dataModel.shotCellComp();
+        }
     }
 }
 

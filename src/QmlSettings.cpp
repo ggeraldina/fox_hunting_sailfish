@@ -34,6 +34,16 @@ int QmlSettings::getLevel() {
     return settings.value(SETTING_LEVEL, 1).toInt();
 }
 
+QString QmlSettings::getSavingGames() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_SAVING_GAMES, "true").toString();
+}
+
+QString QmlSettings::getSavingStatistics() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_SAVING_STATISTICS, "true").toString();
+}
+
 void QmlSettings::setBaseTableSize(int newValue) {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, newValue);
@@ -76,6 +86,20 @@ void QmlSettings::setLevel(int newValue) {
     emit settingLevelChanged();
 }
 
+void QmlSettings::setSavingGames(QString newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_SAVING_GAMES, newValue);
+    settings.sync();
+    emit settingSavingGamesChanged();
+}
+
+void QmlSettings::setSavingStatistics(QString newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_SAVING_STATISTICS, newValue);
+    settings.sync();
+    emit settingSavingStatisticsChanged();
+}
+
 void QmlSettings::updateToDefaultSettings() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
@@ -84,11 +108,15 @@ void QmlSettings::updateToDefaultSettings() {
     settings.setValue(SETTING_VOLUME_EFFECTS, 0.0);
     settings.setValue(SETTING_LANGUAGE, "-??");
     settings.setValue(SETTING_LEVEL, 1);
+    settings.setValue(SETTING_SAVING_GAMES, "true");
+    settings.setValue(SETTING_SAVING_STATISTICS, "true");
     emit settingBaseTableSizeChanged();
     emit settingNumberFoxesChanged();
     emit settingSpeedStepCompChanged();
     emit settingVolumeEffectsChanged();
     emit settingLanguageChanged();
     emit settingLevelChanged();
+    emit settingSavingGamesChanged();
+    emit settingSavingStatisticsChanged();
     settings.sync();
 }
