@@ -147,78 +147,78 @@
 <context>
     <name>MenuPage</name>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="23"/>
-        <location filename="../qml/pages/MenuPage.qml" line="227"/>
+        <location filename="../qml/pages/MenuPage.qml" line="34"/>
+        <location filename="../qml/pages/MenuPage.qml" line="224"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="158"/>
+        <location filename="../qml/pages/MenuPage.qml" line="155"/>
         <source>Language | Язык</source>
         <translation>Language | Язык</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="162"/>
+        <location filename="../qml/pages/MenuPage.qml" line="159"/>
         <source>EN</source>
         <translation>EN</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="169"/>
+        <location filename="../qml/pages/MenuPage.qml" line="166"/>
         <source>RU</source>
         <translation>RU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="228"/>
+        <location filename="../qml/pages/MenuPage.qml" line="225"/>
         <source>New game</source>
         <translation>Новая игра против ИИ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="229"/>
+        <location filename="../qml/pages/MenuPage.qml" line="226"/>
         <source>Continue game</source>
         <translation>Продолжить игру против ИИ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="230"/>
+        <location filename="../qml/pages/MenuPage.qml" line="227"/>
         <source>New game (practice)</source>
         <translation>Новая тренировочная игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="231"/>
+        <location filename="../qml/pages/MenuPage.qml" line="228"/>
         <source>Continue game (practice)</source>
         <translation>Продолжить тренировочную игру</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="232"/>
+        <location filename="../qml/pages/MenuPage.qml" line="229"/>
         <source>Game&apos;s rules</source>
         <translation>Правила игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="233"/>
+        <location filename="../qml/pages/MenuPage.qml" line="230"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игр</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="234"/>
+        <location filename="../qml/pages/MenuPage.qml" line="231"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="235"/>
+        <location filename="../qml/pages/MenuPage.qml" line="232"/>
         <source>About program</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="236"/>
+        <location filename="../qml/pages/MenuPage.qml" line="233"/>
         <source>Game</source>
         <translation>Игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="237"/>
+        <location filename="../qml/pages/MenuPage.qml" line="234"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="238"/>
+        <location filename="../qml/pages/MenuPage.qml" line="235"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>

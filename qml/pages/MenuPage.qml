@@ -18,24 +18,21 @@ Page {
         }
     }
 
-    PageHeader {
-        id: headerPage
-        title: qsTr("Menu")
-    }
-
     SilicaFlickable {
         id: flickable
         contentWidth: column.width
         contentHeight: column.height
         anchors.fill: parent
-        anchors {
-            topMargin: headerPage.height
-        }
 
         Column {
             id: column
             width: flickable.width
             spacing: Theme.paddingMedium
+
+            PageHeader {
+                id: headerPage
+                title: qsTr("Menu")
+            }
 
             SectionHeader {
                 id: sectionGame
