@@ -7,7 +7,20 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
-    property string tableName: "gameStatistics"
+
+    ListModel {
+        id: listModel
+        Component.onCompleted: {
+            DB.dbReadGameStatistics()
+        }
+    }
+
+    ListModel {
+        id: listModelPractice
+        Component.onCompleted: {
+            DB.dbReadGamePracticeStatistics()
+        }
+    }
 
     SilicaFlickable {
         id: flickable
@@ -41,7 +54,7 @@ Page {
                     // подчеркивание icon.source красным в Qt Creator - это нормально
                     icon.source: "image://theme/icon-m-delete"
                     onClicked: {
-                        DB.dbDeleteAllGameStatistics(tableName)
+                        DB.dbDeleteAllGameStatistics()
                     }
                 }
             }
@@ -50,103 +63,151 @@ Page {
                 spacing: Theme.paddingMedium
                 width: flickable.width
 
-                Repeater {
-                    model: ListModel {
-                        id: listModel
-                        Component.onCompleted: DB.dbReadAllGameStatistics(tableName)
+                ExpandingSectionGroup {
+                    ExpandingSection {
+                        title: qsTr("Game with AI")
+                        content.sourceComponent: Column {
+                            Repeater {
+                                model: listModel
+                                delegate: Column {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    Label {
+                                        id: labelName
+                                        anchors.right: parent.right
+                                        text: qsTr("")
+                                        color: Theme.highlightColor
+                                        font.pixelSize: Theme.fontSizeTiny
+                                    }
+                                    Column {
+                                        width: page.width - 40
+                                        height: (Theme.paddingMedium + Theme.fontSizeSmall) * 8
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        spacing: Theme.paddingMedium
+                                        Text {
+                                            id: textWinner
+                                            text: qsTr("Winner ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                            id: textLevelGame
+                                            text: qsTr("Level ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                            id: textStepsUser
+                                            text: qsTr("Steps user ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                            id: textStepsComp
+                                            text: qsTr("Steps comp ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                            id: textSizeField
+                                            text: qsTr("Size field ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                           id: textNumberFoxes
+                                           text: qsTr("Foxes ")
+                                           color: Theme.highlightColor
+                                           font.pixelSize: Theme.fontSizeSmall
+                                           anchors.horizontalCenter: parent.horizontalCenter
+                                       }
+                                    }
+                                    Component.onCompleted: {
+                                        var obj = JSON.parse(model.dataJSON)
+                                        var date = new Date(obj.date)
+                                        labelName.text += date.toDateString() + ", " + date.toTimeString()
+                                        textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
+                                        textNumberFoxes.text += obj.countFoxes
+                                        if (settings.settingLanguage == "-ru") {
+                                            if (obj.winner == "I") {
+                                                textWinner.text += "Противник"
+                                            }
+                                            else {
+                                                textWinner.text += "Вы"
+                                            }
+                                        }
+                                        else {
+                                            if (obj.winner == "I") {
+                                                textWinner.text += "Opponent"
+                                            }
+                                            else {
+                                                textWinner.text += "You"
+                                            }
+                                        }
+                                        textLevelGame.text += obj.level
+                                        textStepsComp.text += obj.stepsComp
+                                        textStepsUser.text += obj.stepsUser
+                                    }
+                                }
+                            }
+                        }
                     }
 
-                    delegate: Column {
-                        anchors.horizontalCenter: parent.horizontalCenter
-
-                        Label {
-                            id: labelName
-                            anchors.right: parent.right
-                            text: qsTr("")
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeTiny
-                        }
-
-                        Column {
-                            width: page.width - 40
-                            height: (Theme.paddingMedium + Theme.fontSizeSmall) * (6 + 1)
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            spacing: Theme.paddingMedium
-
-                            Text {
-                                id: textWinner
-                                text: qsTr("Winner ")
-                                color: Theme.highlightColor
-                                font.pixelSize: Theme.fontSizeSmall
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }                            
-
-                            Text {
-                                id: textLevelGame
-                                text: qsTr("Level ")
-                                color: Theme.highlightColor
-                                font.pixelSize: Theme.fontSizeSmall
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-
-                            Text {
-                                id: textStepsUser
-                                text: qsTr("Steps user ")
-                                color: Theme.highlightColor
-                                font.pixelSize: Theme.fontSizeSmall
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-
-                            Text {
-                                id: textStepsComp
-                                text: qsTr("Steps comp ")
-                                color: Theme.highlightColor
-                                font.pixelSize: Theme.fontSizeSmall
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-
-                            Text {
-                                id: textSizeField
-                                text: qsTr("Size field ")
-                                color: Theme.highlightColor
-                                font.pixelSize: Theme.fontSizeSmall
-                                anchors.horizontalCenter: parent.horizontalCenter
-                            }
-
-                            Text {
-                               id: textNumberFoxes
-                               text: qsTr("Foxes ")
-                               color: Theme.highlightColor
-                               font.pixelSize: Theme.fontSizeSmall
-                               anchors.horizontalCenter: parent.horizontalCenter
-                           }
-                        }
-
-                        Component.onCompleted: {
-                            var obj = JSON.parse(model.dataJSON)
-                            var date = new Date(obj.date)
-                            labelName.text += date.toDateString() + ", " + date.toTimeString()
-                            textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
-                            textNumberFoxes.text += obj.countFoxes
-                            if (settings.settingLanguage == "-ru") {
-                                if (obj.winner == "I") {
-                                    textWinner.text += "Противник"
-                                }
-                                else {
-                                    textWinner.text += "Вы"
+                    ExpandingSection {
+                        title: qsTr("Game (practice)")
+                        content.sourceComponent: Column {
+                            Repeater {
+                                model: listModelPractice
+                                delegate: Column {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    Label {
+                                        id: labelPracticeName
+                                        anchors.right: parent.right
+                                        text: qsTr("")
+                                        color: Theme.highlightColor
+                                        font.pixelSize: Theme.fontSizeTiny
+                                    }
+                                    Column {
+                                        width: page.width - 40
+                                        height: (Theme.paddingMedium + Theme.fontSizeSmall) * 5
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        spacing: Theme.paddingMedium
+                                        Text {
+                                            id: textPracticeStepsUser
+                                            text: qsTr("Steps user ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                            id: textPracticeSizeField
+                                            text: qsTr("Size field ")
+                                            color: Theme.highlightColor
+                                            font.pixelSize: Theme.fontSizeSmall
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+                                        Text {
+                                           id: textPracticeNumberFoxes
+                                           text: qsTr("Foxes ")
+                                           color: Theme.highlightColor
+                                           font.pixelSize: Theme.fontSizeSmall
+                                           anchors.horizontalCenter: parent.horizontalCenter
+                                       }
+                                    }
+                                    Component.onCompleted: {
+                                        var obj = JSON.parse(model.dataJSON)
+                                        var date = new Date(obj.date)
+                                        labelPracticeName.text += date.toDateString() + ", " + date.toTimeString()
+                                        textPracticeSizeField.text += (obj.sizeField + "×" + obj.sizeField)
+                                        textPracticeNumberFoxes.text += obj.countFoxes
+                                        textPracticeStepsUser.text += obj.stepsUser
+                                    }
                                 }
                             }
-                            else {
-                                if (obj.winner == "I") {
-                                    textWinner.text += "Opponent"
-                                }
-                                else {
-                                    textWinner.text += "You"
-                                }
-                            }
-                            textLevelGame.text += obj.level
-                            textStepsComp.text += obj.stepsComp
-                            textStepsUser.text += obj.stepsUser
                         }
                     }
                 }
@@ -154,9 +215,5 @@ Page {
         }
 
         VerticalScrollDecorator { }
-    }
-
-    Component.onCompleted: {
-        DB.dbInitGameStatistics(tableName)
     }
 }

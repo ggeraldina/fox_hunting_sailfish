@@ -115,14 +115,12 @@ Page {
         }
 
         Grid {
-            id: fieldTop
             spacing: spacingGrid
             x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
             height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
             columns: 2
 
             Rectangle {
-                  id: item
                   width: baseWidthHeight
                   height: baseWidthHeight
                   color: "darkblue";
@@ -141,7 +139,6 @@ Page {
                   height: baseWidthHeight * baseFieldSize
 
                   Grid {
-                      id: fieldTopFox
                       spacing: spacingGrid
                       anchors.fill: parent
                       columns: baseFieldSize
@@ -150,19 +147,19 @@ Page {
                       Repeater {
                           model: dataModel.dataComp
                           delegate: Item {
-                                      width: baseWidthHeight
-                                      height: baseWidthHeight
+                              width: baseWidthHeight
+                              height: baseWidthHeight
 
-                                      Image {
-                                          anchors.fill: parent
-                                          source: model.backgroundURL
-                                      }
+                              Image {
+                                  anchors.fill: parent
+                                  source: model.backgroundURL
+                              }
 
-                                      Text {
-                                          anchors.centerIn: parent
-                                          text: model.text
-                                      }
-                                  }
+                              Text {
+                                  anchors.centerIn: parent
+                                  text: model.text
+                              }
+                          }
                       }
                   }
              }
@@ -177,7 +174,6 @@ Page {
         }
 
         Grid {
-            id: fieldBottom
             spacing: spacingGrid
             x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
             height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
@@ -202,7 +198,6 @@ Page {
                   height: baseWidthHeight * baseFieldSize
 
                   Grid {
-                      id: fieldBottomFox
                       spacing: spacingGrid
                       anchors.fill: parent
                       columns: baseFieldSize
@@ -211,29 +206,29 @@ Page {
                       Repeater {
                           model: dataModel.dataUser
                           delegate: Item {
-                                      width: baseWidthHeight
-                                      height: baseWidthHeight
+                              width: baseWidthHeight
+                              height: baseWidthHeight
 
-                                      Image {
-                                          anchors.fill: parent
-                                          source: model.backgroundURL
-                                      }
+                              Image {
+                                  anchors.fill: parent
+                                  source: model.backgroundURL
+                              }
 
-                                      Text {
-                                          anchors.centerIn: parent
-                                          text: model.text
-                                      }
+                              Text {
+                                  anchors.centerIn: parent
+                                  text: model.text
+                              }
 
-                                      MouseArea {
-                                          anchors.fill: parent
-                                          onClicked: {
-                                              dataModel.shotCellUser(model.index);
-                                          }
-                                          onPressAndHold: {
-                                              dataModel.putOrRemoveMarkCellUser(model.index);
-                                          }
-                                      }
+                              MouseArea {
+                                  anchors.fill: parent
+                                  onClicked: {
+                                      dataModel.shotCellUser(model.index);
                                   }
+                                  onPressAndHold: {
+                                      dataModel.putOrRemoveMarkCellUser(model.index);
+                                  }
+                              }
+                          }
                       }
                   }
              }

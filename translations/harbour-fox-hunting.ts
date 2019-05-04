@@ -52,6 +52,21 @@
     </message>
 </context>
 <context>
+    <name>GamePracticePage</name>
+    <message>
+        <source> (steps </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Min steps </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LocationFoxesPage</name>
     <message>
         <source>Ok</source>
@@ -153,6 +168,14 @@
     </message>
     <message>
         <source>Continue game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New game (practice)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue game (practice)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -304,6 +327,14 @@
         <source></source>
         <translation></translation>
     </message>
+    <message>
+        <source>Game with AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game (practice)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TablesLocationFoxes</name>
@@ -340,6 +371,37 @@
     </message>
     <message>
         <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WinGamePracticePage</name>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulate!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You made </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The game is over.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> steps.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

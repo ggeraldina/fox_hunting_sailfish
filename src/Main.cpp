@@ -7,6 +7,7 @@
 #include "CellComp.h"
 #include "TablesCompUser.h"
 #include "TablesLocationFoxes.h"
+#include "TablesPractice.h"
 #include "QmlSettings.h"
 #include "QmlTranslator.h"
 
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<CellComp>("CellComp", 1, 0, "CellComp");
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");
     qmlRegisterType<TablesLocationFoxes>("TablesLocationFoxes", 1, 0, "TablesLocationFoxes");
+    qmlRegisterType<TablesPractice>("TablesPractice", 1, 0, "TablesPractice");
     qmlRegisterType<QmlSettings>("QmlSettings", 1, 0, "QmlSettings");
     qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");    
 

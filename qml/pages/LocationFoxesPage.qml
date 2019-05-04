@@ -76,14 +76,12 @@ Dialog {
         }
 
         Grid {
-            id: fieldTop
             spacing: spacingGrid
             x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
             height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
             columns: 2
 
             Rectangle {
-                  id: item
                   width: baseWidthHeight
                   height: baseWidthHeight
                   color: "darkblue";
@@ -102,7 +100,6 @@ Dialog {
                   height: baseWidthHeight * baseFieldSize
 
                   Grid {
-                      id: fieldTopFox
                       spacing: spacingGrid
                       anchors.fill: parent
                       columns: baseFieldSize

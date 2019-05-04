@@ -48,20 +48,38 @@
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="112"/>
-        <location filename="../qml/pages/GamePage.qml" line="174"/>
+        <location filename="../qml/pages/GamePage.qml" line="171"/>
         <source> (steps </source>
         <translation> (steps </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="112"/>
-        <location filename="../qml/pages/GamePage.qml" line="174"/>
+        <location filename="../qml/pages/GamePage.qml" line="171"/>
         <source>)</source>
         <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="173"/>
+        <location filename="../qml/pages/GamePage.qml" line="170"/>
         <source>You</source>
         <translation>Your field</translation>
+    </message>
+</context>
+<context>
+    <name>GamePracticePage</name>
+    <message>
+        <location filename="../qml/pages/GamePracticePage.qml" line="81"/>
+        <source> Min steps </source>
+        <translation>Try to find all the foxes by making as few steps as possible.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <source> (steps </source>
+        <translation> Steps </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <source>)</source>
+        <translation> </translation>
     </message>
 </context>
 <context>
@@ -87,13 +105,13 @@
         <translation>You can set the location of the foxes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="159"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="156"/>
         <source>Randomly</source>
         <translation>Randomly</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="173"/>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="205"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="170"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="202"/>
         <source>Foxes less than need</source>
         <translation>Foxes less than need</translation>
     </message>
@@ -130,67 +148,77 @@
     <name>MenuPage</name>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="23"/>
-        <location filename="../qml/pages/MenuPage.qml" line="190"/>
+        <location filename="../qml/pages/MenuPage.qml" line="227"/>
         <source>Menu</source>
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="128"/>
+        <location filename="../qml/pages/MenuPage.qml" line="158"/>
         <source>Language | Язык</source>
         <translation>Language | Язык</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="132"/>
+        <location filename="../qml/pages/MenuPage.qml" line="162"/>
         <source>EN</source>
         <translation>EN</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="139"/>
+        <location filename="../qml/pages/MenuPage.qml" line="169"/>
         <source>RU</source>
         <translation>RU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="191"/>
+        <location filename="../qml/pages/MenuPage.qml" line="228"/>
         <source>New game</source>
-        <translation>New game</translation>
+        <translation>New game against AI</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="192"/>
+        <location filename="../qml/pages/MenuPage.qml" line="229"/>
         <source>Continue game</source>
-        <translation>Continue game</translation>
+        <translation>Continue game against AI</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="193"/>
+        <location filename="../qml/pages/MenuPage.qml" line="230"/>
+        <source>New game (practice)</source>
+        <translation>New practice game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="231"/>
+        <source>Continue game (practice)</source>
+        <translation>Continue practice game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="232"/>
         <source>Game&apos;s rules</source>
         <translation>Game&apos;s rules</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="194"/>
+        <location filename="../qml/pages/MenuPage.qml" line="233"/>
         <source>Game&apos;s statistics</source>
-        <translation>Game&apos;s statistics</translation>
+        <translation>Games&apos; statistics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="195"/>
+        <location filename="../qml/pages/MenuPage.qml" line="234"/>
         <source>Game&apos;s settings</source>
         <translation>Game&apos;s settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="196"/>
+        <location filename="../qml/pages/MenuPage.qml" line="235"/>
         <source>About program</source>
         <translation>About program</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="197"/>
+        <location filename="../qml/pages/MenuPage.qml" line="236"/>
         <source>Game</source>
         <translation>Game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="198"/>
+        <location filename="../qml/pages/MenuPage.qml" line="237"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="199"/>
+        <location filename="../qml/pages/MenuPage.qml" line="238"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
@@ -285,7 +313,7 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="74"/>
         <source>Games&apos;s level</source>
-        <translation>Games&apos;s level</translation>
+        <translation>Game&apos;s level against AI</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
@@ -315,7 +343,7 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>Size of games field</source>
-        <translation>Size of games field</translation>
+        <translation>Size of game&apos;s field</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="126"/>
@@ -350,28 +378,40 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="188"/>
         <source>Saving statistics</source>
-        <translation>Save game&apos;s statistics</translation>
+        <translation>Save games&apos; statistics</translation>
     </message>
 </context>
 <context>
     <name>StatisticsPage</name>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="34"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="47"/>
         <source>Game&apos;s statistics</source>
-        <translation>Game&apos;s statistics</translation>
+        <translation>Games&apos; statistics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="110"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="68"/>
+        <source>Game with AI</source>
+        <translation>Games against AI</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="116"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="188"/>
         <source>Size field </source>
         <translation>Size of gaming fields: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="118"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="123"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="195"/>
         <source>Foxes </source>
         <translation>Number of foxes: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="78"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="161"/>
+        <source>Game (practice)</source>
+        <translation>Practice games</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StatisticsPage.qml" line="88"/>
         <source>Winner </source>
         <translation>Winner - </translation>
     </message>
@@ -381,17 +421,18 @@ The winner is the one who first finds all the foxes.
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="86"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="95"/>
         <source>Level </source>
         <translation>Level </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="102"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="109"/>
         <source>Steps comp </source>
         <translation>Count opponent&apos;s steps: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="94"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="102"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="181"/>
         <source>Steps user </source>
         <translation>Count your steps: </translation>
     </message>
@@ -441,6 +482,44 @@ The winner is the one who first finds all the foxes.
         <location filename="../qml/pages/WinGamePage.qml" line="52"/>
         <source>Menu</source>
         <translation>Menu</translation>
+    </message>
+</context>
+<context>
+    <name>WinGamePracticePage</name>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="13"/>
+        <source>Fox hunting</source>
+        <translation>Fox hunting</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="28"/>
+        <source>The game is over.</source>
+        <translation>The game is over.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="35"/>
+        <source>Congratulate!</source>
+        <translation>Congratulate!</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="56"/>
+        <source>New game</source>
+        <translation>New game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="62"/>
+        <source>Menu</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="70"/>
+        <source>You made </source>
+        <translation>You made </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGamePracticePage.qml" line="72"/>
+        <source> steps.</source>
+        <translation> steps.</translation>
     </message>
 </context>
 </TS>

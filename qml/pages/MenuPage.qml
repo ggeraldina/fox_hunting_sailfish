@@ -62,7 +62,7 @@ Page {
                 width: column.width
                 Label {
                     id: labelContinueGame
-                    color: itemNewGame.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    color: itemContinueGame.highlighted ? Theme.highlightColor : Theme.primaryColor
                     anchors.verticalCenter: parent.verticalCenter
                     x: Theme.horizontalPageMargin
                 }
@@ -72,6 +72,36 @@ Page {
                     } else {
                         pageStack.push(Qt.resolvedUrl("GamePage.qml"))
                     }
+                }
+            }
+
+            BackgroundItem {
+                id: itemNewGamePractice
+                width: column.width
+                Label {
+                    id: labelNewGamePractice
+                    color: itemNewGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    var levelPractice = 0
+                    DB.dbDeleteFieldLocationGameSave(levelPractice, quantityFoxes, baseFieldSize, "Practice")
+                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemContinueGamePractice
+                width: column.width
+                Label {
+                    id: labelContinueGamePractice
+                    color: itemContinueGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
                 }
             }
 
@@ -169,14 +199,21 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Activating) {
-            if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
-                if (settings.settingSavingGames == "true") {
+            var levelPractice = 0
+            if (settings.settingSavingGames == "true") {
+                if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
                     itemContinueGame.visible = true
                 } else {
                     itemContinueGame.visible = false
                 }
+                if (DB.dbExistsFieldLocationGameSave(levelPractice, quantityFoxes, baseFieldSize, "Practice")) {
+                    itemContinueGamePractice.visible = true
+                } else {
+                    itemContinueGamePractice.visible = false
+                }
             } else {
                 itemContinueGame.visible = false
+                itemContinueGamePractice.visible = false
             }
             if (DB.dbExistsDataTable("gameStatistics")) {
                 itemStatistics.visible = true
@@ -190,6 +227,8 @@ Page {
         headerPage.title = qsTr("Menu")
         labelNewGame.text = qsTr("New game")
         labelContinueGame.text = qsTr("Continue game")
+        labelNewGamePractice.text = qsTr("New game (practice)")
+        labelContinueGamePractice.text = qsTr("Continue game (practice)")
         labelRules.text = qsTr("Game's rules")
         labelStatistics.text = qsTr("Game's statistics")
         labelSettings.text = qsTr("Game's settings")

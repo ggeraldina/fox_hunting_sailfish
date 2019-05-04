@@ -35,46 +35,91 @@ function dbExistsDataTable(tableName) {
     return true
 }
 
+// for debug
+
+function dbPrintTable(table) {
+        var db = dbGetHandle()
+        var results = ""
+        console.log("----------------TABLE------------------")
+        db.transaction(function (tx) {
+            results = tx.executeSql('SELECT * FROM ' + table)
+            for (var i = 0; i < results.rows.length; i++) {
+                for(var column in results.rows.item(i)) {
+                    console.log(column + ": " + results.rows.item(i)[column])
+                }
+            }
+        })
+        console.log("---------------------------------------")
+}
+
 // gameStatistics
 
-function dbInitGameStatistics(tableName) {
+function dbInitGameStatistics(table) {
     var db = dbGetHandle()
     try {
         db.transaction(function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS ' +
-                          tableName +
+                          table +
                           ' (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, dataJSON TEXT)')
         })
     } catch (err) {
-        console.log("Error creating table " + tableName + " in database: " + err)
+        console.log("Error creating table " + table + " in database: " + err)
     };
 }
 
-function dbReadAllGameStatistics(tableName) {
+function dbReadGameStatistics() {
     var db = dbGetHandle()
     db.transaction(function (tx) {
-        var results = tx.executeSql('SELECT id, dataJSON FROM ' + tableName)
+        var results = tx.executeSql('SELECT id, dataJSON FROM gameStatistics')
+        for (var i = 0; i < results.rows.length; i++) {
+        // listModel - it is my stuff (type ListModel)
+            listModel.append({
+                                     id: results.rows.item(i).id,
+                                     dataJSON: results.rows.item(i).dataJSON
+                                 })
+        }
+    })
+}
+
+function dbReadGamePracticeStatistics() {
+    var db = dbGetHandle()
+    db.transaction(function (tx) {
+        var results = tx.executeSql('SELECT id, dataJSON FROM gamePracticeStatistics')
         for (var i = 0; i < results.rows.length; i++) {
             // listModel - it is my stuff (type ListModel)
-            listModel.append({
-                                 id: results.rows.item(i).id,
+            listModelPractice.append({
+                                 id: "Practice_" + results.rows.item(i).id,
                                  dataJSON: results.rows.item(i).dataJSON
                              })
         }
     })
 }
 
-function dbInsertRowGameStatistics(tableName, dataJSON) {
+function dbCountStepsGamePracticeStatistics() {
+    var db = dbGetHandle()
+    var obj = ""
+    db.transaction(function (tx) {
+        var results = tx.executeSql('SELECT id, dataJSON FROM gamePracticeStatistics ORDER BY id')
+        var lastRow = results.rows.length - 1
+        var data = results.rows.item(lastRow).dataJSON
+        obj = JSON.parse(data)
+    })
+    return obj.stepsUser
+}
+
+function dbInsertRowGameStatistics(table, dataJSON) {
     var db = dbGetHandle()
     db.transaction(function (tx) {
-        tx.executeSql('INSERT INTO ' + tableName + ' (dataJSON) VALUES(?)', [dataJSON])
+        tx.executeSql('INSERT INTO ' + table + ' (dataJSON) VALUES(?)', [dataJSON])
     })
 }
 
-function dbDeleteAllGameStatistics(tableName) {
-    dbDeleteAll(tableName);
+function dbDeleteAllGameStatistics() {
+    dbDeleteAll("gameStatistics");
+    dbDeleteAll("gamePracticeStatistics");
     // listModel - it is my stuff (type ListModel)
     listModel.clear()
+    listModelPractice.clear()
 }
 
 // locationGameSave

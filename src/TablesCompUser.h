@@ -51,7 +51,7 @@ public:
     Q_INVOKABLE void shotCellUserGameSave(int index);
 
 
-private:
+protected:
     void increaseCountStepsComp(int addedValue = 1);
     void increaseCountStepsUser(int addedValue = 1);
 
@@ -90,7 +90,7 @@ signals:
 
 public slots:
 
-private slots:
+protected slots:
     void createData();
     void nextStepComp();
 };

@@ -29,6 +29,7 @@ ApplicationWindow
             pageStack.push(Qt.resolvedUrl("pages/SelectLanguagePage.qml"))
         }
         DB.dbInitGameStatistics("gameStatistics")
+        DB.dbInitGameStatistics("gamePracticeStatistics")
         DB.dbInitLocationGameSave()
     }
 }
