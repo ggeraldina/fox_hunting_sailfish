@@ -67,17 +67,17 @@
 <context>
     <name>GamePracticePage</name>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="81"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="85"/>
         <source> Min steps </source>
         <translation>Попробуйте найти всех лис, сделав как можно меньше ходов.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="150"/>
         <source> (steps </source>
         <translation> Ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="150"/>
         <source>)</source>
         <translation> </translation>
     </message>

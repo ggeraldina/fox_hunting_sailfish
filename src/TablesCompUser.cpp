@@ -61,14 +61,6 @@ void TablesCompUser::shotCellCompGameSave(int index) {
     else {
         TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     }
-
-//    for (int i = 0; i < dataComp.count(); i++) {
-//        qDebug() << i << " Comp with:";
-//        qDebug() << "value " << dataComp.value(i)->getValue();
-//        qDebug() << "shot " << dataComp.value(i)->getShot();
-//        qDebug() << "possible shot " << dataComp.value(i)->getPossibleShot();
-//        qDebug() << "chance " << dataComp.value(i)->getChance();
-//    }
 }
 
 void TablesCompUser::shotCellUserGameSave(int index) {
@@ -81,12 +73,6 @@ void TablesCompUser::shotCellUserGameSave(int index) {
     else {
         TableUser::editCellsWhenNoFox(&dataUser, index);
     }
-
-//    for (int i = 0; i < dataUser.count(); i++) {
-//        qDebug() << i << " User with:";
-//        qDebug() << "value " << dataUser.value(i)->getValue();
-//        qDebug() << "shot " << dataUser.value(i)->getShot();
-//    }
 }
 
 QQmlListProperty<CellComp> TablesCompUser::getDataComp() {
@@ -123,6 +109,10 @@ int TablesCompUser::getLevelGame() {
 
 bool TablesCompUser::getFlagLockedTables() {
     return flagLockedTables;
+}
+
+int TablesCompUser::getCountFoundFoxesUser() {
+    return countFoundFoxesUser;
 }
 
 void TablesCompUser::setSpeedStepComp(int newValue) {
@@ -179,9 +169,15 @@ void TablesCompUser::shotCellUserWhenFox(int index) {
     TableUser::editCellsWhenFox(&dataUser, index);
     countFoundFoxesUser++;
     if (countFoundFoxesUser == numberFoxes) {
-        emit winUser();
+        flagLockedTables = true;
+        QTimer::singleShot(speedTimer, this, &TablesCompUser::signalWinUser);
+        return;
     }
     flagLockedTables = false;
+}
+
+void TablesCompUser::signalWinUser() {
+    emit winUser();
 }
 
 void TablesCompUser::shotCellUserWhenNoFox(int index) {
@@ -210,10 +206,15 @@ void TablesCompUser::shotCellCompWhenFox(int index) {
     TableComp::editCellsWhenFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     countFoundFoxesComp++;
     if (countFoundFoxesComp == numberFoxes) {
-        emit winComp();
+        flagLockedTables = true;
+        QTimer::singleShot(speedTimer, this, &TablesCompUser::signalWinComp);
         return;
     }
     QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
+}
+
+void TablesCompUser::signalWinComp() {
+    emit winComp();
 }
 
 void TablesCompUser::shotCellCompWhenNoFox(int index) {

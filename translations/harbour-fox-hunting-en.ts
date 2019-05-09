@@ -67,17 +67,17 @@
 <context>
     <name>GamePracticePage</name>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="81"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="85"/>
         <source> Min steps </source>
         <translation>Try to find all the foxes by making as few steps as possible.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="150"/>
         <source> (steps </source>
         <translation> Steps </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="150"/>
         <source>)</source>
         <translation> </translation>
     </message>

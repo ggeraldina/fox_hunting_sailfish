@@ -8,5 +8,7 @@
         <file>js/database/Database.js</file>
         <file>image/fox.gif</file>
         <file>image/salute.gif</file>
+        <file>image/foxInCircle.png</file>
+        <file>image/foxInCircleBW.png</file>
     </qresource>
 </RCC>

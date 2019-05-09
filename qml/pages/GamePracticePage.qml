@@ -13,6 +13,7 @@ Page {
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
+    property int maxQuantityFoxes: 4
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property int level: 0
     property string field: "Practice"
@@ -57,7 +58,10 @@ Page {
                     var fox = 0
                     var shot = 1
                     DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                }
+                }                
+            }
+            onShotFoxUser: {
+                repeaterFoundFoxes.model.get(beforeCountFoxes).flippedFox = true
             }
             onWinUser: {
                 if (settings.settingSavingStatistics == "true") {
@@ -81,6 +85,64 @@ Page {
             text: qsTr(" Min steps ")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeMedium
+        }
+
+        Grid {
+            id: gridFoundFoxes
+            spacing: Theme.paddingLarge
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: (page.width - 2 * Theme.paddingLarge - (columns - 1) * Theme.paddingLarge) / maxQuantityFoxes
+            columns: quantityFoxes
+            Repeater {
+                id: repeaterFoundFoxes
+                model: ListModel {
+                    id: modelFoundFoxes
+                }
+                delegate: Flipable {
+                    id: flipable
+                    width: gridFoundFoxes.height
+                    height: gridFoundFoxes.height
+
+                    property bool flipped: flippedFox
+
+                    front: Image {
+                        source: "qrc:/image/foxInCircleBW.png"
+                        width: gridFoundFoxes.height
+                        height: gridFoundFoxes.height
+                        anchors.centerIn: parent
+                    }
+                    back: Image {
+                        source: "qrc:/image/foxInCircle.png"
+                        width: gridFoundFoxes.height
+                        height: gridFoundFoxes.height
+                        anchors.centerIn: parent
+                    }
+
+                    transform: Rotation {
+                        id: rotation
+                        origin.x: flipable.width/2
+                        origin.y: flipable.height/2
+                        axis.x: 0; axis.y: 1; axis.z: 0
+                        angle: 0
+                    }
+
+                    states: State {
+                        PropertyChanges {
+                            target: rotation
+                            angle: 180
+                        }
+                        when: flipable.flipped
+                    }
+
+                    transitions: Transition {
+                        NumberAnimation {
+                            target: rotation
+                            property: "angle"
+                            duration: 1000
+                        }
+                    }
+                }
+            }
         }
 
         Label {
@@ -165,6 +227,14 @@ Page {
                 restoreStepsGame()
             } else {
                 dataModelPractice.initFoxesUser()
+            }
+        }
+        var countFoundFoxes = dataModelPractice.getCountFoundFoxesUser()
+        for(var j = 0; j < settings.settingNumberFoxes; j++) {
+            if (j < countFoundFoxes) {
+                modelFoundFoxes.append({"idFox": j, "flippedFox": true})
+            } else {
+                modelFoundFoxes.append({"idFox": j, "flippedFox": false})
             }
         }
         dataModelPractice.flagLockedTables = false

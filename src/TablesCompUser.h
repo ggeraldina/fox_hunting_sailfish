@@ -49,6 +49,7 @@ public:
     Q_INVOKABLE void addFoxesUser(QVariant indexes);
     Q_INVOKABLE void shotCellCompGameSave(int index);
     Q_INVOKABLE void shotCellUserGameSave(int index);
+    Q_INVOKABLE int getCountFoundFoxesUser();
 
 
 protected:
@@ -56,7 +57,7 @@ protected:
     void increaseCountStepsUser(int addedValue = 1);
 
     void shotCellUserWhenFox(int index);
-    void shotCellUserWhenNoFox(int index);
+    void shotCellUserWhenNoFox(int index);    
     void shotCellCompWhenFox(int index);
     void shotCellCompWhenNoFox(int index);
     int generateIndexByLevel();
@@ -64,6 +65,7 @@ protected:
     int speedStepComp; // msec
     int levelGame; // 1 - minimum level
     const QString MARK_USER = "?";
+    const int speedTimer = 2000; //msec
 
     int countFoundFoxesComp = 0;
     int countFoundFoxesUser = 0;
@@ -84,6 +86,7 @@ signals:
     void flagLockedTablesChanged();
     void shotUser(int index);
     void shotComp(int index);
+    void shotFoxUser(int beforeCountFoxes);
     void winUser();
     void winComp();
     void addFoxUser(int index);
@@ -93,6 +96,8 @@ public slots:
 protected slots:
     void createData();
     void nextStepComp();
+    void signalWinUser();
+    void signalWinComp();
 };
 
 #endif // TABLESCOMPUSER_H

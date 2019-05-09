@@ -7,13 +7,14 @@ TablesPractice::~TablesPractice() {
 }
 
 void TablesPractice::shotCellUser(int index) {
-    if (dataUser.value(index)->getShot()) {
+    if (flagLockedTables || dataUser.value(index)->getShot()) {
         return;
     }
     emit shotUser(index);
     TablesCompUser::increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
+        emit shotFoxUser(countFoundFoxesUser);
         TablesCompUser::shotCellUserWhenFox(index);
     }
     else {
