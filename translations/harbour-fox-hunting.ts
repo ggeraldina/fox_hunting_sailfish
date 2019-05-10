@@ -178,6 +178,14 @@
         <source>Continue game (practice)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New game against player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue game against player</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RulesPage</name>

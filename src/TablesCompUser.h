@@ -1,18 +1,17 @@
 #ifndef TABLESCOMPUSER_H
 #define TABLESCOMPUSER_H
 
-#include <QDebug>
 #include <QVariant>
 #include <QObject>
 #include <QQmlListProperty>
 #include <QTimer>
 #include <QTime>
-#include "CellComp.h"
-#include "CellUser.h"
-#include "TablesBase.h"
 #include "lib_tables/TableAny.h"
 #include "lib_tables/TableComp.h"
 #include "lib_tables/TableUser.h"
+#include "CellComp.h"
+#include "CellUser.h"
+#include "TablesBase.h"
 
 
 class TablesCompUser : public TablesBase {
@@ -41,14 +40,15 @@ public:
     void setLevelGame(int newValue);
     void setFlagLockedTables(bool newValue);
 
+    Q_INVOKABLE void createData();
     Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
     Q_INVOKABLE void shotCellComp();
     Q_INVOKABLE void putOrRemoveMarkCellUser(int index);
     Q_INVOKABLE void addFoxesComp(QVariant indexes);
     Q_INVOKABLE void initFoxesUser();
     Q_INVOKABLE void addFoxesUser(QVariant indexes);
-    Q_INVOKABLE void shotCellCompGameSave(int index);
-    Q_INVOKABLE void shotCellUserGameSave(int index);
+    Q_INVOKABLE void shotCellCompGameRestore(int index);
+    Q_INVOKABLE void shotCellUserGameRestore(int index);
     Q_INVOKABLE int getCountFoundFoxesUser();
 
 
@@ -94,7 +94,6 @@ signals:
 public slots:
 
 protected slots:
-    void createData();
     void nextStepComp();
     void signalWinUser();
     void signalWinComp();

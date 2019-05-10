@@ -2,10 +2,10 @@
 #define TABLESLOCATIONFOXES_H
 
 #include <QObject>
-#include "TablesBase.h"
-#include "CellBase.h"
 #include <QQmlListProperty>
 #include "lib_tables/TableAny.h"
+#include "CellBase.h"
+#include "TablesBase.h"
 
 class TablesLocationFoxes : public TablesBase {
     Q_OBJECT
@@ -15,6 +15,7 @@ public:
     TablesLocationFoxes(QObject *parent = nullptr);
     ~TablesLocationFoxes();
 
+    Q_INVOKABLE void createData();
     Q_INVOKABLE void cleanLocationFoxes();
     Q_INVOKABLE void generateRandomLocationFoxes();
     Q_INVOKABLE QString putOrRemoveFox(int index);
@@ -28,12 +29,11 @@ private:
 
 signals:
     void dataFoxesChanged();
-    void addFoxComp(int index);
-    void removeFoxComp(int index);
+    void addFoxLocation(int index);
+    void removeFoxLocation(int index);
     void removeAllFox();
 
 private slots:
-    void createData();
 };
 
 

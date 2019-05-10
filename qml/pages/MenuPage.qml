@@ -10,6 +10,7 @@ Page {
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
     property int level: settings.settingLevel
+    property int levelDefault: 0
 
     Connections {
         target: translator
@@ -50,7 +51,12 @@ Page {
                 onClicked: {
                     DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
                     DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
-                    pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"))
+                    pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                   { level: level,
+                                     field: "Comp",
+                                     fieldOpponent: "User",
+                                     nextPage: "GamePage.qml",
+                                     namePlayer: "" })
                 }
             }
 
@@ -65,7 +71,12 @@ Page {
                 }
                 onClicked: {
                     if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
-                        pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"))
+                        pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                       { level: level,
+                                         field: "Comp",
+                                         fieldOpponent: "User",
+                                         nextPage: "GamePage.qml",
+                                         namePlayer: "" })
                     } else {
                         pageStack.push(Qt.resolvedUrl("GamePage.qml"))
                     }
@@ -99,6 +110,59 @@ Page {
                 }
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemNewGameUserUser
+                width: column.width
+                Label {
+                    id: labelNewGameUserUser
+                    color: itemNewGameUserUser.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    DB.dbDeleteFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User0")
+                    DB.dbDeleteFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User1")
+                    pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                   { level: levelDefault,
+                                     field: "User1",
+                                     fieldOpponent: "User0",
+                                     nextPage: "LocationFoxesPage.qml",
+                                     namePlayer: "Player 1! " })
+                }
+            }
+
+            BackgroundItem {
+                id: itemContinueGameUserUser
+                width: column.width
+                Label {
+                    id: labelContinueGameUserUser
+                    color: itemContinueGameUserUser.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    if (DB.dbExistsFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User1") == false) {
+                        pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                       { level: levelDefault,
+                                         field: "User1",
+                                         fieldOpponent: "User0",
+                                         nextPage: "LocationFoxesPage.qml",
+                                         namePlayer: "Player 1! " })
+                    } else {
+                        if (DB.dbExistsFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User0") == false) {
+                            pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                           { level: levelDefault,
+                                             field: "User0",
+                                             fieldOpponent: "",
+                                             nextPage: "GameUserUserPage.qml",
+                                             namePlayer: "Player 2! " })
+                        } else {
+                            pageStack.push(Qt.resolvedUrl("GameUserUserPage.qml"))
+                        }
+                    }
                 }
             }
 
@@ -226,6 +290,8 @@ Page {
         labelContinueGame.text = qsTr("Continue game")
         labelNewGamePractice.text = qsTr("New game (practice)")
         labelContinueGamePractice.text = qsTr("Continue game (practice)")
+        labelNewGameUserUser.text = qsTr("New game against player")
+        labelContinueGameUserUser.text = qsTr("Continue game against player")
         labelRules.text = qsTr("Game's rules")
         labelStatistics.text = qsTr("Game's statistics")
         labelSettings.text = qsTr("Game's settings")

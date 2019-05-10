@@ -12,13 +12,8 @@ Dialog {
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
+    property int level: settings.settingLevel
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
-    // customizable properties
-    property int level: 0
-    property string field: ""
-    property string fieldOpponent: ""
-    property string nextPage: ""
-    property string namePlayer: ""
 
     Connections {
         target: settings
@@ -33,14 +28,17 @@ Dialog {
     TablesLocationFoxes {
         id: dataModelLocation
         onAddFoxLocation: {
+            var field = "Comp"
             var fox = 1
             var shot = 0
             DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
         }
         onRemoveFoxLocation: {
+            var field = "Comp"
             DB.dbDeleteRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index)
         }
         onRemoveAllFox: {
+            var field = "Comp"
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
         }
     }
@@ -56,7 +54,7 @@ Dialog {
         spacing: Theme.paddingMedium
 
         Label {
-            text: namePlayer + qsTr("Are you pleased the location of the foxes on the field?")
+            text: qsTr("Are you pleased the location of the foxes on the field?")
             width:column.width - Theme.paddingLarge * 2
             horizontalAlignment: Text.AlignJustify
             anchors.horizontalCenter: parent.horizontalCenter
@@ -84,19 +82,7 @@ Dialog {
             Rectangle {
                   width: baseWidthHeight
                   height: baseWidthHeight
-                  color: {
-                      switch (field) {
-                      case "Comp":
-                          color = "darkblue"
-                          break
-                      case "User0":
-                          color = "darkblue"
-                          break
-                      case "User1":
-                          color = "darkred"
-                          break
-                      }
-                  }
+                  color: "darkblue";
             }
 
             FieldTableLitters {
@@ -187,28 +173,17 @@ Dialog {
     }
 
     onAccepted: {
-        switch (nextPage) {
-        case "LocationFoxesPage.qml":
-            pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                             { level: level,
-                                               field: "User0",
-                                               fieldOpponent: "",
-                                               nextPage: "GameUserUserPage.qml",
-                                               namePlayer: "Player 2! " })
-            break
-        default:
-            pageStack.replace(Qt.resolvedUrl(nextPage))
-        }
+        pageStack.replace(Qt.resolvedUrl("GamePage.qml"))
     }
 
     onRejected: {
         if (settings.settingSavingGames == "false") {
-            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         }
     }
 
     Component.onCompleted: {
-        DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, fieldOpponent)
+        DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
         dataModelLocation.baseTableSize = baseFieldSize
         dataModelLocation.numberFoxes = quantityFoxes
         dataModelLocation.createData()
@@ -217,10 +192,10 @@ Dialog {
     }
 
     function restoreCompFoxesGame() {
-        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)) {
-            var numberCellFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
-            for (var i = 0; i < numberCellFoxes.length; i++) {
-                dataModelLocation.putOrRemoveFox(numberCellFoxes[i])
+        if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
+            var numberCellCompFoxes = DB.dbGetFoxesFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+            for (var i = 0; i < numberCellCompFoxes.length; i++) {
+                dataModelLocation.putOrRemoveFox(numberCellCompFoxes[i])
             }
             if(dataModelLocation.equalNumberAndCountFoxes()) {
                 page.canAccept = true
@@ -234,3 +209,4 @@ Dialog {
         }
     }
 }
+

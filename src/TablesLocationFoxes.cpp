@@ -1,7 +1,6 @@
 #include "TablesLocationFoxes.h"
 
 TablesLocationFoxes::TablesLocationFoxes(QObject *parent) : TablesBase(parent) {
-    connect(this, &TablesBase::baseTableSizeChanged, this, &TablesLocationFoxes::createData);
     currentCountFoxes = 0;
 }
 
@@ -49,7 +48,7 @@ void TablesLocationFoxes::generateRandomLocationFoxes() {
             if (TableAny::checkPossibleAddFox(&dataFoxes, randomIndex)) {
                 dataFoxes.value(randomIndex)->setValue(VALUE_FOX);
                 dataFoxes.value(randomIndex)->setText("x");
-                emit addFoxComp(randomIndex);
+                emit addFoxLocation(randomIndex);
                 break;
             }
         }
@@ -60,7 +59,7 @@ QString TablesLocationFoxes::putOrRemoveFox(int index) {
     if (dataFoxes.value(index)->getValue() == VALUE_FOX) {
         dataFoxes.value(index)->setValue(0);
         dataFoxes.value(index)->setText("");
-        emit removeFoxComp(index);
+        emit removeFoxLocation(index);
         currentCountFoxes--;
         return tr("Foxes less than need");
     }
@@ -68,7 +67,7 @@ QString TablesLocationFoxes::putOrRemoveFox(int index) {
         if (TableAny::checkPossibleAddFox(&dataFoxes, index)) {
             dataFoxes.value(index)->setValue(VALUE_FOX);
             dataFoxes.value(index)->setText("x");
-            emit addFoxComp(index);
+            emit addFoxLocation(index);
             currentCountFoxes++;
             if (currentCountFoxes != numberFoxes) {
                 return tr("Foxes less than need");

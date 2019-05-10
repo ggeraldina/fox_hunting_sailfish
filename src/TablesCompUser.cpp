@@ -1,7 +1,6 @@
 #include "TablesCompUser.h"
 
 TablesCompUser::TablesCompUser(QObject *parent) : TablesBase(parent) {
-    connect(this, &TablesBase::baseTableSizeChanged, this, &TablesCompUser::createData);
 }
 
 TablesCompUser::~TablesCompUser() {
@@ -51,7 +50,7 @@ void TablesCompUser::addFoxesUser(QVariant indexes) {
     }
 }
 
-void TablesCompUser::shotCellCompGameSave(int index) {
+void TablesCompUser::shotCellCompGameRestore(int index) {
     increaseCountStepsComp();
     int valueCell = dataComp.value(index)->getValue();
     if (valueCell == VALUE_FOX) {
@@ -63,7 +62,7 @@ void TablesCompUser::shotCellCompGameSave(int index) {
     }
 }
 
-void TablesCompUser::shotCellUserGameSave(int index) {
+void TablesCompUser::shotCellUserGameRestore(int index) {
     increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
     if (valueCell == VALUE_FOX) {

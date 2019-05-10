@@ -30,6 +30,40 @@ Page {
         loops : 1
     }
 
+    TablesPractice {
+        id: dataModelPractice
+        onAddFoxUser: {
+            if (settings.settingSavingGames == "true") {
+                var fox = 1
+                var shot = 0
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+            }
+        }
+        onShotUser: {
+            soundEffect.play()
+            if (settings.settingSavingGames == "true") {
+                var fox = 0
+                var shot = 1
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+            }
+        }
+        onShotFoxUser: {
+            repeaterFoundFoxes.model.get(beforeCountFoxes).flippedFox = true
+        }
+        onWinUser: {
+            if (settings.settingSavingStatistics == "true") {
+                var obj = { date: new Date(),
+                    sizeField: baseFieldSize,
+                    countFoxes: quantityFoxes,
+                    stepsUser: countStepsUser,
+                }
+                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
+            }
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
+            pageStack.replace(Qt.resolvedUrl("WinGamePracticePage.qml"))
+        }
+    }
+
     Column {
         id: column
         anchors {
@@ -39,43 +73,7 @@ Page {
             left: page.left
             bottom: page.bottom
         }
-        spacing: Theme.paddingMedium
-
-        TablesPractice {
-            id: dataModelPractice
-            baseTableSize: baseFieldSize
-            numberFoxes: quantityFoxes
-            onAddFoxUser: {
-                if (settings.settingSavingGames == "true") {
-                    var fox = 1
-                    var shot = 0
-                    DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                }
-            }
-            onShotUser: {
-                soundEffect.play()
-                if (settings.settingSavingGames == "true") {
-                    var fox = 0
-                    var shot = 1
-                    DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
-                }                
-            }
-            onShotFoxUser: {
-                repeaterFoundFoxes.model.get(beforeCountFoxes).flippedFox = true
-            }
-            onWinUser: {
-                if (settings.settingSavingStatistics == "true") {
-                    var obj = { date: new Date(),
-                        sizeField: baseFieldSize,
-                        countFoxes: quantityFoxes,
-                        stepsUser: countStepsUser,
-                    }
-                    DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
-                }
-                DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
-                pageStack.replace(Qt.resolvedUrl("WinGamePracticePage.qml"))
-            }
-        }
+        spacing: Theme.paddingMedium        
 
         Label {
             width:column.width - Theme.paddingLarge * 2
@@ -183,7 +181,7 @@ Page {
                       rows: baseFieldSize
 
                       Repeater {
-                          model: dataModelPractice.dataUser
+                          id: repeaterPracticeUser
                           delegate: Item {
                               width: baseWidthHeight
                               height: baseWidthHeight
@@ -215,7 +213,11 @@ Page {
     }
 
     Component.onCompleted: {
+        dataModelPractice.baseTableSize = baseFieldSize
+        dataModelPractice.numberFoxes = quantityFoxes
+        dataModelPractice.createData()
         restoreGame()
+        repeaterPracticeUser.model = dataModelPractice.dataUser
     }
 
     function restoreGame() {
@@ -247,7 +249,7 @@ Page {
         var numberRows = stepRestoreGame.length
         for (var i = 0; i < numberRows; i++) {
             if (stepRestoreGame[i].field == "Practice") {
-                dataModelPractice.shotCellUserGameSave(stepRestoreGame[i].index)
+                dataModelPractice.shotCellUserGameRestore(stepRestoreGame[i].index)
             }
         }
     }

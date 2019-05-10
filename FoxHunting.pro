@@ -27,7 +27,8 @@ SOURCES += \
     src/QmlSettings.cpp \
     src/TablesBase.cpp \
     src/TablesLocationFoxes.cpp \
-    src/TablesPractice.cpp
+    src/TablesPractice.cpp \
+    src/TablesUserUser.cpp
 
 DISTFILES += \
     qml/FoxHunting.qml \
@@ -52,7 +53,8 @@ DISTFILES += \
     qml/pages/AboutPage.qml \
     qml/pages/LocationFoxesPage.qml \
     qml/pages/GamePracticePage.qml \
-    qml/pages/WinGamePracticePage.qml
+    qml/pages/WinGamePracticePage.qml \
+    qml/pages/GameUserUserPage.qml
 
 RESOURCES += \
     foxhunting.qrc
@@ -88,7 +90,8 @@ HEADERS += \
     src/QmlSettings.h \
     src/TablesBase.h \
     src/TablesLocationFoxes.h \
-    src/TablesPractice.h
+    src/TablesPractice.h \
+    src/TablesUserUser.h
 
 #SUBDIRS += \
 #    FoxHunting.pro
