@@ -135,7 +135,8 @@ Page {
                                      field: "User1",
                                      fieldOpponent: "User0",
                                      nextPage: "LocationFoxesPage.qml",
-                                     namePlayer: namePlayer1 })
+                                     namePlayer: namePlayer1,
+                                     namePlayer2: namePlayer2})
                 }
             }
 
@@ -156,7 +157,8 @@ Page {
                                          field: "User1",
                                          fieldOpponent: "User0",
                                          nextPage: "LocationFoxesPage.qml",
-                                         namePlayer: namePlayer1 })
+                                         namePlayer: namePlayer1,
+                                         namePlayer2: namePlayer2})
                     } else {
                         if (DB.dbGetStatusGameStatus("UserUser", levelDefault, quantityFoxes, baseFieldSize) == "locationUser0") {
                             pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),

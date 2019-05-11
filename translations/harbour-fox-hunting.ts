@@ -67,6 +67,25 @@
     </message>
 </context>
 <context>
+    <name>GameUserUserPage</name>
+    <message>
+        <source>Player 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> (steps </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LocationFoxesPage</name>
     <message>
         <source>Ok</source>
@@ -90,10 +109,6 @@
     </message>
     <message>
         <source>Foxes less than need</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Player2! </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

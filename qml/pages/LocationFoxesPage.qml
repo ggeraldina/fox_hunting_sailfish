@@ -20,7 +20,7 @@ Dialog {
     property string fieldOpponent: ""
     property string nextPage: ""
     property string namePlayer: ""
-    property string namePlayer2: qsTr("Player2! ")
+    property string namePlayer2: ""
 
     Connections {
         target: settings

@@ -27,11 +27,7 @@ void TablesCompUser::createData() {
 }
 
 void TablesCompUser::addFoxesComp(QVariant indexes) {
-    QList<QVariant> list = indexes.toList();
-    for(auto index : list) {
-        int indexInt = index.toInt();
-        TableAny::addOneFox(&dataComp, indexInt);
-    }
+    TableAny::addFoxes(&dataComp, indexes);
     TableAny::showFoxesOnField(&dataComp);
 }
 
@@ -43,11 +39,7 @@ void TablesCompUser::initFoxesUser() {
 }
 
 void TablesCompUser::addFoxesUser(QVariant indexes) {
-    QList<QVariant> list = indexes.toList();
-    for(auto index : list) {
-        int indexInt = index.toInt();
-        TableAny::addOneFox(&dataUser, indexInt);
-    }
+    TableAny::addFoxes(&dataUser, indexes);
 }
 
 void TablesCompUser::shotCellCompGameRestore(int index) {
@@ -222,16 +214,7 @@ void TablesCompUser::shotCellCompWhenNoFox(int index) {
 }
 
 void TablesCompUser::putOrRemoveMarkCellUser(int index) {
-    if (dataUser.value(index)->getShot()) {
-        return;
-    }
-    QString textCell = dataUser.value(index)->getText();
-    if (textCell == "") {
-        dataUser.value(index)->setText(MARK_USER);
-    }
-    else {
-        dataUser.value(index)->setText("");
-    }
+    TableUser::putOrRemoveMarkCell(&dataUser, index);
 }
 
 int TablesCompUser::generateIndexByLevel() {

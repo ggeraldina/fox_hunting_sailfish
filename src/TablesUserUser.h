@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QQmlListProperty>
 #include "TablesCompUser.h"
+#include "TablesPractice.h"
 
 class TablesUserUser : public TablesCompUser {
     Q_OBJECT
@@ -23,14 +24,16 @@ public:
     void setFlagLockedTablesOpponent(bool newValue);
 
     Q_INVOKABLE void createData();
-//    Q_INVOKABLE void shotCellUserOpponent(int index);
-//    Q_INVOKABLE void putOrRemoveMarkCellUserOpponent(int index);
-//    Q_INVOKABLE void initFoxesUserOpponent();
-//    Q_INVOKABLE void addFoxesUserOpponent(QVariant indexes);
-//    Q_INVOKABLE void shotCellUserOpponentGameRestore(int index);
+    Q_INVOKABLE void shotCellUserOpponent(int index); // the user made the shot on the cell with index
+    Q_INVOKABLE void shotCellUser(int index); // the user made the shot on the cell with index
+    Q_INVOKABLE void putOrRemoveMarkCellUserOpponent(int index);
+    Q_INVOKABLE void addFoxesUserOpponent(QVariant indexes);
+    Q_INVOKABLE void shotCellUserOpponentGameRestore(int index);
 
 protected:
     void increaseCountStepsUserOpponent(int addedValue = 1);
+
+    void shotCellUserOpponentWhenFox(int index);
 
     int countFoundFoxesUserOpponent = 0;
     int countStepsUserOpponent = 0;
@@ -48,7 +51,7 @@ signals:
     void addFoxUserOpponent(int index);
 
 protected slots:
-//    void signalWinUserOpponent();
+    void signalWinUserOpponent();
 };
 
 #endif // TABLESUSERUSER_H

@@ -64,7 +64,6 @@ protected:
 
     int speedStepComp; // msec
     int levelGame; // 1 - minimum level
-    const QString MARK_USER = "?";
     const int speedTimer = 2000; //msec
 
     int countFoundFoxesComp = 0;

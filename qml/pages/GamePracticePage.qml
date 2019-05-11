@@ -218,11 +218,15 @@ Page {
     Component.onCompleted: {
         var statusGame = "game"
         DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+        initDataModelPractice()
+        repeaterPracticeUser.model = dataModelPractice.dataUser
+    }
+
+    function initDataModelPractice() {
         dataModelPractice.baseTableSize = baseFieldSize
         dataModelPractice.numberFoxes = quantityFoxes
         dataModelPractice.createData()
         restoreGame()
-        repeaterPracticeUser.model = dataModelPractice.dataUser
     }
 
     function restoreGame() {

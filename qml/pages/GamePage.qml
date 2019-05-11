@@ -240,14 +240,18 @@ Page {
     Component.onCompleted: {
         var statusGame = "game"
         DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+        initDataModel()
+        repeaterComp.model = dataModel.dataComp
+        repeaterUser.model = dataModel.dataUser
+    }
+
+    function initDataModel() {
         dataModel.baseTableSize = baseFieldSize
         dataModel.numberFoxes = quantityFoxes
         dataModel.speedStepComp = speedStepComputer
         dataModel.levelGame = level
         dataModel.createData()
         restoreGame()
-        repeaterComp.model = dataModel.dataComp
-        repeaterUser.model = dataModel.dataUser
     }
 
     function restoreGame() {

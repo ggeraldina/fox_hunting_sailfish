@@ -8,6 +8,7 @@
 #include "TablesCompUser.h"
 #include "TablesLocationFoxes.h"
 #include "TablesPractice.h"
+#include "TablesUserUser.h"
 #include "QmlSettings.h"
 #include "QmlTranslator.h"
 
@@ -25,6 +26,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<TablesCompUser>("TablesCompUser", 1, 0, "TablesCompUser");
     qmlRegisterType<TablesLocationFoxes>("TablesLocationFoxes", 1, 0, "TablesLocationFoxes");
     qmlRegisterType<TablesPractice>("TablesPractice", 1, 0, "TablesPractice");
+    qmlRegisterType<TablesUserUser>("TablesUserUser", 1, 0, "TablesUserUser");
     qmlRegisterType<QmlSettings>("QmlSettings", 1, 0, "QmlSettings");
     qmlRegisterType<QmlTranslator>("QmlTranslator", 1, 0, "QmlTranslator");    
 

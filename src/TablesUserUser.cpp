@@ -26,6 +26,22 @@ void TablesUserUser::createData() {
     }
 }
 
+void TablesUserUser::addFoxesUserOpponent(QVariant indexes) {
+    TableAny::addFoxes(&dataUserOpponent, indexes);
+}
+
+void TablesUserUser::shotCellUserOpponentGameRestore(int index) {
+    increaseCountStepsUserOpponent();
+    int valueCell = dataUserOpponent.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        countFoundFoxesUserOpponent++;
+        TableUser::editCellsWhenFox(&dataUserOpponent, index);
+    }
+    else {
+        TableUser::editCellsWhenNoFox(&dataUserOpponent, index);
+    }
+}
+
 QQmlListProperty<CellUser> TablesUserUser::getDataUserOpponent() {
     return QQmlListProperty<CellUser>(static_cast<QObject *>(this), static_cast<void *>(&dataUserOpponent),
                                      &TablesBase::appendDataCells<CellUser>,
@@ -53,4 +69,61 @@ void TablesUserUser::setFlagLockedTablesOpponent(bool newValue) {
 void TablesUserUser::increaseCountStepsUserOpponent(int addedValue) {
     countStepsUserOpponent += addedValue;
     emit countStepsUserOpponentChanged();
+}
+
+
+
+
+void TablesUserUser::shotCellUserOpponent(int index) {
+    if (flagLockedTablesOpponent || dataUserOpponent.value(index)->getShot()) {
+        return;
+    }
+    flagLockedTablesOpponent = true;
+    emit shotUserOpponent(index);
+    increaseCountStepsUserOpponent();
+    int valueCell = dataUserOpponent.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        emit shotFoxUserOpponent(countFoundFoxesUserOpponent);
+        shotCellUserOpponentWhenFox(index);
+    }
+    else {
+        TableUser::editCellsWhenNoFox(&dataUserOpponent, index);
+        flagLockedTables = false;
+    }
+}
+
+void TablesUserUser::shotCellUserOpponentWhenFox(int index) {
+    TableUser::editCellsWhenFox(&dataUserOpponent, index);
+    countFoundFoxesUserOpponent++;
+    if (countFoundFoxesUserOpponent == numberFoxes) {
+        flagLockedTablesOpponent = true;
+        QTimer::singleShot(speedTimer, this, &TablesUserUser::signalWinUserOpponent);
+        return;
+    }
+    flagLockedTablesOpponent = false;
+}
+
+void TablesUserUser::signalWinUserOpponent() {
+    emit winUserOpponent();
+}
+
+void TablesUserUser::shotCellUser(int index) {
+    if (flagLockedTables || dataUser.value(index)->getShot()) {
+        return;
+    }
+    flagLockedTables = true;
+    emit shotUser(index);
+    TablesCompUser::increaseCountStepsUser();
+    int valueCell = dataUser.value(index)->getValue();
+    if (valueCell == VALUE_FOX) {
+        TablesCompUser::shotCellUserWhenFox(index);
+    }
+    else {
+        TableUser::editCellsWhenNoFox(&dataUser, index);
+        flagLockedTablesOpponent = false;
+    }
+}
+
+void TablesUserUser::putOrRemoveMarkCellUserOpponent(int index) {
+    TableUser::putOrRemoveMarkCell(&dataUserOpponent, index);
 }

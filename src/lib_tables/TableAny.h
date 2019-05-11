@@ -2,6 +2,7 @@
 #define TABLEANY_H
 
 #include <QObject>
+#include <QVariant>
 #include <QVector>
 
 // объяснение, почему реализация шаблонов в .h
@@ -15,6 +16,16 @@ public:
     static void calculateIndexesCellsAroundRadius(int indexesCellsAround[],
                                                   int countCells, int currentIndex, int radius = 1);
     static int calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex);
+
+    template <class T>
+    static void addFoxes(T *list, QVariant indexes) {
+        QList<QVariant> indexesFoxes = indexes.toList();
+        for(auto index : indexesFoxes) {
+            int indexInt = index.toInt();
+            addOneFox(list, indexInt);
+        }
+    }
+
 
     template <class T>
     static QVector<int> addRandomFoxes(T *list, int numberFoxes) {

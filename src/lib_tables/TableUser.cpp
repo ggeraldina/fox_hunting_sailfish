@@ -16,3 +16,16 @@ void TableUser::editCellsWhenNoFox(QList<CellUser *> *list, int index) {
     list->value(index)->setShot(true);
 }
 
+void TableUser::putOrRemoveMarkCell(QList<CellUser *> *list, int index) {
+    if (list->value(index)->getShot()) {
+        return;
+    }
+    QString textCell = list->value(index)->getText();
+    if (textCell == "") {
+        list->value(index)->setText("?");
+    }
+    else {
+        list->value(index)->setText("");
+    }
+}
+

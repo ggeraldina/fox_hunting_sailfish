@@ -12,6 +12,7 @@ public:
 
     static void editCellsWhenFox(QList<CellUser *> *list, int index);
     static void editCellsWhenNoFox(QList<CellUser *> *list, int index);
+    static void putOrRemoveMarkCell(QList<CellUser *> *list, int index);
 
 private:
     static const int VALUE_FOX = -1;
