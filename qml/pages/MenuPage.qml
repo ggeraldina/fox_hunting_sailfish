@@ -11,6 +11,8 @@ Page {
     property int quantityFoxes: settings.settingNumberFoxes
     property int level: settings.settingLevel
     property int levelDefault: 0
+    property string namePlayer1: qsTr("Player1! ")
+    property string namePlayer2: qsTr("Player2! ")
 
     Connections {
         target: translator
@@ -52,7 +54,8 @@ Page {
                     DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
                     DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
                     pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                   { level: level,
+                                   { typeGame: "AI",
+                                     level: level,
                                      field: "Comp",
                                      fieldOpponent: "User",
                                      nextPage: "GamePage.qml",
@@ -70,9 +73,10 @@ Page {
                     x: Theme.horizontalPageMargin
                 }
                 onClicked: {
-                    if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {
+                    if (DB.dbGetStatusGameStatus("AI", level, quantityFoxes, baseFieldSize) == "locationComp") {
                         pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                       { level: level,
+                                       { typeGame: "AI",
+                                         level: level,
                                          field: "Comp",
                                          fieldOpponent: "User",
                                          nextPage: "GamePage.qml",
@@ -126,11 +130,12 @@ Page {
                     DB.dbDeleteFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User0")
                     DB.dbDeleteFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User1")
                     pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                   { level: levelDefault,
+                                   { typeGame: "UserUser",
+                                     level: levelDefault,
                                      field: "User1",
                                      fieldOpponent: "User0",
                                      nextPage: "LocationFoxesPage.qml",
-                                     namePlayer: "Player 1! " })
+                                     namePlayer: namePlayer1 })
                 }
             }
 
@@ -144,21 +149,23 @@ Page {
                     x: Theme.horizontalPageMargin
                 }
                 onClicked: {
-                    if (DB.dbExistsFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User1") == false) {
+                    if (DB.dbGetStatusGameStatus("UserUser", levelDefault, quantityFoxes, baseFieldSize) == "locationUser1") {
                         pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                       { level: levelDefault,
+                                       { typeGame: "UserUser",
+                                         level: levelDefault,
                                          field: "User1",
                                          fieldOpponent: "User0",
                                          nextPage: "LocationFoxesPage.qml",
-                                         namePlayer: "Player 1! " })
+                                         namePlayer: namePlayer1 })
                     } else {
-                        if (DB.dbExistsFieldLocationGameSave(levelDefault, quantityFoxes, baseFieldSize, "User0") == false) {
+                        if (DB.dbGetStatusGameStatus("UserUser", levelDefault, quantityFoxes, baseFieldSize) == "locationUser0") {
                             pageStack.push(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                           { level: levelDefault,
+                                           { typeGame: "UserUser",
+                                             level: levelDefault,
                                              field: "User0",
                                              fieldOpponent: "",
                                              nextPage: "GameUserUserPage.qml",
-                                             namePlayer: "Player 2! " })
+                                             namePlayer: namePlayer2 })
                         } else {
                             pageStack.push(Qt.resolvedUrl("GameUserUserPage.qml"))
                         }
@@ -260,26 +267,35 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Activating) {
-            var levelPractice = 0
             if (settings.settingSavingGames == "true") {
-                if (DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")) {
+                if (DB.dbGetStatusGameStatus("AI", level, quantityFoxes, baseFieldSize) != "new") {
                     itemContinueGame.visible = true
                 } else {
                     itemContinueGame.visible = false
                 }
-                if (DB.dbExistsFieldLocationGameSave(levelPractice, quantityFoxes, baseFieldSize, "Practice")) {
+                if (DB.dbGetStatusGameStatus("Practice", levelDefault, quantityFoxes, baseFieldSize) != "new") {
                     itemContinueGamePractice.visible = true
                 } else {
                     itemContinueGamePractice.visible = false
                 }
+                if (DB.dbGetStatusGameStatus("UserUser", levelDefault, quantityFoxes, baseFieldSize) != "new") {
+                    itemContinueGameUserUser.visible = true
+                } else {
+                    itemContinueGameUserUser.visible = false
+                }
             } else {
                 itemContinueGame.visible = false
                 itemContinueGamePractice.visible = false
+                itemContinueGameUserUser.visible = false
             }
             if (DB.dbExistsDataTable("gameStatistics")) {
                 itemStatistics.visible = true
             } else {
-                itemStatistics.visible = false
+                if (DB.dbExistsDataTable("gamePracticeStatistics")) {
+                    itemStatistics.visible = true
+                } else {
+                    itemStatistics.visible = false
+                }
             }
         }
     }

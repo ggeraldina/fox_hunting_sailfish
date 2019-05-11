@@ -14,11 +14,13 @@ Dialog {
     property int quantityFoxes: settings.settingNumberFoxes
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     // customizable properties
+    property string typeGame: ""
     property int level: 0
     property string field: ""
     property string fieldOpponent: ""
     property string nextPage: ""
     property string namePlayer: ""
+    property string namePlayer2: qsTr("Player2! ")
 
     Connections {
         target: settings
@@ -190,11 +192,12 @@ Dialog {
         switch (nextPage) {
         case "LocationFoxesPage.qml":
             pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                             { level: level,
+                                             { typeGame: typeGame,
+                                               level: level,
                                                field: "User0",
                                                fieldOpponent: "",
                                                nextPage: "GameUserUserPage.qml",
-                                               namePlayer: "Player 2! " })
+                                               namePlayer: namePlayer2 })
             break
         default:
             pageStack.replace(Qt.resolvedUrl(nextPage))
@@ -208,6 +211,8 @@ Dialog {
     }
 
     Component.onCompleted: {
+        var statusGame = "location" + field
+        DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
         DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, fieldOpponent)
         dataModelLocation.baseTableSize = baseFieldSize
         dataModelLocation.numberFoxes = quantityFoxes

@@ -10,6 +10,7 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property string typeGame: "Practice"
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
@@ -60,6 +61,8 @@ Page {
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
             }
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, field)
+            var statusGame = "new"
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
             pageStack.replace(Qt.resolvedUrl("WinGamePracticePage.qml"))
         }
     }
@@ -213,6 +216,8 @@ Page {
     }
 
     Component.onCompleted: {
+        var statusGame = "game"
+        DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
         dataModelPractice.baseTableSize = baseFieldSize
         dataModelPractice.numberFoxes = quantityFoxes
         dataModelPractice.createData()

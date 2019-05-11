@@ -40,7 +40,7 @@ function dbExistsDataTable(tableName) {
 function dbPrintTable(table) {
         var db = dbGetHandle()
         var results = ""
-        console.log("----------------TABLE------------------")
+        console.log("-----------TABLE " + table + "-------------")
         db.transaction(function (tx) {
             results = tx.executeSql('SELECT * FROM ' + table)
             for (var i = 0; i < results.rows.length; i++) {
@@ -226,4 +226,58 @@ function dbDeleteFieldLocationGameSave(level, foxes, size, field) {
 
 function dbDeleteAllLocationGameSave() {
     dbDeleteAll('locationGameSave');
+}
+
+// gameStatus
+
+function dbInitGameStatus() {
+    var db = dbGetHandle()
+    try {
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS gameStatus' +
+                          ' (typeGame TEXT, ' +
+                          ' level INTEGER, ' +
+                          ' foxes INTEGER, ' +
+                          ' size TEXT, ' +
+                          ' status TEXT, ' +
+                          ' datetime TEXT, ' +
+                          ' CONSTRAINT tablePK PRIMARY KEY (typeGame, level, foxes, size));')
+        })
+    } catch (err) {
+        console.log("Error creating table gameStatus in database: " + err)
+    };
+}
+
+function dbInsertRowGameStatus(typeGame, level, foxes, size, status) {
+    var db = dbGetHandle()
+    db.transaction(function (tx) {
+        var results = tx.executeSql('SELECT * FROM gameStatus WHERE typeGame = ? and level = ? and foxes = ? and size = ?;',
+                                    [typeGame, level, foxes, size])
+        if (results.rows.length == 0) {
+            tx.executeSql('INSERT INTO gameStatus (datetime, typeGame, level, foxes, size, status)' +
+                          ' VALUES (strftime("%Y-%m-%d %H:%M:%f", "now"), ?, ?, ?, ?, ?);',
+                          [typeGame, level, foxes, size, status])
+        } else {
+            tx.executeSql('UPDATE gameStatus SET status = ?, datetime = strftime("%Y-%m-%d %H:%M:%f", "now")' +
+                          ' WHERE typeGame = ? and level = ? and foxes = ? and size = ?',
+                          [status, typeGame, level, foxes, size])
+        }
+    })
+}
+
+function dbGetStatusGameStatus(typeGame, level, foxes, size) {
+    var db = dbGetHandle()
+    var results = ""
+    db.transaction(function (tx) {
+        results = tx.executeSql('SELECT status FROM gameStatus WHERE typeGame = ? and level = ? and foxes = ? and size = ?;',
+                                    [typeGame, level, foxes, size])
+    })
+    if (results.rows.length != 0) {
+        return results.rows.item(0).status
+    }
+    return "new"
+}
+
+function dbDeleteAllGameStatus() {
+    dbDeleteAll('gameStatus');
 }

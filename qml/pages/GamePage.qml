@@ -10,6 +10,7 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property string typeGame: "AI"
     property int spacingGrid: 1    
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
@@ -69,9 +70,11 @@ Page {
                     stepsUser: countStepsUser,
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
-            }
+            }            
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+            var statusGame = "new"
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
             pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
         }
         onWinComp: {
@@ -88,6 +91,8 @@ Page {
             }
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+            var statusGame = "new"
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
             pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
         }
     }
@@ -232,7 +237,9 @@ Page {
         }
     }
 
-    Component.onCompleted: {        
+    Component.onCompleted: {
+        var statusGame = "game"
+        DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
         dataModel.baseTableSize = baseFieldSize
         dataModel.numberFoxes = quantityFoxes
         dataModel.speedStepComp = speedStepComputer

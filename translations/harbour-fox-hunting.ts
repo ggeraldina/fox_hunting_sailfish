@@ -92,6 +92,10 @@
         <source>Foxes less than need</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Player2! </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LoseGamePage</name>
@@ -184,6 +188,14 @@
     </message>
     <message>
         <source>Continue game against player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player1! </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player2! </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
