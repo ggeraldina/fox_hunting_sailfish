@@ -44,7 +44,13 @@ Page {
         Button {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("New game")
-            onClicked: pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"))
+            onClicked: pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"),
+                                         { typeGame: "AI",
+                                           level: level,
+                                           field: "Comp",
+                                           fieldOpponent: "User",
+                                           nextPage: "GamePage.qml",
+                                           namePlayer1: "" })
         }
 
         Button {

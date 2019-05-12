@@ -217,10 +217,6 @@
 <context>
     <name>RulesPage</name>
     <message>
-        <source>New game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rules of the game</source>
         <translation type="unfinished"></translation>
     </message>
@@ -246,6 +242,107 @@
     </message>
     <message>
         <source>functionality of the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SectionGameAI</name>
+    <message>
+        <source>Game with AI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Winner </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps user </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps comp </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size field </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No data</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SectionGamePractice</name>
+    <message>
+        <source>Game (practice)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Steps user </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size field </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No data</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SectionGameUserUser</name>
+    <message>
+        <source>Game against player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Winner </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps player 1 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps player 2 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size field </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -335,40 +432,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Winner </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Steps comp </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Steps user </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Size field </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Foxes </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Level </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source></source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Game with AI</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Game (practice)</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -437,6 +502,29 @@
     </message>
     <message>
         <source> steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WinGameUserUserPage</name>
+    <message>
+        <source>Fox hunting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Winner </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulate!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

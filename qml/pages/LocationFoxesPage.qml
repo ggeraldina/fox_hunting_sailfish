@@ -19,7 +19,7 @@ Dialog {
     property string field: ""
     property string fieldOpponent: ""
     property string nextPage: ""
-    property string namePlayer: ""
+    property string namePlayer1: ""
     property string namePlayer2: ""
 
     Connections {
@@ -58,7 +58,7 @@ Dialog {
         spacing: Theme.paddingMedium
 
         Label {
-            text: namePlayer + qsTr("Are you pleased the location of the foxes on the field?")
+            text: namePlayer1 + qsTr("Are you pleased the location of the foxes on the field?")
             width:column.width - Theme.paddingLarge * 2
             horizontalAlignment: Text.AlignJustify
             anchors.horizontalCenter: parent.horizontalCenter
@@ -197,7 +197,7 @@ Dialog {
                                                field: "User0",
                                                fieldOpponent: "",
                                                nextPage: "GameUserUserPage.qml",
-                                               namePlayer: namePlayer2 })
+                                               namePlayer1: namePlayer2 })
             break
         default:
             pageStack.replace(Qt.resolvedUrl(nextPage))

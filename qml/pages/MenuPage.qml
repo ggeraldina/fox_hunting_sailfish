@@ -59,7 +59,7 @@ Page {
                                      field: "Comp",
                                      fieldOpponent: "User",
                                      nextPage: "GamePage.qml",
-                                     namePlayer: "" })
+                                     namePlayer1: "" })
                 }
             }
 
@@ -80,7 +80,7 @@ Page {
                                          field: "Comp",
                                          fieldOpponent: "User",
                                          nextPage: "GamePage.qml",
-                                         namePlayer: "" })
+                                         namePlayer1: "" })
                     } else {
                         pageStack.push(Qt.resolvedUrl("GamePage.qml"))
                     }
@@ -135,7 +135,7 @@ Page {
                                      field: "User1",
                                      fieldOpponent: "User0",
                                      nextPage: "LocationFoxesPage.qml",
-                                     namePlayer: namePlayer1,
+                                     namePlayer1: namePlayer1,
                                      namePlayer2: namePlayer2})
                 }
             }
@@ -157,7 +157,7 @@ Page {
                                          field: "User1",
                                          fieldOpponent: "User0",
                                          nextPage: "LocationFoxesPage.qml",
-                                         namePlayer: namePlayer1,
+                                         namePlayer1: namePlayer1,
                                          namePlayer2: namePlayer2})
                     } else {
                         if (DB.dbGetStatusGameStatus("UserUser", levelDefault, quantityFoxes, baseFieldSize) == "locationUser0") {
@@ -167,7 +167,7 @@ Page {
                                              field: "User0",
                                              fieldOpponent: "",
                                              nextPage: "GameUserUserPage.qml",
-                                             namePlayer: namePlayer2 })
+                                             namePlayer1: namePlayer2 })
                         } else {
                             pageStack.push(Qt.resolvedUrl("GameUserUserPage.qml"))
                         }

@@ -5,6 +5,7 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property string winner: ""
 
     PageHeader {
         id: headerPage
@@ -23,7 +24,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("You win!")
+            text: qsTr("Winner ") + winner
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeLarge
         }
@@ -45,12 +46,13 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("New game")
             onClicked: pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                         { typeGame: "AI",
-                                           level: level,
-                                           field: "Comp",
-                                           fieldOpponent: "User",
-                                           nextPage: "GamePage.qml",
-                                           namePlayer1: "" })
+                                         { typeGame: "UserUser",
+                                           level: levelDefault,
+                                           field: "User1",
+                                           fieldOpponent: "User0",
+                                           nextPage: "LocationFoxesPage.qml",
+                                           namePlayer1: namePlayer1,
+                                           namePlayer2: namePlayer2})
         }
 
         Button {

@@ -11,6 +11,8 @@ Page {
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
     property string typeGame: "UserUser"
+    property string namePlayer1: "Player1"
+    property string namePlayer2: "Player2"
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
@@ -55,7 +57,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "Player 1",
+                    winner: namePlayer1,
                     level: level,
                     stepsUserOpponent: countStepsUserOpponent,
                     stepsUser: countStepsUser,
@@ -66,14 +68,14 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
             DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
+            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"), {winner : namePlayer1})
         }
         onWinUser: {
             if (settings.settingSavingStatistics == "true") {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "Player 2",
+                    winner: namePlayer2,
                     level: level,
                     stepsUserOpponent: countStepsUserOpponent,
                     stepsUser: countStepsUser,
@@ -84,7 +86,7 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
             DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
+            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"), {winner: namePlayer2})
         }
     }
 
@@ -267,7 +269,6 @@ Page {
         } else {
             restoreStepsGame()
         }
-        dataModelUserUser.flagLockedTablesOpponent = false
     }
 
     function restoreStepsGame() {
@@ -281,6 +282,11 @@ Page {
                 dataModelUserUser.shotCellUserGameRestore(stepRestoreGame[i].index)
             }
         }
+        if (numberRows > 0 && stepRestoreGame[numberRows-1].field == "User0" && stepRestoreGame[numberRows-1].fox == 0) {
+            dataModelUserUser.flagLockedTables = false
+            return
+        }
+        dataModelUserUser.flagLockedTablesOpponent = false
     }
 
 }

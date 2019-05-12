@@ -179,6 +179,7 @@ Page {
                     } else {
                         settings.settingSavingGames = "false"
                         DB.dbDeleteAllLocationGameSave()
+                        DB.dbDeleteAllGameStatus()
                     }
                 }
             }

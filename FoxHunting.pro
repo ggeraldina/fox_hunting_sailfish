@@ -54,7 +54,11 @@ DISTFILES += \
     qml/pages/LocationFoxesPage.qml \
     qml/pages/GamePracticePage.qml \
     qml/pages/WinGamePracticePage.qml \
-    qml/pages/GameUserUserPage.qml
+    qml/pages/GameUserUserPage.qml \
+    qml/pages/components/statistics_page/SectionGameAI.qml \
+    qml/pages/components/statistics_page/SectionGamePractice.qml \
+    qml/pages/components/statistics_page/SectionGameUserUser.qml \
+    qml/pages/WinGameUserUserPage.qml
 
 RESOURCES += \
     foxhunting.qrc

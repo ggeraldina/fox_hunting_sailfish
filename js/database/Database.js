@@ -95,6 +95,20 @@ function dbReadGamePracticeStatistics() {
     })
 }
 
+function dbReadGameUserUserStatistics() {
+    var db = dbGetHandle()
+    db.transaction(function (tx) {
+        var results = tx.executeSql('SELECT id, dataJSON FROM gameUserUserStatistics')
+        for (var i = 0; i < results.rows.length; i++) {
+            // listModel - it is my stuff (type ListModel)
+            listModelUserUser.append({
+                                 id: "UserUser_" + results.rows.item(i).id,
+                                 dataJSON: results.rows.item(i).dataJSON
+                             })
+        }
+    })
+}
+
 function dbCountStepsGamePracticeStatistics() {
     var db = dbGetHandle()
     var obj = ""
@@ -117,9 +131,11 @@ function dbInsertRowGameStatistics(table, dataJSON) {
 function dbDeleteAllGameStatistics() {
     dbDeleteAll("gameStatistics");
     dbDeleteAll("gamePracticeStatistics");
+    dbDeleteAll("gameUserUserStatistics");
     // listModel - it is my stuff (type ListModel)
     listModel.clear()
     listModelPractice.clear()
+    listModelUserUser.clear()
 }
 
 // locationGameSave

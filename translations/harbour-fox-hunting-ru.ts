@@ -85,26 +85,26 @@
 <context>
     <name>GameUserUserPage</name>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="104"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="106"/>
         <source>Player 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Игрок 1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="105"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="174"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="107"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="176"/>
         <source> (steps </source>
-        <translation type="unfinished"></translation>
+        <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="105"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="174"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="107"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="176"/>
         <source>)</source>
-        <translation type="unfinished"></translation>
+        <translation>)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="173"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="175"/>
         <source>Player 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Игрок 2</translation>
     </message>
 </context>
 <context>
@@ -164,7 +164,7 @@
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="52"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="58"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -322,10 +322,129 @@
 - Результат каждой игры сохраняется, его можно посмотреть в статистике.
         </translation>
     </message>
+</context>
+<context>
+    <name>SectionGameAI</name>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="80"/>
-        <source>New game</source>
-        <translation>Новая игра</translation>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="7"/>
+        <source>Game with AI</source>
+        <translation>Игры против ИИ</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="16"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="11"/>
+        <source>No data</source>
+        <translation>Нет данных</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="35"/>
+        <source>Winner </source>
+        <translation>Победитель - </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="42"/>
+        <source>Level </source>
+        <translation>Уровень </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="49"/>
+        <source>Steps user </source>
+        <translation>Количество Ваших ходов: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="56"/>
+        <source>Steps comp </source>
+        <translation>Количество ходов противника: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="63"/>
+        <source>Size field </source>
+        <translation>Размер поля: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="70"/>
+        <source>Foxes </source>
+        <translation>Количество лис: </translation>
+    </message>
+</context>
+<context>
+    <name>SectionGamePractice</name>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="7"/>
+        <source>Game (practice)</source>
+        <translation>Тренировочные игры</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="16"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="11"/>
+        <source>No data</source>
+        <translation>Нет данных</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="35"/>
+        <source>Steps user </source>
+        <translation>Количество Ваших ходов: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="42"/>
+        <source>Size field </source>
+        <translation>Размер поля: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="49"/>
+        <source>Foxes </source>
+        <translation>Количество лис: </translation>
+    </message>
+</context>
+<context>
+    <name>SectionGameUserUser</name>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="7"/>
+        <source>Game against player</source>
+        <translation>Игры против игрока</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="16"/>
+        <source></source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="11"/>
+        <source>No data</source>
+        <translation>Нет данных</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="35"/>
+        <source>Winner </source>
+        <translation>Победитель - </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="42"/>
+        <source>Steps player 1 </source>
+        <translation>Количество ходов игрока 1: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="49"/>
+        <source>Steps player 2 </source>
+        <translation>Количество ходов игрока 2: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="56"/>
+        <source>Size field </source>
+        <translation>Размер поля: </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="63"/>
+        <source>Foxes </source>
+        <translation>Количество лис: </translation>
     </message>
 </context>
 <context>
@@ -421,7 +540,7 @@
         <translation>Сохранять игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="188"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
         <source>Saving statistics</source>
         <translation>Сохранять статистику игр</translation>
     </message>
@@ -429,57 +548,14 @@
 <context>
     <name>StatisticsPage</name>
     <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="47"/>
+        <location filename="../qml/pages/StatisticsPage.qml" line="55"/>
         <source>Game&apos;s statistics</source>
         <translation>Статистика игр</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="68"/>
-        <source>Game with AI</source>
-        <translation>Игры против ИИ</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="116"/>
-        <location filename="../qml/pages/StatisticsPage.qml" line="188"/>
-        <source>Size field </source>
-        <translation>Размер поля: </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="123"/>
-        <location filename="../qml/pages/StatisticsPage.qml" line="195"/>
-        <source>Foxes </source>
-        <translation>Количество лис: </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="161"/>
-        <source>Game (practice)</source>
-        <translation>Тренировочные игры</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="88"/>
-        <source>Winner </source>
-        <translation>Победитель - </translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="69"/>
         <source></source>
         <translation></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="95"/>
-        <source>Level </source>
-        <translation>Уровень </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="109"/>
-        <source>Steps comp </source>
-        <translation>Количество ходов противника: </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StatisticsPage.qml" line="102"/>
-        <location filename="../qml/pages/StatisticsPage.qml" line="181"/>
-        <source>Steps user </source>
-        <translation>Количество Ваших ходов: </translation>
     </message>
 </context>
 <context>
@@ -524,7 +600,7 @@
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="52"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="58"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -565,6 +641,34 @@
         <location filename="../qml/pages/WinGamePracticePage.qml" line="72"/>
         <source> steps.</source>
         <translation> ходов.</translation>
+    </message>
+</context>
+<context>
+    <name>WinGameUserUserPage</name>
+    <message>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="12"/>
+        <source>Fox hunting</source>
+        <translation>Охота на лис</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="27"/>
+        <source>Winner </source>
+        <translation>Победитель - </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="34"/>
+        <source>Congratulate!</source>
+        <translation>Поздравляем!</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="47"/>
+        <source>New game</source>
+        <translation>Новая игра</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="60"/>
+        <source>Menu</source>
+        <translation>Меню</translation>
     </message>
 </context>
 </TS>
