@@ -61,6 +61,8 @@ Page {
                     level: level,
                     stepsUserOpponent: countStepsUserOpponent,
                     stepsUser: countStepsUser,
+                    nameUserOpponent: namePlayer1,
+                    nameUser: namePlayer2
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
             }
@@ -79,6 +81,8 @@ Page {
                     level: level,
                     stepsUserOpponent: countStepsUserOpponent,
                     stepsUser: countStepsUser,
+                    nameUserOpponent: namePlayer1,
+                    nameUser: namePlayer2
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
             }
@@ -101,140 +105,152 @@ Page {
         }
         spacing: Theme.paddingMedium
 
-        Label {
+        Column {
+            rotation: settings.settingRotationFieldTop
+            transformOrigin: Item.Center
+            spacing: Theme.paddingMedium
             anchors.horizontalCenter: parent.horizontalCenter
-            text: namePlayer1 +  qsTr(" (steps ") + dataModelUserUser.countStepsUserOpponent + qsTr(")")
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeSmall
-        }
 
-        Grid {
-            spacing: spacingGrid
-            x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
-            height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
-            columns: 2
-
-            Rectangle {
-                  width: baseWidthHeight
-                  height: baseWidthHeight
-                  color: "darkblue";
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: namePlayer1 +  qsTr(" (steps ") + dataModelUserUser.countStepsUserOpponent + qsTr(")")
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeSmall
             }
 
-            FieldTableLitters {
+            Grid {
+                spacing: spacingGrid
+                height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
+                columns: 2
 
-            }
+                Rectangle {
+                      width: baseWidthHeight
+                      height: baseWidthHeight
+                      color: "darkblue";
+                }
 
-            FieldTableDigits{
+                FieldTableLitters {
 
-            }
+                }
 
-            Item {
-                  width: baseWidthHeight * baseFieldSize
-                  height: baseWidthHeight * baseFieldSize
+                FieldTableDigits{
 
-                  Grid {
-                      spacing: spacingGrid
-                      anchors.fill: parent
-                      columns: baseFieldSize
-                      rows: baseFieldSize
+                }
 
-                      Repeater {
-                          id: repeaterUser0
-                          delegate: Item {
-                              width: baseWidthHeight
-                              height: baseWidthHeight
+                Item {
+                      width: baseWidthHeight * baseFieldSize
+                      height: baseWidthHeight * baseFieldSize
 
-                              Image {
-                                  anchors.fill: parent
-                                  source: model.backgroundURL
-                              }
+                      Grid {
+                          spacing: spacingGrid
+                          anchors.fill: parent
+                          columns: baseFieldSize
+                          rows: baseFieldSize
 
-                              Text {
-                                  anchors.centerIn: parent
-                                  text: model.text
-                              }
+                          Repeater {
+                              id: repeaterUser0
+                              delegate: Item {
+                                  width: baseWidthHeight
+                                  height: baseWidthHeight
 
-                              MouseArea {
-                                  anchors.fill: parent
-                                  onClicked: {
-                                      dataModelUserUser.shotCellUserOpponent(model.index);
+                                  Image {
+                                      anchors.fill: parent
+                                      source: model.backgroundURL
                                   }
-                                  onPressAndHold: {
-                                      dataModelUserUser.putOrRemoveMarkCellUserOpponent(model.index);
+
+                                  Text {
+                                      anchors.centerIn: parent
+                                      text: model.text
+                                  }
+
+                                  MouseArea {
+                                      anchors.fill: parent
+                                      onClicked: {
+                                          dataModelUserUser.shotCellUserOpponent(model.index);
+                                      }
+                                      onPressAndHold: {
+                                          dataModelUserUser.putOrRemoveMarkCellUserOpponent(model.index);
+                                      }
                                   }
                               }
                           }
                       }
-                  }
-             }
+                 }
+            }
         }
 
-        Label {
+        Column {
+            rotation: settings.settingRotationFieldBottom
+            transformOrigin: Item.Center
+            spacing: Theme.paddingMedium
             anchors.horizontalCenter: parent.horizontalCenter
-            text: namePlayer2 + qsTr(" (steps ") + dataModelUserUser.countStepsUser + qsTr(")")
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeSmall
-        }
 
-        Grid {
-            spacing: spacingGrid
-            x: page.width / 2 - width / 2 - spacingGrid * baseFieldSize / 2
-            height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
-            columns: 2
-
-            Rectangle {
-                  width: baseWidthHeight
-                  height: baseWidthHeight
-                  color: "darkRed";
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: namePlayer2 + qsTr(" (steps ") + dataModelUserUser.countStepsUser + qsTr(")")
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeSmall
             }
 
-            FieldTableLitters {
+            Grid {
+                spacing: spacingGrid
+                height: spacingGrid * baseFieldSize + baseWidthHeight * (baseFieldSize + 1)
+                columns: 2
 
-            }
+                Rectangle {
+                      width: baseWidthHeight
+                      height: baseWidthHeight
+                      color: "darkRed";
+                }
 
-            FieldTableDigits{
+                FieldTableLitters {
 
-            }
+                }
 
-            Item {
-                  width: baseWidthHeight * baseFieldSize
-                  height: baseWidthHeight * baseFieldSize
+                FieldTableDigits{
 
-                  Grid {
-                      spacing: spacingGrid
-                      anchors.fill: parent
-                      columns: baseFieldSize
-                      rows: baseFieldSize
+                }
 
-                      Repeater {
-                          id: repeaterUser1
-                          delegate: Item {
-                              width: baseWidthHeight
-                              height: baseWidthHeight
+                Item {
+                      width: baseWidthHeight * baseFieldSize
+                      height: baseWidthHeight * baseFieldSize
 
-                              Image {
-                                  anchors.fill: parent
-                                  source: model.backgroundURL
-                              }
+                      Grid {
+                          spacing: spacingGrid
+                          anchors.fill: parent
+                          columns: baseFieldSize
+                          rows: baseFieldSize
 
-                              Text {
-                                  anchors.centerIn: parent
-                                  text: model.text
-                              }
+                          Repeater {
+                              id: repeaterUser1
+                              delegate: Item {
+                                  width: baseWidthHeight
+                                  height: baseWidthHeight
 
-                              MouseArea {
-                                  anchors.fill: parent
-                                  onClicked: {
-                                      dataModelUserUser.shotCellUser(model.index);
+                                  Image {
+                                      anchors.fill: parent
+                                      source: model.backgroundURL
                                   }
-                                  onPressAndHold: {
-                                      dataModelUserUser.putOrRemoveMarkCellUser(model.index);
+
+                                  Text {
+                                      anchors.centerIn: parent
+                                      text: model.text
+                                  }
+
+                                  MouseArea {
+                                      anchors.fill: parent
+                                      onClicked: {
+                                          dataModelUserUser.shotCellUser(model.index);
+                                      }
+                                      onPressAndHold: {
+                                          dataModelUserUser.putOrRemoveMarkCellUser(model.index);
+                                      }
                                   }
                               }
                           }
                       }
-                  }
-             }
+                 }
+            }
         }
     }
 

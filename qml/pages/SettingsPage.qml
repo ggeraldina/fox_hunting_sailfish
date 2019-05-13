@@ -15,6 +15,8 @@ Page {
     property bool currentCheckedSavingStatistics: settings.settingSavingStatistics == "true" ? true : false
     property string userName: settings.settingUserName
     property string userOpponentName: settings.settingUserOpponentName
+    property int currentIndexRotationFieldTop: settings.settingRotationFieldTop * 4 / 360
+    property int currentIndexRotationFieldBottom: settings.settingRotationFieldBottom * 4 / 360
 
     Connections {
         target: translator
@@ -32,6 +34,8 @@ Page {
         onSettingSavingStatisticsChanged: switchSavingStatistics.checked = settings.settingSavingStatistics == "true" ? true : false
         onSettingUserNameChanged: textFieldUser.text = settings.settingUserName
         onSettingUserOpponentNameChanged: textFieldUserOpponent = settings.settingUserOpponentName
+        onSettingRotationFieldTopChanged: comboBoxRotationFieldTop.currentIndex = settings.settingRotationFieldTop * 4 / 360
+        onSettingRotationFieldBottomChanged: comboBoxRotationFieldBottom.currentIndex = settings.settingRotationFieldBottom * 4 / 360
     }
 
     SilicaFlickable {
@@ -71,36 +75,35 @@ Page {
                 }
             }
 
-            ComboBox {
-                id: comboBoxLevel
+            TextField {
+                id: textFieldUser
                 width: page.width
-                currentIndex: currentIndexLevel
-                label: qsTr("Games's level")
-
-                menu: ContextMenu {
-                    MenuItem {
-                        text: qsTr("1")
-                        onClicked: settings.settingLevel = 1
-                    }
-                    MenuItem {
-                        text: qsTr("2")
-                        onClicked: settings.settingLevel = 2
-                    }
-                    MenuItem {
-                        text: qsTr("3")
-                        onClicked: settings.settingLevel = 3
-                    }
-                    MenuItem {
-                        text: qsTr("4")
-                        onClicked: settings.settingLevel = 4
-                    }
-                    MenuItem {
-                        text: qsTr("5")
-                        onClicked: settings.settingLevel = 5
-                    }
+                text: userName
+                placeholderText: qsTr("Enter Username")
+                label: qsTr("Your name")
+                validator: RegExpValidator {
+                    regExp: /^(?!\s).*\S$/
+                }
+                color: errorHighlight ? "red" : Theme.primaryColor
+                onTextChanged: {
+                    settings.settingUserName = text
                 }
             }
 
+            TextField {
+                id: textFieldUserOpponent
+                width: page.width
+                text: userOpponentName
+                placeholderText: qsTr("Enter name of an other player")
+                label: qsTr("Player 2")
+                validator: RegExpValidator {
+                    regExp: /^(?!\s).*\S$/
+                }
+                color: errorHighlight ? "red" : Theme.primaryColor
+                onTextChanged: {
+                    settings.settingUserOpponentName = text
+                }
+            }
             ComboBox {
                 id: comboBoxBaseTableSize
                 width: page.width
@@ -140,6 +143,57 @@ Page {
                     }
                 }
             }
+            ComboBox {
+                id: comboBoxRotationFieldTop
+                width: page.width
+                currentIndex: currentIndexRotationFieldTop
+                label: qsTr("Rotation of top field")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: "0°"
+                        onClicked: settings.settingRotationFieldTop = 0
+                    }
+                    MenuItem {
+                        text: "90°"
+                        onClicked: settings.settingRotationFieldTop = 90
+                    }
+                    MenuItem {
+                        text: "180°"
+                        onClicked: settings.settingRotationFieldTop = 180
+                    }
+                    MenuItem {
+                        text: "270°"
+                        onClicked: settings.settingRotationFieldTop = 270
+                    }
+                }
+            }
+
+            ComboBox {
+                id: comboBoxRotationFieldBottom
+                width: page.width
+                currentIndex: currentIndexRotationFieldBottom
+                label: qsTr("Rotation of bottom field")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: "0°"
+                        onClicked: settings.settingRotationFieldBottom = 0
+                    }
+                    MenuItem {
+                        text: "90°"
+                        onClicked: settings.settingRotationFieldBottom = 90
+                    }
+                    MenuItem {
+                        text: "180°"
+                        onClicked: settings.settingRotationFieldBottom = 180
+                    }
+                    MenuItem {
+                        text: "270°"
+                        onClicked: settings.settingRotationFieldBottom = 270
+                    }
+                }
+            }
 
             ComboBox {
                 id: comboBoxSpeedStepComp
@@ -155,6 +209,36 @@ Page {
                     MenuItem {
                         text: qsTr("1 sec")
                         onClicked: settings.settingSpeedStepComp = 1000
+                    }
+                }
+            }
+
+            ComboBox {
+                id: comboBoxLevel
+                width: page.width
+                currentIndex: currentIndexLevel
+                label: qsTr("Games's level")
+
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("1")
+                        onClicked: settings.settingLevel = 1
+                    }
+                    MenuItem {
+                        text: qsTr("2")
+                        onClicked: settings.settingLevel = 2
+                    }
+                    MenuItem {
+                        text: qsTr("3")
+                        onClicked: settings.settingLevel = 3
+                    }
+                    MenuItem {
+                        text: qsTr("4")
+                        onClicked: settings.settingLevel = 4
+                    }
+                    MenuItem {
+                        text: qsTr("5")
+                        onClicked: settings.settingLevel = 5
                     }
                 }
             }
@@ -198,36 +282,6 @@ Page {
                     } else {
                         settings.settingSavingStatistics = "false"
                     }
-                }
-            }
-
-            TextField {
-                id: textFieldUser
-                width: page.width
-                text: userName
-                placeholderText: "Enter Username"
-                label: "Player"
-                validator: RegExpValidator {
-                    regExp: /^(?!\s).*\S$/
-                }
-                color: errorHighlight ? "red" : Theme.primaryColor
-                onTextChanged: {
-                    settings.settingUserName = text
-                }
-            }
-
-            TextField {
-                id: textFieldUserOpponent
-                width: page.width
-                text: userOpponentName
-                placeholderText: "Enter name of player 2"
-                label: "Player 2"
-                validator: RegExpValidator {
-                    regExp: /^(?!\s).*\S$/
-                }
-                color: errorHighlight ? "red" : Theme.primaryColor
-                onTextChanged: {
-                    settings.settingUserOpponentName = text
                 }
             }
         }

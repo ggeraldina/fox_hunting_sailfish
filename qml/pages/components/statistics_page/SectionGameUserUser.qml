@@ -39,14 +39,14 @@ ExpandingSection {
                     }
                     Text {
                         id: textStepsUserOpponent
-                        text: qsTr("Steps player 1 ")
+                        text: qsTr("Steps ")
                         color: Theme.highlightColor
                         font.pixelSize: Theme.fontSizeSmall
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     Text {
                         id: textStepsUser
-                        text: qsTr("Steps player 2 ")
+                        text: qsTr("Steps ")
                         color: Theme.highlightColor
                         font.pixelSize: Theme.fontSizeSmall
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -73,8 +73,8 @@ ExpandingSection {
                     textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                     textNumberFoxes.text += obj.countFoxes
                     textWinner.text += obj.winner
-                    textStepsUserOpponent.text += obj.stepsUserOpponent
-                    textStepsUser.text += obj.stepsUser
+                    textStepsUserOpponent.text += ("(" + obj.nameUserOpponent + ") " + obj.stepsUserOpponent)
+                    textStepsUser.text += ("(" + obj.nameUser + ") " + obj.stepsUser)
                 }
             }
         }

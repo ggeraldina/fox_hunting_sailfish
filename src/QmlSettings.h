@@ -19,6 +19,8 @@ class QmlSettings : public QObject {
     Q_PROPERTY(QString settingSavingStatistics READ getSavingStatistics WRITE setSavingStatistics NOTIFY settingSavingStatisticsChanged)
     Q_PROPERTY(QString settingUserName READ getUserName WRITE setUserName NOTIFY settingUserNameChanged)
     Q_PROPERTY(QString settingUserOpponentName READ getUserOpponentName WRITE setUserOpponentName NOTIFY settingUserOpponentNameChanged)
+    Q_PROPERTY(int settingRotationFieldTop READ getRotationFieldTop WRITE setRotationFieldTop NOTIFY settingRotationFieldTopChanged)
+    Q_PROPERTY(int settingRotationFieldBottom READ getRotationFieldBottom WRITE setRotationFieldBottom NOTIFY settingRotationFieldBottomChanged)
 
 public:
     explicit QmlSettings(QObject *parent = nullptr);
@@ -33,6 +35,8 @@ public:
     QString getSavingStatistics();
     QString getUserName();
     QString getUserOpponentName();
+    int getRotationFieldTop();
+    int getRotationFieldBottom();
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
@@ -44,6 +48,8 @@ public:
     void setSavingStatistics(QString newValue);
     void setUserName(QString newValue);
     void setUserOpponentName(QString newValue);
+    void setRotationFieldTop(int newValue);
+    void setRotationFieldBottom(int newValue);
 
     Q_INVOKABLE void updateToDefaultSettings();
 
@@ -59,6 +65,8 @@ private:
     const QString SETTING_SAVING_STATISTICS = "settings_app/saving_statistics";
     const QString SETTING_USER_NAME = "settings_app/user_name";
     const QString SETTING_USER_OPPONENT_NAME = "settings_app/user_opponent_name";
+    const QString SETTING_ROTATION_FIELD_TOP = "settings_app/rotation_field_top";
+    const QString SETTING_ROTATION_FIELD_BOTTOM = "settings_app/rotation_field_bottom";
 
 signals:
     void settingBaseTableSizeChanged();
@@ -71,6 +79,8 @@ signals:
     void settingSavingStatisticsChanged();
     void settingUserNameChanged();
     void settingUserOpponentNameChanged();
+    void settingRotationFieldTopChanged();
+    void settingRotationFieldBottomChanged();
 };
 
 #endif // QMLSETTINGS_H

@@ -72,11 +72,11 @@ Page {
                 width: flickable.width
 
                 ExpandingSectionGroup {
-                    SectionGameAI {
+                    SectionGamePractice {
 
                     }
 
-                    SectionGamePractice {
+                    SectionGameAI {
 
                     }
 

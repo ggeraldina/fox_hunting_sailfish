@@ -42,14 +42,19 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="115"/>
-        <location filename="../qml/pages/GamePage.qml" line="173"/>
+        <location filename="../qml/pages/GamePage.qml" line="20"/>
+        <source>Device</source>
+        <translation>Устройство</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GamePage.qml" line="121"/>
+        <location filename="../qml/pages/GamePage.qml" line="185"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="115"/>
-        <location filename="../qml/pages/GamePage.qml" line="173"/>
+        <location filename="../qml/pages/GamePage.qml" line="121"/>
+        <location filename="../qml/pages/GamePage.qml" line="185"/>
         <source>)</source>
         <translation>)</translation>
     </message>
@@ -75,14 +80,14 @@
 <context>
     <name>GameUserUserPage</name>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="106"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="174"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="116"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="190"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="106"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="174"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="116"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="190"/>
         <source>)</source>
         <translation>)</translation>
     </message>
@@ -153,87 +158,113 @@
     <name>MenuPage</name>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="37"/>
-        <location filename="../qml/pages/MenuPage.qml" line="306"/>
+        <location filename="../qml/pages/MenuPage.qml" line="343"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="228"/>
+        <location filename="../qml/pages/MenuPage.qml" line="248"/>
         <source>Language | Язык</source>
         <translation>Language | Язык</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="232"/>
+        <location filename="../qml/pages/MenuPage.qml" line="252"/>
         <source>EN</source>
         <translation>EN</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="239"/>
+        <location filename="../qml/pages/MenuPage.qml" line="259"/>
         <source>RU</source>
         <translation>RU</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="307"/>
+        <location filename="../qml/pages/MenuPage.qml" line="344"/>
         <source>New game</source>
-        <translation>Новая игра против ИИ</translation>
+        <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="308"/>
+        <location filename="../qml/pages/MenuPage.qml" line="345"/>
         <source>Continue game</source>
-        <translation>Продолжить игру против ИИ</translation>
+        <translation>Продолжить игру</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="309"/>
+        <location filename="../qml/pages/MenuPage.qml" line="346"/>
         <source>New game (practice)</source>
-        <translation>Новая тренировочная игра</translation>
+        <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="310"/>
+        <location filename="../qml/pages/MenuPage.qml" line="347"/>
         <source>Continue game (practice)</source>
-        <translation>Продолжить тренировочную игру</translation>
+        <translation>Продолжить игру</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="311"/>
+        <location filename="../qml/pages/MenuPage.qml" line="348"/>
         <source>New game against player</source>
-        <translation>Новая игра против игрока</translation>
+        <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="312"/>
+        <location filename="../qml/pages/MenuPage.qml" line="349"/>
         <source>Continue game against player</source>
-        <translation>Продолжить игру против игрока</translation>
+        <translation>Продолжить игру</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="313"/>
+        <location filename="../qml/pages/MenuPage.qml" line="350"/>
         <source>Game&apos;s rules</source>
         <translation>Правила игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="314"/>
+        <location filename="../qml/pages/MenuPage.qml" line="351"/>
         <source>Game&apos;s statistics</source>
-        <translation>Статистика игр</translation>
+        <translation>Результаты игр</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="315"/>
+        <location filename="../qml/pages/MenuPage.qml" line="352"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="316"/>
+        <location filename="../qml/pages/MenuPage.qml" line="353"/>
         <source>About program</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="317"/>
+        <location filename="../qml/pages/MenuPage.qml" line="354"/>
         <source>Game</source>
         <translation>Игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="318"/>
+        <location filename="../qml/pages/MenuPage.qml" line="355"/>
+        <source>One player</source>
+        <translation>Один игрок</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="356"/>
+        <location filename="../qml/pages/MenuPage.qml" line="358"/>
+        <source>Two players</source>
+        <translation>Два игрока</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="357"/>
+        <source>You-Device</source>
+        <translation>(Вы против Устройства)</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="359"/>
+        <source>You-Player</source>
+        <translation>(Вы против другого игрока)</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="360"/>
+        <source>Statistics</source>
+        <translation>Результаты</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MenuPage.qml" line="361"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MenuPage.qml" line="319"/>
+        <location filename="../qml/pages/MenuPage.qml" line="362"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
@@ -298,7 +329,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="7"/>
         <source>Game with AI</source>
-        <translation>Игры против ИИ</translation>
+        <translation>Против Устройства</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="16"/>
@@ -328,7 +359,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="56"/>
         <source>Steps comp </source>
-        <translation>Количество ходов противника: </translation>
+        <translation>Количество ходов Устройства: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="63"/>
@@ -346,7 +377,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="7"/>
         <source>Game (practice)</source>
-        <translation>Тренировочные игры</translation>
+        <translation>Один игрок</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="16"/>
@@ -384,7 +415,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="7"/>
         <source>Game against player</source>
-        <translation>Игры против игрока</translation>
+        <translation>Против другого игрока</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="16"/>
@@ -403,13 +434,9 @@
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="42"/>
-        <source>Steps player 1 </source>
-        <translation>Количество ходов игрока 1: </translation>
-    </message>
-    <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="49"/>
-        <source>Steps player 2 </source>
-        <translation>Количество ходов игрока 2: </translation>
+        <source>Steps </source>
+        <translation>Ходы </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="56"/>
@@ -445,79 +472,109 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Game&apos;s settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
-        <source>Games&apos;s level</source>
-        <translation>Уровень игры против ИИ</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <source>Enter Username</source>
+        <translation>Введите ваше имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>Your name</source>
+        <translation>Вы</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="97"/>
+        <source>Enter name of an other player</source>
+        <translation>Введите имя другого игрока</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <source>Player 2</source>
+        <translation>Игрок 2</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <source>Games&apos;s level</source>
+        <translation>Уровень игры против Устройства</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
         <source>1</source>
         <translation>очень легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>2</source>
         <translation>легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>3</source>
         <translation>средний</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="94"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
         <source>4</source>
         <translation>сложный</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>5</source>
         <translation>очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="108"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
         <source>Size of games field</source>
         <translation>Размер игрового поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="130"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>Amount foxes</source>
         <translation>Количество лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="148"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
         <source>Speed of computer&apos;s steps</source>
         <translation>Задержка ходов противника</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="152"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
         <source>0,5 sec</source>
         <translation>0,5 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="156"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
         <source>1 sec</source>
         <translation>1 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="165"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
         <source>Volume of effects</source>
         <translation>Громкость звуковых эффектов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="178"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="262"/>
         <source>Saving games</source>
         <translation>Сохранять игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="193"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
         <source>Saving statistics</source>
-        <translation>Сохранять статистику игр</translation>
+        <translation>Сохранять результаты игр</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <source>Rotation of top field</source>
+        <translation>Угол поворота верхнего поля</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <source>Rotation of bottom field</source>
+        <translation>Угол поворота нижнего поля</translation>
     </message>
 </context>
 <context>
@@ -525,7 +582,7 @@
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="55"/>
         <source>Game&apos;s statistics</source>
-        <translation>Статистика игр</translation>
+        <translation>Результаты игр</translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="69"/>

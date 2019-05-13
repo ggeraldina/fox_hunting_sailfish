@@ -31,7 +31,7 @@ QString QmlSettings::getLanguage() {
 
 int QmlSettings::getLevel() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
-    return settings.value(SETTING_LEVEL, 1).toInt();
+    return settings.value(SETTING_LEVEL, 5).toInt();
 }
 
 QString QmlSettings::getSavingGames() {
@@ -52,6 +52,16 @@ QString QmlSettings::getUserName() {
 QString QmlSettings::getUserOpponentName() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     return settings.value(SETTING_USER_OPPONENT_NAME, "Player 2").toString();
+}
+
+int QmlSettings::getRotationFieldTop() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_ROTATION_FIELD_TOP, 0).toInt();
+}
+
+int QmlSettings::getRotationFieldBottom() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_ROTATION_FIELD_BOTTOM, 0).toInt();
 }
 
 void QmlSettings::setBaseTableSize(int newValue) {
@@ -124,6 +134,20 @@ void QmlSettings::setUserOpponentName(QString newValue) {
     emit settingUserOpponentNameChanged();
 }
 
+void QmlSettings::setRotationFieldTop(int newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_ROTATION_FIELD_TOP, newValue);
+    settings.sync();
+    emit settingRotationFieldTopChanged();
+}
+
+void QmlSettings::setRotationFieldBottom(int newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_ROTATION_FIELD_BOTTOM, newValue);
+    settings.sync();
+    emit settingRotationFieldBottomChanged();
+}
+
 void QmlSettings::updateToDefaultSettings() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
@@ -131,11 +155,13 @@ void QmlSettings::updateToDefaultSettings() {
     settings.setValue(SETTING_SPEED_STEP_COMP, 1000);
     settings.setValue(SETTING_VOLUME_EFFECTS, 0.0);
     settings.setValue(SETTING_LANGUAGE, "-??");
-    settings.setValue(SETTING_LEVEL, 1);
+    settings.setValue(SETTING_LEVEL, 5);
     settings.setValue(SETTING_SAVING_GAMES, "true");
     settings.setValue(SETTING_SAVING_STATISTICS, "true");
     settings.setValue(SETTING_USER_NAME, "Player");
     settings.setValue(SETTING_USER_OPPONENT_NAME, "Player 2");
+    settings.setValue(SETTING_ROTATION_FIELD_TOP, 0);
+    settings.setValue(SETTING_ROTATION_FIELD_BOTTOM, 0);
     emit settingBaseTableSizeChanged();
     emit settingNumberFoxesChanged();
     emit settingSpeedStepCompChanged();
@@ -146,5 +172,7 @@ void QmlSettings::updateToDefaultSettings() {
     emit settingSavingStatisticsChanged();
     emit settingUserNameChanged();
     emit settingUserOpponentNameChanged();
+    emit settingRotationFieldTopChanged();
+    emit settingRotationFieldBottomChanged();
     settings.sync();
 }

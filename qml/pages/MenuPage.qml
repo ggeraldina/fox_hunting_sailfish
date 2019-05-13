@@ -35,10 +35,58 @@ Page {
             PageHeader {
                 id: headerPage
                 title: qsTr("Menu")
-            }
+            }            
 
             SectionHeader {
                 id: sectionGame
+            }
+
+            Label {
+                id: labelGamePractice
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
+            }
+
+            BackgroundItem {
+                id: itemNewGamePractice
+                width: column.width
+                Label {
+                    id: labelNewGamePractice
+                    color: itemNewGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    var levelPractice = 0
+                    DB.dbDeleteFieldLocationGameSave(levelPractice, quantityFoxes, baseFieldSize, "Practice")
+                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemContinueGamePractice
+                width: column.width
+                Label {
+                    id: labelContinueGamePractice
+                    color: itemContinueGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
+                }
+            }
+
+            Label {
+                id: labelGameTwoPlayers
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
+            }
+
+            Label {
+                id: labelGame
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
             }
 
             BackgroundItem {
@@ -87,34 +135,16 @@ Page {
                 }
             }
 
-            BackgroundItem {
-                id: itemNewGamePractice
-                width: column.width
-                Label {
-                    id: labelNewGamePractice
-                    color: itemNewGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    x: Theme.horizontalPageMargin
-                }
-                onClicked: {
-                    var levelPractice = 0
-                    DB.dbDeleteFieldLocationGameSave(levelPractice, quantityFoxes, baseFieldSize, "Practice")
-                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
-                }
+            Label {
+                id: labelGameUserUserTwoPlayers
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
             }
 
-            BackgroundItem {
-                id: itemContinueGamePractice
-                width: column.width
-                Label {
-                    id: labelContinueGamePractice
-                    color: itemContinueGamePractice.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    x: Theme.horizontalPageMargin
-                }
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("GamePracticePage.qml"))
-                }
+            Label {
+                id: labelGameUserUser
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
             }
 
             BackgroundItem {
@@ -175,18 +205,8 @@ Page {
                 }
             }
 
-            BackgroundItem {
-                id: itemRules
-                width: column.width
-                Label {
-                    id: labelRules
-                    color: itemRules.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    x: Theme.horizontalPageMargin
-                }
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("RulesPage.qml"))
-                }
+            SectionHeader {
+                id: sectionStatistics
             }
 
             BackgroundItem {
@@ -247,6 +267,20 @@ Page {
 
             SectionHeader {
                 id: sectionHelp
+            }            
+
+            BackgroundItem {
+                id: itemRules
+                width: column.width
+                Label {
+                    id: labelRules
+                    color: itemRules.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("RulesPage.qml"))
+                }
             }
 
             BackgroundItem {
@@ -291,11 +325,14 @@ Page {
                 itemContinueGameUserUser.visible = false
             }
             if (DB.dbExistsDataTable("gameStatistics")) {
+                sectionStatistics.visible = true
                 itemStatistics.visible = true
             } else {
                 if (DB.dbExistsDataTable("gamePracticeStatistics")) {
+                    sectionStatistics.visible = true
                     itemStatistics.visible = true
                 } else {
+                    sectionStatistics.visible = false
                     itemStatistics.visible = false
                 }
             }
@@ -315,6 +352,12 @@ Page {
         labelSettings.text = qsTr("Game's settings")
         labelAbout.text = qsTr("About program")
         sectionGame.text = qsTr("Game")
+        labelGamePractice.text = qsTr("One player")
+        labelGameTwoPlayers.text = qsTr("Two players")
+        labelGame.text = qsTr("You-Device")
+        labelGameUserUserTwoPlayers.text = qsTr("Two players")
+        labelGameUserUser.text = qsTr("You-Player")
+        sectionStatistics.text = qsTr("Statistics")
         sectionSettings.text = qsTr("Settings")
         sectionHelp.text = qsTr("Help")
     }

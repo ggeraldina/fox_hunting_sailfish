@@ -42,6 +42,10 @@
         <source>)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GamePracticePage</name>
@@ -154,10 +158,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,6 +187,30 @@
     </message>
     <message>
         <source>Continue game against player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You-Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You-Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two players</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -306,14 +330,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Steps player 1 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Steps player 2 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Size field </source>
         <translation type="unfinished"></translation>
     </message>
@@ -323,6 +339,10 @@
     </message>
     <message>
         <source>No data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +422,30 @@
     </message>
     <message>
         <source>Saving statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation of top field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation of bottom field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter name of an other player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player 2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
