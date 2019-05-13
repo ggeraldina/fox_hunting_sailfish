@@ -11,8 +11,8 @@ Page {
     property int quantityFoxes: settings.settingNumberFoxes
     property int level: settings.settingLevel
     property int levelDefault: 0
-    property string namePlayer1: qsTr("Player1! ")
-    property string namePlayer2: qsTr("Player2! ")
+    property string namePlayer1: settings.settingUserName
+    property string namePlayer2: settings.settingUserOpponentName
 
     Connections {
         target: translator
@@ -59,7 +59,7 @@ Page {
                                      field: "Comp",
                                      fieldOpponent: "User",
                                      nextPage: "GamePage.qml",
-                                     namePlayer1: "" })
+                                     namePlayer1: namePlayer1 })
                 }
             }
 
@@ -80,7 +80,7 @@ Page {
                                          field: "Comp",
                                          fieldOpponent: "User",
                                          nextPage: "GamePage.qml",
-                                         namePlayer1: "" })
+                                         namePlayer1: namePlayer1 })
                     } else {
                         pageStack.push(Qt.resolvedUrl("GamePage.qml"))
                     }

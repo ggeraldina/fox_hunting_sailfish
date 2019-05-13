@@ -7,6 +7,7 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property string username: settings.settingUserName
 
     PageHeader {
         id: headerPage
@@ -67,9 +68,9 @@ Page {
             if (settings.settingSavingStatistics == "true") {
                 var countSteps = DB.dbCountStepsGamePracticeStatistics()
                 labelSteps.visible = true
-                labelSteps.text = qsTr("You made ") +
-                        countSteps +
-                        qsTr(" steps.")
+                labelSteps.text = username + "! "
+                        qsTr("You made steps - ") +
+                        countSteps
             }
         }
     }

@@ -17,6 +17,7 @@ Page {
     property int maxQuantityFoxes: 4
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property int level: 0
+    property string username: settings.settingUserName
     property string field: "Practice"
     property string tableName: "gamePracticeStatistics"
 
@@ -56,6 +57,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
+                    winner: username,
                     stepsUser: countStepsUser,
                 }
                 DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))

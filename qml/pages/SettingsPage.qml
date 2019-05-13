@@ -13,21 +13,25 @@ Page {
     property int currentIndexLevel: settings.settingLevel - 1
     property bool currentCheckedSavingGames: settings.settingSavingGames == "true" ? true : false
     property bool currentCheckedSavingStatistics: settings.settingSavingStatistics == "true" ? true : false
+    property string userName: settings.settingUserName
+    property string userOpponentName: settings.settingUserOpponentName
 
     Connections {
-            target: translator
+        target: translator
     }
 
     Connections {
-            target: settings
-            // for default settings
-            onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
-            onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
-            onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
-            onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
-            onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
-            onSettingSavingGamesChanged: switchSavingGames.checked = settings.settingSavingGames == "true" ? true : false
-            onSettingSavingStatisticsChanged: switchSavingStatistics.checked = settings.settingSavingStatistics == "true" ? true : false
+        target: settings
+        // for default settings
+        onSettingBaseTableSizeChanged: comboBoxBaseTableSize.currentIndex = settings.settingBaseTableSize - 7
+        onSettingNumberFoxesChanged: comboBoxNumberFoxes.currentIndex = settings.settingNumberFoxes - 3
+        onSettingSpeedStepCompChanged: comboBoxSpeedStepComp.currentIndex = settings.settingSpeedStepComp / 500 - 1
+        onSettingVolumeEffectsChanged: sliderVolumeEffects.value = settings.settingVolumeEffects
+        onSettingLevelChanged: comboBoxLevel.currentIndex = settings.settingLevel - 1
+        onSettingSavingGamesChanged: switchSavingGames.checked = settings.settingSavingGames == "true" ? true : false
+        onSettingSavingStatisticsChanged: switchSavingStatistics.checked = settings.settingSavingStatistics == "true" ? true : false
+        onSettingUserNameChanged: textFieldUser.text = settings.settingUserName
+        onSettingUserOpponentNameChanged: textFieldUserOpponent = settings.settingUserOpponentName
     }
 
     SilicaFlickable {
@@ -194,6 +198,36 @@ Page {
                     } else {
                         settings.settingSavingStatistics = "false"
                     }
+                }
+            }
+
+            TextField {
+                id: textFieldUser
+                width: page.width
+                text: userName
+                placeholderText: "Enter Username"
+                label: "Player"
+                validator: RegExpValidator {
+                    regExp: /^(?!\s).*\S$/
+                }
+                color: errorHighlight ? "red" : Theme.primaryColor
+                onTextChanged: {
+                    settings.settingUserName = text
+                }
+            }
+
+            TextField {
+                id: textFieldUserOpponent
+                width: page.width
+                text: userOpponentName
+                placeholderText: "Enter name of player 2"
+                label: "Player 2"
+                validator: RegExpValidator {
+                    regExp: /^(?!\s).*\S$/
+                }
+                color: errorHighlight ? "red" : Theme.primaryColor
+                onTextChanged: {
+                    settings.settingUserOpponentName = text
                 }
             }
         }

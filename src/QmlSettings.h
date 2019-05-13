@@ -17,6 +17,8 @@ class QmlSettings : public QObject {
     Q_PROPERTY(int settingLevel READ getLevel WRITE setLevel NOTIFY settingLevelChanged)
     Q_PROPERTY(QString settingSavingGames READ getSavingGames WRITE setSavingGames NOTIFY settingSavingGamesChanged)
     Q_PROPERTY(QString settingSavingStatistics READ getSavingStatistics WRITE setSavingStatistics NOTIFY settingSavingStatisticsChanged)
+    Q_PROPERTY(QString settingUserName READ getUserName WRITE setUserName NOTIFY settingUserNameChanged)
+    Q_PROPERTY(QString settingUserOpponentName READ getUserOpponentName WRITE setUserOpponentName NOTIFY settingUserOpponentNameChanged)
 
 public:
     explicit QmlSettings(QObject *parent = nullptr);
@@ -29,6 +31,8 @@ public:
     int getLevel();
     QString getSavingGames();
     QString getSavingStatistics();
+    QString getUserName();
+    QString getUserOpponentName();
 
     void setBaseTableSize(int newValue);
     void setNumberFoxes(int newValue);
@@ -38,6 +42,9 @@ public:
     void setLevel(int newValue);
     void setSavingGames(QString newValue);
     void setSavingStatistics(QString newValue);
+    void setUserName(QString newValue);
+    void setUserOpponentName(QString newValue);
+
     Q_INVOKABLE void updateToDefaultSettings();
 
 private:
@@ -50,6 +57,8 @@ private:
     const QString SETTING_LEVEL = "settings_game/level";
     const QString SETTING_SAVING_GAMES = "settings_app/saving_games";
     const QString SETTING_SAVING_STATISTICS = "settings_app/saving_statistics";
+    const QString SETTING_USER_NAME = "settings_app/user_name";
+    const QString SETTING_USER_OPPONENT_NAME = "settings_app/user_opponent_name";
 
 signals:
     void settingBaseTableSizeChanged();
@@ -60,6 +69,8 @@ signals:
     void settingLevelChanged();
     void settingSavingGamesChanged();
     void settingSavingStatisticsChanged();
+    void settingUserNameChanged();
+    void settingUserOpponentNameChanged();
 };
 
 #endif // QMLSETTINGS_H

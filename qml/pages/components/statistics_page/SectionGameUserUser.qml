@@ -72,22 +72,7 @@ ExpandingSection {
                     labelName.text += date.toDateString() + ", " + date.toTimeString()
                     textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                     textNumberFoxes.text += obj.countFoxes
-                    if (settings.settingLanguage == "-ru") {
-                        if (obj.winner == "Player 1") {
-                            textWinner.text += "Игрок 1"
-                        }
-                        else {
-                            textWinner.text += "Игрок 2"
-                        }
-                    }
-                    else {
-                        if (obj.winner == "Player 1") {
-                            textWinner.text += "Player 1"
-                        }
-                        else {
-                            textWinner.text += "Player 2"
-                        }
-                    }
+                    textWinner.text += obj.winner
                     textStepsUserOpponent.text += obj.stepsUserOpponent
                     textStepsUser.text += obj.stepsUser
                 }

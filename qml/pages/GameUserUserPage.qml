@@ -11,8 +11,8 @@ Page {
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
     property string typeGame: "UserUser"
-    property string namePlayer1: "Player1"
-    property string namePlayer2: "Player2"
+    property string namePlayer1: settings.settingUserName
+    property string namePlayer2: settings.settingUserOpponentName
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
@@ -68,7 +68,7 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
             DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"), {winner : namePlayer1})
+            pageStack.replace(Qt.resolvedUrl("WinGameUserUserPage.qml"), {winner : namePlayer1})
         }
         onWinUser: {
             if (settings.settingSavingStatistics == "true") {
@@ -86,7 +86,7 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
             DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-            pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"), {winner: namePlayer2})
+            pageStack.replace(Qt.resolvedUrl("WinGameUserUserPage.qml"), {winner: namePlayer2})
         }
     }
 
@@ -103,8 +103,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Player 1") +
-                  qsTr(" (steps ") + dataModelUserUser.countStepsUserOpponent + qsTr(")")
+            text: namePlayer1 +  qsTr(" (steps ") + dataModelUserUser.countStepsUserOpponent + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
@@ -172,8 +171,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Player 2") +
-                  qsTr(" (steps ") + dataModelUserUser.countStepsUser + qsTr(")")
+            text: namePlayer2 + qsTr(" (steps ") + dataModelUserUser.countStepsUser + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }

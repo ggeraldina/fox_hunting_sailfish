@@ -58,7 +58,7 @@ Dialog {
         spacing: Theme.paddingMedium
 
         Label {
-            text: namePlayer1 + qsTr("Are you pleased the location of the foxes on the field?")
+            text: namePlayer1 + "! " + qsTr("Are you pleased the location of the foxes on the field?")
             width:column.width - Theme.paddingLarge * 2
             horizontalAlignment: Text.AlignJustify
             anchors.horizontalCenter: parent.horizontalCenter

@@ -35,19 +35,11 @@
 <context>
     <name>GamePage</name>
     <message>
-        <source>You</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> (steps </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -69,19 +61,11 @@
 <context>
     <name>GameUserUserPage</name>
     <message>
-        <source>Player 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> (steps </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Player 2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -205,14 +189,6 @@
         <source>Continue game against player</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Player1! </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Player2! </source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RulesPage</name>
@@ -308,6 +284,10 @@
     </message>
     <message>
         <source>No data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Winner </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -493,15 +473,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You made </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The game is over.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> steps.</source>
+        <source>You made steps - </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

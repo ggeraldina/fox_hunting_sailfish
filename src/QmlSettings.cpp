@@ -44,6 +44,16 @@ QString QmlSettings::getSavingStatistics() {
     return settings.value(SETTING_SAVING_STATISTICS, "true").toString();
 }
 
+QString QmlSettings::getUserName() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_USER_NAME, "Player").toString();
+}
+
+QString QmlSettings::getUserOpponentName() {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    return settings.value(SETTING_USER_OPPONENT_NAME, "Player 2").toString();
+}
+
 void QmlSettings::setBaseTableSize(int newValue) {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, newValue);
@@ -100,6 +110,20 @@ void QmlSettings::setSavingStatistics(QString newValue) {
     emit settingSavingStatisticsChanged();
 }
 
+void QmlSettings::setUserName(QString newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_USER_NAME, newValue);
+    settings.sync();
+    emit settingUserNameChanged();
+}
+
+void QmlSettings::setUserOpponentName(QString newValue) {
+    QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
+    settings.setValue(SETTING_USER_OPPONENT_NAME, newValue);
+    settings.sync();
+    emit settingUserOpponentNameChanged();
+}
+
 void QmlSettings::updateToDefaultSettings() {
     QSettings settings(NAME_FILE_SETTINGS, QSettings::NativeFormat, this);
     settings.setValue(SETTING_BASE_TABLE_SIZE, 9);
@@ -110,6 +134,8 @@ void QmlSettings::updateToDefaultSettings() {
     settings.setValue(SETTING_LEVEL, 1);
     settings.setValue(SETTING_SAVING_GAMES, "true");
     settings.setValue(SETTING_SAVING_STATISTICS, "true");
+    settings.setValue(SETTING_USER_NAME, "Player");
+    settings.setValue(SETTING_USER_OPPONENT_NAME, "Player 2");
     emit settingBaseTableSizeChanged();
     emit settingNumberFoxesChanged();
     emit settingSpeedStepCompChanged();
@@ -118,5 +144,7 @@ void QmlSettings::updateToDefaultSettings() {
     emit settingLevelChanged();
     emit settingSavingGamesChanged();
     emit settingSavingStatisticsChanged();
+    emit settingUserNameChanged();
+    emit settingUserOpponentNameChanged();
     settings.sync();
 }

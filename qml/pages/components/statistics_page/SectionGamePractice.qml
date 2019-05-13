@@ -31,6 +31,13 @@ ExpandingSection {
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: Theme.paddingMedium
                     Text {
+                        id: textPracticeWinner
+                        text: qsTr("Winner ")
+                        color: Theme.highlightColor
+                        font.pixelSize: Theme.fontSizeSmall
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
+                    Text {
                         id: textPracticeStepsUser
                         text: qsTr("Steps user ")
                         color: Theme.highlightColor
@@ -59,6 +66,7 @@ ExpandingSection {
                     textPracticeSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                     textPracticeNumberFoxes.text += obj.countFoxes
                     textPracticeStepsUser.text += obj.stepsUser
+                    textPracticeWinner.text += obj.winner
                 }
             }
         }

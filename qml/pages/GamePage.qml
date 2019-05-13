@@ -16,6 +16,8 @@ Page {
     property int quantityFoxes: settings.settingNumberFoxes
     property int speedStepComputer: settings.settingSpeedStepComp
     property int level: settings.settingLevel
+    property string username: settings.settingUserName
+    property string nameComp: settings.settingUserOpponentName
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property string tableName: "gameStatistics"
 
@@ -64,7 +66,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "You",
+                    winner: username,
                     level: level,
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
@@ -82,7 +84,7 @@ Page {
                 var obj = { date: new Date(),
                     sizeField: baseFieldSize,
                     countFoxes: quantityFoxes,
-                    winner: "I",
+                    winner: nameComp,
                     level: level,
                     stepsComp: countStepsComp,
                     stepsUser: countStepsUser,
@@ -110,8 +112,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("I") +
-                  qsTr(" (steps ") + dataModel.countStepsComp + qsTr(")")
+            text: nameComp + qsTr(" (steps ") + dataModel.countStepsComp + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
@@ -169,8 +170,7 @@ Page {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("You") +
-                  qsTr(" (steps ") + dataModel.countStepsUser + qsTr(")")
+            text: username + qsTr(" (steps ") + dataModel.countStepsUser + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
         }
