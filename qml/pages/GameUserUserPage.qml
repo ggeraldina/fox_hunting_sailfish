@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.6
+import QtGraphicalEffects 1.0
 import QtQuick.LocalStorage 2.0
 import "qrc:/js/database/Database.js" as DB
 import TablesUserUser 1.0
@@ -34,6 +35,24 @@ Page {
 
     TablesUserUser {
         id: dataModelUserUser
+        onFlagLockedTablesChanged: {
+            if (flagLockedTables) {
+                effectStepUserOpponent.color = Theme.highlightColor
+                effectStepUser.color = "transparent"
+            } else {
+                effectStepUserOpponent.color = "transparent"
+                effectStepUser.color = Theme.highlightColor
+            }
+        }
+        onFlagLockedTablesOpponentChanged: {
+            if (flagLockedTablesOpponent) {
+                effectStepUserOpponent.color = "transparent"
+                effectStepUser.color = Theme.highlightColor
+            } else {
+                effectStepUserOpponent.color = Theme.highlightColor
+                effectStepUser.color = "transparent"
+            }
+        }
         onShotUserOpponent: {
             soundEffect.play()
             if (settings.settingSavingGames == "true") {
@@ -69,7 +88,7 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User0")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
-            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame, "Player1")
             pageStack.replace(Qt.resolvedUrl("WinGameUserUserPage.qml"), {winner : namePlayer1})
         }
         onWinUser: {
@@ -89,7 +108,7 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User0")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
             var statusGame = "new"
-            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame, "Player2")
             pageStack.replace(Qt.resolvedUrl("WinGameUserUserPage.qml"), {winner: namePlayer2})
         }
     }
@@ -112,10 +131,21 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
 
             Label {
+                id: labelUserOpponent
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: namePlayer1 +  qsTr(" (steps ") + dataModelUserUser.countStepsUserOpponent + qsTr(")")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
+            }
+
+            RectangularGlow {
+                id: effectStepUserOpponent
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: labelUserOpponent.width
+                height: 1
+                glowRadius: 10
+                spread: 0
+                cornerRadius: glowRadius
             }
 
             Grid {
@@ -186,10 +216,21 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
 
             Label {
+                id: labelUser
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: namePlayer2 + qsTr(" (steps ") + dataModelUserUser.countStepsUser + qsTr(")")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
+            }
+
+            RectangularGlow {
+                id: effectStepUser
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: labelUser.width
+                height: 1
+                glowRadius: 10
+                spread: 0
+                cornerRadius: glowRadius
             }
 
             Grid {
@@ -280,6 +321,11 @@ Page {
         if (settings.settingSavingGames == "false") {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User0")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User1")
+            if (DB.dbGetLastWinnerGameStatus("UserUser", level, quantityFoxes, baseFieldSize) == "Player1") {
+                dataModelUserUser.flagLockedTablesOpponent = false
+            } else {
+                dataModelUserUser.flagLockedTables = false
+            }
         } else {
             restoreStepsGame()
         }
@@ -300,7 +346,14 @@ Page {
             dataModelUserUser.flagLockedTables = false
             return
         }
-        dataModelUserUser.flagLockedTablesOpponent = false
+        if (numberRows > 0 && stepRestoreGame[numberRows-1].field == "User0" && stepRestoreGame[numberRows-1].fox == 0) {
+            dataModelUserUser.flagLockedTablesOpponent = false
+            return
+        }
+        if (DB.dbGetLastWinnerGameStatus("UserUser", level, quantityFoxes, baseFieldSize) == "Player1") {
+            dataModelUserUser.flagLockedTablesOpponent = false
+        } else {
+            dataModelUserUser.flagLockedTables = false
+        }
     }
-
 }

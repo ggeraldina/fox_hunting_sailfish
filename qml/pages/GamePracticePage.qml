@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.6
+import QtGraphicalEffects 1.0
 import QtQuick.LocalStorage 2.0
 import "qrc:/js/database/Database.js" as DB
 import TablesPractice 1.0
@@ -149,10 +150,21 @@ Page {
         }
 
         Label {
+            id: labelSteps
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr(" (steps ") + dataModelPractice.countStepsUser + qsTr(")")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeSmall
+        }
+
+        RectangularGlow {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: labelSteps.width
+            height: 1
+            glowRadius: 10
+            spread: 0
+            cornerRadius: glowRadius
+            color: Theme.highlightColor
         }
 
         Grid {

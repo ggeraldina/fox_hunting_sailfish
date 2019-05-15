@@ -79,6 +79,7 @@ void TablesUserUser::shotCellUserOpponent(int index) {
         return;
     }
     flagLockedTablesOpponent = true;
+    emit flagLockedTablesOpponentChanged();
     emit shotUserOpponent(index);
     increaseCountStepsUserOpponent();
     int valueCell = dataUserOpponent.value(index)->getValue();
@@ -89,6 +90,7 @@ void TablesUserUser::shotCellUserOpponent(int index) {
     else {
         TableUser::editCellsWhenNoFox(&dataUserOpponent, index);
         flagLockedTables = false;
+        emit flagLockedTablesChanged();
     }
 }
 
@@ -97,10 +99,12 @@ void TablesUserUser::shotCellUserOpponentWhenFox(int index) {
     countFoundFoxesUserOpponent++;
     if (countFoundFoxesUserOpponent == numberFoxes) {
         flagLockedTablesOpponent = true;
+        emit flagLockedTablesOpponentChanged();
         QTimer::singleShot(speedTimer, this, &TablesUserUser::signalWinUserOpponent);
         return;
     }
     flagLockedTablesOpponent = false;
+    emit flagLockedTablesOpponentChanged();
 }
 
 void TablesUserUser::signalWinUserOpponent() {
@@ -112,6 +116,7 @@ void TablesUserUser::shotCellUser(int index) {
         return;
     }
     flagLockedTables = true;
+    emit flagLockedTablesChanged();
     emit shotUser(index);
     TablesCompUser::increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
@@ -121,6 +126,7 @@ void TablesUserUser::shotCellUser(int index) {
     else {
         TableUser::editCellsWhenNoFox(&dataUser, index);
         flagLockedTablesOpponent = false;
+        emit flagLockedTablesOpponentChanged();
     }
 }
 

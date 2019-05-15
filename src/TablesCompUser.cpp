@@ -145,6 +145,7 @@ void TablesCompUser::shotCellUser(int index) {
         return;
     }
     flagLockedTables = true;
+    emit flagLockedTablesChanged();
     emit shotUser(index);
     increaseCountStepsUser();
     int valueCell = dataUser.value(index)->getValue();
@@ -161,10 +162,12 @@ void TablesCompUser::shotCellUserWhenFox(int index) {
     countFoundFoxesUser++;
     if (countFoundFoxesUser == numberFoxes) {
         flagLockedTables = true;
+        emit flagLockedTablesChanged();
         QTimer::singleShot(speedTimer, this, &TablesCompUser::signalWinUser);
         return;
     }
     flagLockedTables = false;
+    emit flagLockedTablesChanged();
 }
 
 void TablesCompUser::signalWinUser() {
@@ -198,6 +201,7 @@ void TablesCompUser::shotCellCompWhenFox(int index) {
     countFoundFoxesComp++;
     if (countFoundFoxesComp == numberFoxes) {
         flagLockedTables = true;
+        emit flagLockedTablesChanged();
         QTimer::singleShot(speedTimer, this, &TablesCompUser::signalWinComp);
         return;
     }
@@ -211,6 +215,7 @@ void TablesCompUser::signalWinComp() {
 void TablesCompUser::shotCellCompWhenNoFox(int index) {
     TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     flagLockedTables = false;
+    emit flagLockedTablesChanged();
 }
 
 void TablesCompUser::putOrRemoveMarkCellUser(int index) {

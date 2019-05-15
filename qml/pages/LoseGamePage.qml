@@ -5,6 +5,8 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property string namePlayer1: settings.settingUserName
+    property int level: settings.settingLevel
 
     PageHeader {
         id: headerPage
@@ -50,7 +52,7 @@ Page {
                                            field: "Comp",
                                            fieldOpponent: "User",
                                            nextPage: "GamePage.qml",
-                                           namePlayer1: "" })
+                                           namePlayer1: namePlayer1 })
         }
 
         Button {

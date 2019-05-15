@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.6
+import QtGraphicalEffects 1.0
 import QtQuick.LocalStorage 2.0
 import "qrc:/js/database/Database.js" as DB
 import TablesCompUser 1.0
@@ -35,11 +36,29 @@ Page {
 
     TablesCompUser {
         id: dataModel
+        onFlagLockedTablesChanged: {
+            if (flagLockedTables) {
+                effectStepComp.color = Theme.highlightColor
+                effectStepUser.color = "transparent"
+            } else {
+                effectStepComp.color = "transparent"
+                effectStepUser.color = Theme.highlightColor
+            }
+        }
         onAddFoxUser: {
             if (settings.settingSavingGames == "true") {
                 var field = "User"
                 var fox = 1
                 var shot = 0
+                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+            }
+        }
+        onShotComp: {
+            soundEffect.play()
+            if (settings.settingSavingGames == "true") {
+                var field = "Comp"
+                var fox = 0
+                var shot = 1
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
             }
         }
@@ -52,14 +71,23 @@ Page {
                 DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
             }
         }
-        onShotComp: {
-            soundEffect.play()
-            if (settings.settingSavingGames == "true") {
-                var field = "Comp"
-                var fox = 0
-                var shot = 1
-                DB.dbInsertRowLocationGameSave(level, quantityFoxes, baseFieldSize, field, index, fox, shot)
+        onWinComp: {
+            if (settings.settingSavingStatistics == "true") {
+                var obj = { date: new Date(),
+                    sizeField: baseFieldSize,
+                    countFoxes: quantityFoxes,
+                    winner: nameComp,
+                    level: level,
+                    stepsComp: countStepsComp,
+                    stepsUser: countStepsUser,
+                }
+                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj), "Player1")
             }
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
+            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
+            var statusGame = "new"
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+            pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
         }
         onWinUser: {
             if (settings.settingSavingStatistics == "true") {
@@ -76,26 +104,8 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
             var statusGame = "new"
-            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
+            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame, "Player2")
             pageStack.replace(Qt.resolvedUrl("WinGamePage.qml"))
-        }
-        onWinComp: {
-            if (settings.settingSavingStatistics == "true") {
-                var obj = { date: new Date(),
-                    sizeField: baseFieldSize,
-                    countFoxes: quantityFoxes,
-                    winner: nameComp,
-                    level: level,
-                    stepsComp: countStepsComp,
-                    stepsUser: countStepsUser,
-                }
-                DB.dbInsertRowGameStatistics(tableName, JSON.stringify(obj))
-            }
-            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User")
-            DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
-            var statusGame = "new"
-            DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-            pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
         }
     }
 
@@ -117,10 +127,21 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
 
             Label {
+                id: labelComp
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: nameComp + qsTr(" (steps ") + dataModel.countStepsComp + qsTr(")")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
+            }
+
+            RectangularGlow {
+                id: effectStepComp
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: labelComp.width
+                height: 1
+                glowRadius: 10
+                spread: 0
+                cornerRadius: glowRadius
             }
 
             Grid {
@@ -181,10 +202,21 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
 
             Label {
+                id: labelUser
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: username + qsTr(" (steps ") + dataModel.countStepsUser + qsTr(")")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
+            }
+
+            RectangularGlow {
+                id: effectStepUser
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: labelUser.width
+                height: 1
+                glowRadius: 10
+                spread: 0
+                cornerRadius: glowRadius
             }
 
             Grid {
@@ -193,9 +225,10 @@ Page {
                 columns: 2
 
                 Rectangle {
-                      width: baseWidthHeight
-                      height: baseWidthHeight
-                      color: "darkRed";
+                    id: recRed
+                    width: baseWidthHeight
+                    height: baseWidthHeight
+                    color: "darkRed";
                 }
 
                 FieldTableLitters {
@@ -272,6 +305,9 @@ Page {
         dataModel.addFoxesComp(numberCellCompFoxes)
         if (settings.settingSavingGames == "false") {
             dataModel.initFoxesUser()
+            if (DB.dbGetLastWinnerGameStatus("AI", level, quantityFoxes, baseFieldSize) == "Player1") {
+                dataModel.shotCellComp();
+            }
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
         } else {
             if(DB.dbExistsFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "User") == false) {

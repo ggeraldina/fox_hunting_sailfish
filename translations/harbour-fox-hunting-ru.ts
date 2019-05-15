@@ -42,19 +42,19 @@
 <context>
     <name>GamePage</name>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="20"/>
+        <location filename="../qml/pages/GamePage.qml" line="21"/>
         <source>Device</source>
         <translation>Устройство</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="121"/>
-        <location filename="../qml/pages/GamePage.qml" line="185"/>
+        <location filename="../qml/pages/GamePage.qml" line="132"/>
+        <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="121"/>
-        <location filename="../qml/pages/GamePage.qml" line="185"/>
+        <location filename="../qml/pages/GamePage.qml" line="132"/>
+        <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source>)</source>
         <translation>)</translation>
     </message>
@@ -62,17 +62,17 @@
 <context>
     <name>GamePracticePage</name>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="88"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="89"/>
         <source> Min steps </source>
         <translation>Попробуйте найти всех лис, сделав как можно меньше ходов.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="153"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
         <source> (steps </source>
         <translation> Ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePracticePage.qml" line="153"/>
+        <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
         <source>)</source>
         <translation> </translation>
     </message>
@@ -80,14 +80,14 @@
 <context>
     <name>GameUserUserPage</name>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="116"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="190"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="221"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="116"/>
-        <location filename="../qml/pages/GameUserUserPage.qml" line="190"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
+        <location filename="../qml/pages/GameUserUserPage.qml" line="221"/>
         <source>)</source>
         <translation>)</translation>
     </message>
@@ -129,27 +129,27 @@
 <context>
     <name>LoseGamePage</name>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="11"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="13"/>
         <source>Fox hunting</source>
         <translation>Охота на лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="26"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="28"/>
         <source>You lost.</source>
         <translation>Вы проиграли</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="33"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="35"/>
         <source>Better luck next time!</source>
         <translation>В следующий раз повезет!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="46"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="48"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoseGamePage.qml" line="58"/>
+        <location filename="../qml/pages/LoseGamePage.qml" line="60"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -612,27 +612,27 @@
 <context>
     <name>WinGamePage</name>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="11"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="13"/>
         <source>Fox hunting</source>
         <translation>Охота на лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="26"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="28"/>
         <source>You win!</source>
         <translation>Вы победили!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="33"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="35"/>
         <source>Congratulate!</source>
         <translation>Поздравляем!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="46"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="48"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGamePage.qml" line="58"/>
+        <location filename="../qml/pages/WinGamePage.qml" line="60"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>
@@ -673,27 +673,27 @@
 <context>
     <name>WinGameUserUserPage</name>
     <message>
-        <location filename="../qml/pages/WinGameUserUserPage.qml" line="12"/>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="15"/>
         <source>Fox hunting</source>
         <translation>Охота на лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGameUserUserPage.qml" line="27"/>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="30"/>
         <source>Winner </source>
         <translation>Победитель - </translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGameUserUserPage.qml" line="34"/>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="37"/>
         <source>Congratulate!</source>
         <translation>Поздравляем!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGameUserUserPage.qml" line="47"/>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="50"/>
         <source>New game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WinGameUserUserPage.qml" line="60"/>
+        <location filename="../qml/pages/WinGameUserUserPage.qml" line="63"/>
         <source>Menu</source>
         <translation>Меню</translation>
     </message>

@@ -5,7 +5,10 @@ Page {
     id: page
     anchors.fill: parent
     allowedOrientations: Orientation.Portrait
+    property int levelDefault: 0
     property string winner: ""
+    property string namePlayer1: settings.settingUserName
+    property string namePlayer2: settings.settingUserOpponentName
 
     PageHeader {
         id: headerPage

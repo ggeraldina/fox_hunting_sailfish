@@ -250,12 +250,14 @@ function dbInitGameStatus() {
     var db = dbGetHandle()
     try {
         db.transaction(function (tx) {
+//            tx.executeSql('DROP TABLE IF EXISTS gameStatus');
             tx.executeSql('CREATE TABLE IF NOT EXISTS gameStatus' +
                           ' (typeGame TEXT, ' +
                           ' level INTEGER, ' +
                           ' foxes INTEGER, ' +
                           ' size TEXT, ' +
                           ' status TEXT, ' +
+                          ' lastWinner TEXT, ' +
                           ' datetime TEXT, ' +
                           ' CONSTRAINT tablePK PRIMARY KEY (typeGame, level, foxes, size));')
         })
@@ -264,19 +266,33 @@ function dbInitGameStatus() {
     };
 }
 
-function dbInsertRowGameStatus(typeGame, level, foxes, size, status) {
+function dbInsertRowGameStatus(typeGame, level, foxes, size, status, lastWinner) {
+    // lastWinner = Player1 or Player2;
     var db = dbGetHandle()
     db.transaction(function (tx) {
         var results = tx.executeSql('SELECT * FROM gameStatus WHERE typeGame = ? and level = ? and foxes = ? and size = ?;',
                                     [typeGame, level, foxes, size])
         if (results.rows.length == 0) {
-            tx.executeSql('INSERT INTO gameStatus (datetime, typeGame, level, foxes, size, status)' +
-                          ' VALUES (strftime("%Y-%m-%d %H:%M:%f", "now"), ?, ?, ?, ?, ?);',
-                          [typeGame, level, foxes, size, status])
+            if (lastWinner === undefined && typeGame == "AI") {
+                lastWinner = "Player2"
+            } else {
+                lastWinner = "Player1"
+            }
+            tx.executeSql('INSERT INTO gameStatus (datetime, typeGame, level, foxes, size, status, lastWinner)' +
+                          ' VALUES (strftime("%Y-%m-%d %H:%M:%f", "now"), ?, ?, ?, ?, ?, ?)',
+                          [typeGame, level, foxes, size, status, lastWinner])
         } else {
-            tx.executeSql('UPDATE gameStatus SET status = ?, datetime = strftime("%Y-%m-%d %H:%M:%f", "now")' +
-                          ' WHERE typeGame = ? and level = ? and foxes = ? and size = ?',
-                          [status, typeGame, level, foxes, size])
+            if (lastWinner === undefined) {
+                tx.executeSql('UPDATE gameStatus SET status = ?, ' +
+                              ' datetime = strftime("%Y-%m-%d %H:%M:%f", "now")' +
+                              ' WHERE typeGame = ? and level = ? and foxes = ? and size = ?',
+                              [status, typeGame, level, foxes, size])
+            } else {
+                tx.executeSql('UPDATE gameStatus SET status = ?, lastWinner = ?,' +
+                              ' datetime = strftime("%Y-%m-%d %H:%M:%f", "now")' +
+                              ' WHERE typeGame = ? and level = ? and foxes = ? and size = ?',
+                              [status, lastWinner, typeGame, level, foxes, size])
+            }
         }
     })
 }
@@ -292,6 +308,19 @@ function dbGetStatusGameStatus(typeGame, level, foxes, size) {
         return results.rows.item(0).status
     }
     return "new"
+}
+
+function dbGetLastWinnerGameStatus(typeGame, level, foxes, size) {
+    var db = dbGetHandle()
+    var results = ""
+    db.transaction(function (tx) {
+        results = tx.executeSql('SELECT lastWinner FROM gameStatus WHERE typeGame = ? and level = ? and foxes = ? and size = ?;',
+                                    [typeGame, level, foxes, size])
+    })
+    if (results.rows.length != 0) {
+        return results.rows.item(0).lastWinner
+    }
+    return "Player1"
 }
 
 function dbDeleteAllGameStatus() {
