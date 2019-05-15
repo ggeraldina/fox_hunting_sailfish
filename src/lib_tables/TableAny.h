@@ -15,7 +15,9 @@ public:
 
     static void calculateIndexesCellsAroundRadius(int indexesCellsAround[],
                                                   int countCells, int currentIndex, int radius = 1);
-    static int calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex);
+    static QVector<bool> calculateIndexesShapeSnowflake(int countCells, int currentIndex);
+
+    static int countGroupTrueIndexes(QVector<bool> indexes);
 
     template <class T>
     static void addFoxes(T *list, QVariant indexes) {
@@ -55,8 +57,7 @@ public:
     template <class T>
     static void editCellsShapeNoSnowflake(T *list, int currentIndex, void fun(T *, int)) {
         const int countCells = list->count();
-        bool cellsShapeSnowflake[countCells];
-        calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, currentIndex);
+        QVector<bool> cellsShapeSnowflake = calculateIndexesShapeSnowflake(countCells, currentIndex);
         for (int i = 0; i < countCells; i++) {
             if(!cellsShapeSnowflake[i]) {
                 fun(list, i);

@@ -250,7 +250,6 @@ function dbInitGameStatus() {
     var db = dbGetHandle()
     try {
         db.transaction(function (tx) {
-//            tx.executeSql('DROP TABLE IF EXISTS gameStatus');
             tx.executeSql('CREATE TABLE IF NOT EXISTS gameStatus' +
                           ' (typeGame TEXT, ' +
                           ' level INTEGER, ' +

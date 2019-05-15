@@ -25,21 +25,27 @@ void TableAny::calculateIndexesCellsAroundRadius(int indexesCellsAround[],
                                                                   currentIndex + (baseFieldSize - 1) * radius;
 }
 
-int TableAny::calculateIndexesShapeSnowflake(bool cellsShapeSnowflake[], int sizeArray, int currentIndex) {
-    for(int i = 0; i < sizeArray; i++) {
-        cellsShapeSnowflake[i] = false;
-    }
+QVector<bool> TableAny::calculateIndexesShapeSnowflake(int countCells, int currentIndex) {
+    QVector<bool> cellsShapeSnowflake(countCells, false);
     cellsShapeSnowflake[currentIndex] = true;
-    int countGroupTrue = 1;
     int indexesCellsAround[8];
-    int baseFieldSize = static_cast<int>(sqrt(sizeArray));
+    int baseFieldSize = static_cast<int>(sqrt(countCells));
     for(int i = 1; i < baseFieldSize; i++) {
-        calculateIndexesCellsAroundRadius(indexesCellsAround, sizeArray, currentIndex, i);
-        for (int indexCell : indexesCellsAround) {
+        calculateIndexesCellsAroundRadius(indexesCellsAround, countCells, currentIndex, i);
+        for(int indexCell : indexesCellsAround) {
             if(indexCell >= 0) {
                 cellsShapeSnowflake[indexCell] = true;
-                countGroupTrue++;
             }
+        }
+    }
+    return cellsShapeSnowflake;
+}
+
+int TableAny::countGroupTrueIndexes(QVector<bool> indexes) {
+    int countGroupTrue = 0;
+    for(bool index : indexes) {
+        if(index) {
+            countGroupTrue++;
         }
     }
     return countGroupTrue;

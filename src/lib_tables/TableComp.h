@@ -2,6 +2,7 @@
 #define TABLECOMP_H
 
 #include <QObject>
+#include <QVector>
 #include "../CellComp.h"
 #include "TableAny.h"
 
@@ -26,7 +27,7 @@ private:
     static void editCellsWhenNumber(QList<CellComp *> *list, int index, int numberFoxes);
     static void editChance(QList<CellComp *> *list, int index, double newChance);
     static int countMaxChance(QList<CellComp *> *list);
-    static void calculateIndexesCellsMaxChance(QList<CellComp *> *list, int indexesCells[], int sizeArray);
+    static QVector<int> calculateIndexesCellsMaxChance(QList<CellComp *> *list);
 
 
 private:

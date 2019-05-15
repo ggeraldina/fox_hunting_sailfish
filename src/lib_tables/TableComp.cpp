@@ -32,8 +32,7 @@ void TableComp::recalculatePossibleShot(QList<CellComp *> *list, int numberFoxes
 
 int TableComp::countFoundFoxesShapeSnowflake(QList<CellComp *> *list, int index) {
     int countCells = list->count();
-    bool cellsShapeSnowflake[countCells];
-    TableAny::calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, index);
+    QVector<bool> cellsShapeSnowflake = TableAny::calculateIndexesShapeSnowflake(countCells, index);
     int countFoundFoxesAround = 0;
     for (int i = 0; i < countCells; i++) {
         if (cellsShapeSnowflake[i]) {
@@ -87,8 +86,8 @@ void TableComp::editPossibleShotFalseAround(QList<CellComp *> *list, int current
 
 void TableComp::editCellsWhenNumber(QList<CellComp *> *list, int currentIndex, int numberFoxes) {
     int countCells = list->count();
-    bool cellsShapeSnowflake[countCells];
-    int countGroupTrue = TableAny::calculateIndexesShapeSnowflake(cellsShapeSnowflake, countCells, currentIndex);
+    QVector<bool> cellsShapeSnowflake = TableAny::calculateIndexesShapeSnowflake(countCells, currentIndex);
+    int countGroupTrue = TableAny::countGroupTrueIndexes(cellsShapeSnowflake);
     int valueCell = list->value(currentIndex)->getValue();
     double chanceGroupTrue = static_cast<double>(valueCell) / (countGroupTrue * numberFoxes);
     double chanceGroupFalse = static_cast<double>(numberFoxes - valueCell) / ((countCells - countGroupTrue) * numberFoxes);
@@ -109,9 +108,8 @@ void TableComp::editChance(QList<CellComp *> *list, int index, double newChance)
 }
 
 int TableComp::generateIndexCellForShot(QList<CellComp *> *list) {
-    int countCellsRandom = countMaxChance(list);
-    int indexesRandomCells[countCellsRandom];
-    calculateIndexesCellsMaxChance(list, indexesRandomCells, countCellsRandom);
+    QVector<int> indexesRandomCells = calculateIndexesCellsMaxChance(list);
+    int countCellsRandom = indexesRandomCells.count();
     int randomNumber = rand() % countCellsRandom;
     int randomIndex = indexesRandomCells[randomNumber];
     return randomIndex;
@@ -136,27 +134,24 @@ int TableComp::countMaxChance(QList<CellComp *> *list) {
     return countChance;
 }
 
-void TableComp::calculateIndexesCellsMaxChance(QList<CellComp *> *list, int indexesCells[], int sizeArray) {
+QVector<int> TableComp::calculateIndexesCellsMaxChance(QList<CellComp *> *list) {
     int countCells = list->count();
     double maxChance = -1;
-    indexesCells[0] = 0;
-    int indexArray = 0;
+    QVector<int> indexesCellsMax;
     for (int i = 0; i < countCells; i++) {
         double chance = list->value(i)->getChance();
         if (list->value(i)->getPossibleShot()) {
             if (chance > maxChance) {
                 maxChance = chance;
-                indexesCells[0] = i;
-                indexArray = 1;
+                indexesCellsMax.clear();
+                indexesCellsMax.append(i);
             }
-            else if (chance == maxChance && indexArray < sizeArray) {
-                indexesCells[indexArray] = i;
-                indexArray += 1;
+            else if (chance == maxChance) {
+                indexesCellsMax.append(i);
             }
         }
     }
-    for (int i = 0; i < sizeArray; i++) {
-    }
+    return indexesCellsMax;
 }
 
 int TableComp::generateRandomIndexForShot(QList<CellComp *> *list, int countCells) {
