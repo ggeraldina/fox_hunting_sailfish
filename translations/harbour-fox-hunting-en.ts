@@ -278,11 +278,31 @@
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="33"/>
+        <source>Variants of the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="42"/>
+        <source>variants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="48"/>
+        <source>Order of play (One player)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="57"/>
+        <source>order of play for one player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="63"/>
         <source>Order of play</source>
         <translation>Order of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="42"/>
+        <location filename="../qml/pages/RulesPage.qml" line="72"/>
         <source>order of play</source>
         <translation>On fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
 
@@ -290,29 +310,59 @@ The winner is the one who first finds all the foxes.
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="48"/>
+        <location filename="../qml/pages/RulesPage.qml" line="78"/>
         <source>Feature of the game</source>
         <translation>Feature of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="57"/>
-        <source>feature of the game</source>
+        <location filename="../qml/pages/RulesPage.qml" line="87"/>
+        <source>feature of the game 1</source>
         <translation>1) The fox displayed after each well-aimed shot on a cell with this fox, and shot can be repeated.
 
-2) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
-
-3) Foxes can not be located in the one cell.
-
-4) Foxes can&apos;t be located in neighboring cells.
 </translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="63"/>
+        <location filename="../qml/pages/RulesPage.qml" line="97"/>
+        <source>feature of the game 2</source>
+        <translation>2) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="107"/>
+        <source>Directions for finding foxes relative to the cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="128"/>
+        <source>The digit is the number of foxes around the cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="148"/>
+        <location filename="../qml/pages/RulesPage.qml" line="188"/>
+        <source>Foxes are not in cells with a dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="168"/>
+        <source>feature of the game 3</source>
+        <translation>3) Foxes can not be located in the one cell.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="178"/>
+        <source>feature of the game 4</source>
+        <translation>4) Foxes can&apos;t be located in neighboring cells.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="210"/>
         <source>Functionality of the program</source>
         <translation>Functionality of the program</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="72"/>
+        <location filename="../qml/pages/RulesPage.qml" line="219"/>
         <source>functionality of the program</source>
         <translation>- Clicking on the cell - a shot (step) on the field.
 
@@ -487,92 +537,92 @@ The winner is the one who first finds all the foxes.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="97"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Enter name of an other player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>Player 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
         <source>Games&apos;s level</source>
         <translation>Game&apos;s level against AI</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>1</source>
         <translation>very easy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>2</source>
         <translation>easy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
         <source>3</source>
         <translation>average</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>4</source>
         <translation>difficult</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>5</source>
         <translation>very difficult</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Size of games field</source>
         <translation>Size of game&apos;s field</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>Amount foxes</source>
         <translation>Number of foxes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
         <source>Speed of computer&apos;s steps</source>
         <translation>Speed of opponent&apos;s steps</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
         <source>0,5 sec</source>
         <translation>0,5 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="214"/>
         <source>1 sec</source>
         <translation>1 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="253"/>
         <source>Volume of effects</source>
         <translation>Volume of sound effects</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="262"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="266"/>
         <source>Saving games</source>
         <translation>Save games</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Saving statistics</source>
         <translation>Save games&apos; statistics</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>Rotation of top field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="180"/>
         <source>Rotation of bottom field</source>
         <translation type="unfinished"></translation>
     </message>

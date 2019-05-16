@@ -81,6 +81,8 @@ Page {
                 text: userName
                 placeholderText: qsTr("Enter Username")
                 label: qsTr("Your name")
+                EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                EnterKey.onClicked: focus = false
                 validator: RegExpValidator {
                     regExp: /^(?!\s).*\S$/
                 }
@@ -96,6 +98,8 @@ Page {
                 text: userOpponentName
                 placeholderText: qsTr("Enter name of an other player")
                 label: qsTr("Player 2")
+                EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                EnterKey.onClicked: focus = false
                 validator: RegExpValidator {
                     regExp: /^(?!\s).*\S$/
                 }

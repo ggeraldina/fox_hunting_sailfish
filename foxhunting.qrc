@@ -10,5 +10,9 @@
         <file>image/salute.gif</file>
         <file>image/foxInCircle.png</file>
         <file>image/foxInCircleBW.png</file>
+        <file>image/rulesGame/cells_location.png</file>
+        <file>image/rulesGame/cells_locationFoxes.png</file>
+        <file>image/rulesGame/cells_notFox.png</file>
+        <file>image/rulesGame/cells_notFox1.png</file>
     </qresource>
 </RCC>

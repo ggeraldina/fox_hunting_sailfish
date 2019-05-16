@@ -278,50 +278,104 @@
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="33"/>
-        <source>Order of play</source>
-        <translation>Порядок игры</translation>
+        <source>Variants of the game</source>
+        <translation>Варианты игры</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="42"/>
-        <source>order of play</source>
-        <translation>На полях игрока и его противника случайным образом спрятано несколько лис. Игроки по очереди делают свои выстрелы каждый на своем поле, пытаясь отыскать всех лис раньше противника. Игрок стреляет первым.
+        <source>variants</source>
+        <translation>◦ Игра для одного игрока (Нужно найти всех лис за минимально возможное количество ходов)
 
-Победителем становится тот, кто первым найдет всех лис, загаданных противником.
-        </translation>
+◦ Игра игрока против устройства (Нужно попробовать обыграть искусственный интеллект)
+
+◦ Игра против другого игрока на одном устройстве
+</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="48"/>
+        <source>Order of play (One player)</source>
+        <translation>Порядок игры (1 игрок)</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="57"/>
+        <source>order of play for one player</source>
+        <translation>На поле игрока спрятано несколько лис. Нужно найти всех лис, сделав как можно меньше ходов.
+
+Игрок становится победителем после того, как найдет всех загаданных лис.
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="63"/>
+        <source>Order of play</source>
+        <translation>Порядок игры (2 игрока)</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="72"/>
+        <source>order of play</source>
+        <translation>На полях игрока и его противника случайным образом спрятано несколько лис. Игроки по очереди делают свои выстрелы каждый на своем поле, пытаясь отыскать всех лис раньше противника.
+
+Победителем становится тот, кто первым найдет всех лис, загаданных противником.
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="78"/>
         <source>Feature of the game</source>
         <translation>Особенности игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="57"/>
-        <source>feature of the game</source>
+        <location filename="../qml/pages/RulesPage.qml" line="87"/>
+        <source>feature of the game 1</source>
         <translation>1) После каждого меткого выстрела по клетке открывается лиса и предоставляется повторный выстрел.
-
-2) В случае промаха открывается число, которое показывает количество лис, спрятанных во всех клетках, находящихся на одной вертикали, горизонтали и по обеим диагоналям (Учитываются как ненайденные, так и найденные лисы). Следующий ход предоставляется противнику.
-
-3) Несколько лис не могут находится в одной клетке.
-
-4) Лисы не могут располагаться в соседних клетках.
-        </translation>
+</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="63"/>
+        <location filename="../qml/pages/RulesPage.qml" line="97"/>
+        <source>feature of the game 2</source>
+        <translation>2) В случае промаха открывается число, которое показывает количество лис, спрятанных во всех клетках, находящихся на одной вертикали, горизонтали и по обеим диагоналям (Учитываются как ненайденные, так и найденные лисы). Следующий ход предоставляется противнику.
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="107"/>
+        <source>Directions for finding foxes relative to the cell</source>
+        <translation>Направления для поиска лис относительно клетки</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="128"/>
+        <source>The digit is the number of foxes around the cell</source>
+        <translation>
+Цифра - это количество лис вокруг клетки</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="148"/>
+        <location filename="../qml/pages/RulesPage.qml" line="188"/>
+        <source>Foxes are not in cells with a dots</source>
+        <translation>
+Лис нет в клетках с точками</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="168"/>
+        <source>feature of the game 3</source>
+        <translation>
+3) Несколько лис не могут находится в одной клетке.
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="178"/>
+        <source>feature of the game 4</source>
+        <translation>4) Лисы не могут располагаться в соседних клетках.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RulesPage.qml" line="210"/>
         <source>Functionality of the program</source>
         <translation>Функционал программы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="72"/>
+        <location filename="../qml/pages/RulesPage.qml" line="219"/>
         <source>functionality of the program</source>
         <translation>- Нажатие по клетке - выстрел на своем поле.
 
 - Долгое нажатие по клетке - метка на своем поле.
-
-- В настройках игры можно выбрать размер полей, количество лис на поле, уровень сложности игры, скорость ходов противника, громкость звуковых эффектов. Настройки по умолчанию: самый легкий уровень, размер поля - 9х9, 4 лисы на поле, 1 ход противника в секунду, игра без звука.
-
-- Результат каждой игры сохраняется, его можно посмотреть в статистике.
-        </translation>
+</translation>
     </message>
 </context>
 <context>
@@ -487,92 +541,92 @@
         <translation>Вы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="97"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Enter name of an other player</source>
         <translation>Введите имя другого игрока</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>Player 2</source>
         <translation>Игрок 2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
         <source>Games&apos;s level</source>
         <translation>Уровень игры против Устройства</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>1</source>
         <translation>очень легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>2</source>
         <translation>легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
         <source>3</source>
         <translation>средний</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>4</source>
         <translation>сложный</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>5</source>
         <translation>очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Size of games field</source>
         <translation>Размер игрового поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>Amount foxes</source>
         <translation>Количество лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
         <source>Speed of computer&apos;s steps</source>
-        <translation>Задержка ходов противника</translation>
+        <translation>Задержка ходов Устройства</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
         <source>0,5 sec</source>
         <translation>0,5 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="214"/>
         <source>1 sec</source>
         <translation>1 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="253"/>
         <source>Volume of effects</source>
         <translation>Громкость звуковых эффектов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="262"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="266"/>
         <source>Saving games</source>
         <translation>Сохранять игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Saving statistics</source>
         <translation>Сохранять результаты игр</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>Rotation of top field</source>
         <translation>Угол поворота верхнего поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="180"/>
         <source>Rotation of bottom field</source>
         <translation>Угол поворота нижнего поля</translation>
     </message>
