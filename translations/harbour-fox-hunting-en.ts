@@ -40,11 +40,77 @@
     </message>
 </context>
 <context>
+    <name>FeatureGamePage</name>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="28"/>
+        <source>Feature of the game</source>
+        <translation>Feature of the game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="38"/>
+        <source>feature of the game 1</source>
+        <translation>1) The fox displayed after each well-aimed shot on a cell with this fox, and shot can be repeated.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="48"/>
+        <source>feature of the game 2</source>
+        <translation>2) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
+        <source>Directions for finding foxes relative to the cell</source>
+        <translation>Directions for finding foxes relative to the cell</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="79"/>
+        <source>The digit is the number of foxes around the cell</source>
+        <translation>The digit is the number of foxes around the cell</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="99"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="139"/>
+        <source>Foxes are not in cells with a dots</source>
+        <translation>Foxes are not in cells with a dots</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="119"/>
+        <source>feature of the game 3</source>
+        <translation>3) Foxes can not be located in the one cell.
+
+</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="129"/>
+        <source>feature of the game 4</source>
+        <translation>4) Foxes can&apos;t be located in neighboring cells.</translation>
+    </message>
+</context>
+<context>
+    <name>FunctionalityGamePage</name>
+    <message>
+        <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="28"/>
+        <source>Functionality of the program</source>
+        <translation>Functionality of the program</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
+        <source>functionality of the program</source>
+        <translation>- Clicking on the cell - a shot (step) on the field.
+
+- Long press on the cell - mark on the field.
+</translation>
+    </message>
+</context>
+<context>
     <name>GamePage</name>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="21"/>
         <source>Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Device</translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="132"/>
@@ -230,33 +296,33 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="354"/>
         <source>Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="355"/>
         <source>One player</source>
-        <translation type="unfinished"></translation>
+        <translation>One player</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="356"/>
         <location filename="../qml/pages/MenuPage.qml" line="358"/>
         <source>Two players</source>
-        <translation type="unfinished"></translation>
+        <translation>Two players</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="357"/>
         <source>You-Device</source>
-        <translation type="unfinished"></translation>
+        <translation>You against your Device</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="359"/>
         <source>You-Player</source>
-        <translation type="unfinished"></translation>
+        <translation>You against other player</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="360"/>
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Results</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="361"/>
@@ -270,6 +336,19 @@
     </message>
 </context>
 <context>
+    <name>OnePlayerPage</name>
+    <message>
+        <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="28"/>
+        <source>Order of play (One player)</source>
+        <translation>Order of play (One player)</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="38"/>
+        <source>order of play for one player</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RulesPage</name>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="28"/>
@@ -277,24 +356,14 @@
         <translation>Rules of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="33"/>
+        <location filename="../qml/pages/RulesPage.qml" line="35"/>
         <source>Variants of the game</source>
-        <translation type="unfinished"></translation>
+        <translation>Variants of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="42"/>
-        <source>variants</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="48"/>
+        <location filename="../qml/pages/RulesPage.qml" line="49"/>
         <source>Order of play (One player)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="57"/>
-        <source>order of play for one player</source>
-        <translation type="unfinished"></translation>
+        <translation>Order of play (One player)</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="63"/>
@@ -302,76 +371,14 @@
         <translation>Order of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="72"/>
-        <source>order of play</source>
-        <translation>On fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
-
-The winner is the one who first finds all the foxes.
-        </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="78"/>
+        <location filename="../qml/pages/RulesPage.qml" line="77"/>
         <source>Feature of the game</source>
         <translation>Feature of the game</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RulesPage.qml" line="87"/>
-        <source>feature of the game 1</source>
-        <translation>1) The fox displayed after each well-aimed shot on a cell with this fox, and shot can be repeated.
-
-</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="97"/>
-        <source>feature of the game 2</source>
-        <translation>2) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
-
-</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="107"/>
-        <source>Directions for finding foxes relative to the cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="128"/>
-        <source>The digit is the number of foxes around the cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="148"/>
-        <location filename="../qml/pages/RulesPage.qml" line="188"/>
-        <source>Foxes are not in cells with a dots</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="168"/>
-        <source>feature of the game 3</source>
-        <translation>3) Foxes can not be located in the one cell.
-
-</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="178"/>
-        <source>feature of the game 4</source>
-        <translation>4) Foxes can&apos;t be located in neighboring cells.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="210"/>
+        <location filename="../qml/pages/RulesPage.qml" line="91"/>
         <source>Functionality of the program</source>
         <translation>Functionality of the program</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RulesPage.qml" line="219"/>
-        <source>functionality of the program</source>
-        <translation>- Clicking on the cell - a shot (step) on the field.
-
-- Long press on the cell - mark on the field.
-
-- You can choose the size of fields, the number of foxes on the field, the level of difficulty of the game, the speed of the opponent&apos;s steps, the volume of sound effects in the game settings. Default settings: the easiest level, the field size - 9x9, 4 foxes on the field, one step of the opponent per second, the game without sound.
-
-- The result of each game is saved, you can see it in the statistics.
-</translation>
     </message>
 </context>
 <context>
@@ -486,7 +493,7 @@ The winner is the one who first finds all the foxes.
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="42"/>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="49"/>
         <source>Steps </source>
-        <translation type="unfinished"></translation>
+        <translation>Steps </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="56"/>
@@ -529,22 +536,22 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>Enter Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter your name</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation>Your name</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Enter name of an other player</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter name of other player</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>Player 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Player 2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="224"/>
@@ -619,12 +626,12 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>Rotation of top field</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotation of top field</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="180"/>
         <source>Rotation of bottom field</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotation of bottom field</translation>
     </message>
 </context>
 <context>
@@ -657,6 +664,35 @@ The winner is the one who first finds all the foxes.
         <location filename="../src/TablesLocationFoxes.cpp" line="79"/>
         <source>A lot of foxes</source>
         <translation>All foxes are placed</translation>
+    </message>
+</context>
+<context>
+    <name>TwoPlayersPage</name>
+    <message>
+        <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="28"/>
+        <source>Order of play</source>
+        <translation>Order of the game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="38"/>
+        <source>order of play</source>
+        <translation>On fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
+
+The winner is the one who first finds all the foxes.
+        </translation>
+    </message>
+</context>
+<context>
+    <name>VariantsGamePage</name>
+    <message>
+        <location filename="../qml/pages/rulesPages/VariantsGamePage.qml" line="28"/>
+        <source>Variants of the game</source>
+        <translation>Variants of the game</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/VariantsGamePage.qml" line="38"/>
+        <source>variants</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

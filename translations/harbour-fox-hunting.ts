@@ -33,6 +33,52 @@
     </message>
 </context>
 <context>
+    <name>FeatureGamePage</name>
+    <message>
+        <source>Feature of the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Directions for finding foxes relative to the cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The digit is the number of foxes around the cell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foxes are not in cells with a dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FunctionalityGamePage</name>
+    <message>
+        <source>Functionality of the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>functionality of the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GamePage</name>
     <message>
         <source> (steps </source>
@@ -215,6 +261,17 @@
     </message>
 </context>
 <context>
+    <name>OnePlayerPage</name>
+    <message>
+        <source>Order of play (One player)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>order of play for one player</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RulesPage</name>
     <message>
         <source>Rules of the game</source>
@@ -222,10 +279,6 @@
     </message>
     <message>
         <source>Order of play</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>order of play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -237,51 +290,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>functionality of the program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>feature of the game 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>feature of the game 3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>feature of the game 4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>feature of the game 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Directions for finding foxes relative to the cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The digit is the number of foxes around the cell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Foxes are not in cells with a dots</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Order of play (One player)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>order of play for one player</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Variants of the game</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>variants</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -512,6 +525,28 @@
     </message>
     <message>
         <source>Foxes less than need</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TwoPlayersPage</name>
+    <message>
+        <source>Order of play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>order of play</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VariantsGamePage</name>
+    <message>
+        <source>Variants of the game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>variants</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

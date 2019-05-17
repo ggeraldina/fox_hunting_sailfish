@@ -28,197 +28,73 @@ Page {
                 title: qsTr("Rules of the game")
             }
 
-            ExpandingSectionGroup {
-                ExpandingSection {
-                    title: qsTr("Variants of the game")
-                    content.sourceComponent: Column {
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("variants")
-                        }
-                    }
+            BackgroundItem {
+                id: itemVariants
+                width: column.width
+                Label {
+                    text: qsTr("Variants of the game")
+                    color: itemVariants.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
                 }
-
-                ExpandingSection {
-                    title: qsTr("Order of play (One player)")
-                    content.sourceComponent: Column {
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("order of play for one player")
-                        }
-                    }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("rulesPages/VariantsGamePage.qml"))
                 }
+            }
 
-                ExpandingSection {
-                    title: qsTr("Order of play")
-                    content.sourceComponent: Column {
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("order of play")
-                        }
-                    }
+            BackgroundItem {
+                id: itemOnePlayer
+                width: column.width
+                Label {
+                    text: qsTr("Order of play (One player)")
+                    color: itemOnePlayer.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
                 }
-
-                ExpandingSection {
-                    title: qsTr("Feature of the game")
-                    content.sourceComponent: Column {
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("feature of the game 1")
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("feature of the game 2")
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 4
-                            horizontalAlignment: Text.AlignHCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeSmall
-                            text: qsTr("Directions for finding foxes relative to the cell")
-                        }
-
-                        Image {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            fillMode: Image.PreserveAspectFit
-                            width: sourceSize.width > (column.width - Theme.paddingLarge * 4) ?
-                                       column.width - Theme.paddingLarge * 4 :
-                                       sourceSize.width
-                            height: width
-                            source: "qrc:/image/rulesGame/cells_location.png"
-
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 4
-                            horizontalAlignment: Text.AlignHCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeSmall
-                            text: qsTr("The digit is the number of foxes around the cell")
-                        }
-
-                        Image {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            fillMode: Image.PreserveAspectFit
-                            width: sourceSize.width > (column.width - Theme.paddingLarge * 4) ?
-                                       column.width - Theme.paddingLarge * 4 :
-                                       sourceSize.width
-                            height: width
-                            source: "qrc:/image/rulesGame/cells_locationFoxes.png"
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 4
-                            horizontalAlignment: Text.AlignHCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeSmall
-                            text: qsTr("Foxes are not in cells with a dots")
-                        }
-
-                        Image {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            fillMode: Image.PreserveAspectFit
-                            width: sourceSize.width > (column.width - Theme.paddingLarge * 4) ?
-                                       column.width - Theme.paddingLarge * 4 :
-                                       sourceSize.width
-                            height: width
-                            source: "qrc:/image/rulesGame/cells_notFox1.png"
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("feature of the game 3")
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("feature of the game 4")
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 4
-                            horizontalAlignment: Text.AlignHCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeSmall
-                            text: qsTr("Foxes are not in cells with a dots")
-                        }
-
-                        Image {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            fillMode: Image.PreserveAspectFit
-                            width: sourceSize.width > (column.width - Theme.paddingLarge * 4) ?
-                                       column.width - Theme.paddingLarge * 4 :
-                                       sourceSize.width
-                            height: width
-                            source: "qrc:/image/rulesGame/cells_notFox.png"
-                        }
-
-                        Text {
-                            width:column.width - Theme.paddingLarge * 4
-                            font.pixelSize: Theme.fontSizeSmall
-                            text: ""
-                        }
-                    }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("rulesPages/OnePlayerPage.qml"))
                 }
+            }
 
-                ExpandingSection {
-                    title: qsTr("Functionality of the program")
-                    content.sourceComponent: Column {
-                        Text {
-                            width:column.width - Theme.paddingLarge * 2
-                            horizontalAlignment: Text.AlignJustify
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            wrapMode: Text.WordWrap
-                            color: Theme.highlightColor
-                            font.pixelSize: Theme.fontSizeMedium
-                            text: qsTr("functionality of the program")
-                        }
-                    }
+            BackgroundItem {
+                id: itemTwoPlayer
+                width: column.width
+                Label {
+                    text: qsTr("Order of play")
+                    color: itemTwoPlayer.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("rulesPages/TwoPlayersPage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemFeatureGame
+                width: column.width
+                Label {
+                    text: qsTr("Feature of the game")
+                    color: itemFeatureGame.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("rulesPages/FeatureGamePage.qml"))
+                }
+            }
+
+            BackgroundItem {
+                id: itemFunctionalityGame
+                width: column.width
+                Label {
+                    text: qsTr("Functionality of the program")
+                    color: itemFunctionalityGame.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    x: Theme.horizontalPageMargin
+                }
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("rulesPages/FunctionalityGamePage.qml"))
                 }
             }
         }
