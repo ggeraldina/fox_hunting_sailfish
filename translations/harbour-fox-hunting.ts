@@ -12,16 +12,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Author: Geraldina
-(ggeraldina@yandex.ru)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fox hunting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Version: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author: Geraldina</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please send all your suggestions and advice to e-mail: ggeraldina@yandex.ru</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -64,6 +67,10 @@
     </message>
     <message>
         <source>feature of the game 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>feature of the game 5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

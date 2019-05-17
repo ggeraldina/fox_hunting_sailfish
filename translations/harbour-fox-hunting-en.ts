@@ -25,10 +25,13 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="56"/>
-        <source>Author: Geraldina
-(ggeraldina@yandex.ru)</source>
-        <translation>Author: Geraldina
-(ggeraldina@yandex.ru)</translation>
+        <source>Author: Geraldina</source>
+        <translation>Author: Geraldina</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <source>Please send all your suggestions and advice to e-mail: ggeraldina@yandex.ru</source>
+        <translation>Please send all your suggestions and advice to e-mail: ggeraldina@yandex.ru</translation>
     </message>
 </context>
 <context>
@@ -49,44 +52,48 @@
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="38"/>
         <source>feature of the game 1</source>
-        <translation>1) The fox displayed after each well-aimed shot on a cell with this fox, and shot can be repeated.
-
+        <translation>1) If the game is not the first, the right of the first step is granted to the winner.
 </translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="48"/>
         <source>feature of the game 2</source>
-        <translation>2) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
-
+        <translation>2) The fox displayed after each well-aimed shot on a cell with this fox, and еру shot can be repeated.
 </translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="68"/>
         <source>Directions for finding foxes relative to the cell</source>
         <translation>Directions for finding foxes relative to the cell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="79"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="89"/>
         <source>The digit is the number of foxes around the cell</source>
-        <translation>The digit is the number of foxes around the cell</translation>
+        <translation>
+The digit is the number of foxes around the cell</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="99"/>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="139"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="109"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="149"/>
         <source>Foxes are not in cells with a dots</source>
-        <translation>Foxes are not in cells with a dots</translation>
+        <translation>Foxes are not in cells with a dot</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="119"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="139"/>
+        <source>feature of the game 5</source>
+        <translation>5) Foxes can&apos;t be located in neighboring cells.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
         <source>feature of the game 3</source>
-        <translation>3) Foxes can not be located in the one cell.
-
+        <translation>3) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next step is given to the opponent.
 </translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="129"/>
         <source>feature of the game 4</source>
-        <translation>4) Foxes can&apos;t be located in neighboring cells.</translation>
+        <translation>4) Foxes can not be located in the one cell.
+</translation>
     </message>
 </context>
 <context>
@@ -99,9 +106,12 @@
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
         <source>functionality of the program</source>
-        <translation>- Clicking on the cell - a shot (step) on the field.
+        <translation>◦ Clicking on the cell - a shot (step) on the grid.
 
-- Long press on the cell - mark on the field.
+◦ Long press on the cell - mark on the grid.
+
+Note:
+After the game&apos;s over the players&apos; grids are shown for 3 seconds.
 </translation>
     </message>
 </context>
@@ -116,7 +126,7 @@
         <location filename="../qml/pages/GamePage.qml" line="132"/>
         <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source> (steps </source>
-        <translation> (steps </translation>
+        <translation> (steps: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="132"/>
@@ -135,7 +145,7 @@
     <message>
         <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
         <source> (steps </source>
-        <translation> Steps </translation>
+        <translation> Steps: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
@@ -149,7 +159,7 @@
         <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
         <location filename="../qml/pages/GameUserUserPage.qml" line="221"/>
         <source> (steps </source>
-        <translation> (steps </translation>
+        <translation> (steps: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
@@ -173,7 +183,7 @@
     <message>
         <location filename="../qml/pages/LocationFoxesPage.qml" line="61"/>
         <source>Are you pleased the location of the foxes on the field?</source>
-        <translation>Are you pleased the location of the foxes on the field?</translation>
+        <translation>Are you pleased the location of the foxes on the grid?</translation>
     </message>
     <message>
         <location filename="../qml/pages/LocationFoxesPage.qml" line="71"/>
@@ -246,32 +256,32 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="344"/>
         <source>New game</source>
-        <translation>New game against AI</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="345"/>
         <source>Continue game</source>
-        <translation>Continue game against AI</translation>
+        <translation>Continue game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="346"/>
         <source>New game (practice)</source>
-        <translation>New practice game</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="347"/>
         <source>Continue game (practice)</source>
-        <translation>Continue practice game</translation>
+        <translation>Continue game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="348"/>
         <source>New game against player</source>
-        <translation>New game against player</translation>
+        <translation>New game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="349"/>
         <source>Continue game against player</source>
-        <translation>Continue game against player</translation>
+        <translation>Continue game</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="350"/>
@@ -281,12 +291,12 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="351"/>
         <source>Game&apos;s statistics</source>
-        <translation>Games&apos; statistics</translation>
+        <translation>Games&apos; results</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="352"/>
         <source>Game&apos;s settings</source>
-        <translation>Game&apos;s settings</translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="353"/>
@@ -312,12 +322,12 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="357"/>
         <source>You-Device</source>
-        <translation>You against your Device</translation>
+        <translation>(You&apos;re against the Device)</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="359"/>
         <source>You-Player</source>
-        <translation>You against other player</translation>
+        <translation>(You&apos;re against other player)</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="360"/>
@@ -340,12 +350,15 @@
     <message>
         <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="28"/>
         <source>Order of play (One player)</source>
-        <translation>Order of play (One player)</translation>
+        <translation>Order  of the game (1 player)</translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="38"/>
         <source>order of play for one player</source>
-        <translation type="unfinished"></translation>
+        <translation>On the grid of the player several foxes is hidden. Need to find all the foxes by making as few steps as possible.
+
+The player becomes the winner after he finds all the hidden foxes.
+</translation>
     </message>
 </context>
 <context>
@@ -363,12 +376,12 @@
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="49"/>
         <source>Order of play (One player)</source>
-        <translation>Order of play (One player)</translation>
+        <translation>Order of the game (1 player)</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="63"/>
         <source>Order of play</source>
-        <translation>Order of the game</translation>
+        <translation>Order of the game (2 player)</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="77"/>
@@ -411,17 +424,17 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="49"/>
         <source>Steps user </source>
-        <translation>Count your steps: </translation>
+        <translation>The number of your steps: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="56"/>
         <source>Steps comp </source>
-        <translation>Count opponent&apos;s steps: </translation>
+        <translation>The number of steps the device: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="63"/>
         <source>Size field </source>
-        <translation>Size of gaming fields: </translation>
+        <translation>Size of gaming grids: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="70"/>
@@ -434,7 +447,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="7"/>
         <source>Game (practice)</source>
-        <translation>Practice games</translation>
+        <translation>One player</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="16"/>
@@ -454,12 +467,12 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="42"/>
         <source>Steps user </source>
-        <translation>Count your steps: </translation>
+        <translation>The number of your steps: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="49"/>
         <source>Size field </source>
-        <translation>Size of gaming fields: </translation>
+        <translation>Size of gaming grids: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="56"/>
@@ -472,7 +485,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="7"/>
         <source>Game against player</source>
-        <translation>Games against player</translation>
+        <translation>Against other player</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="16"/>
@@ -498,7 +511,7 @@
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="56"/>
         <source>Size field </source>
-        <translation>Size of gaming fields: </translation>
+        <translation>Size of gaming grids: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="63"/>
@@ -531,7 +544,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Game&apos;s settings</source>
-        <translation>Game&apos;s settings</translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
@@ -541,12 +554,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Your name</source>
-        <translation>Your name</translation>
+        <translation>You</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Enter name of an other player</source>
-        <translation>Enter name of other player</translation>
+        <translation>Enter the name of another player</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="100"/>
@@ -556,7 +569,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="224"/>
         <source>Games&apos;s level</source>
-        <translation>Game&apos;s level against AI</translation>
+        <translation>Game&apos;s level against the Device</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="228"/>
@@ -586,7 +599,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Size of games field</source>
-        <translation>Size of game&apos;s field</translation>
+        <translation>Size of game&apos;s grid</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
@@ -596,7 +609,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="206"/>
         <source>Speed of computer&apos;s steps</source>
-        <translation>Speed of opponent&apos;s steps</translation>
+        <translation>Speed of Device&apos;s steps</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="210"/>
@@ -621,17 +634,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Saving statistics</source>
-        <translation>Save games&apos; statistics</translation>
+        <translation>Save games&apos; results</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>Rotation of top field</source>
-        <translation>Rotation of top field</translation>
+        <translation>Angle of rotation of the upper grid</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="180"/>
         <source>Rotation of bottom field</source>
-        <translation>Rotation of bottom field</translation>
+        <translation>Angle of rotation of the bottom grid</translation>
     </message>
 </context>
 <context>
@@ -639,7 +652,7 @@
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="55"/>
         <source>Game&apos;s statistics</source>
-        <translation>Games&apos; statistics</translation>
+        <translation>Games&apos; results</translation>
     </message>
     <message>
         <location filename="../qml/pages/StatisticsPage.qml" line="69"/>
@@ -658,7 +671,7 @@
     <message>
         <location filename="../src/TablesLocationFoxes.cpp" line="77"/>
         <source>There are nearby foxes</source>
-        <translation>Cannot be placed next to other foxes</translation>
+        <translation>Cannot be placed near to other foxes</translation>
     </message>
     <message>
         <location filename="../src/TablesLocationFoxes.cpp" line="79"/>
@@ -671,12 +684,12 @@
     <message>
         <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="28"/>
         <source>Order of play</source>
-        <translation>Order of the game</translation>
+        <translation>Order of the game (2 players)</translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="38"/>
         <source>order of play</source>
-        <translation>On fields of the player and his opponent randomly several foxes hidden on each field. Players take turns making their shots each on his field, trying to find all foxes before the opponent. The player shoots first.
+        <translation>On grids of the player and his opponent randomly several foxes hidden on each grid. Players take turns making their shots each on his grid, trying to find all foxes before the opponent.
 
 The winner is the one who first finds all the foxes.
         </translation>
@@ -692,7 +705,12 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/rulesPages/VariantsGamePage.qml" line="38"/>
         <source>variants</source>
-        <translation type="unfinished"></translation>
+        <translation>◦ Single player game (You need to find all the foxes in the minimum possible number of steps).
+
+◦ The player vs device (You need to try to win artificial intelligence).
+
+◦ The player vs another player on the same device.
+</translation>
     </message>
 </context>
 <context>
@@ -753,7 +771,7 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/WinGamePracticePage.qml" line="72"/>
         <source>You made steps - </source>
-        <translation>You made steps - </translation>
+        <translation>You made steps: </translation>
     </message>
 </context>
 <context>

@@ -68,7 +68,7 @@ Page {
             if (settings.settingSavingStatistics == "true") {
                 var countSteps = DB.dbCountStepsGamePracticeStatistics()
                 labelSteps.visible = true
-                labelSteps.text = username + "! "
+                labelSteps.text = username + "! " +
                         qsTr("You made steps - ") +
                         countSteps
             }

@@ -25,10 +25,13 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="56"/>
-        <source>Author: Geraldina
-(ggeraldina@yandex.ru)</source>
-        <translation>Автор: Geraldina
-(ggeraldina@yandex.ru)</translation>
+        <source>Author: Geraldina</source>
+        <translation>Автор: Geraldina</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <source>Please send all your suggestions and advice to e-mail: ggeraldina@yandex.ru</source>
+        <translation>Пожалуйста, присылайте все ваши предложения и советы на e-mail: ggeraldina@yandex.ru</translation>
     </message>
 </context>
 <context>
@@ -49,44 +52,49 @@
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="38"/>
         <source>feature of the game 1</source>
-        <translation>1) После каждого меткого выстрела по клетке открывается лиса и предоставляется повторный выстрел.
+        <translation>1) Если игра не первая, то право первого хода предоставляется победителю.
 </translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="48"/>
         <source>feature of the game 2</source>
-        <translation>2) В случае промаха открывается число, которое показывает количество лис, спрятанных во всех клетках, находящихся на одной вертикали, горизонтали и по обеим диагоналям (Учитываются как ненайденные, так и найденные лисы). Следующий ход предоставляется противнику.
+        <translation>2) После каждого меткого выстрела по клетке открывается лиса и предоставляется повторный выстрел.
 </translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="68"/>
         <source>Directions for finding foxes relative to the cell</source>
         <translation>Направления для поиска лис относительно клетки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="79"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="89"/>
         <source>The digit is the number of foxes around the cell</source>
         <translation>
 Цифра - это количество лис вокруг клетки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="99"/>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="139"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="109"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="149"/>
         <source>Foxes are not in cells with a dots</source>
         <translation>
-Лис нет в клетках с точками</translation>
+Лис нет в клетках с точкой</translation>
     </message>
     <message>
-        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="119"/>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="139"/>
+        <source>feature of the game 5</source>
+        <translation>5) Лисы не могут располагаться в соседних клетках.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
         <source>feature of the game 3</source>
-        <translation>
-3) Несколько лис не могут находится в одной клетке.
+        <translation>3) В случае промаха открывается число, которое показывает количество лис, спрятанных во всех клетках, находящихся на одной вертикали, горизонтали и по обеим диагоналям (Учитываются как ненайденные, так и найденные лисы). Следующий ход предоставляется противнику.
 </translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="129"/>
         <source>feature of the game 4</source>
-        <translation>4) Лисы не могут располагаться в соседних клетках.</translation>
+        <translation>4) Несколько лис не могут находится в одной клетке.
+</translation>
     </message>
 </context>
 <context>
@@ -99,9 +107,12 @@
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
         <source>functionality of the program</source>
-        <translation>- Нажатие по клетке - выстрел на своем поле.
+        <translation>◦ Нажатие по клетке - выстрел на своем поле.
 
-- Долгое нажатие по клетке - метка на своем поле.
+◦ Долгое нажатие по клетке - метка на своем поле.
+
+Замечание:
+После окончания игры поля игроков показываются еще в течение 3 секунд.
 </translation>
     </message>
 </context>
@@ -695,11 +706,11 @@
     <message>
         <location filename="../qml/pages/rulesPages/VariantsGamePage.qml" line="38"/>
         <source>variants</source>
-        <translation>◦ Игра для одного игрока (Нужно найти всех лис за минимально возможное количество ходов)
+        <translation>◦ Игра для одного игрока (Нужно найти всех лис за минимально возможное количество ходов).
 
-◦ Игра игрока против устройства (Нужно попробовать обыграть искусственный интеллект)
+◦ Игра игрока против устройства (Нужно попробовать обыграть искусственный интеллект).
 
-◦ Игра против другого игрока на одном устройстве
+◦ Игра против другого игрока на одном устройстве.
 </translation>
     </message>
 </context>

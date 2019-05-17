@@ -53,10 +53,19 @@ Page {
                 left: parent.left
                 leftMargin: Theme.paddingLarge
             }
-            text: qsTr("Author: Geraldina
-(ggeraldina@yandex.ru)")
+            text: qsTr("Author: Geraldina")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeMedium
+        }
+
+        Text {
+            width:column.width - Theme.paddingLarge * 2
+            horizontalAlignment: Text.AlignJustify
+            anchors.horizontalCenter: parent.horizontalCenter
+            wrapMode: Text.WordWrap
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeMedium
+            text: qsTr("Please send all your suggestions and advice to e-mail: ggeraldina@yandex.ru")
         }
     }
 }

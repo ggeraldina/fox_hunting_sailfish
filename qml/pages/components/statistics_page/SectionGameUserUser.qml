@@ -27,7 +27,7 @@ ExpandingSection {
                 }
                 Column {
                     width: page.width - 40
-                    height: (Theme.paddingMedium + Theme.fontSizeSmall) * 8
+                    height: (Theme.paddingMedium + Theme.fontSizeSmall) * 6
                     anchors.horizontalCenter: parent.horizontalCenter
                     spacing: Theme.paddingMedium
                     Text {
@@ -73,8 +73,8 @@ ExpandingSection {
                     textSizeField.text += (obj.sizeField + "×" + obj.sizeField)
                     textNumberFoxes.text += obj.countFoxes
                     textWinner.text += obj.winner
-                    textStepsUserOpponent.text += ("(" + obj.nameUserOpponent + ") " + obj.stepsUserOpponent)
-                    textStepsUser.text += ("(" + obj.nameUser + ") " + obj.stepsUser)
+                    textStepsUserOpponent.text += ("(" + obj.nameUserOpponent + "): " + obj.stepsUserOpponent)
+                    textStepsUser.text += ("(" + obj.nameUser + "): " + obj.stepsUser)
                 }
             }
         }

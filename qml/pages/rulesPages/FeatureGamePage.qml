@@ -49,6 +49,16 @@ Page {
             }
 
             Text {
+                width:column.width - Theme.paddingLarge * 2
+                horizontalAlignment: Text.AlignJustify
+                anchors.horizontalCenter: parent.horizontalCenter
+                wrapMode: Text.WordWrap
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeMedium
+                text: qsTr("feature of the game 3")
+            }
+
+            Text {
                 width:column.width - Theme.paddingLarge * 4
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -116,7 +126,7 @@ Page {
                 wrapMode: Text.WordWrap
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: qsTr("feature of the game 3")
+                text: qsTr("feature of the game 4")
             }
 
             Text {
@@ -126,7 +136,7 @@ Page {
                 wrapMode: Text.WordWrap
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: qsTr("feature of the game 4")
+                text: qsTr("feature of the game 5")
             }
 
             Text {
