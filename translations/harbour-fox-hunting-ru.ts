@@ -356,7 +356,7 @@
     <message>
         <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="38"/>
         <source>order of play for one player</source>
-        <translation>На поле игрока спрятано несколько лис. Нужно найти всех лис, сделав как можно меньше ходов.
+        <translation>На поле игрока случайным образом спрятано несколько лис. Нужно найти всех лис, сделав как можно меньше ходов.
 
 Игрок становится победителем после того, как найдет всех загаданных лис.
 </translation>
@@ -548,22 +548,22 @@
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Enter Username</source>
         <translation>Введите ваше имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>Your name</source>
         <translation>Вы</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Enter name of an other player</source>
         <translation>Введите имя другого игрока</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Player 2</source>
         <translation>Игрок 2</translation>
     </message>
@@ -690,7 +690,7 @@
     <message>
         <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="38"/>
         <source>order of play</source>
-        <translation>На полях игрока и его противника случайным образом спрятано несколько лис. Игроки по очереди делают свои выстрелы каждый на своем поле, пытаясь отыскать всех лис раньше противника.
+        <translation>На полях игрока и его противника спрятано несколько лис. Игроки по очереди делают свои выстрелы каждый на своем поле, пытаясь отыскать всех лис раньше противника.
 
 Победителем становится тот, кто первым найдет всех лис, загаданных противником.
 </translation>

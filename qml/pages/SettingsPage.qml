@@ -11,10 +11,6 @@ Page {
     property int currentIndexNumberFoxes: settings.settingNumberFoxes - 3
     property int currentIndexSpeedStepComp: settings.settingSpeedStepComp / 500 - 1
     property int currentIndexLevel: settings.settingLevel - 1
-    property bool currentCheckedSavingGames: settings.settingSavingGames == "true" ? true : false
-    property bool currentCheckedSavingStatistics: settings.settingSavingStatistics == "true" ? true : false
-    property string userName: settings.settingUserName
-    property string userOpponentName: settings.settingUserOpponentName
     property int currentIndexRotationFieldTop: settings.settingRotationFieldTop * 4 / 360
     property int currentIndexRotationFieldBottom: settings.settingRotationFieldBottom * 4 / 360
 
@@ -33,7 +29,7 @@ Page {
         onSettingSavingGamesChanged: switchSavingGames.checked = settings.settingSavingGames == "true" ? true : false
         onSettingSavingStatisticsChanged: switchSavingStatistics.checked = settings.settingSavingStatistics == "true" ? true : false
         onSettingUserNameChanged: textFieldUser.text = settings.settingUserName
-        onSettingUserOpponentNameChanged: textFieldUserOpponent = settings.settingUserOpponentName
+        onSettingUserOpponentNameChanged: textFieldUserOpponent.text = settings.settingUserOpponentName
         onSettingRotationFieldTopChanged: comboBoxRotationFieldTop.currentIndex = settings.settingRotationFieldTop * 4 / 360
         onSettingRotationFieldBottomChanged: comboBoxRotationFieldBottom.currentIndex = settings.settingRotationFieldBottom * 4 / 360
     }
@@ -78,7 +74,6 @@ Page {
             TextField {
                 id: textFieldUser
                 width: page.width
-                text: userName
                 placeholderText: qsTr("Enter Username")
                 label: qsTr("Your name")
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
@@ -90,12 +85,12 @@ Page {
                 onTextChanged: {
                     settings.settingUserName = text
                 }
+                Component.onCompleted: text = settings.settingUserName
             }
 
             TextField {
                 id: textFieldUserOpponent
                 width: page.width
-                text: userOpponentName
                 placeholderText: qsTr("Enter name of an other player")
                 label: qsTr("Player 2")
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
@@ -107,6 +102,7 @@ Page {
                 onTextChanged: {
                     settings.settingUserOpponentName = text
                 }
+                Component.onCompleted: text  = settings.settingUserOpponentName
             }
             ComboBox {
                 id: comboBoxBaseTableSize
@@ -264,7 +260,6 @@ Page {
             TextSwitch {
                 id: switchSavingGames
                 text: qsTr("Saving games")
-                checked: currentCheckedSavingGames
                 onCheckedChanged: {
                     if (checked) {
                         settings.settingSavingGames = "true"
@@ -274,12 +269,12 @@ Page {
                         DB.dbDeleteAllGameStatus()
                     }
                 }
+                Component.onCompleted: checked = settings.settingSavingGames == "true" ? true : false
             }
 
             TextSwitch {
                 id: switchSavingStatistics
                 text: qsTr("Saving statistics")
-                checked: currentCheckedSavingStatistics
                 onCheckedChanged: {
                     if (checked) {
                         settings.settingSavingStatistics = "true"
@@ -287,6 +282,7 @@ Page {
                         settings.settingSavingStatistics = "false"
                     }
                 }
+                Component.onCompleted: checked = settings.settingSavingStatistics == "true" ? true : false
             }
         }
 

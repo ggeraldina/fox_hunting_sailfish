@@ -58,7 +58,7 @@
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="48"/>
         <source>feature of the game 2</source>
-        <translation>2) The fox displayed after each well-aimed shot on a cell with this fox, and еру shot can be repeated.
+        <translation>2) The fox displayed after each well-aimed shot on a cell with this fox, and shot can be repeated.
 </translation>
     </message>
     <message>
@@ -86,7 +86,7 @@ The digit is the number of foxes around the cell</translation>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
         <source>feature of the game 3</source>
-        <translation>3) In case of a miss, a number is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next step is given to the opponent.
+        <translation>3) In case of a miss, a digit is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next step is given to the opponent.
 </translation>
     </message>
     <message>
@@ -355,7 +355,7 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
     <message>
         <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="38"/>
         <source>order of play for one player</source>
-        <translation>On the grid of the player several foxes is hidden. Need to find all the foxes by making as few steps as possible.
+        <translation>On the grid of the player randomly several foxes is hidden. Need to find all the foxes by making as few steps as possible.
 
 The player becomes the winner after he finds all the hidden foxes.
 </translation>
@@ -381,7 +381,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="63"/>
         <source>Order of play</source>
-        <translation>Order of the game (2 player)</translation>
+        <translation>Order of the game (2 players)</translation>
     </message>
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="77"/>
@@ -399,7 +399,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="7"/>
         <source>Game with AI</source>
-        <translation>Games against AI</translation>
+        <translation>Against the Divice</translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="16"/>
@@ -547,22 +547,22 @@ The player becomes the winner after he finds all the hidden foxes.
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Enter Username</source>
         <translation>Enter your name</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>Your name</source>
         <translation>You</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Enter name of an other player</source>
         <translation>Enter the name of another player</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Player 2</source>
         <translation>Player 2</translation>
     </message>
@@ -689,7 +689,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/rulesPages/TwoPlayersPage.qml" line="38"/>
         <source>order of play</source>
-        <translation>On grids of the player and his opponent randomly several foxes hidden on each grid. Players take turns making their shots each on his grid, trying to find all foxes before the opponent.
+        <translation>On grids of the player and his opponent several foxes hidden on each grid. Players take turns making their shots each on his grid, trying to find all foxes before the opponent.
 
 The winner is the one who first finds all the foxes.
         </translation>
