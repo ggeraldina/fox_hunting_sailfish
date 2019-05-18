@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=openrepos-fox-hunting
-Exec=openrepos-fox-hunting
+Icon=harbour-fox-hunting
+Exec=harbour-fox-hunting
 Name=Fox hunting
 # translation
 # your app name in locale (ru)

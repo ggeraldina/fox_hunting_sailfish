@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = openrepos-fox-hunting
+TARGET = harbour-fox-hunting
 
 CONFIG += sailfishapp
 
@@ -38,10 +38,18 @@ DISTFILES += \
     image/*.jpg \
     soundeffects/shot.wav \
     js/database/Database.js \
-    icons/108x108/openrepos-fox-hunting.png \
-    icons/128x128/openrepos-fox-hunting.png \
-    icons/172x172/openrepos-fox-hunting.png \
-    icons/86x86/openrepos-fox-hunting.png \
+    rpm/harbour-fox-hunting.yaml \
+    rpm/harbour-fox-hunting.spec \
+    rpm/harbour-fox-hunting.changes.run.in \
+    rpm/harbour-fox-hunting.changes.in \
+    harbour-fox-hunting.desktop \
+    icons/108x108/harbour-fox-hunting.png \
+    icons/128x128/harbour-fox-hunting.png \
+    icons/172x172/harbour-fox-hunting.png \
+    icons/86x86/harbour-fox-hunting.png \
+    translations/harbour-fox-hunting-en.ts \
+    translations/harbour-fox-hunting.ts \
+    translations/harbour-fox-hunting-ru.ts \
     qml/pages/AboutPage.qml \
     qml/pages/LocationFoxesPage.qml \
     qml/pages/GamePracticePage.qml \
@@ -55,15 +63,7 @@ DISTFILES += \
     qml/pages/rulesPages/OnePlayerPage.qml \
     qml/pages/rulesPages/TwoPlayersPage.qml \
     qml/pages/rulesPages/FeatureGamePage.qml \
-    qml/pages/rulesPages/FunctionalityGamePage.qml \
-    rpm/openrepos-fox-hunting.changes.in \
-    rpm/openrepos-fox-hunting.yaml \
-    rpm/openrepos-fox-hunting.spec \
-    rpm/openrepos-fox-hunting.changes.run.in \
-    translations/openrepos-fox-hunting-en.ts \
-    translations/openrepos-fox-hunting.ts \
-    translations/openrepos-fox-hunting-ru.ts \
-    openrepos-fox-hunting.desktop
+    qml/pages/rulesPages/FunctionalityGamePage.qml
 
 RESOURCES += \
     foxhunting.qrc
@@ -76,9 +76,9 @@ CONFIG += \
     sailfishapp_i18n \
 
 TRANSLATIONS += \
-    translations/openrepos-fox-hunting-ru.ts \
-    translations/openrepos-fox-hunting-en.ts \
-    translations/openrepos-fox-hunting.ts \
+    translations/harbour-fox-hunting-ru.ts \
+    translations/harbour-fox-hunting-en.ts \
+    translations/harbour-fox-hunting.ts \
 
 lupdate_only {
     SOURCES += \
