@@ -52,7 +52,7 @@
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="38"/>
         <source>feature of the game 1</source>
-        <translation>1) If the game is not the first, the right of the first step is granted to the winner.
+        <translation>1) If the game is not the first, the right of the first move is granted to the winner.
 </translation>
     </message>
     <message>
@@ -86,7 +86,7 @@ The digit is the number of foxes around the cell</translation>
     <message>
         <location filename="../qml/pages/rulesPages/FeatureGamePage.qml" line="58"/>
         <source>feature of the game 3</source>
-        <translation>3) In case of a miss, a digit is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next step is given to the opponent.
+        <translation>3) In case of a miss, a digit is displayed, which shows the number of foxes hidden in all cells, located on the same vertical, horizontal and on both diagonals (both undiscovered and found foxes are taken into account). The next move is given to the opponent.
 </translation>
     </message>
     <message>
@@ -106,7 +106,7 @@ The digit is the number of foxes around the cell</translation>
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
         <source>functionality of the program</source>
-        <translation>◦ Clicking on the cell - a shot (step) on the grid.
+        <translation>◦ Clicking on the cell - a shot (move) on the grid.
 
 ◦ Long press on the cell - mark on the grid.
 
@@ -126,7 +126,7 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
         <location filename="../qml/pages/GamePage.qml" line="132"/>
         <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source> (steps </source>
-        <translation> (steps: </translation>
+        <translation> (moves: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePage.qml" line="132"/>
@@ -140,12 +140,12 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
     <message>
         <location filename="../qml/pages/GamePracticePage.qml" line="89"/>
         <source> Min steps </source>
-        <translation>Try to find all the foxes by making as few steps as possible.</translation>
+        <translation>Try to find all the foxes by making as few moves as possible.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
         <source> (steps </source>
-        <translation> Steps: </translation>
+        <translation> Moves: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GamePracticePage.qml" line="155"/>
@@ -159,7 +159,7 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
         <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
         <location filename="../qml/pages/GameUserUserPage.qml" line="221"/>
         <source> (steps </source>
-        <translation> (steps: </translation>
+        <translation> (moves: </translation>
     </message>
     <message>
         <location filename="../qml/pages/GameUserUserPage.qml" line="136"/>
@@ -355,7 +355,7 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
     <message>
         <location filename="../qml/pages/rulesPages/OnePlayerPage.qml" line="38"/>
         <source>order of play for one player</source>
-        <translation>On the grid of the player randomly several foxes is hidden. Need to find all the foxes by making as few steps as possible.
+        <translation>On the grid of the player randomly several foxes is hidden. Need to find all the foxes by making as few moves as possible.
 
 The player becomes the winner after he finds all the hidden foxes.
 </translation>
@@ -424,12 +424,12 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="49"/>
         <source>Steps user </source>
-        <translation>The number of your steps: </translation>
+        <translation>The number of your moves: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="56"/>
         <source>Steps comp </source>
-        <translation>The number of steps the device: </translation>
+        <translation>The number of moves the device: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameAI.qml" line="63"/>
@@ -467,7 +467,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="42"/>
         <source>Steps user </source>
-        <translation>The number of your steps: </translation>
+        <translation>The number of your moves: </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGamePractice.qml" line="49"/>
@@ -506,7 +506,7 @@ The player becomes the winner after he finds all the hidden foxes.
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="42"/>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="49"/>
         <source>Steps </source>
-        <translation>Steps </translation>
+        <translation>Moves </translation>
     </message>
     <message>
         <location filename="../qml/pages/components/statistics_page/SectionGameUserUser.qml" line="56"/>
@@ -609,7 +609,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="202"/>
         <source>Speed of computer&apos;s steps</source>
-        <translation>Speed of Device&apos;s steps</translation>
+        <translation>Speed of Device&apos;s moves</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="206"/>
@@ -705,7 +705,7 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/rulesPages/VariantsGamePage.qml" line="38"/>
         <source>variants</source>
-        <translation>◦ Single player game (You need to find all the foxes in the minimum possible number of steps).
+        <translation>◦ Single player game (You need to find all the foxes in the minimum possible number of moves).
 
 ◦ The player vs device (You need to try to win artificial intelligence).
 
@@ -771,7 +771,7 @@ The winner is the one who first finds all the foxes.
     <message>
         <location filename="../qml/pages/WinGamePracticePage.qml" line="72"/>
         <source>You made steps - </source>
-        <translation>You made steps: </translation>
+        <translation>You made moves: </translation>
     </message>
 </context>
 <context>
