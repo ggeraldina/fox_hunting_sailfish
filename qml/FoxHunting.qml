@@ -6,7 +6,8 @@ import "pages"
 
 ApplicationWindow
 {
-//    initialPage: Component { }
+    property int countGames: 0
+    id: applicationWindow
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
 

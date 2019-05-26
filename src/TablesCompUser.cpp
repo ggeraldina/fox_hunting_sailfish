@@ -140,7 +140,9 @@ void TablesCompUser::increaseCountStepsUser(int addedValue) {
     emit countStepsUserChanged();
 }
 
-void TablesCompUser::shotCellUser(int index) {
+void TablesCompUser::shotCellUser(int index) {  // for comp-comp first step A1
+    speedStepComp = 1;  //comp-comp
+    speedTimer = 1; //comp-comp
     if (flagLockedTables || dataUser.value(index)->getShot()) {
         return;
     }
@@ -168,6 +170,7 @@ void TablesCompUser::shotCellUserWhenFox(int index) {
     }
     flagLockedTables = false;
     emit flagLockedTablesChanged();
+    QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepUser); //comp-comp
 }
 
 void TablesCompUser::signalWinUser() {
@@ -216,6 +219,23 @@ void TablesCompUser::shotCellCompWhenNoFox(int index) {
     TableComp::editCellsWhenNoFox(&dataComp, index, numberFoxes, countFoundFoxesComp);
     flagLockedTables = false;
     emit flagLockedTablesChanged();
+    QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepUser); //comp-comp
+}
+
+void TablesCompUser::nextStepUser(){ //comp-comp    
+    if (cellUser > 80) {
+        QTimer::singleShot(speedStepComp, this, &TablesCompUser::nextStepComp);
+        qDebug() << "more 80";
+        return;
+    }
+    int valueCell = dataUser.value(cellUser)->getValue();
+    if (valueCell == VALUE_FOX) {
+        cellUser++;
+        nextStepUser();
+        return;
+    }
+    shotCellUser(cellUser);
+    cellUser++;
 }
 
 void TablesCompUser::putOrRemoveMarkCellUser(int index) {
