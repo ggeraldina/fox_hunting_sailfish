@@ -59,22 +59,7 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Menu")
             onClicked: pageStack.navigateBack()
-        }        
-    }
-
-    onStatusChanged: { // comp-comp
-        if (page.status === PageStatus.Active) {
-            if (applicationWindow.countGames >= 500) {
-                pageStack.navigateBack()
-            } else {
-                pageStack.replace(Qt.resolvedUrl("LocationFoxesPage.qml"),
-                                     { typeGame: "AI",
-                                       level: level,
-                                       field: "Comp",
-                                       fieldOpponent: "User",
-                                       nextPage: "GamePage.qml",
-                                       namePlayer1: namePlayer1 })
-            }
         }
     }
 }
+

@@ -87,11 +87,6 @@ Page {
             DB.dbDeleteFieldLocationGameSave(level, quantityFoxes, baseFieldSize, "Comp")
             var statusGame = "new"
             DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)
-
-            applicationWindow.countGames++ // comp-comp
-            console.log("game # " + applicationWindow.countGames) // comp-comp
-            console.log("   steps - " + countStepsComp) // comp-comp
-
             pageStack.replace(Qt.resolvedUrl("LoseGamePage.qml"))
         }
         onWinUser: {
@@ -293,7 +288,6 @@ Page {
         initDataModel()
         repeaterComp.model = dataModel.dataComp
         repeaterUser.model = dataModel.dataUser
-        dataModel.shotCellUser(0); // comp-comp
     }
 
     function initDataModel() {

@@ -1,7 +1,6 @@
 #ifndef TABLESCOMPUSER_H
 #define TABLESCOMPUSER_H
 
-#include <QDebug>
 #include <QVariant>
 #include <QObject>
 #include <QQmlListProperty>
@@ -65,15 +64,13 @@ protected:
 
     int speedStepComp; // msec
     int levelGame; // 1 - minimum level
-    int speedTimer = 2000; //msec
+    const int speedTimer = 2000; //msec
 
     int countFoundFoxesComp = 0;
     int countFoundFoxesUser = 0;
     int countStepsComp = 0;
     int countStepsUser = 0;
     bool flagLockedTables = false;
-
-    int cellUser = 1; //comp-comp
 
     QList<CellComp *> dataComp;
     QList<CellUser *> dataUser;
@@ -99,8 +96,6 @@ protected slots:
     void nextStepComp();
     void signalWinUser();
     void signalWinComp();
-
-    void nextStepUser(); //comp-comp
 };
 
 #endif // TABLESCOMPUSER_H

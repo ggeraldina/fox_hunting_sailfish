@@ -210,12 +210,6 @@ Dialog {
         }
     }
 
-    onStatusChanged: { // comp-comp
-        if (page.status === PageStatus.Active) {
-            accept()
-        }
-    }
-
     Component.onCompleted: {
         var statusGame = "location" + field
         DB.dbInsertRowGameStatus(typeGame, level, quantityFoxes, baseFieldSize, statusGame)

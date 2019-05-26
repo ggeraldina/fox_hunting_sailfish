@@ -124,14 +124,14 @@
         <translation>Устройство</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="137"/>
-        <location filename="../qml/pages/GamePage.qml" line="212"/>
+        <location filename="../qml/pages/GamePage.qml" line="132"/>
+        <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source> (steps </source>
         <translation> (ходы: </translation>
     </message>
     <message>
-        <location filename="../qml/pages/GamePage.qml" line="137"/>
-        <location filename="../qml/pages/GamePage.qml" line="212"/>
+        <location filename="../qml/pages/GamePage.qml" line="132"/>
+        <location filename="../qml/pages/GamePage.qml" line="207"/>
         <source>)</source>
         <translation>)</translation>
     </message>
@@ -198,7 +198,7 @@
     </message>
     <message>
         <location filename="../qml/pages/LocationFoxesPage.qml" line="184"/>
-        <location filename="../qml/pages/LocationFoxesPage.qml" line="240"/>
+        <location filename="../qml/pages/LocationFoxesPage.qml" line="234"/>
         <source>Foxes less than need</source>
         <translation>Лис на поле мало</translation>
     </message>
