@@ -10,7 +10,7 @@ class CellComp : public CellBase {
     Q_PROPERTY(double chance READ getChance WRITE setChance NOTIFY chanceChanged)
 
 public:
-    explicit CellComp(QObject *parent = 0);
+    explicit CellComp(QObject *parent = nullptr);
 
     bool getShot();
     bool getPossibleShot();

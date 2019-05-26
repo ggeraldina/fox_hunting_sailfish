@@ -1,16 +1,4 @@
-
-#include <QtQuick>
-#include <sailfishapp.h>
-#include <QtQml>
-#include "CellBase.h"
-#include "CellUser.h"
-#include "CellComp.h"
-#include "TablesCompUser.h"
-#include "TablesLocationFoxes.h"
-#include "TablesPractice.h"
-#include "TablesUserUser.h"
-#include "QmlSettings.h"
-#include "QmlTranslator.h"
+#include "Main.h"
 
 int main(int argc, char *argv[])
 {

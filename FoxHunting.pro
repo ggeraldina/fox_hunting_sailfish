@@ -100,7 +100,8 @@ HEADERS += \
     src/TablesBase.h \
     src/TablesLocationFoxes.h \
     src/TablesPractice.h \
-    src/TablesUserUser.h
+    src/TablesUserUser.h \
+    src/Main.h
 
 #SUBDIRS += \
 #    FoxHunting.pro
