@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="11"/>
         <source>About program</source>
-        <translation>О программе</translation>
+        <translation>О приложении</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="26"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="28"/>
         <source>Functionality of the program</source>
-        <translation>Функционал программы</translation>
+        <translation>Функционал приложения</translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
@@ -302,7 +302,7 @@
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="353"/>
         <source>About program</source>
-        <translation>О программе</translation>
+        <translation>О приложении</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="354"/>
@@ -392,7 +392,7 @@
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="91"/>
         <source>Functionality of the program</source>
-        <translation>Функционал программы</translation>
+        <translation>Функционал приложения</translation>
     </message>
 </context>
 <context>
@@ -568,32 +568,32 @@
         <translation>Игрок 2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Games&apos;s level</source>
         <translation>Уровень игры против Устройства</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>1</source>
         <translation>очень легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
         <source>2</source>
         <translation>легкий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>3</source>
         <translation>средний</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>4</source>
         <translation>сложный</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
         <source>5</source>
         <translation>очень сложный</translation>
     </message>
@@ -603,47 +603,47 @@
         <translation>Размер игрового поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>Amount foxes</source>
         <translation>Количество лис</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
         <source>Speed of computer&apos;s steps</source>
         <translation>Задержка ходов Устройства</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="214"/>
         <source>0,5 sec</source>
         <translation>0,5 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="218"/>
         <source>1 sec</source>
         <translation>1 сек</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="257"/>
         <source>Volume of effects</source>
         <translation>Громкость звуковых эффектов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="262"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>Saving games</source>
         <translation>Сохранять игры</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="285"/>
         <source>Saving statistics</source>
         <translation>Сохранять результаты игр</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Rotation of top field</source>
         <translation>Угол поворота верхнего поля</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="184"/>
         <source>Rotation of bottom field</source>
         <translation>Угол поворота нижнего поля</translation>
     </message>

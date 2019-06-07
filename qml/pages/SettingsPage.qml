@@ -123,6 +123,10 @@ Page {
                         text: "9 × 9"
                         onClicked: settings.settingBaseTableSize = 9
                     }
+                    MenuItem {
+                        text: "10 × 10"
+                        onClicked: settings.settingBaseTableSize = 10
+                    }
                 }
             }
 
@@ -140,6 +144,10 @@ Page {
                     MenuItem {
                         text: "4"
                         onClicked: settings.settingNumberFoxes = 4
+                    }
+                    MenuItem {
+                        text: "5"
+                        onClicked: settings.settingNumberFoxes = 5
                     }
                 }
             }

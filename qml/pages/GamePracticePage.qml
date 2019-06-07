@@ -15,7 +15,7 @@ Page {
     property int spacingGrid: 1
     property int baseFieldSize: settings.settingBaseTableSize
     property int quantityFoxes: settings.settingNumberFoxes
-    property int maxQuantityFoxes: 4
+    property int maxQuantityFoxes: 5
     property int baseWidthHeight: page.width * (9 / baseFieldSize) / 15
     property int level: 0
     property string username: settings.settingUserName

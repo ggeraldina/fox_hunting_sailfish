@@ -33,7 +33,7 @@ Page {
                 left: parent.left
                 leftMargin: Theme.paddingLarge
             }
-            text: qsTr("Version: ") + ("1.1")
+            text: qsTr("Version: ") + ("1.2")
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeMedium
         }

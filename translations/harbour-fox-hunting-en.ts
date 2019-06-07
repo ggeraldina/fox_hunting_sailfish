@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="11"/>
         <source>About program</source>
-        <translation>About program</translation>
+        <translation>About App</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="26"/>
@@ -101,7 +101,7 @@ The digit is the number of foxes around the cell</translation>
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="28"/>
         <source>Functionality of the program</source>
-        <translation>Functionality of the program</translation>
+        <translation>Functionality of the App</translation>
     </message>
     <message>
         <location filename="../qml/pages/rulesPages/FunctionalityGamePage.qml" line="38"/>
@@ -301,7 +301,7 @@ After the game&apos;s over the players&apos; grids are shown for 3 seconds.
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="353"/>
         <source>About program</source>
-        <translation>About program</translation>
+        <translation>About App</translation>
     </message>
     <message>
         <location filename="../qml/pages/MenuPage.qml" line="354"/>
@@ -391,7 +391,7 @@ The player becomes the winner after he finds all the hidden foxes.
     <message>
         <location filename="../qml/pages/RulesPage.qml" line="91"/>
         <source>Functionality of the program</source>
-        <translation>Functionality of the program</translation>
+        <translation>Functionality of the App</translation>
     </message>
 </context>
 <context>
@@ -567,32 +567,32 @@ The player becomes the winner after he finds all the hidden foxes.
         <translation>Player 2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Games&apos;s level</source>
         <translation>Game&apos;s level against the Device</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>1</source>
         <translation>very easy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
         <source>2</source>
         <translation>easy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>3</source>
         <translation>average</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="236"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>4</source>
         <translation>difficult</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
         <source>5</source>
         <translation>very difficult</translation>
     </message>
@@ -602,47 +602,47 @@ The player becomes the winner after he finds all the hidden foxes.
         <translation>Size of game&apos;s grid</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>Amount foxes</source>
         <translation>Number of foxes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
         <source>Speed of computer&apos;s steps</source>
         <translation>Speed of Device&apos;s moves</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="206"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="214"/>
         <source>0,5 sec</source>
         <translation>0,5 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="210"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="218"/>
         <source>1 sec</source>
         <translation>1 sec</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="257"/>
         <source>Volume of effects</source>
         <translation>Volume of sound effects</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="262"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>Saving games</source>
         <translation>Save games</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="285"/>
         <source>Saving statistics</source>
         <translation>Save games&apos; results</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Rotation of top field</source>
         <translation>Angle of rotation of the upper grid</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="184"/>
         <source>Rotation of bottom field</source>
         <translation>Angle of rotation of the bottom grid</translation>
     </message>
