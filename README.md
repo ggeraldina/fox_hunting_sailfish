@@ -1,10 +1,9 @@
 # Логическая игра "Охота на лис" для SailfishOS, 2018-2019г
----
-Номер регистрации (свидетельства): [2020662742](https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&rn=5985&DocNumber=2020662742&TypeFile=html)
-
----
 
 Реализация логической игры "Охота на лис" для SailfishOS на `C++ + QML`
+
+---
+Номер регистрации (свидетельства): [2020662742](https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&rn=5985&DocNumber=2020662742&TypeFile=html)
 
 ---
 ### Название программы для ЭВМ:
