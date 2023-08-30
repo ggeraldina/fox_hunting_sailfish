@@ -3,6 +3,9 @@
 Реализация логической игры "Охота на лис" для SailfishOS на `C++ + QML`
 
 ---
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Это произведение доступно по <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">лицензии Creative Commons «Attribution-NonCommercial» («Атрибуция-Некоммерчески») 4.0 Всемирная</a>.
+
+
 Номер регистрации (свидетельства): [2020662742](https://www1.fips.ru/registers-doc-view/fips_servlet?DB=EVM&rn=5985&DocNumber=2020662742&TypeFile=html)
 
 ---
